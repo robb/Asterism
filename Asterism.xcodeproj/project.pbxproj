@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		54D9EE691721543D00383762 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9EE681721543D00383762 /* Foundation.framework */; };
 		54D9EE6E1721543D00383762 /* Asterism.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 54D9EE6D1721543D00383762 /* Asterism.h */; };
-		54D9EE701721543D00383762 /* Asterism.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D9EE6F1721543D00383762 /* Asterism.m */; };
 		54D9EE781721543D00383762 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9EE771721543D00383762 /* SenTestingKit.framework */; };
 		54D9EE7A1721543D00383762 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9EE791721543D00383762 /* UIKit.framework */; };
 		54D9EE7B1721543D00383762 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9EE681721543D00383762 /* Foundation.framework */; };
 		54D9EE7E1721543D00383762 /* libAsterism.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9EE651721543D00383762 /* libAsterism.a */; };
 		54D9EE841721543D00383762 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54D9EE821721543D00383762 /* InfoPlist.strings */; };
-		54D9EE921721556300383762 /* AsterismSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D9EE911721556300383762 /* AsterismSpec.m */; };
+		54E1B64817215678008A2175 /* AsterismEach.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1B64717215678008A2175 /* AsterismEach.m */; };
+		54E1B64A17215783008A2175 /* AsterismEachSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1B64917215783008A2175 /* AsterismEachSpec.m */; };
 		6DA0E311E2FE4D0091F50B0D /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B82A91E23E8448D2861527C1 /* libPods-Specs.a */; };
 /* End PBXBuildFile section */
 
@@ -47,14 +47,15 @@
 		54D9EE681721543D00383762 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		54D9EE6C1721543D00383762 /* Asterism-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Asterism-Prefix.pch"; sourceTree = "<group>"; };
 		54D9EE6D1721543D00383762 /* Asterism.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Asterism.h; sourceTree = "<group>"; };
-		54D9EE6F1721543D00383762 /* Asterism.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Asterism.m; sourceTree = "<group>"; };
 		54D9EE761721543D00383762 /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D9EE771721543D00383762 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		54D9EE791721543D00383762 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		54D9EE811721543D00383762 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		54D9EE831721543D00383762 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		54D9EE90172154F100383762 /* Specs-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
-		54D9EE911721556300383762 /* AsterismSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismSpec.m; sourceTree = "<group>"; };
+		54E1B64617215678008A2175 /* AsterismEach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismEach.h; sourceTree = "<group>"; };
+		54E1B64717215678008A2175 /* AsterismEach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismEach.m; sourceTree = "<group>"; };
+		54E1B64917215783008A2175 /* AsterismEachSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismEachSpec.m; sourceTree = "<group>"; };
 		6F8F6BC620F04200B843D72F /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 		B82A91E23E8448D2861527C1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,7 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				54D9EE6D1721543D00383762 /* Asterism.h */,
-				54D9EE6F1721543D00383762 /* Asterism.m */,
+				54E1B64617215678008A2175 /* AsterismEach.h */,
+				54E1B64717215678008A2175 /* AsterismEach.m */,
 				54D9EE6B1721543D00383762 /* Supporting Files */,
 			);
 			path = Asterism;
@@ -135,7 +137,7 @@
 		54D9EE7F1721543D00383762 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
-				54D9EE911721556300383762 /* AsterismSpec.m */,
+				54E1B64917215783008A2175 /* AsterismEachSpec.m */,
 				54D9EE801721543D00383762 /* Supporting Files */,
 			);
 			path = Specs;
@@ -279,7 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54D9EE701721543D00383762 /* Asterism.m in Sources */,
+				54E1B64817215678008A2175 /* AsterismEach.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54D9EE921721556300383762 /* AsterismSpec.m in Sources */,
+				54E1B64A17215783008A2175 /* AsterismEachSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Asterism : NSObject
-
-@end
+#import "AsterismEach.h"
