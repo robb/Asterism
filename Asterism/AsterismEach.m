@@ -39,3 +39,12 @@ OVERLOADABLE void each(NSDictionary *dict, void(^iterator)(id key, id obj))
         iterator(key, obj);
     }];
 }
+
+#pragma mark - Sets
+
+OVERLOADABLE void each(NSSet *set, void(^iterator)(id obj))
+{
+    [set enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+        iterator(obj);
+    }];
+}

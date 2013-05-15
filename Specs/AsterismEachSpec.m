@@ -59,7 +59,7 @@ describe(@"for dictionaries", ^{
         expect(calls).to.equal(0);
     });
 
-    describe(@"when iterating oer a non-empty dictionary", ^{
+    describe(@"when iterating over a non-empty dictionary", ^{
         it(@"should call the block once for every key-value-pair", ^{
             __block NSUInteger calls = 0;
 
@@ -79,6 +79,32 @@ describe(@"for dictionaries", ^{
             each(@{ @"foo": @"FOO" }, ^(id key, id obj) {
                 expect([key uppercaseString]).to.equal(obj);
             });
+        });
+    });
+});
+
+describe(@"for sets", ^{
+    it(@"should not call the block when given an empty set", ^{
+        __block NSUInteger calls = 0;
+
+        each([[NSSet alloc] init], ^(id obj) {
+            calls++;
+        });
+
+        expect(calls).to.equal(0);
+    });
+
+    describe(@"when iterating over a non-empty set", ^{
+        it(@"should call the block once for every object", ^{
+            __block NSUInteger calls = 0;
+
+            NSSet *set = [NSSet setWithArray:@[ @1, @2, @3 ]];
+
+            each(set, ^(id obj) {
+                calls++;
+            });
+
+            expect(calls).to.equal(3);
         });
     });
 });
