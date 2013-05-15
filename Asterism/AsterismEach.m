@@ -48,3 +48,10 @@ OVERLOADABLE void each(NSSet *set, void(^iterator)(id obj))
         iterator(obj);
     }];
 }
+
+OVERLOADABLE void each(id<NSFastEnumeration> enumerable, void(^iterator)(id obj))
+{
+    for (id obj in enumerable) {
+        iterator(obj);
+    }
+}

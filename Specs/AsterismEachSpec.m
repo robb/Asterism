@@ -109,4 +109,32 @@ describe(@"for sets", ^{
     });
 });
 
+describe(@"for objects implementing <NSFastEnumeration>", ^{
+    it(@"should not call the block when given an empty object", ^{
+        __block NSUInteger calls = 0;
+
+        id<NSFastEnumeration> enumerable = @[];
+
+        each(enumerable, ^(id obj) {
+            calls++;
+        });
+
+        expect(calls).to.equal(0);
+    });
+
+    describe(@"when iterating over a non-empty object", ^{
+        it(@"should call the block once for every object", ^{
+            __block NSUInteger calls = 0;
+
+            id<NSFastEnumeration> enumerable = @[ @1, @2, @3 ];
+
+            each(enumerable, ^(id obj) {
+                calls++;
+            });
+
+            expect(calls).to.equal(3);
+        });
+    });
+});
+
 SpecEnd
