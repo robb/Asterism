@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define OVERLOADABLE __attribute((overloadable))
+#define OVERLOADABLE __attribute__((overloadable))
 
 OVERLOADABLE void each(NSArray *array, void(^iterator)(id obj));
 OVERLOADABLE void each(NSArray *array, void(^iterator)(id obj, NSUInteger idx));
