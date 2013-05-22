@@ -25,7 +25,7 @@ describe(@"for arrays", ^{
         it(@"should call the block once for every object", ^{
             __block NSUInteger calls = 0;
 
-            each(@[@0, @1, @2], ^(id obj) {
+            each(@[ @0, @1, @2 ], ^(id obj) {
                 calls++;
             });
 
@@ -33,7 +33,7 @@ describe(@"for arrays", ^{
         });
 
         it(@"should optionally pass in the index", ^{
-            each(@[@0, @1, @2], ^(id obj, NSUInteger idx) {
+            each(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
                 expect(obj).to.equal(@(idx));
             });
         });
@@ -41,7 +41,7 @@ describe(@"for arrays", ^{
         it(@"should iterate over the array in order", ^{
             __block NSUInteger calls = 0;
 
-            each(@[@0, @1, @2], ^(id obj, NSUInteger idx) {
+            each(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
                 expect(calls++).to.equal(idx);
             });
         });
