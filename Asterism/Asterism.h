@@ -9,3 +9,4 @@
 #import <Foundation/Foundation.h>
 
 #import "AsterismEach.h"
+#import "AsterismMap.h"
