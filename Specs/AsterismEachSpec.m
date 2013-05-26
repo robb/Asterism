@@ -83,32 +83,6 @@ describe(@"for dictionaries", ^{
     });
 });
 
-describe(@"for sets", ^{
-    it(@"should not call the block when given an empty set", ^{
-        __block NSUInteger calls = 0;
-
-        each([[NSSet alloc] init], ^(id obj) {
-            calls++;
-        });
-
-        expect(calls).to.equal(0);
-    });
-
-    describe(@"when iterating over a non-empty set", ^{
-        it(@"should call the block once for every object", ^{
-            __block NSUInteger calls = 0;
-
-            NSSet *set = [NSSet setWithArray:@[ @1, @2, @3 ]];
-
-            each(set, ^(id obj) {
-                calls++;
-            });
-
-            expect(calls).to.equal(3);
-        });
-    });
-});
-
 describe(@"for objects implementing <NSFastEnumeration>", ^{
     it(@"should not call the block when given an empty object", ^{
         __block NSUInteger calls = 0;
