@@ -21,50 +21,48 @@ describe(@"for arrays", ^{
         expect(calls).to.equal(0);
     });
 
-    describe(@"when applied to a non-empty array", ^{
-        it(@"should replace the objects with the result of the block", ^{
-            NSArray *before = @[ @1, @2, @3 ];
+    it(@"should replace the objects with the result of the block", ^{
+        NSArray *before = @[ @1, @2, @3 ];
 
-            NSArray *after = map(before, ^(NSNumber *number) {
-                return [number description];
-            });
-
-            expect(after).to.equal((@[ @"1", @"2", @"3" ]));
+        NSArray *after = map(before, ^(NSNumber *number) {
+            return [number description];
         });
 
-        it(@"should remove all elements for which the block returns nil", ^{
-            NSArray *even = map(@[ @0, @1, @2, @3 ], ^(NSNumber *number) {
-                return number.integerValue % 2 == 0 ? number : nil;
-            });
+        expect(after).to.equal((@[ @"1", @"2", @"3" ]));
+    });
 
-            expect(even).to.equal((@[ @0, @2 ]));
+    it(@"should remove all elements for which the block returns nil", ^{
+        NSArray *even = map(@[ @0, @1, @2, @3 ], ^(NSNumber *number) {
+            return number.integerValue % 2 == 0 ? number : nil;
         });
 
-        it(@"should call the block once for every object", ^{
-            __block NSUInteger calls = 0;
+        expect(even).to.equal((@[ @0, @2 ]));
+    });
 
-            map(@[ @0, @1, @2 ], ^(id obj) {
-                return @(calls++);
-            });
+    it(@"should call the block once for every object", ^{
+        __block NSUInteger calls = 0;
 
-            expect(calls).to.equal(3);
+        map(@[ @0, @1, @2 ], ^(id obj) {
+            return @(calls++);
         });
 
-        it(@"should optionally pass in the index", ^{
-            map(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
-                expect(obj).to.equal(@(idx));
+        expect(calls).to.equal(3);
+    });
 
-                return @(idx);
-            });
+    it(@"should optionally pass in the index", ^{
+        map(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
+            expect(obj).to.equal(@(idx));
+
+            return @(idx);
         });
+    });
 
-        it(@"should maintain order", ^{
-            NSArray *before = @[ @1, @2, @3, @4 ];
+    it(@"should maintain order", ^{
+        NSArray *before = @[ @1, @2, @3, @4 ];
 
-            NSArray *after = map(before, ^(id obj) { return obj; });
+        NSArray *after = map(before, ^(id obj) { return obj; });
 
-            expect(after).to.equal(before);
-        });
+        expect(after).to.equal(before);
     });
 });
 
@@ -79,59 +77,57 @@ describe(@"for dictionaries", ^{
         expect(calls).to.equal(0);
     });
 
-    describe(@"when applied to a non-empty array", ^{
-        it(@"should replace the values with the result of the block", ^{
-            NSDictionary *before = @{
-                @"fr": @"Bonjour",
-                @"en": @"Hello"
-            };
+    it(@"should replace the values with the result of the block", ^{
+        NSDictionary *before = @{
+            @"fr": @"Bonjour",
+            @"en": @"Hello"
+        };
 
-            NSDictionary *after = map(before, ^(NSString *string) {
-                return [string uppercaseString];
-            });
-
-            expect(after).to.equal((@{
-                @"fr": @"BONJOUR",
-                @"en": @"HELLO"
-            }));
+        NSDictionary *after = map(before, ^(NSString *string) {
+            return [string uppercaseString];
         });
 
-        it(@"should remove all elements for which the block returns nil", ^{
-            NSDictionary *before = @{
-                @"fr": @"Bonjour",
-                @"en": @"Hello"
-            };
+        expect(after).to.equal((@{
+            @"fr": @"BONJOUR",
+            @"en": @"HELLO"
+        }));
+    });
 
-            NSDictionary *after = map(before, ^(NSString *string) {
-                return [string isEqual:@"Bonjour"] ? string : nil;
-            });
+    it(@"should remove all elements for which the block returns nil", ^{
+        NSDictionary *before = @{
+            @"fr": @"Bonjour",
+            @"en": @"Hello"
+        };
 
-            expect(after).to.equal(@{
-                @"fr": @"Bonjour"
-            });
+        NSDictionary *after = map(before, ^(NSString *string) {
+            return [string isEqual:@"Bonjour"] ? string : nil;
         });
 
-        it(@"should call the block once for every key-value-pair", ^{
-            __block NSUInteger calls = 0;
+        expect(after).to.equal(@{
+            @"fr": @"Bonjour"
+        });
+    });
 
-            NSDictionary *dictionary = @{
-                @"fr": @"Bonjour",
-                @"en": @"Hello"
-            };
+    it(@"should call the block once for every key-value-pair", ^{
+        __block NSUInteger calls = 0;
 
-            map(dictionary, ^(id obj) {
-                return @(calls++);
-            });
+        NSDictionary *dictionary = @{
+            @"fr": @"Bonjour",
+            @"en": @"Hello"
+        };
 
-            expect(calls).to.equal(2);
+        map(dictionary, ^(id obj) {
+            return @(calls++);
         });
 
-        it(@"should optionally pass in the key", ^{
-            map(@{ @"foo": @"FOO" }, ^(id key, id obj) {
-                expect([key uppercaseString]).to.equal(obj);
+        expect(calls).to.equal(2);
+    });
 
-                return obj;
-            });
+    it(@"should optionally pass in the key", ^{
+        map(@{ @"foo": @"FOO" }, ^(id key, id obj) {
+            expect([key uppercaseString]).to.equal(obj);
+
+            return obj;
         });
     });
 });
@@ -147,40 +143,38 @@ describe(@"for sets", ^{
         expect(calls).to.equal(0);
     });
 
-    describe(@"when applied to a non-empty set", ^{
-        it(@"should replace the objects with the result of the block", ^{
-            NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
+    it(@"should replace the objects with the result of the block", ^{
+        NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-            NSSet *after = map(before, ^(NSNumber *number) {
-                return [number description];
-            });
-
-            expect(after).to.equal(([NSSet setWithArray:@[
-                @"1", @"2", @"3"
-            ]]));
+        NSSet *after = map(before, ^(NSNumber *number) {
+            return [number description];
         });
 
-        it(@"should remove all elements for which the block returns nil", ^{
-            NSSet *numbers = [NSSet setWithArray:@[ @0, @1, @2, @3 ]];
+        expect(after).to.equal(([NSSet setWithArray:@[
+            @"1", @"2", @"3"
+        ]]));
+    });
 
-            NSSet *even = map(numbers, ^(NSNumber *number) {
-                return number.integerValue % 2 == 0 ? number : nil;
-            });
+    it(@"should remove all elements for which the block returns nil", ^{
+        NSSet *numbers = [NSSet setWithArray:@[ @0, @1, @2, @3 ]];
 
-            expect(even).to.equal(([NSSet setWithArray:@[ @0, @2 ]]));
+        NSSet *even = map(numbers, ^(NSNumber *number) {
+            return number.integerValue % 2 == 0 ? number : nil;
         });
 
-        it(@"should call the block once for every object", ^{
-            __block NSUInteger calls = 0;
+        expect(even).to.equal(([NSSet setWithArray:@[ @0, @2 ]]));
+    });
 
-            NSSet *set = [NSSet setWithArray:@[ @1, @2, @3 ]];
+    it(@"should call the block once for every object", ^{
+        __block NSUInteger calls = 0;
 
-            map(set, ^(id obj) {
-                return @(calls++);
-            });
+        NSSet *set = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-            expect(calls).to.equal(3);
+        map(set, ^(id obj) {
+            return @(calls++);
         });
+
+        expect(calls).to.equal(3);
     });
 });
 
