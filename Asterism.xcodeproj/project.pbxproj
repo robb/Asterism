@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		542C1CB817520F560013D41E /* AsterismReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = 542C1CB717520F560013D41E /* AsterismReduce.m */; };
+		542C1CBA175214B90013D41E /* AsterismReduceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 542C1CB9175214B90013D41E /* AsterismReduceSpec.m */; };
 		54CE84BB174D74E1006F960A /* AsterismMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BA174D74E1006F960A /* AsterismMap.m */; };
 		54CE84BD174D78C0006F960A /* AsterismMapSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BC174D78C0006F960A /* AsterismMapSpec.m */; };
 		54D9EE691721543D00383762 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9EE681721543D00383762 /* Foundation.framework */; };
@@ -45,6 +47,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		542C1CB617520F560013D41E /* AsterismReduce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismReduce.h; sourceTree = "<group>"; };
+		542C1CB717520F560013D41E /* AsterismReduce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismReduce.m; sourceTree = "<group>"; };
+		542C1CB9175214B90013D41E /* AsterismReduceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismReduceSpec.m; sourceTree = "<group>"; };
 		54CE84B9174D74E1006F960A /* AsterismMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismMap.h; sourceTree = "<group>"; };
 		54CE84BA174D74E1006F960A /* AsterismMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismMap.m; sourceTree = "<group>"; };
 		54CE84BC174D78C0006F960A /* AsterismMapSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismMapSpec.m; sourceTree = "<group>"; };
@@ -128,6 +133,8 @@
 				54E1B64717215678008A2175 /* AsterismEach.m */,
 				54CE84B9174D74E1006F960A /* AsterismMap.h */,
 				54CE84BA174D74E1006F960A /* AsterismMap.m */,
+				542C1CB617520F560013D41E /* AsterismReduce.h */,
+				542C1CB717520F560013D41E /* AsterismReduce.m */,
 				54D9EE6B1721543D00383762 /* Supporting Files */,
 			);
 			path = Asterism;
@@ -146,6 +153,7 @@
 			children = (
 				54E1B64917215783008A2175 /* AsterismEachSpec.m */,
 				54CE84BC174D78C0006F960A /* AsterismMapSpec.m */,
+				542C1CB9175214B90013D41E /* AsterismReduceSpec.m */,
 				54D9EE801721543D00383762 /* Supporting Files */,
 			);
 			path = Specs;
@@ -291,6 +299,7 @@
 			files = (
 				54E1B64817215678008A2175 /* AsterismEach.m in Sources */,
 				54CE84BB174D74E1006F960A /* AsterismMap.m in Sources */,
+				542C1CB817520F560013D41E /* AsterismReduce.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +309,7 @@
 			files = (
 				54E1B64A17215783008A2175 /* AsterismEachSpec.m in Sources */,
 				54CE84BD174D78C0006F960A /* AsterismMapSpec.m in Sources */,
+				542C1CBA175214B90013D41E /* AsterismReduceSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
