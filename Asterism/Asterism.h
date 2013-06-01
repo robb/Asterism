@@ -10,3 +10,4 @@
 
 #import "AsterismEach.h"
 #import "AsterismMap.h"
+#import "AsterismReduce.h"

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define OVERLOADABLE __attribute__((overloadable))
+#import "AsterismConstants.h"
 
 OVERLOADABLE NSArray *map(NSArray *array, id(^block)(id obj));
 OVERLOADABLE NSArray *map(NSArray *array, id(^block)(id obj, NSUInteger idx));

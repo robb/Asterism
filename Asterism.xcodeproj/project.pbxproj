@@ -63,6 +63,7 @@
 		54D9EE811721543D00383762 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		54D9EE831721543D00383762 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		54D9EE90172154F100383762 /* Specs-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
+		54E0ED68175A0D070076C6EA /* AsterismConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsterismConstants.h; sourceTree = "<group>"; };
 		54E1B64617215678008A2175 /* AsterismEach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismEach.h; sourceTree = "<group>"; };
 		54E1B64717215678008A2175 /* AsterismEach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismEach.m; sourceTree = "<group>"; };
 		54E1B64917215783008A2175 /* AsterismEachSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismEachSpec.m; sourceTree = "<group>"; };
@@ -129,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				54D9EE6D1721543D00383762 /* Asterism.h */,
+				54E0ED68175A0D070076C6EA /* AsterismConstants.h */,
 				54E1B64617215678008A2175 /* AsterismEach.h */,
 				54E1B64717215678008A2175 /* AsterismEach.m */,
 				54CE84B9174D74E1006F960A /* AsterismMap.h */,

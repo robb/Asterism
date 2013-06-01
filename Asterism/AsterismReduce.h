@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define OVERLOADABLE __attribute__((overloadable))
+#import "AsterismConstants.h"
 
 OVERLOADABLE id reduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj));
 OVERLOADABLE id reduce(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj));
