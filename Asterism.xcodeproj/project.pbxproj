@@ -20,6 +20,8 @@
 		54D9EE841721543D00383762 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54D9EE821721543D00383762 /* InfoPlist.strings */; };
 		54E0ED6B175A0D5B0076C6EA /* AsterismHead.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED6A175A0D5B0076C6EA /* AsterismHead.m */; };
 		54E0ED6D175A0DF00076C6EA /* AsterismHeadSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED6C175A0DF00076C6EA /* AsterismHeadSpec.m */; };
+		54E0ED70175A0FAC0076C6EA /* AsterismTail.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED6F175A0FAC0076C6EA /* AsterismTail.m */; };
+		54E0ED72175A146B0076C6EA /* AsterismTailSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED71175A146B0076C6EA /* AsterismTailSpec.m */; };
 		54E1B64817215678008A2175 /* AsterismEach.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1B64717215678008A2175 /* AsterismEach.m */; };
 		54E1B64A17215783008A2175 /* AsterismEachSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1B64917215783008A2175 /* AsterismEachSpec.m */; };
 		6DA0E311E2FE4D0091F50B0D /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B82A91E23E8448D2861527C1 /* libPods-Specs.a */; };
@@ -69,6 +71,9 @@
 		54E0ED69175A0D5B0076C6EA /* AsterismHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismHead.h; sourceTree = "<group>"; };
 		54E0ED6A175A0D5B0076C6EA /* AsterismHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismHead.m; sourceTree = "<group>"; };
 		54E0ED6C175A0DF00076C6EA /* AsterismHeadSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismHeadSpec.m; sourceTree = "<group>"; };
+		54E0ED6E175A0FAC0076C6EA /* AsterismTail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismTail.h; sourceTree = "<group>"; };
+		54E0ED6F175A0FAC0076C6EA /* AsterismTail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismTail.m; sourceTree = "<group>"; };
+		54E0ED71175A146B0076C6EA /* AsterismTailSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismTailSpec.m; sourceTree = "<group>"; };
 		54E1B64617215678008A2175 /* AsterismEach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismEach.h; sourceTree = "<group>"; };
 		54E1B64717215678008A2175 /* AsterismEach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismEach.m; sourceTree = "<group>"; };
 		54E1B64917215783008A2175 /* AsterismEachSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismEachSpec.m; sourceTree = "<group>"; };
@@ -144,6 +149,8 @@
 				54CE84BA174D74E1006F960A /* AsterismMap.m */,
 				542C1CB617520F560013D41E /* AsterismReduce.h */,
 				542C1CB717520F560013D41E /* AsterismReduce.m */,
+				54E0ED6E175A0FAC0076C6EA /* AsterismTail.h */,
+				54E0ED6F175A0FAC0076C6EA /* AsterismTail.m */,
 				54D9EE6B1721543D00383762 /* Supporting Files */,
 			);
 			path = Asterism;
@@ -164,6 +171,7 @@
 				54E0ED6C175A0DF00076C6EA /* AsterismHeadSpec.m */,
 				54CE84BC174D78C0006F960A /* AsterismMapSpec.m */,
 				542C1CB9175214B90013D41E /* AsterismReduceSpec.m */,
+				54E0ED71175A146B0076C6EA /* AsterismTailSpec.m */,
 				54D9EE801721543D00383762 /* Supporting Files */,
 			);
 			path = Specs;
@@ -311,6 +319,7 @@
 				54CE84BB174D74E1006F960A /* AsterismMap.m in Sources */,
 				542C1CB817520F560013D41E /* AsterismReduce.m in Sources */,
 				54E0ED6B175A0D5B0076C6EA /* AsterismHead.m in Sources */,
+				54E0ED70175A0FAC0076C6EA /* AsterismTail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +331,7 @@
 				54CE84BD174D78C0006F960A /* AsterismMapSpec.m in Sources */,
 				542C1CBA175214B90013D41E /* AsterismReduceSpec.m in Sources */,
 				54E0ED6D175A0DF00076C6EA /* AsterismHeadSpec.m in Sources */,
+				54E0ED72175A146B0076C6EA /* AsterismTailSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
