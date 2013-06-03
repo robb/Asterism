@@ -68,24 +68,4 @@ describe(@"reduce", ^{
     });
 });
 
-describe(@"reduceRight", ^{
-    it(@"should reduce a arrays from right to left", ^{
-        id result = reduceRight(@[ @"a", @"b", @"c" ], @"d", ^(NSString *memo, NSString *obj) {
-            return [memo stringByAppendingString:obj];
-        });
-
-        expect(result).to.equal(@"dcba");
-    });
-
-    it(@"should reduce a arrays from right to left", ^{
-        NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:@[ @"a", @"b", @"c"]];
-
-        id result = reduceRight(set, @"d", ^(NSString *memo, NSString *obj) {
-            return [memo stringByAppendingString:obj];
-        });
-
-        expect(result).to.equal(@"dcba");
-    });
-});
-
 SpecEnd
