@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
+#import "AsterismLift.h"
+
 #import "AsterismGroup.h"
 
 SpecBegin(AsterismGroup)
@@ -13,9 +15,7 @@ SpecBegin(AsterismGroup)
 NSArray *array = @[  @"Hello", @"Bonjour", @"Hallo", @"Hej" ];
 
 it(@"should return a dictionary of sets, grouped by the blocks return value", ^{
-    NSDictionary *dictionary = group(array, ^(NSString *string) {
-        return @(string.length);
-    });
+    NSDictionary *dictionary = group(array, lift_noargs(length));
 
     expect(dictionary).to.haveCountOf(3);
 

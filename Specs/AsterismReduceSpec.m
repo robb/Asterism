@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
+#import "AsterismLift.h"
+
 #import "AsterismReduce.h"
 
 SpecBegin(AsterismReduce)
@@ -59,9 +61,7 @@ describe(@"reduce", ^{
         });
 
         it(@"should reduce arrays in order", ^{
-            id result = reduce(@[ @"a", @"b", @"c" ], ^(NSString *memo, NSString *obj) {
-                return [memo stringByAppendingString:obj];
-            });
+            id result = reduce(@[ @"a", @"b", @"c" ], lift(stringByAppendingString:));
 
             expect(result).to.equal(@"abc");
         });

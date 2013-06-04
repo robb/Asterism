@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
+#import "AsterismLift.h"
+
 #import "AsterismMap.h"
 
 SpecBegin(AsterismMap)
@@ -24,9 +26,7 @@ describe(@"for arrays", ^{
     it(@"should replace the objects with the result of the block", ^{
         NSArray *before = @[ @1, @2, @3 ];
 
-        NSArray *after = map(before, ^(NSNumber *number) {
-            return [number description];
-        });
+        NSArray *after = map(before, lift_noargs(description));
 
         expect(after).to.equal((@[ @"1", @"2", @"3" ]));
     });
@@ -83,9 +83,7 @@ describe(@"for dictionaries", ^{
             @"en": @"Hello"
         };
 
-        NSDictionary *after = map(before, ^(NSString *string) {
-            return [string uppercaseString];
-        });
+        NSDictionary *after = map(before, lift_noargs(uppercaseString));
 
         expect(after).to.equal((@{
             @"fr": @"BONJOUR",
@@ -146,9 +144,7 @@ describe(@"for sets", ^{
     it(@"should replace the objects with the result of the block", ^{
         NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-        NSSet *after = map(before, ^(NSNumber *number) {
-            return [number description];
-        });
+        NSSet *after = map(before, lift_noargs(description));
 
         expect(after).to.equal(([NSSet setWithArray:@[
             @"1", @"2", @"3"

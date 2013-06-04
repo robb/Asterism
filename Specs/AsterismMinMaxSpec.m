@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
+#import "AsterismLift.h"
+
 #import "AsterismMinMax.h"
 
 SpecBegin(AsterismMinMax)
@@ -31,9 +33,7 @@ describe(@"min", ^{
 
     describe(@"with a block returning an NSNumber", ^{
         it(@"should return the minimum", ^{
-            NSNumber *minimum = min(array, ^NSNumber *(id obj1, id obj2) {
-                return @([obj1 compare:obj2]);
-            });
+            NSNumber *minimum = min(array, lift(compare:));
 
             expect(minimum).to.equal(-1);
         });
@@ -59,9 +59,7 @@ describe(@"max", ^{
 
     describe(@"with a block returning an NSNumber", ^{
         it(@"should return the maximum", ^{
-            NSNumber *maximum = max(array, ^NSNumber *(id obj1, id obj2) {
-                return @([obj1 compare:obj2]);
-            });
+            NSNumber *maximum = max(array, lift(compare:));
 
             expect(maximum).to.equal(9);
         });
