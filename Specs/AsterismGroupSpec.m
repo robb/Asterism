@@ -1,0 +1,28 @@
+//
+//  AsterismGroupSpec.m
+//  Asterism
+//
+//  Created by Robert Böhnke on 6/4/13.
+//  Copyright (c) 2013 Robert Böhnke. All rights reserved.
+//
+
+#import "AsterismGroup.h"
+
+SpecBegin(AsterismGroup)
+
+NSArray *array = @[  @"Hello", @"Bonjour", @"Hallo", @"Hej" ];
+
+it(@"should return a dictionary of sets, grouped by the blocks return value", ^{
+    NSDictionary *dictionary = group(array, ^(NSString *string) {
+        return @(string.length);
+    });
+
+    expect(dictionary).to.haveCountOf(3);
+
+    expect(dictionary[@3]).to.contain(@"Hej");
+    expect(dictionary[@5]).to.contain(@"Hello");
+    expect(dictionary[@5]).to.contain(@"Hallo");
+    expect(dictionary[@7]).to.contain(@"Bonjour");
+});
+
+SpecEnd
