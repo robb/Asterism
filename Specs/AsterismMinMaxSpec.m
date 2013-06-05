@@ -34,7 +34,7 @@ describe(@"min", ^{
             NSNumber *minimum = min(array, ^NSNumber *(id obj1, id obj2) {
                 return @([obj1 compare:obj2]);
             });
-            
+
             expect(minimum).to.equal(-1);
         });
     });
@@ -62,7 +62,7 @@ describe(@"max", ^{
             NSNumber *maximum = max(array, ^NSNumber *(id obj1, id obj2) {
                 return @([obj1 compare:obj2]);
             });
-            
+
             expect(maximum).to.equal(9);
         });
     });
