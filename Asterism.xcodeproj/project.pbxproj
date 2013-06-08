@@ -212,8 +212,6 @@
 				54E0ED6F175A0FAC0076C6EA /* AsterismTail.m */,
 				54CE84BE174D839E006F960A /* AsterismLift.h */,
 				54CE84BF174D839E006F960A /* AsterismLift.m */,
-				54CE84BE174D839E006F960A /* AsterismLift.h */,
-				54CE84BF174D839E006F960A /* AsterismLift.m */,
 				357F33ED9E93F83753910F7F /* AsterismPartial.h */,
 				357F3336A1371659B3130FB0 /* AsterismPartial.m */,
 				542C1CB517514FE00013D41E /* metamacros.h */,
