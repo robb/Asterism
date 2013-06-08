@@ -26,16 +26,16 @@ ASTBlockVar lift_var(SEL selector);
 #define lift_noargs_(SELECTOR) \
         ((id (^)(id))lift_var(@selector(SELECTOR)))
 
-#define parameter_(INDEX, MAX) \
+#define lift_parameter_(INDEX, MAX) \
         metamacro_if_eq(INDEX, metamacro_dec(MAX)) \
             (id) \
             (id, )
 
-#define parameters_(COUNT) \
-        metamacro_for_cxt(COUNT, parameter_,, COUNT)
+#define lift_parameters_(COUNT) \
+        metamacro_for_cxt(COUNT, lift_parameter_,, COUNT)
 
-#define block_signature(...) \
-        id(^)(parameters_(metamacro_inc(metamacro_argcount(__VA_ARGS__))))
+#define lift_block_signature(...) \
+        id(^)(lift_parameters_(metamacro_inc(metamacro_argcount(__VA_ARGS__))))
 
 #define lift_(...) \
-        ((block_signature(__VA_ARGS__)) lift_var(@selector(metamacro_foreach_concat(,,__VA_ARGS__))))
+        ((lift_block_signature(__VA_ARGS__)) lift_var(@selector(metamacro_foreach_concat(,,__VA_ARGS__))))
