@@ -8,19 +8,38 @@
 
 #import <Foundation/Foundation.h>
 
-#define OVERLOADABLE __attribute__((overloadable))
+#import "metamacros.h"
 
-typedef id (^ASTBlock0)(void);
-typedef id (^ASTBlock1)(id arg1);
-typedef id (^ASTBlock2)(id arg1, id arg2);
-typedef id (^ASTBlock3)(id arg1, id arg2, id arg3);
-typedef id (^ASTBlock4)(id arg1, id arg2, id arg3, id arg4);
-typedef id (^ASTBlock5)(id arg1, id arg2, id arg3, id arg4, id arg5);
-typedef id (^ASTBlock6)(id arg1, id arg2, id arg3, id arg4, id arg5, id arg6);
+#import "AsterismConstants.h"
 
-OVERLOADABLE ASTBlock0 partial(id value, ASTBlock1 block);
-OVERLOADABLE ASTBlock1 partial(id value, ASTBlock2 block);
-OVERLOADABLE ASTBlock2 partial(id value, ASTBlock3 block);
-OVERLOADABLE ASTBlock3 partial(id value, ASTBlock4 block);
-OVERLOADABLE ASTBlock4 partial(id value, ASTBlock5 block);
-OVERLOADABLE ASTBlock5 partial(id value, ASTBlock6 block);
+#define parameter_(INDEX, MAX) \
+        id metamacro_if_eq(INDEX, metamacro_dec(MAX))()(,)
+
+#define parameters_(COUNT) \
+        metamacro_for_cxt(COUNT, parameter_,, COUNT)
+
+#define partial(ARG_COUNT) \
+        OVERLOADABLE id (^partial(id(^block)(parameters_(ARG_COUNT)), id obj))(parameters_(metamacro_dec(ARG_COUNT)));
+
+#define partialRight(ARG_COUNT) \
+        OVERLOADABLE id (^partialRight(id(^block)(parameters_(ARG_COUNT)), id obj))(parameters_(metamacro_dec(ARG_COUNT)));
+
+partial(1)
+partial(2)
+partial(3)
+partial(4)
+partial(5)
+partial(6)
+
+partialRight(1)
+partialRight(2)
+partialRight(3)
+partialRight(4)
+partialRight(5)
+partialRight(6)
+
+#undef parameter_
+#undef parameters_
+
+#undef partial
+#undef partialRight

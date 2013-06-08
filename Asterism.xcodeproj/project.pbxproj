@@ -10,6 +10,7 @@
 		357F376323C41EF675D2B956 /* AsterismPartial.m in Sources */ = {isa = PBXBuildFile; fileRef = 357F3336A1371659B3130FB0 /* AsterismPartial.m */; };
 		542C1CB817520F560013D41E /* AsterismReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = 542C1CB717520F560013D41E /* AsterismReduce.m */; };
 		542C1CBA175214B90013D41E /* AsterismReduceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 542C1CB9175214B90013D41E /* AsterismReduceSpec.m */; };
+		546B5FEE176346AE00AE3EBC /* AsterismPartialSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 546B5FED176346AE00AE3EBC /* AsterismPartialSpec.m */; };
 		549B7264175CFE6700E6A378 /* AsterismReject.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B7263175CFE6700E6A378 /* AsterismReject.m */; };
 		549B7268175D07CF00E6A378 /* AsterismNegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B7267175D07CF00E6A378 /* AsterismNegate.m */; };
 		549B726A175D08E400E6A378 /* AsterismRejectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B7269175D08E400E6A378 /* AsterismRejectSpec.m */; };
@@ -20,9 +21,9 @@
 		54A0BB2E175E647E001D06E2 /* AsterismMinMaxSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BB2D175E647E001D06E2 /* AsterismMinMaxSpec.m */; };
 		54A72CBF175D0F5000D9A05E /* AsterismPluck.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A72CBE175D0F4F00D9A05E /* AsterismPluck.m */; };
 		54A72CC1175D0FD500D9A05E /* AsterismPluckSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A72CC0175D0FD400D9A05E /* AsterismPluckSpec.m */; };
-		54A7FD43175CE45D004A7541 /* AsterismFilterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A7FD42175CE45D004A7541 /* AsterismFilterSpec.m */; };
 		54A7FD3E175CDCCE004A7541 /* LiftTestClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A7FD3D175CDCCE004A7541 /* LiftTestClassA.m */; };
 		54A7FD41175CDCF9004A7541 /* LiftTestClassB.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A7FD40175CDCF9004A7541 /* LiftTestClassB.m */; };
+		54A7FD43175CE45D004A7541 /* AsterismFilterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A7FD42175CE45D004A7541 /* AsterismFilterSpec.m */; };
 		54CE84BB174D74E1006F960A /* AsterismMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BA174D74E1006F960A /* AsterismMap.m */; };
 		54CE84BD174D78C0006F960A /* AsterismMapSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BC174D78C0006F960A /* AsterismMapSpec.m */; };
 		54CE84C0174D839E006F960A /* AsterismLift.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BF174D839E006F960A /* AsterismLift.m */; };
@@ -74,9 +75,9 @@
 		542C1CB617520F560013D41E /* AsterismReduce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismReduce.h; sourceTree = "<group>"; };
 		542C1CB717520F560013D41E /* AsterismReduce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismReduce.m; sourceTree = "<group>"; };
 		542C1CB9175214B90013D41E /* AsterismReduceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismReduceSpec.m; sourceTree = "<group>"; };
+		546B5FED176346AE00AE3EBC /* AsterismPartialSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismPartialSpec.m; sourceTree = "<group>"; };
 		549B7262175CFE6700E6A378 /* AsterismReject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismReject.h; sourceTree = "<group>"; };
 		549B7263175CFE6700E6A378 /* AsterismReject.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = AsterismReject.m; sourceTree = "<group>"; };
-		549B7265175D046B00E6A378 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
 		549B7266175D07CF00E6A378 /* AsterismNegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismNegate.h; sourceTree = "<group>"; };
 		549B7267175D07CF00E6A378 /* AsterismNegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismNegate.m; sourceTree = "<group>"; };
 		549B7269175D08E400E6A378 /* AsterismRejectSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismRejectSpec.m; sourceTree = "<group>"; };
@@ -90,11 +91,11 @@
 		54A72CBD175D0F4F00D9A05E /* AsterismPluck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismPluck.h; sourceTree = "<group>"; };
 		54A72CBE175D0F4F00D9A05E /* AsterismPluck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismPluck.m; sourceTree = "<group>"; };
 		54A72CC0175D0FD400D9A05E /* AsterismPluckSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismPluckSpec.m; sourceTree = "<group>"; };
-		54A7FD42175CE45D004A7541 /* AsterismFilterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismFilterSpec.m; sourceTree = "<group>"; };
 		54A7FD3C175CDCCE004A7541 /* LiftTestClassA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiftTestClassA.h; sourceTree = "<group>"; };
 		54A7FD3D175CDCCE004A7541 /* LiftTestClassA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiftTestClassA.m; sourceTree = "<group>"; };
 		54A7FD3F175CDCF9004A7541 /* LiftTestClassB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiftTestClassB.h; sourceTree = "<group>"; };
 		54A7FD40175CDCF9004A7541 /* LiftTestClassB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiftTestClassB.m; sourceTree = "<group>"; };
+		54A7FD42175CE45D004A7541 /* AsterismFilterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismFilterSpec.m; sourceTree = "<group>"; };
 		54CE84B9174D74E1006F960A /* AsterismMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismMap.h; sourceTree = "<group>"; };
 		54CE84BA174D74E1006F960A /* AsterismMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismMap.m; sourceTree = "<group>"; };
 		54CE84BC174D78C0006F960A /* AsterismMapSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismMapSpec.m; sourceTree = "<group>"; };
@@ -239,6 +240,7 @@
 				54CE84BC174D78C0006F960A /* AsterismMapSpec.m */,
 				54A0BB2D175E647E001D06E2 /* AsterismMinMaxSpec.m */,
 				549B726B175D097100E6A378 /* AsterismNegateSpec.m */,
+				546B5FED176346AE00AE3EBC /* AsterismPartialSpec.m */,
 				54A72CC0175D0FD400D9A05E /* AsterismPluckSpec.m */,
 				542C1CB9175214B90013D41E /* AsterismReduceSpec.m */,
 				549B7269175D08E400E6A378 /* AsterismRejectSpec.m */,
@@ -426,6 +428,7 @@
 				54CE84C2174D93A6006F960A /* AsterismLiftSpec.m in Sources */,
 				54A7FD3E175CDCCE004A7541 /* LiftTestClassA.m in Sources */,
 				54A7FD41175CDCF9004A7541 /* LiftTestClassB.m in Sources */,
+				546B5FEE176346AE00AE3EBC /* AsterismPartialSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
