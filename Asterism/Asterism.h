@@ -9,5 +9,15 @@
 #import <Foundation/Foundation.h>
 
 #import "AsterismEach.h"
+#import "AsterismFilter.h"
+#import "AsterismGroup.h"
+#import "AsterismHead.h"
 #import "AsterismMap.h"
+#import "AsterismMinMax.h"
+#import "AsterismNegate.h"
+#import "AsterismPluck.h"
 #import "AsterismReduce.h"
+#import "AsterismReject.h"
+#import "AsterismTail.h"
+#import "AsterismLift.h"
+#import "AsterismPartial.h"
