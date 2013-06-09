@@ -13,9 +13,9 @@
 
 SpecBegin(AsterismLift)
 
-describe(@"lift_noargs", ^{
+describe(@"lift0", ^{
     it(@"should return a block that takes one arguments", ^{
-        id (^block)(id) = lift_noargs(description);
+        id (^block)(id) = lift0(description);
 
         expect(block).notTo.beNil();
     });
@@ -31,7 +31,7 @@ describe(@"lift", ^{
 
 describe(@"Calling a block", ^{
     describe(@"without additional arguments", ^{
-        id (^block)(id) = lift_noargs(uppercaseString);
+        id (^block)(id) = lift0(uppercaseString);
 
         it(@"should invoke the selector on the object", ^{
             expect(block(@"foo")).to.equal(@"FOO");
@@ -64,7 +64,7 @@ describe(@"Calling a block", ^{
     });
 
     it(@"should raise an exception if the object does not implement the method", ^{
-        id (^block)(id) = lift_noargs(uppercaseString);
+        id (^block)(id) = lift0(uppercaseString);
 
         expect(^{
             block(@1);

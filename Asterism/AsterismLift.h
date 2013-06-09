@@ -14,8 +14,8 @@ typedef id (^ASTBlockVar)(id va, ...);
 
 ASTBlockVar lift_var(SEL selector);
 
-#define lift_noargs(SELECTOR) \
-        lift_noargs_(SELECTOR)
+#define lift0(SELECTOR) \
+        lift0_(SELECTOR)
 
 #define lift(...) \
         lift_(__VA_ARGS__)
@@ -23,7 +23,7 @@ ASTBlockVar lift_var(SEL selector);
 // IMPLEMENTATION DETAILS FOLLOW!
 // Do not write code that depends on anything below this line.
 
-#define lift_noargs_(SELECTOR) \
+#define lift0_(SELECTOR) \
         ((id (^)(id))lift_var(@selector(SELECTOR)))
 
 #define lift_parameter_(INDEX, MAX) \

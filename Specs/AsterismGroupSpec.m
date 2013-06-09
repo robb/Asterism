@@ -15,7 +15,7 @@ SpecBegin(AsterismGroup)
 NSArray *array = @[  @"Hello", @"Bonjour", @"Hallo", @"Hej" ];
 
 it(@"should return a dictionary of sets, grouped by the blocks return value", ^{
-    NSDictionary *dictionary = group(array, lift_noargs(length));
+    NSDictionary *dictionary = group(array, lift0(length));
 
     expect(dictionary).to.haveCountOf(3);
 

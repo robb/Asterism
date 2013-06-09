@@ -26,7 +26,7 @@ describe(@"for arrays", ^{
     it(@"should replace the objects with the result of the block", ^{
         NSArray *before = @[ @1, @2, @3 ];
 
-        NSArray *after = map(before, lift_noargs(description));
+        NSArray *after = map(before, lift0(description));
 
         expect(after).to.equal((@[ @"1", @"2", @"3" ]));
     });
@@ -83,7 +83,7 @@ describe(@"for dictionaries", ^{
             @"en": @"Hello"
         };
 
-        NSDictionary *after = map(before, lift_noargs(uppercaseString));
+        NSDictionary *after = map(before, lift0(uppercaseString));
 
         expect(after).to.equal((@{
             @"fr": @"BONJOUR",
@@ -144,7 +144,7 @@ describe(@"for sets", ^{
     it(@"should replace the objects with the result of the block", ^{
         NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-        NSSet *after = map(before, lift_noargs(description));
+        NSSet *after = map(before, lift0(description));
 
         expect(after).to.equal(([NSSet setWithArray:@[
             @"1", @"2", @"3"
