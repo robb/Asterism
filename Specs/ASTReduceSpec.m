@@ -1,5 +1,5 @@
 //
-//  AsterismReduceSpec.m
+//  ASTReduceSpec.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 5/26/13.
@@ -8,9 +8,9 @@
 
 #import "AsterismLift.h"
 
-#import "AsterismReduce.h"
+#import "ASTReduce.h"
 
-SpecBegin(AsterismReduce)
+SpecBegin(ASTReduce)
 
 describe(@"reduce", ^{
     describe(@"for objects implementing <NSFastEnumeration>", ^{
@@ -18,7 +18,7 @@ describe(@"reduce", ^{
             it(@"should return the initial value when reducing an empty collection", ^{
                 NSString *initial = @"initial";
 
-                id result = reduce(@[], initial, ^id(id memo, id obj) {
+                id result = ASTReduce(@[], initial, ^id(id memo, id obj) {
                     return nil;
                 });
 
@@ -26,7 +26,7 @@ describe(@"reduce", ^{
             });
 
             it(@"should use the inital value in the first iteration", ^{
-                id result = reduce(@[ @1, @2, @3 ], @4, ^(NSNumber *memo, NSNumber *obj) {
+                id result = ASTReduce(@[ @1, @2, @3 ], @4, ^(NSNumber *memo, NSNumber *obj) {
                     return @(memo.doubleValue + obj.doubleValue);
                 });
 
@@ -36,7 +36,7 @@ describe(@"reduce", ^{
 
         describe(@"without an inital value", ^{
             it(@"should return nil when reducing an empty collection", ^{
-                id result = reduce(@[], ^id(id memo, id obj) {
+                id result = ASTReduce(@[], ^id(id memo, id obj) {
                     return nil;
                 });
 
@@ -44,7 +44,7 @@ describe(@"reduce", ^{
             });
 
             it(@"should return the single value of a collection with one member", ^{
-                id result = reduce(@[ @1 ], ^id(id memo, id obj) {
+                id result = ASTReduce(@[ @1 ], ^id(id memo, id obj) {
                     return nil;
                 });
 
@@ -52,7 +52,7 @@ describe(@"reduce", ^{
             });
 
             it(@"should reduce the collection starting from the first value", ^{
-                id result = reduce(@[ @1, @2, @3 ], ^(NSNumber *memo, NSNumber *obj) {
+                id result = ASTReduce(@[ @1, @2, @3 ], ^(NSNumber *memo, NSNumber *obj) {
                     return @(memo.doubleValue + obj.doubleValue);
                 });
 
@@ -61,7 +61,7 @@ describe(@"reduce", ^{
         });
 
         it(@"should reduce arrays in order", ^{
-            id result = reduce(@[ @"a", @"b", @"c" ], lift(stringByAppendingString:));
+            id result = ASTReduce(@[ @"a", @"b", @"c" ], lift(stringByAppendingString:));
 
             expect(result).to.equal(@"abc");
         });

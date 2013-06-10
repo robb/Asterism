@@ -16,7 +16,7 @@
 #import "ASTMinMax.h"
 #import "ASTNegate.h"
 #import "ASTPluck.h"
-#import "AsterismReduce.h"
+#import "ASTReduce.h"
 #import "AsterismReject.h"
 #import "AsterismTail.h"
 #import "AsterismLift.h"

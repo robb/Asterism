@@ -1,14 +1,14 @@
 //
-//  AsterismReduce.m
+//  ASTReduce.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 5/26/13.
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismReduce.h"
+#import "ASTReduce.h"
 
-OVERLOADABLE id reduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj))
+OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj))
 {
     id current;
 
@@ -26,7 +26,7 @@ OVERLOADABLE id reduce(id<NSFastEnumeration> collection, id(^block)(id memo, id 
     return current;
 }
 
-OVERLOADABLE id reduce(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj))
+OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj))
 {
     id current = memo;
 

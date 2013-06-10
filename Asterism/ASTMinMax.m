@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismReduce.h"
+#import "ASTReduce.h"
 
 #import "ASTMinMax.h"
 
@@ -37,7 +37,7 @@ OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection)
 
 OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator)
 {
-    return reduce(collection, ^id(id a, id b) {
+    return ASTReduce(collection, ^id(id a, id b) {
         return comparator(a, b) ==  NSOrderedAscending ? a : b;
     });
 }
@@ -56,7 +56,7 @@ OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection)
 
 OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator)
 {
-    return reduce(collection, ^id(id a, id b) {
+    return ASTReduce(collection, ^id(id a, id b) {
         return comparator(a, b) ==  NSOrderedDescending ? a : b;
     });
 }
