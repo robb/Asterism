@@ -20,4 +20,4 @@
 #import "ASTReject.h"
 #import "ASTTail.h"
 #import "ASTLift.h"
-#import "AsterismPartial.h"
+#import "ASTPartial.h"
