@@ -1,5 +1,5 @@
 //
-//  AsterismMinMaxSpec.m
+//  ASTMinMaxSpec.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/4/13.
@@ -8,22 +8,22 @@
 
 #import "AsterismLift.h"
 
-#import "AsterismMinMax.h"
+#import "ASTMinMax.h"
 
-SpecBegin(AsterismMinMax)
+SpecBegin(ASTMinMax)
 
 NSArray *array = @[ @2, @3, @9, @4, @-1 ];
 
-describe(@"min", ^{
+describe(@"ASTMin", ^{
     describe(@"without a comparator block", ^{
         it(@"should return the minimum by calling compare:", ^{
-            expect(min(array)).to.equal(-1);
+            expect(ASTMin(array)).to.equal(-1);
         });
     });
 
     describe(@"with a block returning an NSComparisonResult", ^{
         it(@"should return the minimum", ^{
-            NSNumber *minimum = min(array, ^NSComparisonResult(id obj1, id obj2) {
+            NSNumber *minimum = ASTMin(array, ^NSComparisonResult(id obj1, id obj2) {
                 return [obj1 compare:obj2];
             });
 
@@ -33,23 +33,23 @@ describe(@"min", ^{
 
     describe(@"with a block returning an NSNumber", ^{
         it(@"should return the minimum", ^{
-            NSNumber *minimum = min(array, lift(compare:));
+            NSNumber *minimum = ASTMin(array, lift(compare:));
 
             expect(minimum).to.equal(-1);
         });
     });
 });
 
-describe(@"max", ^{
+describe(@"ASTMax", ^{
     describe(@"without a comparator block", ^{
         it(@"should return the maximum by calling compare:", ^{
-            expect(max(array)).to.equal(9);
+            expect(ASTMax(array)).to.equal(9);
         });
     });
 
     describe(@"with a block returning an NSComparisonResult", ^{
         it(@"should return the maximum", ^{
-            NSNumber *maximum = max(array, ^NSComparisonResult(id obj1, id obj2) {
+            NSNumber *maximum = ASTMax(array, ^NSComparisonResult(id obj1, id obj2) {
                 return [obj1 compare:obj2];
             });
 
@@ -59,7 +59,7 @@ describe(@"max", ^{
 
     describe(@"with a block returning an NSNumber", ^{
         it(@"should return the maximum", ^{
-            NSNumber *maximum = max(array, lift(compare:));
+            NSNumber *maximum = ASTMax(array, lift(compare:));
 
             expect(maximum).to.equal(9);
         });
