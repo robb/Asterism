@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AsterismConstants.h"
+#import "ASTConstants.h"
 
 OVERLOADABLE NSArray *ASTPluck(NSArray *array, NSString *keyPath);
 

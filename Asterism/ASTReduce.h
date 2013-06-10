@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AsterismConstants.h"
+#import "ASTConstants.h"
 
 OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj));
 OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj));

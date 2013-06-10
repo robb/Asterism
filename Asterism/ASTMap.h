@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AsterismConstants.h"
+#import "ASTConstants.h"
 
 OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj));
 OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx));

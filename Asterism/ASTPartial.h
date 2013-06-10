@@ -10,7 +10,7 @@
 
 #import "metamacros.h"
 
-#import "AsterismConstants.h"
+#import "ASTConstants.h"
 
 #define ASTPartial_parameter_(INDEX, MAX) \
         id metamacro_if_eq(INDEX, metamacro_dec(MAX))()(,)

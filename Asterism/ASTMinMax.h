@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AsterismConstants.h"
+#import "ASTConstants.h"
 
 OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection);
 OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator);

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AsterismConstants.h"
+#import "ASTConstants.h"
 
 OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id obj));
 OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id obj, NSUInteger idx));

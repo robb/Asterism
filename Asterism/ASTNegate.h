@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AsterismConstants.h"
+#import "ASTConstants.h"
 
 OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id)))(id);
 OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id);

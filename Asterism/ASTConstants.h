@@ -1,5 +1,5 @@
 //
-//  AsterismConstants.h
+//  ASTConstants.h
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/1/13.

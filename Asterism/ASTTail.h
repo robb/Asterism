@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AsterismConstants.h"
+#import "ASTConstants.h"
 
 OVERLOADABLE NSArray *ASTTail(NSArray *array);

@@ -112,7 +112,7 @@
 		54D9EE811721543D00383762 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
 		54D9EE831721543D00383762 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		54D9EE90172154F100383762 /* Specs-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Specs-Prefix.pch"; sourceTree = "<group>"; };
-		54E0ED68175A0D070076C6EA /* AsterismConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsterismConstants.h; sourceTree = "<group>"; };
+		54E0ED68175A0D070076C6EA /* ASTConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASTConstants.h; sourceTree = "<group>"; };
 		54E0ED69175A0D5B0076C6EA /* ASTHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTHead.h; sourceTree = "<group>"; };
 		54E0ED6A175A0D5B0076C6EA /* ASTHead.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTHead.m; sourceTree = "<group>"; };
 		54E0ED6C175A0DF00076C6EA /* ASTHeadSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTHeadSpec.m; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				54D9EE6D1721543D00383762 /* Asterism.h */,
-				54E0ED68175A0D070076C6EA /* AsterismConstants.h */,
+				54E0ED68175A0D070076C6EA /* ASTConstants.h */,
 				54E1B64617215678008A2175 /* ASTEach.h */,
 				54E1B64717215678008A2175 /* ASTEach.m */,
 				54E0ED73175A1ABD0076C6EA /* ASTFilter.h */,
