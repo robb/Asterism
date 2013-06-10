@@ -12,7 +12,7 @@
 #import "ASTFilter.h"
 #import "ASTGroup.h"
 #import "ASTHead.h"
-#import "AsterismMap.h"
+#import "ASTMap.h"
 #import "AsterismMinMax.h"
 #import "AsterismNegate.h"
 #import "AsterismPluck.h"

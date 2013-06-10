@@ -1,5 +1,5 @@
 //
-//  AsterismMapSpec.m
+//  ASTMapSpec.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 5/23/13.
@@ -8,15 +8,15 @@
 
 #import "AsterismLift.h"
 
-#import "AsterismMap.h"
+#import "ASTMap.h"
 
-SpecBegin(AsterismMap)
+SpecBegin(ASTMap)
 
 describe(@"for arrays", ^{
     it(@"should not call the block when given an empty array", ^{
         __block NSUInteger calls = 0;
 
-        map(@[], ^(id obj) {
+        ASTMap(@[], ^(id obj) {
             return @(calls++);
         });
 
@@ -26,13 +26,13 @@ describe(@"for arrays", ^{
     it(@"should replace the objects with the result of the block", ^{
         NSArray *before = @[ @1, @2, @3 ];
 
-        NSArray *after = map(before, lift0(description));
+        NSArray *after = ASTMap(before, lift0(description));
 
         expect(after).to.equal((@[ @"1", @"2", @"3" ]));
     });
 
     it(@"should remove all elements for which the block returns nil", ^{
-        NSArray *even = map(@[ @0, @1, @2, @3 ], ^(NSNumber *number) {
+        NSArray *even = ASTMap(@[ @0, @1, @2, @3 ], ^(NSNumber *number) {
             return number.integerValue % 2 == 0 ? number : nil;
         });
 
@@ -42,7 +42,7 @@ describe(@"for arrays", ^{
     it(@"should call the block once for every object", ^{
         __block NSUInteger calls = 0;
 
-        map(@[ @0, @1, @2 ], ^(id obj) {
+        ASTMap(@[ @0, @1, @2 ], ^(id obj) {
             return @(calls++);
         });
 
@@ -50,7 +50,7 @@ describe(@"for arrays", ^{
     });
 
     it(@"should optionally pass in the index", ^{
-        map(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
+        ASTMap(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
             expect(obj).to.equal(@(idx));
 
             return @(idx);
@@ -60,7 +60,7 @@ describe(@"for arrays", ^{
     it(@"should maintain order", ^{
         NSArray *before = @[ @1, @2, @3, @4 ];
 
-        NSArray *after = map(before, ^(id obj) { return obj; });
+        NSArray *after = ASTMap(before, ^(id obj) { return obj; });
 
         expect(after).to.equal(before);
     });
@@ -70,7 +70,7 @@ describe(@"for dictionaries", ^{
     it(@"should not call the block when given an empty dictionary", ^{
         __block NSUInteger calls = 0;
 
-        map(@{}, ^(id obj) {
+        ASTMap(@{}, ^(id obj) {
             return @(calls++);
         });
 
@@ -83,7 +83,7 @@ describe(@"for dictionaries", ^{
             @"en": @"Hello"
         };
 
-        NSDictionary *after = map(before, lift0(uppercaseString));
+        NSDictionary *after = ASTMap(before, lift0(uppercaseString));
 
         expect(after).to.equal((@{
             @"fr": @"BONJOUR",
@@ -97,7 +97,7 @@ describe(@"for dictionaries", ^{
             @"en": @"Hello"
         };
 
-        NSDictionary *after = map(before, ^(NSString *string) {
+        NSDictionary *after = ASTMap(before, ^(NSString *string) {
             return [string isEqual:@"Bonjour"] ? string : nil;
         });
 
@@ -114,7 +114,7 @@ describe(@"for dictionaries", ^{
             @"en": @"Hello"
         };
 
-        map(dictionary, ^(id obj) {
+        ASTMap(dictionary, ^(id obj) {
             return @(calls++);
         });
 
@@ -122,7 +122,7 @@ describe(@"for dictionaries", ^{
     });
 
     it(@"should optionally pass in the key", ^{
-        map(@{ @"foo": @"FOO" }, ^(id key, id obj) {
+        ASTMap(@{ @"foo": @"FOO" }, ^(id key, id obj) {
             expect([key uppercaseString]).to.equal(obj);
 
             return obj;
@@ -134,7 +134,7 @@ describe(@"for sets", ^{
     it(@"should not call the block when given an empty set", ^{
         __block NSUInteger calls = 0;
 
-        map([[NSSet alloc] init], ^(id obj) {
+        ASTMap([[NSSet alloc] init], ^(id obj) {
             return @(calls++);
         });
 
@@ -144,7 +144,7 @@ describe(@"for sets", ^{
     it(@"should replace the objects with the result of the block", ^{
         NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-        NSSet *after = map(before, lift0(description));
+        NSSet *after = ASTMap(before, lift0(description));
 
         expect(after).to.equal(([NSSet setWithArray:@[
             @"1", @"2", @"3"
@@ -154,7 +154,7 @@ describe(@"for sets", ^{
     it(@"should remove all elements for which the block returns nil", ^{
         NSSet *numbers = [NSSet setWithArray:@[ @0, @1, @2, @3 ]];
 
-        NSSet *even = map(numbers, ^(NSNumber *number) {
+        NSSet *even = ASTMap(numbers, ^(NSNumber *number) {
             return number.integerValue % 2 == 0 ? number : nil;
         });
 
@@ -166,7 +166,7 @@ describe(@"for sets", ^{
 
         NSSet *set = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-        map(set, ^(id obj) {
+        ASTMap(set, ^(id obj) {
             return @(calls++);
         });
 

@@ -1,5 +1,5 @@
 //
-//  AsterismMap.m
+//  ASTMap.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 5/22/13.
@@ -8,18 +8,18 @@
 
 #import "ASTEach.h"
 
-#import "AsterismMap.h"
+#import "ASTMap.h"
 
 #pragma mark - Arrays
 
-OVERLOADABLE NSArray *map(NSArray *array, id(^block)(id obj))
+OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj))
 {
-    return map(array, ^(id obj, NSUInteger _) {
+    return ASTMap(array, ^(id obj, NSUInteger _) {
         return block(obj);
     });
 }
 
-OVERLOADABLE NSArray *map(NSArray *array, id(^block)(id obj, NSUInteger idx))
+OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx))
 {
     NSMutableArray *result = [NSMutableArray array];
 
@@ -34,14 +34,14 @@ OVERLOADABLE NSArray *map(NSArray *array, id(^block)(id obj, NSUInteger idx))
     return result;
 }
 
-OVERLOADABLE NSDictionary *map(NSDictionary *dict, id(^block)(id obj))
+OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj))
 {
-    return map(dict, ^(id _, id obj) {
+    return ASTMap(dict, ^(id _, id obj) {
         return block(obj);
     });
 }
 
-OVERLOADABLE NSDictionary *map(NSDictionary *dict, id(^block)(id key, id obj))
+OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj))
 {
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
 
@@ -56,7 +56,7 @@ OVERLOADABLE NSDictionary *map(NSDictionary *dict, id(^block)(id key, id obj))
     return result;
 }
 
-OVERLOADABLE NSSet *map(NSSet *set, id(^block)(id obj))
+OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj))
 {
     NSMutableSet *result = [NSMutableSet set];
 

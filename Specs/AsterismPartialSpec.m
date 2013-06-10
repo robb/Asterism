@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismMap.h"
+#import "ASTMap.h"
 #import "AsterismLift.h"
 
 #import "AsterismPartial.h"
