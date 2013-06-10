@@ -1,5 +1,5 @@
 //
-//  AsterismGroupSpec.m
+//  ASTGroupSpec.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/4/13.
@@ -8,14 +8,14 @@
 
 #import "AsterismLift.h"
 
-#import "AsterismGroup.h"
+#import "ASTGroup.h"
 
-SpecBegin(AsterismGroup)
+SpecBegin(ASTGroup)
 
 NSArray *array = @[  @"Hello", @"Bonjour", @"Hallo", @"Hej" ];
 
 it(@"should return a dictionary of sets, grouped by the blocks return value", ^{
-    NSDictionary *dictionary = group(array, lift0(length));
+    NSDictionary *dictionary = ASTGroup(array, lift0(length));
 
     expect(dictionary).to.haveCountOf(3);
 

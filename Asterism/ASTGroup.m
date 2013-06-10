@@ -1,14 +1,14 @@
 //
-//  AsterismGroup.m
+//  ASTGroup.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/4/13.
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismGroup.h"
+#import "ASTGroup.h"
 
-OVERLOADABLE NSDictionary *group(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id))
+OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id))
 {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
 

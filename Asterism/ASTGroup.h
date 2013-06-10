@@ -1,5 +1,5 @@
 //
-//  AsterismGroup.h
+//  ASTGroup.h
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/4/13.
@@ -10,4 +10,4 @@
 
 #import "AsterismConstants.h"
 
-OVERLOADABLE NSDictionary *group(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
+OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));

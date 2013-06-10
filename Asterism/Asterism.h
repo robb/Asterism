@@ -10,7 +10,7 @@
 
 #import "ASTEach.h"
 #import "ASTFilter.h"
-#import "AsterismGroup.h"
+#import "ASTGroup.h"
 #import "AsterismHead.h"
 #import "AsterismMap.h"
 #import "AsterismMinMax.h"
