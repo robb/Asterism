@@ -1,5 +1,5 @@
 //
-//  AsterismLift.m
+//  ASTLift.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 5/23/13.
@@ -10,7 +10,7 @@
 
 #import <objc/runtime.h>
 
-#import "AsterismLift.h"
+#import "ASTLift.h"
 
 #define NSNUMBER_TYPES char, unsigned char, short, unsigned short, int,\
                        unsigned int, long, unsigned long, long long,\
@@ -20,7 +20,7 @@
 #define TYPE_EQUAL(OBJC_TYPE, TYPE_TO_ENCODE) \
     (strcmp(OBJC_TYPE, @encode(TYPE_TO_ENCODE)) == 0)
 
-ASTBlockVar lift_var(SEL selector)
+ASTBlockVar ASTLiftVar(SEL selector)
 {
     __block const char *currentEncoding = "";
     __block NSInvocation *invocation;

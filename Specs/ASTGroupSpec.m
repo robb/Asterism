@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismLift.h"
+#import "ASTLift.h"
 
 #import "ASTGroup.h"
 
@@ -15,7 +15,7 @@ SpecBegin(ASTGroup)
 NSArray *array = @[  @"Hello", @"Bonjour", @"Hallo", @"Hej" ];
 
 it(@"should return a dictionary of sets, grouped by the blocks return value", ^{
-    NSDictionary *dictionary = ASTGroup(array, lift0(length));
+    NSDictionary *dictionary = ASTGroup(array, ASTLift0(length));
 
     expect(dictionary).to.haveCountOf(3);
 

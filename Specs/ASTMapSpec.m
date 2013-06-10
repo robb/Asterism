@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismLift.h"
+#import "ASTLift.h"
 
 #import "ASTMap.h"
 
@@ -26,7 +26,7 @@ describe(@"for arrays", ^{
     it(@"should replace the objects with the result of the block", ^{
         NSArray *before = @[ @1, @2, @3 ];
 
-        NSArray *after = ASTMap(before, lift0(description));
+        NSArray *after = ASTMap(before, ASTLift0(description));
 
         expect(after).to.equal((@[ @"1", @"2", @"3" ]));
     });
@@ -83,7 +83,7 @@ describe(@"for dictionaries", ^{
             @"en": @"Hello"
         };
 
-        NSDictionary *after = ASTMap(before, lift0(uppercaseString));
+        NSDictionary *after = ASTMap(before, ASTLift0(uppercaseString));
 
         expect(after).to.equal((@{
             @"fr": @"BONJOUR",
@@ -144,7 +144,7 @@ describe(@"for sets", ^{
     it(@"should replace the objects with the result of the block", ^{
         NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-        NSSet *after = ASTMap(before, lift0(description));
+        NSSet *after = ASTMap(before, ASTLift0(description));
 
         expect(after).to.equal(([NSSet setWithArray:@[
             @"1", @"2", @"3"

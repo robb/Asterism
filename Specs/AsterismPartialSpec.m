@@ -7,7 +7,7 @@
 //
 
 #import "ASTMap.h"
-#import "AsterismLift.h"
+#import "ASTLift.h"
 
 #import "AsterismPartial.h"
 
@@ -25,7 +25,7 @@ SixArguments six = ^(id a, id b, id c, id d, id e, id f) {
     return @6;
 };
 
-TwoArguments concat = lift(stringByAppendingString:);
+TwoArguments concat = ASTLift(stringByAppendingString:);
 
 describe(@"partial", ^{
     it(@"should return a block of reduced arity", ^{

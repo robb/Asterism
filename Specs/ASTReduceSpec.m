@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismLift.h"
+#import "ASTLift.h"
 
 #import "ASTReduce.h"
 
@@ -61,7 +61,7 @@ describe(@"reduce", ^{
         });
 
         it(@"should reduce arrays in order", ^{
-            id result = ASTReduce(@[ @"a", @"b", @"c" ], lift(stringByAppendingString:));
+            id result = ASTReduce(@[ @"a", @"b", @"c" ], ASTLift(stringByAppendingString:));
 
             expect(result).to.equal(@"abc");
         });

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismLift.h"
+#import "ASTLift.h"
 
 #import "ASTMinMax.h"
 
@@ -33,7 +33,7 @@ describe(@"ASTMin", ^{
 
     describe(@"with a block returning an NSNumber", ^{
         it(@"should return the minimum", ^{
-            NSNumber *minimum = ASTMin(array, lift(compare:));
+            NSNumber *minimum = ASTMin(array, ASTLift(compare:));
 
             expect(minimum).to.equal(-1);
         });
@@ -59,7 +59,7 @@ describe(@"ASTMax", ^{
 
     describe(@"with a block returning an NSNumber", ^{
         it(@"should return the maximum", ^{
-            NSNumber *maximum = ASTMax(array, lift(compare:));
+            NSNumber *maximum = ASTMax(array, ASTLift(compare:));
 
             expect(maximum).to.equal(9);
         });
