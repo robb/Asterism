@@ -1,5 +1,5 @@
 //
-//  AsterismTail.h
+//  ASTTail.h
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/1/13.
@@ -10,4 +10,4 @@
 
 #import "AsterismConstants.h"
 
-OVERLOADABLE NSArray *tail(NSArray *array);
+OVERLOADABLE NSArray *ASTTail(NSArray *array);

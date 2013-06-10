@@ -18,6 +18,6 @@
 #import "ASTPluck.h"
 #import "ASTReduce.h"
 #import "ASTReject.h"
-#import "AsterismTail.h"
+#import "ASTTail.h"
 #import "AsterismLift.h"
 #import "AsterismPartial.h"
