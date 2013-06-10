@@ -23,7 +23,7 @@
 		54A72CC1175D0FD500D9A05E /* AsterismPluckSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A72CC0175D0FD400D9A05E /* AsterismPluckSpec.m */; };
 		54A7FD3E175CDCCE004A7541 /* LiftTestClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A7FD3D175CDCCE004A7541 /* LiftTestClassA.m */; };
 		54A7FD41175CDCF9004A7541 /* LiftTestClassB.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A7FD40175CDCF9004A7541 /* LiftTestClassB.m */; };
-		54A7FD43175CE45D004A7541 /* AsterismFilterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A7FD42175CE45D004A7541 /* AsterismFilterSpec.m */; };
+		54A7FD43175CE45D004A7541 /* ASTFilterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A7FD42175CE45D004A7541 /* ASTFilterSpec.m */; };
 		54CE84BB174D74E1006F960A /* AsterismMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BA174D74E1006F960A /* AsterismMap.m */; };
 		54CE84BD174D78C0006F960A /* AsterismMapSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BC174D78C0006F960A /* AsterismMapSpec.m */; };
 		54CE84C0174D839E006F960A /* AsterismLift.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BF174D839E006F960A /* AsterismLift.m */; };
@@ -39,7 +39,7 @@
 		54E0ED6D175A0DF00076C6EA /* AsterismHeadSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED6C175A0DF00076C6EA /* AsterismHeadSpec.m */; };
 		54E0ED70175A0FAC0076C6EA /* AsterismTail.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED6F175A0FAC0076C6EA /* AsterismTail.m */; };
 		54E0ED72175A146B0076C6EA /* AsterismTailSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED71175A146B0076C6EA /* AsterismTailSpec.m */; };
-		54E0ED75175A1ABD0076C6EA /* AsterismFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED74175A1ABD0076C6EA /* AsterismFilter.m */; };
+		54E0ED75175A1ABD0076C6EA /* ASTFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED74175A1ABD0076C6EA /* ASTFilter.m */; };
 		54E1B64817215678008A2175 /* ASTEach.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1B64717215678008A2175 /* ASTEach.m */; };
 		54E1B64A17215783008A2175 /* ASTEachSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1B64917215783008A2175 /* ASTEachSpec.m */; };
 		6DA0E311E2FE4D0091F50B0D /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B82A91E23E8448D2861527C1 /* libPods-Specs.a */; };
@@ -95,7 +95,7 @@
 		54A7FD3D175CDCCE004A7541 /* LiftTestClassA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiftTestClassA.m; sourceTree = "<group>"; };
 		54A7FD3F175CDCF9004A7541 /* LiftTestClassB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiftTestClassB.h; sourceTree = "<group>"; };
 		54A7FD40175CDCF9004A7541 /* LiftTestClassB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiftTestClassB.m; sourceTree = "<group>"; };
-		54A7FD42175CE45D004A7541 /* AsterismFilterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismFilterSpec.m; sourceTree = "<group>"; };
+		54A7FD42175CE45D004A7541 /* ASTFilterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTFilterSpec.m; sourceTree = "<group>"; };
 		54CE84B9174D74E1006F960A /* AsterismMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismMap.h; sourceTree = "<group>"; };
 		54CE84BA174D74E1006F960A /* AsterismMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismMap.m; sourceTree = "<group>"; };
 		54CE84BC174D78C0006F960A /* AsterismMapSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismMapSpec.m; sourceTree = "<group>"; };
@@ -119,8 +119,8 @@
 		54E0ED6E175A0FAC0076C6EA /* AsterismTail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismTail.h; sourceTree = "<group>"; };
 		54E0ED6F175A0FAC0076C6EA /* AsterismTail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismTail.m; sourceTree = "<group>"; };
 		54E0ED71175A146B0076C6EA /* AsterismTailSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismTailSpec.m; sourceTree = "<group>"; };
-		54E0ED73175A1ABD0076C6EA /* AsterismFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismFilter.h; sourceTree = "<group>"; };
-		54E0ED74175A1ABD0076C6EA /* AsterismFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsterismFilter.m; sourceTree = "<group>"; };
+		54E0ED73175A1ABD0076C6EA /* ASTFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTFilter.h; sourceTree = "<group>"; };
+		54E0ED74175A1ABD0076C6EA /* ASTFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTFilter.m; sourceTree = "<group>"; };
 		54E1B64617215678008A2175 /* ASTEach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTEach.h; sourceTree = "<group>"; };
 		54E1B64717215678008A2175 /* ASTEach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTEach.m; sourceTree = "<group>"; };
 		54E1B64917215783008A2175 /* ASTEachSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTEachSpec.m; sourceTree = "<group>"; };
@@ -190,8 +190,8 @@
 				54E0ED68175A0D070076C6EA /* AsterismConstants.h */,
 				54E1B64617215678008A2175 /* ASTEach.h */,
 				54E1B64717215678008A2175 /* ASTEach.m */,
-				54E0ED73175A1ABD0076C6EA /* AsterismFilter.h */,
-				54E0ED74175A1ABD0076C6EA /* AsterismFilter.m */,
+				54E0ED73175A1ABD0076C6EA /* ASTFilter.h */,
+				54E0ED74175A1ABD0076C6EA /* ASTFilter.m */,
 				549DFB88175E4DD2005CAD4A /* AsterismGroup.h */,
 				549DFB89175E4DD2005CAD4A /* AsterismGroup.m */,
 				54E0ED69175A0D5B0076C6EA /* AsterismHead.h */,
@@ -232,7 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				54E1B64917215783008A2175 /* ASTEachSpec.m */,
-				54A7FD42175CE45D004A7541 /* AsterismFilterSpec.m */,
+				54A7FD42175CE45D004A7541 /* ASTFilterSpec.m */,
 				549DFB8D175E5526005CAD4A /* AsterismGroupSpec.m */,
 				54E0ED6C175A0DF00076C6EA /* AsterismHeadSpec.m */,
 				54CE84BC174D78C0006F960A /* AsterismMapSpec.m */,
@@ -396,7 +396,7 @@
 				542C1CB817520F560013D41E /* AsterismReduce.m in Sources */,
 				54E0ED6B175A0D5B0076C6EA /* AsterismHead.m in Sources */,
 				54E0ED70175A0FAC0076C6EA /* AsterismTail.m in Sources */,
-				54E0ED75175A1ABD0076C6EA /* AsterismFilter.m in Sources */,
+				54E0ED75175A1ABD0076C6EA /* ASTFilter.m in Sources */,
 				549B7264175CFE6700E6A378 /* AsterismReject.m in Sources */,
 				549B7268175D07CF00E6A378 /* AsterismNegate.m in Sources */,
 				54A72CBF175D0F5000D9A05E /* AsterismPluck.m in Sources */,
@@ -417,7 +417,7 @@
 				542C1CBA175214B90013D41E /* AsterismReduceSpec.m in Sources */,
 				54E0ED6D175A0DF00076C6EA /* AsterismHeadSpec.m in Sources */,
 				54E0ED72175A146B0076C6EA /* AsterismTailSpec.m in Sources */,
-				54A7FD43175CE45D004A7541 /* AsterismFilterSpec.m in Sources */,
+				54A7FD43175CE45D004A7541 /* ASTFilterSpec.m in Sources */,
 				549B726A175D08E400E6A378 /* AsterismRejectSpec.m in Sources */,
 				549B726C175D097100E6A378 /* AsterismNegateSpec.m in Sources */,
 				54A72CC1175D0FD500D9A05E /* AsterismPluckSpec.m in Sources */,

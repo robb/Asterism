@@ -1,14 +1,14 @@
 //
-//  AsterismFilter.m
+//  ASTFilter.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/1/13.
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismFilter.h"
+#import "ASTFilter.h"
 
-OVERLOADABLE NSArray *filter(NSArray *array, BOOL(^block)(id))
+OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id))
 {
     NSIndexSet *indexes = [array indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         return block(obj);
@@ -17,7 +17,7 @@ OVERLOADABLE NSArray *filter(NSArray *array, BOOL(^block)(id))
     return [array objectsAtIndexes:indexes];
 }
 
-OVERLOADABLE NSArray *filter(NSArray *array, BOOL(^block)(id, NSUInteger))
+OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id, NSUInteger))
 {
     NSIndexSet *indexes = [array indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         return block(obj, idx);
@@ -26,7 +26,7 @@ OVERLOADABLE NSArray *filter(NSArray *array, BOOL(^block)(id, NSUInteger))
     return [array objectsAtIndexes:indexes];
 }
 
-OVERLOADABLE NSDictionary *filter(NSDictionary *dict, BOOL(^block)(id))
+OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id))
 {
     NSSet *keys = [dict keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
         return block(obj);
@@ -35,7 +35,7 @@ OVERLOADABLE NSDictionary *filter(NSDictionary *dict, BOOL(^block)(id))
     return [dict dictionaryWithValuesForKeys:keys.allObjects];
 }
 
-OVERLOADABLE NSDictionary *filter(NSDictionary *dict, BOOL(^block)(id, id))
+OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id, id))
 {
     NSSet *keys = [dict keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
         return block(key, obj);
@@ -44,7 +44,7 @@ OVERLOADABLE NSDictionary *filter(NSDictionary *dict, BOOL(^block)(id, id))
     return [dict dictionaryWithValuesForKeys:keys.allObjects];
 }
 
-OVERLOADABLE NSSet *filter(NSSet *set, BOOL(^block)(id))
+OVERLOADABLE NSSet *ASTFilter(NSSet *set, BOOL(^block)(id))
 {
     return [set objectsPassingTest:^BOOL(id obj, BOOL *stop) {
         return block(obj);

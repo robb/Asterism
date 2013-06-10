@@ -1,20 +1,20 @@
 //
-//  AsterismFilterSpec.m
+//  ASTFilterSpec.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/3/13.
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismFilter.h"
+#import "ASTFilter.h"
 
-SpecBegin(AsterismFilter)
+SpecBegin(ASTFilter)
 
 describe(@"for arrays", ^{
     NSArray *before = @[ @1, @2, @3 ];
 
     it(@"should remove all objects that fail the test", ^{
-        NSArray *after = filter(before, ^BOOL(NSNumber *obj) {
+        NSArray *after = ASTFilter(before, ^BOOL(NSNumber *obj) {
             return obj.integerValue % 2 == 1;
         });
 
@@ -22,7 +22,7 @@ describe(@"for arrays", ^{
     });
 
     it(@"should optionally pass in the index", ^{
-        NSArray *after = filter(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
+        NSArray *after = ASTFilter(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
             return idx < 2;
         });
 
@@ -30,7 +30,7 @@ describe(@"for arrays", ^{
     });
 
     it(@"should maintain order", ^{
-        NSArray *after = filter(before, ^BOOL(NSNumber *obj) { return YES; });
+        NSArray *after = ASTFilter(before, ^BOOL(NSNumber *obj) { return YES; });
 
         expect(after).to.equal(before);
     });
@@ -43,7 +43,7 @@ describe(@"for dictionaries", ^{
     };
 
     it(@"should remove all objects that fail the test", ^{
-        NSDictionary *after = filter(before, ^BOOL(NSString *obj) {
+        NSDictionary *after = ASTFilter(before, ^BOOL(NSString *obj) {
             return [obj isEqualToString:@"Bonjour"];
         });
 
@@ -51,7 +51,7 @@ describe(@"for dictionaries", ^{
     });
 
     it(@"should optionally pass in the key", ^{
-        NSDictionary *after = filter(before, ^BOOL(NSString *key, NSString *obj) {
+        NSDictionary *after = ASTFilter(before, ^BOOL(NSString *key, NSString *obj) {
             return [key isEqualToString:@"fr"];
         });
 
@@ -63,7 +63,7 @@ describe(@"for sets", ^{
     NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
     it(@"should remove all objects that fail the test", ^{
-        NSSet *after = filter(before, ^BOOL(NSNumber *obj) {
+        NSSet *after = ASTFilter(before, ^BOOL(NSNumber *obj) {
             return obj.integerValue % 2 == 1;
         });
 

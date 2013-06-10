@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "ASTEach.h"
-#import "AsterismFilter.h"
+#import "ASTFilter.h"
 #import "AsterismGroup.h"
 #import "AsterismHead.h"
 #import "AsterismMap.h"
