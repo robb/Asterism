@@ -1,5 +1,5 @@
 //
-//  AsterismPluck.h
+//  ASTPluck.h
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/3/13.
@@ -10,6 +10,6 @@
 
 #import "AsterismConstants.h"
 
-OVERLOADABLE NSArray *pluck(NSArray *array, NSString *keyPath);
+OVERLOADABLE NSArray *ASTPluck(NSArray *array, NSString *keyPath);
 
-OVERLOADABLE NSSet *pluck(NSSet *set, NSString *keyPath);
+OVERLOADABLE NSSet *ASTPluck(NSSet *set, NSString *keyPath);
