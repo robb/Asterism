@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismEach.h"
+#import "ASTEach.h"
 
 #import "AsterismMap.h"
 
@@ -23,7 +23,7 @@ OVERLOADABLE NSArray *map(NSArray *array, id(^block)(id obj, NSUInteger idx))
 {
     NSMutableArray *result = [NSMutableArray array];
 
-    each(array, ^(id obj, NSUInteger idx) {
+    ASTEach(array, ^(id obj, NSUInteger idx) {
         id transformed = block(obj, idx);
 
         if (transformed != nil) {
@@ -45,7 +45,7 @@ OVERLOADABLE NSDictionary *map(NSDictionary *dict, id(^block)(id key, id obj))
 {
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
 
-    each(dict, ^(id key, id obj) {
+    ASTEach(dict, ^(id key, id obj) {
         id transformed = block(key, obj);
 
         if (transformed != nil) {
@@ -60,7 +60,7 @@ OVERLOADABLE NSSet *map(NSSet *set, id(^block)(id obj))
 {
     NSMutableSet *result = [NSMutableSet set];
 
-    each(set, ^(id obj) {
+    ASTEach(set, ^(id obj) {
         id transformed = block(obj);
 
         if (transformed != nil) {

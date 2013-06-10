@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AsterismEach.h"
+#import "ASTEach.h"
 #import "AsterismFilter.h"
 #import "AsterismGroup.h"
 #import "AsterismHead.h"

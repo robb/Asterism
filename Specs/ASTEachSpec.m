@@ -1,20 +1,20 @@
 //
-//  AsterismEachSpec.m
+//  ASTEachSpec.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 4/19/13.
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismEach.h"
+#import "ASTEach.h"
 
-SpecBegin(AsterismEach)
+SpecBegin(ASTEach)
 
 describe(@"for arrays", ^{
     it(@"should not call the block when given an empty array", ^{
         __block NSUInteger calls = 0;
 
-        each(@[], ^(id obj) {
+        ASTEach(@[], ^(id obj) {
             calls++;
         });
 
@@ -24,7 +24,7 @@ describe(@"for arrays", ^{
     it(@"should call the block once for every object", ^{
         __block NSUInteger calls = 0;
 
-        each(@[ @0, @1, @2 ], ^(id obj) {
+        ASTEach(@[ @0, @1, @2 ], ^(id obj) {
             calls++;
         });
 
@@ -32,7 +32,7 @@ describe(@"for arrays", ^{
     });
 
     it(@"should optionally pass in the index", ^{
-        each(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
+        ASTEach(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
             expect(obj).to.equal(@(idx));
         });
     });
@@ -40,7 +40,7 @@ describe(@"for arrays", ^{
     it(@"should iterate over the array in order", ^{
         __block NSUInteger calls = 0;
 
-        each(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
+        ASTEach(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
             expect(calls++).to.equal(idx);
         });
     });
@@ -50,7 +50,7 @@ describe(@"for dictionaries", ^{
     it(@"should not call the block when given an empty dictionary", ^{
         __block NSUInteger calls = 0;
 
-        each(@{}, ^(id obj) {
+        ASTEach(@{}, ^(id obj) {
             calls++;
         });
 
@@ -65,7 +65,7 @@ describe(@"for dictionaries", ^{
             @"bar": @"BAR"
         };
 
-        each(dictionary, ^(id obj) {
+        ASTEach(dictionary, ^(id obj) {
             calls++;
         });
 
@@ -73,7 +73,7 @@ describe(@"for dictionaries", ^{
     });
 
     it(@"should optionally pass in the key", ^{
-        each(@{ @"foo": @"FOO" }, ^(id key, id obj) {
+        ASTEach(@{ @"foo": @"FOO" }, ^(id key, id obj) {
             expect([key uppercaseString]).to.equal(obj);
         });
     });
@@ -85,7 +85,7 @@ describe(@"for objects implementing <NSFastEnumeration>", ^{
 
         id<NSFastEnumeration> enumerable = @[];
 
-        each(enumerable, ^(id obj) {
+        ASTEach(enumerable, ^(id obj) {
             calls++;
         });
 
@@ -97,7 +97,7 @@ describe(@"for objects implementing <NSFastEnumeration>", ^{
 
         id<NSFastEnumeration> enumerable = @[ @1, @2, @3 ];
 
-        each(enumerable, ^(id obj) {
+        ASTEach(enumerable, ^(id obj) {
             calls++;
         });
 
