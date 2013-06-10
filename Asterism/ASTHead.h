@@ -1,5 +1,5 @@
 //
-//  AsterismHead.h
+//  ASTHead.h
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/1/13.
@@ -10,4 +10,4 @@
 
 #import "AsterismConstants.h"
 
-OVERLOADABLE id head(NSArray *array);
+OVERLOADABLE id ASTHead(NSArray *array);

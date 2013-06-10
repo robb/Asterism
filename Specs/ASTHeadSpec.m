@@ -1,21 +1,21 @@
 //
-//  AsterismHeadSpec.m
+//  ASTHeadSpec.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/1/13.
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismHead.h"
+#import "ASTHead.h"
 
-SpecBegin(AsterismHead)
+SpecBegin(ASTHead)
 
 it(@"should return nil if the array is empty", ^{
-    expect(head(@[])).to.beNil();
+    expect(ASTHead(@[])).to.beNil();
 });
 
 it(@"should return the first element", ^{
-    expect(head(@[ @1, @2 ])).to.equal(@1);
+    expect(ASTHead(@[ @1, @2 ])).to.equal(@1);
 });
 
 SpecEnd
