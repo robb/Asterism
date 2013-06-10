@@ -17,7 +17,7 @@
 #import "ASTNegate.h"
 #import "ASTPluck.h"
 #import "ASTReduce.h"
-#import "AsterismReject.h"
+#import "ASTReject.h"
 #import "AsterismTail.h"
 #import "AsterismLift.h"
 #import "AsterismPartial.h"

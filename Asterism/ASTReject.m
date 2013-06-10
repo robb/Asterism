@@ -1,5 +1,5 @@
 //
-//  AsterismReject.m
+//  ASTReject.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/3/13.
@@ -11,29 +11,29 @@
 #import "ASTFilter.h"
 #import "ASTNegate.h"
 
-#import "AsterismReject.h"
+#import "ASTReject.h"
 
-OVERLOADABLE NSArray *reject(NSArray *array, BOOL(^block)(id))
+OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id))
 {
     return ASTFilter(array, ASTNegate(block));
 }
 
-OVERLOADABLE NSArray *reject(NSArray *array, BOOL(^block)(id, NSUInteger))
+OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id, NSUInteger))
 {
     return ASTFilter(array, ASTNegate(block));
 }
 
-OVERLOADABLE NSDictionary *reject(NSDictionary *dict, BOOL(^block)(id))
+OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id))
 {
     return ASTFilter(dict, ASTNegate(block));
 }
 
-OVERLOADABLE NSDictionary *reject(NSDictionary *dict, BOOL(^block)(id key, id obj))
+OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id key, id obj))
 {
     return ASTFilter(dict, ASTNegate(block));
 }
 
-OVERLOADABLE NSSet *reject(NSSet *set, BOOL(^block)(id obj))
+OVERLOADABLE NSSet *ASTReject(NSSet *set, BOOL(^block)(id obj))
 {
     return ASTFilter(set, ASTNegate(block));
 }

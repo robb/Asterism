@@ -1,20 +1,20 @@
 //
-//  AsterismRejectSpec.m
+//  ASTRejectSpec.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/3/13.
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "AsterismReject.h"
+#import "ASTReject.h"
 
-SpecBegin(AsterismReject)
+SpecBegin(ASTReject)
 
 describe(@"for arrays", ^{
     NSArray *before = @[ @1, @2, @3 ];
 
     it(@"should remove all objects that pass the test", ^{
-        NSArray *after = reject(before, ^BOOL(NSNumber *obj) {
+        NSArray *after = ASTReject(before, ^BOOL(NSNumber *obj) {
             return obj.integerValue % 2 == 1;
         });
 
@@ -22,7 +22,7 @@ describe(@"for arrays", ^{
     });
 
     it(@"should optionally pass in the index", ^{
-        NSArray *after = reject(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
+        NSArray *after = ASTReject(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
             return idx < 2;
         });
 
@@ -30,7 +30,7 @@ describe(@"for arrays", ^{
     });
 
     it(@"should maintain order", ^{
-        NSArray *after = reject(before, ^BOOL(NSNumber *obj) { return NO; });
+        NSArray *after = ASTReject(before, ^BOOL(NSNumber *obj) { return NO; });
 
         expect(after).to.equal(before);
     });
@@ -43,7 +43,7 @@ describe(@"for dictionaries", ^{
     };
 
     it(@"should remove all objects that fail the test", ^{
-        NSDictionary *after = reject(before, ^BOOL(NSString *obj) {
+        NSDictionary *after = ASTReject(before, ^BOOL(NSString *obj) {
             return [obj isEqualToString:@"Bonjour"];
         });
 
@@ -51,7 +51,7 @@ describe(@"for dictionaries", ^{
     });
 
     it(@"should optionally pass in the key", ^{
-        NSDictionary *after = reject(before, ^BOOL(NSString *key, NSString *obj) {
+        NSDictionary *after = ASTReject(before, ^BOOL(NSString *key, NSString *obj) {
             return [key isEqualToString:@"fr"];
         });
 
@@ -63,10 +63,10 @@ describe(@"for sets", ^{
     NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
     it(@"should remove all objects that fail the test", ^{
-        NSSet *after = reject(before, ^BOOL(NSNumber *obj) {
+        NSSet *after = ASTReject(before, ^BOOL(NSNumber *obj) {
             return obj.integerValue % 2 == 1;
         });
-        
+
         expect(after).to.equal(([NSSet setWithArray:@[ @2 ]]));
     });
 });
