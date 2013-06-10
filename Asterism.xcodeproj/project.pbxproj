@@ -310,6 +310,7 @@
 		54D9EE5D1721543D00383762 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = AST;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Robert Böhnke";
 			};
