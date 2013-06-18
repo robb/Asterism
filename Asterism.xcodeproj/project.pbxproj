@@ -42,6 +42,8 @@
 		54E0ED75175A1ABD0076C6EA /* ASTFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED74175A1ABD0076C6EA /* ASTFilter.m */; };
 		54E1B64817215678008A2175 /* ASTEach.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1B64717215678008A2175 /* ASTEach.m */; };
 		54E1B64A17215783008A2175 /* ASTEachSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1B64917215783008A2175 /* ASTEachSpec.m */; };
+		54FE96DE17704C7F006F40AC /* ASTDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96DD17704C7F006F40AC /* ASTDifference.m */; };
+		54FE96E017704FF7006F40AC /* ASTDifferenceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96DF17704FF7006F40AC /* ASTDifferenceSpec.m */; };
 		6DA0E311E2FE4D0091F50B0D /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B82A91E23E8448D2861527C1 /* libPods-Specs.a */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +126,9 @@
 		54E1B64617215678008A2175 /* ASTEach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTEach.h; sourceTree = "<group>"; };
 		54E1B64717215678008A2175 /* ASTEach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTEach.m; sourceTree = "<group>"; };
 		54E1B64917215783008A2175 /* ASTEachSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTEachSpec.m; sourceTree = "<group>"; };
+		54FE96DC17704C7F006F40AC /* ASTDifference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTDifference.h; sourceTree = "<group>"; };
+		54FE96DD17704C7F006F40AC /* ASTDifference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTDifference.m; sourceTree = "<group>"; };
+		54FE96DF17704FF7006F40AC /* ASTDifferenceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTDifferenceSpec.m; sourceTree = "<group>"; };
 		6F8F6BC620F04200B843D72F /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 		B82A91E23E8448D2861527C1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -188,6 +193,8 @@
 			children = (
 				54D9EE6D1721543D00383762 /* Asterism.h */,
 				54E0ED68175A0D070076C6EA /* ASTConstants.h */,
+				54FE96DC17704C7F006F40AC /* ASTDifference.h */,
+				54FE96DD17704C7F006F40AC /* ASTDifference.m */,
 				54E1B64617215678008A2175 /* ASTEach.h */,
 				54E1B64717215678008A2175 /* ASTEach.m */,
 				54E0ED73175A1ABD0076C6EA /* ASTFilter.h */,
@@ -231,6 +238,7 @@
 		54D9EE7F1721543D00383762 /* Specs */ = {
 			isa = PBXGroup;
 			children = (
+				54FE96DF17704FF7006F40AC /* ASTDifferenceSpec.m */,
 				54E1B64917215783008A2175 /* ASTEachSpec.m */,
 				54A7FD42175CE45D004A7541 /* ASTFilterSpec.m */,
 				549DFB8D175E5526005CAD4A /* ASTGroupSpec.m */,
@@ -406,6 +414,7 @@
 				54CE84C0174D839E006F960A /* ASTLift.m in Sources */,
 				54CE84C0174D839E006F960A /* ASTLift.m in Sources */,
 				357F376323C41EF675D2B956 /* ASTPartial.m in Sources */,
+				54FE96DE17704C7F006F40AC /* ASTDifference.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +437,7 @@
 				54A7FD3E175CDCCE004A7541 /* LiftTestClassA.m in Sources */,
 				54A7FD41175CDCF9004A7541 /* LiftTestClassB.m in Sources */,
 				546B5FEE176346AE00AE3EBC /* ASTPartialSpec.m in Sources */,
+				54FE96E017704FF7006F40AC /* ASTDifferenceSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

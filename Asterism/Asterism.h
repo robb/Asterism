@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ASTDifference.h"
 #import "ASTEach.h"
 #import "ASTFilter.h"
 #import "ASTGroup.h"
