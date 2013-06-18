@@ -22,3 +22,4 @@
 #import "ASTReduce.h"
 #import "ASTReject.h"
 #import "ASTTail.h"
+#import "ASTUnion.h"
