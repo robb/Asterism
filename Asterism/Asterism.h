@@ -13,6 +13,7 @@
 #import "ASTFilter.h"
 #import "ASTGroup.h"
 #import "ASTHead.h"
+#import "ASTIntersection.h"
 #import "ASTLift.h"
 #import "ASTMap.h"
 #import "ASTMinMax.h"

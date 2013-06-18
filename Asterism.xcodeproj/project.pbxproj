@@ -46,6 +46,8 @@
 		54FE96E017704FF7006F40AC /* ASTDifferenceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96DF17704FF7006F40AC /* ASTDifferenceSpec.m */; };
 		54FE96E3177053FE006F40AC /* ASTUnion.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96E2177053FE006F40AC /* ASTUnion.m */; };
 		54FE96E517705560006F40AC /* ASTUnionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96E417705560006F40AC /* ASTUnionSpec.m */; };
+		54FE96ED17706265006F40AC /* ASTIntersection.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96EC17706265006F40AC /* ASTIntersection.m */; };
+		54FE96EF177068B2006F40AC /* ASTIntersectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96EE177068B2006F40AC /* ASTIntersectionSpec.m */; };
 		6DA0E311E2FE4D0091F50B0D /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B82A91E23E8448D2861527C1 /* libPods-Specs.a */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +136,9 @@
 		54FE96E1177053FE006F40AC /* ASTUnion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTUnion.h; sourceTree = "<group>"; };
 		54FE96E2177053FE006F40AC /* ASTUnion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTUnion.m; sourceTree = "<group>"; };
 		54FE96E417705560006F40AC /* ASTUnionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTUnionSpec.m; sourceTree = "<group>"; };
+		54FE96EB17706265006F40AC /* ASTIntersection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTIntersection.h; sourceTree = "<group>"; };
+		54FE96EC17706265006F40AC /* ASTIntersection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTIntersection.m; sourceTree = "<group>"; };
+		54FE96EE177068B2006F40AC /* ASTIntersectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTIntersectionSpec.m; sourceTree = "<group>"; };
 		6F8F6BC620F04200B843D72F /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 		B82A91E23E8448D2861527C1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -208,6 +213,8 @@
 				549DFB89175E4DD2005CAD4A /* ASTGroup.m */,
 				54E0ED69175A0D5B0076C6EA /* ASTHead.h */,
 				54E0ED6A175A0D5B0076C6EA /* ASTHead.m */,
+				54FE96EB17706265006F40AC /* ASTIntersection.h */,
+				54FE96EC17706265006F40AC /* ASTIntersection.m */,
 				54CE84BE174D839E006F960A /* ASTLift.h */,
 				54CE84BF174D839E006F960A /* ASTLift.m */,
 				54CE84B9174D74E1006F960A /* ASTMap.h */,
@@ -250,6 +257,7 @@
 				54A7FD42175CE45D004A7541 /* ASTFilterSpec.m */,
 				549DFB8D175E5526005CAD4A /* ASTGroupSpec.m */,
 				54E0ED6C175A0DF00076C6EA /* ASTHeadSpec.m */,
+				54FE96EE177068B2006F40AC /* ASTIntersectionSpec.m */,
 				54CE84C1174D93A6006F960A /* ASTLiftSpec.m */,
 				54CE84BC174D78C0006F960A /* ASTMapSpec.m */,
 				54A0BB2D175E647E001D06E2 /* ASTMinMaxSpec.m */,
@@ -424,6 +432,7 @@
 				357F376323C41EF675D2B956 /* ASTPartial.m in Sources */,
 				54FE96DE17704C7F006F40AC /* ASTDifference.m in Sources */,
 				54FE96E3177053FE006F40AC /* ASTUnion.m in Sources */,
+				54FE96ED17706265006F40AC /* ASTIntersection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +457,7 @@
 				546B5FEE176346AE00AE3EBC /* ASTPartialSpec.m in Sources */,
 				54FE96E017704FF7006F40AC /* ASTDifferenceSpec.m in Sources */,
 				54FE96E517705560006F40AC /* ASTUnionSpec.m in Sources */,
+				54FE96EF177068B2006F40AC /* ASTIntersectionSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
