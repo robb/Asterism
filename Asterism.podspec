@@ -15,7 +15,5 @@ Pod::Spec.new do |s|
   s.source_files = 'Asterism', 'Asterism/**/*.{h,m}'
   s.exclude_files = 'Specs'
 
-  s.public_header_files = 'Asterism/Asterism.h'
-
   s.requires_arc = true
 end
