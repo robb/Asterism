@@ -12,10 +12,16 @@
 
 OVERLOADABLE NSArray *ASTUnion(NSArray *array, NSArray *other)
 {
+    NSCParameterAssert(array != nil);
+    NSCParameterAssert(other != nil);
+
     return [array arrayByAddingObjectsFromArray:ASTDifference(other, array)];
 }
 
 OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other)
 {
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(other != nil);
+
     return [set setByAddingObjectsFromSet:other];
 }
