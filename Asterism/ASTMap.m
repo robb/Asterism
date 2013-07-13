@@ -14,6 +14,9 @@
 
 OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj))
 {
+    NSCParameterAssert(array != nil);
+    NSCParameterAssert(block != nil);
+
     return ASTMap(array, ^(id obj, NSUInteger _) {
         return block(obj);
     });
@@ -21,6 +24,9 @@ OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj))
 
 OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx))
 {
+    NSCParameterAssert(array != nil);
+    NSCParameterAssert(block != nil);
+
     NSMutableArray *result = [NSMutableArray array];
 
     ASTEach(array, ^(id obj, NSUInteger idx) {
@@ -36,6 +42,9 @@ OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx))
 
 OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj))
 {
+    NSCParameterAssert(dict != nil);
+    NSCParameterAssert(block != nil);
+
     return ASTMap(dict, ^(id _, id obj) {
         return block(obj);
     });
@@ -43,6 +52,9 @@ OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj))
 
 OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj))
 {
+    NSCParameterAssert(dict != nil);
+    NSCParameterAssert(block != nil);
+
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
 
     ASTEach(dict, ^(id key, id obj) {
@@ -58,6 +70,9 @@ OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj)
 
 OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj))
 {
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(block != nil);
+
     NSMutableSet *result = [NSMutableSet set];
 
     ASTEach(set, ^(id obj) {
