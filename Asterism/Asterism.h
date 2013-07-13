@@ -10,7 +10,9 @@
 
 #import "ASTDifference.h"
 #import "ASTEach.h"
+#import "ASTEach.h"
 #import "ASTFilter.h"
+#import "ASTFind.h"
 #import "ASTGroup.h"
 #import "ASTHead.h"
 #import "ASTIntersection.h"
