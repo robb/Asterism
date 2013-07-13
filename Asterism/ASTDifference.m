@@ -10,6 +10,9 @@
 
 OVERLOADABLE NSArray *ASTDifference(NSArray *array, NSArray *other)
 {
+    NSCParameterAssert(array != nil);
+    NSCParameterAssert(other != nil);
+
     NSMutableArray *result = [array mutableCopy];
 
     [result removeObjectsInArray:other];
@@ -19,7 +22,11 @@ OVERLOADABLE NSArray *ASTDifference(NSArray *array, NSArray *other)
 
 OVERLOADABLE NSSet *ASTDifference(NSSet *set, NSSet *other)
 {
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(other != nil);
+
     NSMutableSet *result = [set mutableCopy];
+
     [result minusSet:other];
 
     return [result copy];
