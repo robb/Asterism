@@ -10,6 +10,8 @@
 
 OVERLOADABLE NSArray *ASTTail(NSArray *array)
 {
+    NSCParameterAssert(array != nil);
+
     if (array.count <= 1) return @[];
 
     NSRange range = NSMakeRange(1, array.count - 1);

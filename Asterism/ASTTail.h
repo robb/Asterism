@@ -10,4 +10,10 @@
 
 #import "ASTConstants.h"
 
+// Returns all elements of an array after the first one.
+//
+// array - An array of elements. This argument must not be nil.
+//
+// Returns all elements after the first one. If the array has less than one
+// element, an empty array is returned.
 OVERLOADABLE NSArray *ASTTail(NSArray *array);
