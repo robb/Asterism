@@ -10,6 +10,9 @@
 
 OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id))
 {
+    NSCParameterAssert(array != nil);
+    NSCParameterAssert(block != nil);
+
     NSUInteger index = [array indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         return block(obj);
     }];
@@ -19,6 +22,9 @@ OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id))
 
 OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id, NSUInteger))
 {
+    NSCParameterAssert(array != nil);
+    NSCParameterAssert(block != nil);
+
     NSUInteger index = [array indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         return block(obj, idx);
     }];
@@ -28,6 +34,9 @@ OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id, NSUInteger))
 
 OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id))
 {
+    NSCParameterAssert(dict != nil);
+    NSCParameterAssert(block != nil);
+
     for (id key in dict) {
         id value = dict[key];
 
@@ -39,6 +48,9 @@ OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id))
 
 OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id, id))
 {
+    NSCParameterAssert(dict != nil);
+    NSCParameterAssert(block != nil);
+
     for (id key in dict) {
         id value = dict[key];
 
@@ -50,6 +62,9 @@ OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id, id))
 
 OVERLOADABLE id ASTFind(id<NSFastEnumeration> collection, BOOL(^block)(id obj))
 {
+    NSCParameterAssert(collection != nil);
+    NSCParameterAssert(block != nil);
+
     for (id obj in collection) {
         if (block(obj)) return obj;
     }
