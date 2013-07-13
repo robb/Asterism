@@ -10,6 +10,20 @@
 
 #import "ASTConstants.h"
 
+// Returns the intersection of two arrays.
+//
+// array - An array of elements. This argument must not be nil.
+// other - An array of elements. This argument must not be nil.
+//
+// Returns an array containing the elements of `array` that are also present in
+// `other`. The order is being maintained.
 OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other);
 
+// Returns the difference between two sets.
+//
+// set   - A set of elements. This argument must not be nil.
+// other - A set of elements. This argument must not be nil.
+//
+// Returns a set containing the elements of `set` that are also present in
+// `other`.
 OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other);

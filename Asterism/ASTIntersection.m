@@ -10,6 +10,9 @@
 
 OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other)
 {
+    NSCParameterAssert(array != nil);
+    NSCParameterAssert(other != nil);
+
     NSMutableArray *result = [array mutableCopy];
 
     for (id obj in array) {
@@ -23,6 +26,9 @@ OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other)
 
 OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other)
 {
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(other != nil);
+
     NSMutableSet *result = [set mutableCopy];
     [result intersectSet:other];
 
