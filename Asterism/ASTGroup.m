@@ -10,6 +10,9 @@
 
 OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id))
 {
+    NSCParameterAssert(collection != nil);
+    NSCParameterAssert(block != nil);
+
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
 
     for (id obj in collection) {
