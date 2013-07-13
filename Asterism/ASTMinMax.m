@@ -32,11 +32,16 @@ static NSComparator ASTUnboxComparator(NSNumber *(^comparator)(id, id))
 
 OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection)
 {
+    NSCParameterAssert(collection != nil);
+
     return ASTMin(collection, ASTCompare);
 }
 
 OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator)
 {
+    NSCParameterAssert(collection != nil);
+    NSCParameterAssert(comparator != nil);
+
     return ASTReduce(collection, ^id(id a, id b) {
         return comparator(a, b) ==  NSOrderedAscending ? a : b;
     });
@@ -44,6 +49,9 @@ OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator
 
 OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSNumber *(^comparator)(id, id))
 {
+    NSCParameterAssert(collection != nil);
+    NSCParameterAssert(comparator != nil);
+
     return ASTMin(collection, ASTUnboxComparator(comparator));
 }
 
@@ -51,11 +59,16 @@ OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSNumber *(^comparator)
 
 OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection)
 {
+    NSCParameterAssert(collection != nil);
+
     return ASTMax(collection, ASTCompare);
 }
 
 OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator)
 {
+    NSCParameterAssert(collection != nil);
+    NSCParameterAssert(comparator != nil);
+
     return ASTReduce(collection, ^id(id a, id b) {
         return comparator(a, b) ==  NSOrderedDescending ? a : b;
     });
@@ -63,5 +76,8 @@ OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator
 
 OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSNumber *(^comparator)(id, id))
 {
+    NSCParameterAssert(collection != nil);
+    NSCParameterAssert(comparator != nil);
+
     return ASTMax(collection, ASTUnboxComparator(comparator));
 }
