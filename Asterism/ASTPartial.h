@@ -12,6 +12,18 @@
 
 #import "ASTConstants.h"
 
+// This header declares a number of functions called ASTPartial and
+// ASTPartialRight.
+//
+// ASTPartial and ASTPartialRight each take two arguments.
+//
+// block - A block of arrity n. This parameter must not be nil.
+// obj   - An object.
+//
+// Both return a new block of arrity (n-1) by partially applying `obj` to block.
+// ASTPartial applies `obj` as the first argument of `block` whereas
+// ASTPartialRight applies `obj` as the last argument of `block`.
+
 #define ASTPartial_parameter_(INDEX, MAX) \
         id metamacro_if_eq(INDEX, metamacro_dec(MAX))()(,)
 

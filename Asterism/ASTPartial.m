@@ -31,6 +31,7 @@
 #define ASTPartial(ARG_COUNT) \
         OVERLOADABLE id (^ASTPartial(id(^block)(ASTPartial_parameters_(ARG_COUNT)), id obj))(ASTPartial_parameters_(metamacro_dec(ARG_COUNT))) \
         { \
+            NSCParameterAssert(block != nil); \
             return ^id (ASTPartial_named_parameters_(metamacro_dec(ARG_COUNT))) { \
                 metamacro_if_eq(1, ARG_COUNT) \
                     (return block(obj);) \
@@ -41,6 +42,7 @@
 #define ASTPartialRight(ARG_COUNT) \
         OVERLOADABLE id (^ASTPartialRight(id(^block)(ASTPartial_parameters_(ARG_COUNT)), id obj))(ASTPartial_parameters_(metamacro_dec(ARG_COUNT))) \
         { \
+            NSCParameterAssert(block != nil); \
             return ^id (ASTPartial_named_parameters_(metamacro_dec(ARG_COUNT))) { \
                 metamacro_if_eq(1, ARG_COUNT) \
                     (return block(obj);) \
