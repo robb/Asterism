@@ -27,6 +27,7 @@
 #define ASTNegate(...) \
         OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(__VA_ARGS__)))(__VA_ARGS__) \
         { \
+            NSCParameterAssert(block != nil);\
             return ^BOOL (ASTNegate_parameters(__VA_ARGS__)) {\
                 return !block(ASTNegate_arguments(__VA_ARGS__)); \
             }; \
