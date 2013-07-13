@@ -10,4 +10,9 @@
 
 #import "ASTConstants.h"
 
+// Returns the first element of an array.
+//
+// array - An array of elements. This argument must not be nil.
+//
+// Returns the first element or `nil` if the array is empty.
 OVERLOADABLE id ASTHead(NSArray *array);

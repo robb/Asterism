@@ -10,5 +10,7 @@
 
 OVERLOADABLE id ASTHead(NSArray *array)
 {
+    NSCParameterAssert(array != nil);
+
     return array.count > 0 ? array[0] : nil;
 }
