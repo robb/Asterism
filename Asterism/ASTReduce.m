@@ -10,6 +10,9 @@
 
 OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj))
 {
+    NSCParameterAssert(collection != nil);
+    NSCParameterAssert(block != nil);
+
     id current;
 
     BOOL firstRun = YES;
@@ -28,6 +31,9 @@ OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, 
 
 OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj))
 {
+    NSCParameterAssert(collection != nil);
+    NSCParameterAssert(block != nil);
+
     id current = memo;
 
     for (id obj in collection) {
