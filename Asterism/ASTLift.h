@@ -12,11 +12,48 @@
 
 typedef id (^ASTBlockVar)(id va, ...);
 
+// Lifts a selector into a block.
+//
+// selector - A selector.
+//
+// Returns a varargs block that invokes the `selector` on its first argument,
+// using all subsequent parameters as arguments.
+// If invoking the selector returns a primitive value, it is automatically boxed
+// in an NSValue or NSNumber.
+//
+// You should use the ASTLift0 or ASTLift macros for improved type-safety.
 ASTBlockVar ASTLiftVar(SEL selector);
 
+// Lifts a selector into a block.
+//
+// selector - A selector that takes no arguments.
+//
+// Returns a block of type id (^)(id) that invokes `selector` on its argument.
+// If invoking the selector returns a primitive value, it is automatically boxed
+// in an NSValue or NSNumber.
+// If the `selector` on the argument is of type `void`, the block returns `nil`.
 #define ASTLift0(SELECTOR) \
         ASTLift0_(SELECTOR)
 
+// Lifts a selector into a block.
+//
+// selector... - A variadic argument of selector components, each ending in ':'.
+//
+// Returns a block of the return-type id that takes on more argument than the
+// number of selector components it was created with.
+// Calling the block invokes `selector` on its first argument, using the
+// subsequent arguments as parameters.
+//
+// If invoking the selector returns a primitive value, it is automatically boxed
+// in an NSValue or NSNumber.
+// If the `selector` on the argument is of type `void`, the block returns `nil`.
+//
+// Example
+//
+//    id (^block)(id, id, id) = ASTLift(setValue:, forKeyPath:);
+//
+//    block(a, b, c); // Equivalent to [a setValue:b forKeyPath:c];
+//
 #define ASTLift(...) \
         ASTLift_(__VA_ARGS__)
 
