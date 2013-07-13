@@ -12,6 +12,9 @@
 
 OVERLOADABLE NSArray *ASTPluck(NSArray *array, NSString *keyPath)
 {
+    NSCParameterAssert(array != nil);
+    NSCParameterAssert(keyPath != nil);
+
     return ASTMap(array, ^id(id obj) {
         return [obj valueForKeyPath:keyPath];
     });
@@ -19,6 +22,9 @@ OVERLOADABLE NSArray *ASTPluck(NSArray *array, NSString *keyPath)
 
 OVERLOADABLE NSSet *ASTPluck(NSSet *set, NSString *keyPath)
 {
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(keyPath != nil);
+
     return ASTMap(set, ^id(id obj) {
         return [obj valueForKeyPath:keyPath];
     });
