@@ -12,6 +12,19 @@
 
 #import "metamacros.h"
 
+// ASTCompose applies one block to the result of another.
+//
+// Given two blocks `f` and `g`, ASTCompose returns a new block taking the
+// arguments to `g` and applying `f` to the result of calling `g` with the
+// given arguments. Mathematically: ASTCompose(f, g)(x, ...) = f(g(x, ...))
+//
+// Example:
+//
+//     ASTCompose(
+//         ASTLift0(length),
+//         ASTPartialRight(ASTLift(objectForKey:), @"foo")
+//     )(@{ @"foo": @"bar" }) // == @3
+
 #define ASTCompose_parameter_(INDEX, MAX) \
 id metamacro_if_eq(INDEX, metamacro_dec(MAX))()(,)
 
