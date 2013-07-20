@@ -31,6 +31,8 @@ metamacro_for_cxt(COUNT, ASTCompose_argument_,, COUNT)
 #define ASTCompose(ARG_COUNT) \
 OVERLOADABLE id (^ASTCompose(id(^f)(id), id(^g)(ASTCompose_parameters_(ARG_COUNT))))(ASTCompose_parameters_(ARG_COUNT)) \
 { \
+    NSCParameterAssert(f != nil); \
+    NSCParameterAssert(g != nil); \
     return ^id(ASTCompose_named_parameters_(ARG_COUNT)) { \
         return f(g(ASTCompose_arguments_(ARG_COUNT))); \
     }; \
