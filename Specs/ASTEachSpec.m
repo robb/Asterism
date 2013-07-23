@@ -89,6 +89,46 @@ describe(@"for dictionaries", ^{
     });
 });
 
+describe(@"for ordered sets", ^{
+    it(@"should not call the block when given an empty set", ^{
+        __block NSUInteger calls = 0;
+
+        ASTEach([NSOrderedSet orderedSet], ^(id obj) {
+            calls++;
+        });
+
+        expect(calls).to.equal(0);
+    });
+
+    it(@"should call the block once for every object", ^{
+        __block NSUInteger calls = 0;
+
+        ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ^(id obj) {
+            calls++;
+        });
+
+        expect(calls).to.equal(3);
+    });
+
+    it(@"should optionally pass in the index", ^{
+        ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ^(id obj, NSUInteger idx) {
+            expect(obj).to.equal(@(idx));
+        });
+    });
+
+    it(@"should iterate over the array in order", ^{
+        __block NSUInteger calls = 0;
+
+        ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ^(id obj, NSUInteger idx) {
+            expect(calls++).to.equal(idx);
+        });
+    });
+
+    it(@"should work with lifted blocks", ^{
+        ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ASTLift0(description));
+    });
+});
+
 describe(@"for objects implementing <NSFastEnumeration>", ^{
     it(@"should not call the block when given an empty collection", ^{
         __block NSUInteger calls = 0;
