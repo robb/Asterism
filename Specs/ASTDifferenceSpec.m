@@ -38,4 +38,14 @@ describe(@"for sets", ^{
     });
 });
 
+describe(@"for ordered sets", ^{
+    it(@"should return all values from the first set that are not present in the other", ^{
+        NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3, @4 ]];
+
+        NSOrderedSet *result = ASTDifference(before, [NSOrderedSet orderedSetWithArray:@[ @3, @4 ]]);
+
+        expect(result).to.equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]]));
+    });
+});
+
 SpecEnd
