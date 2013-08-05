@@ -40,6 +40,16 @@ describe(@"for sets", ^{
     });
 });
 
+describe(@"for ordered sets", ^{
+    it(@"should return YES for an empty set", ^{
+        expect(ASTEmpty([NSOrderedSet orderedSet])).to.beTruthy();
+    });
+
+    it(@"should return NO for a non-empty set", ^{
+        expect(ASTEmpty([NSOrderedSet orderedSetWithObject:@1])).to.beFalsy();
+    });
+});
+
 describe(@"for objects that implement NSFastEnumeration", ^{
     it(@"should return YES for empty collections", ^{
         id<NSFastEnumeration> collection = @[];
@@ -53,6 +63,5 @@ describe(@"for objects that implement NSFastEnumeration", ^{
         expect(ASTEmpty(collection)).to.beFalsy();
     });
 });
-
 
 SpecEnd
