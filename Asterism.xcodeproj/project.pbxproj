@@ -25,6 +25,8 @@
 		54A7FD3E175CDCCE004A7541 /* LiftTestClassA.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A7FD3D175CDCCE004A7541 /* LiftTestClassA.m */; };
 		54A7FD41175CDCF9004A7541 /* LiftTestClassB.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A7FD40175CDCF9004A7541 /* LiftTestClassB.m */; };
 		54A7FD43175CE45D004A7541 /* ASTFilterSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A7FD42175CE45D004A7541 /* ASTFilterSpec.m */; };
+		54AD1DF617AF31130001971C /* ASTEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AD1DF517AF31130001971C /* ASTEmpty.m */; };
+		54AD1DF817AF31FD0001971C /* ASTEmptySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AD1DF717AF31FD0001971C /* ASTEmptySpec.m */; };
 		54CA8D1C177739B8001BCD9F /* ASTFindSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CA8D1B1777396E001BCD9F /* ASTFindSpec.m */; };
 		54CE84BB174D74E1006F960A /* ASTMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BA174D74E1006F960A /* ASTMap.m */; };
 		54CE84BD174D78C0006F960A /* ASTMapSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BC174D78C0006F960A /* ASTMapSpec.m */; };
@@ -106,6 +108,9 @@
 		54A7FD3F175CDCF9004A7541 /* LiftTestClassB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiftTestClassB.h; sourceTree = "<group>"; };
 		54A7FD40175CDCF9004A7541 /* LiftTestClassB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiftTestClassB.m; sourceTree = "<group>"; };
 		54A7FD42175CE45D004A7541 /* ASTFilterSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTFilterSpec.m; sourceTree = "<group>"; };
+		54AD1DF417AF31130001971C /* ASTEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTEmpty.h; sourceTree = "<group>"; };
+		54AD1DF517AF31130001971C /* ASTEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTEmpty.m; sourceTree = "<group>"; };
+		54AD1DF717AF31FD0001971C /* ASTEmptySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTEmptySpec.m; sourceTree = "<group>"; };
 		54CA8D1B1777396E001BCD9F /* ASTFindSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASTFindSpec.m; sourceTree = "<group>"; };
 		54CE84B9174D74E1006F960A /* ASTMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTMap.h; sourceTree = "<group>"; };
 		54CE84BA174D74E1006F960A /* ASTMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTMap.m; sourceTree = "<group>"; };
@@ -212,6 +217,8 @@
 				54FE96DD17704C7F006F40AC /* ASTDifference.m */,
 				54E1B64617215678008A2175 /* ASTEach.h */,
 				54E1B64717215678008A2175 /* ASTEach.m */,
+				54AD1DF417AF31130001971C /* ASTEmpty.h */,
+				54AD1DF517AF31130001971C /* ASTEmpty.m */,
 				54E0ED73175A1ABD0076C6EA /* ASTFilter.h */,
 				54E0ED74175A1ABD0076C6EA /* ASTFilter.m */,
 				5410F3EC177734E700124E45 /* ASTFind.h */,
@@ -261,6 +268,7 @@
 			children = (
 				54FE96DF17704FF7006F40AC /* ASTDifferenceSpec.m */,
 				54E1B64917215783008A2175 /* ASTEachSpec.m */,
+				54AD1DF717AF31FD0001971C /* ASTEmptySpec.m */,
 				54A7FD42175CE45D004A7541 /* ASTFilterSpec.m */,
 				54CA8D1B1777396E001BCD9F /* ASTFindSpec.m */,
 				549DFB8D175E5526005CAD4A /* ASTGroupSpec.m */,
@@ -442,6 +450,7 @@
 				54FE96DE17704C7F006F40AC /* ASTDifference.m in Sources */,
 				54FE96E3177053FE006F40AC /* ASTUnion.m in Sources */,
 				54FE96ED17706265006F40AC /* ASTIntersection.m in Sources */,
+				54AD1DF617AF31130001971C /* ASTEmpty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +477,7 @@
 				54FE96E017704FF7006F40AC /* ASTDifferenceSpec.m in Sources */,
 				54FE96E517705560006F40AC /* ASTUnionSpec.m in Sources */,
 				54FE96EF177068B2006F40AC /* ASTIntersectionSpec.m in Sources */,
+				54AD1DF817AF31FD0001971C /* ASTEmptySpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
