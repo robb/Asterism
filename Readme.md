@@ -19,7 +19,7 @@ of Cocoa's collections.
 
 ## Lifting
 
-A notable feature of Asterism is that it allows you to lift selectores into
+A notable feature of Asterism is that it allows you to lift selectors into
 blocks. Together with [partial block evaluation](Asterism/ASTPartial.h), this
 allows you to write very concise code.
 
