@@ -59,3 +59,23 @@ OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id key, id
 //
 // Returns a set of all values in `set` that pass the test.
 OVERLOADABLE NSSet *ASTFilter(NSSet *set, BOOL(^block)(id obj));
+
+// Filters out the elements of an ordered set that fail a test.
+//
+// set   - An ordered set of elements. This argument must not be nil.
+// block - A block that takes an element as its only argument and returns `YES`
+//         if the element passes the test. The block must no be nil.
+//
+// Returns an ordered set of all values in `set` that pass the test.
+OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id obj));
+
+// Filters out the elements of an ordered set that fail a test.
+//
+// set   - An ordered set of elements. This argument must not be nil.
+// block - A block that takes an element as well as its index in `set` as its
+//         arguments and returns `YES` if the element passes the test. The block
+//         must no be nil.
+//
+// Returns an ordered set of all values in `set` that pass the test. The order
+// is being maintained.
+OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx));

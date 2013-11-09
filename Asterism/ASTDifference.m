@@ -31,3 +31,15 @@ OVERLOADABLE NSSet *ASTDifference(NSSet *set, NSSet *other)
 
     return [result copy];
 }
+
+OVERLOADABLE NSOrderedSet *ASTDifference(NSOrderedSet *set, NSOrderedSet *other)
+{
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(other != nil);
+
+    NSMutableOrderedSet *result = [set mutableCopy];
+
+    [result minusOrderedSet:other];
+
+    return [result copy];
+}

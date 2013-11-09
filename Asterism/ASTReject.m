@@ -52,3 +52,19 @@ OVERLOADABLE NSSet *ASTReject(NSSet *set, BOOL(^block)(id obj))
 
     return ASTFilter(set, ASTNegate(block));
 }
+
+OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj))
+{
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(block != nil);
+
+    return ASTFilter(set, ASTNegate(block));
+}
+
+OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx))
+{
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(block != nil);
+
+    return ASTFilter(set, ASTNegate(block));
+}

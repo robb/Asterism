@@ -64,6 +64,16 @@ OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id key, id obj))
     }];
 }
 
+OVERLOADABLE void ASTEach(NSOrderedSet *set, void(^iterator)(id, NSUInteger))
+{
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(iterator != nil);
+
+    [set enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        iterator(obj, idx);
+    }];
+}
+
 OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, void(^iterator)(id obj))
 {
     NSCParameterAssert(enumerable != nil);

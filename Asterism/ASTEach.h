@@ -52,6 +52,13 @@ OVERLOADABLE void ASTEach(NSDictionary *dict, id(^iterator)(id obj));
 //            must not be nil.
 OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id key, id obj));
 
+// Iterates over all elements of an ordered set, as well as their indexes.
+//
+// set      - An ordered set of elements. This argument must not be nil.
+// iterator - A block that takes an element and its index in `set` as its
+//            arguments. The block must not be nil.
+OVERLOADABLE void ASTEach(NSOrderedSet *set, void(^iterator)(id obj, NSUInteger idx));
+
 // Iterates over elements in a collection.
 //
 // enumerable - An object that implements NSFastEnumeration. This argument must

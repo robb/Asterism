@@ -27,4 +27,13 @@ describe(@"for sets", ^{
     });
 });
 
+describe(@"for ordered sets", ^{
+    it(@"should return an ordered set containing the objects' values for the given key path", ^{
+        NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @"a", @"ab", @"abc" ]];
+        NSOrderedSet *after = ASTPluck(before, @"length");
+
+        expect(after).to.equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]]));
+    });
+});
+
 SpecEnd

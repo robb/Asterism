@@ -23,6 +23,11 @@ OVERLOADABLE BOOL ASTEmpty(NSSet *set)
     return set.count == 0;
 }
 
+OVERLOADABLE BOOL ASTEmpty(NSOrderedSet *set)
+{
+    return set.count == 0;
+}
+
 OVERLOADABLE BOOL ASTEmpty(id<NSFastEnumeration> collection)
 {
     for (id _ in collection) {

@@ -65,3 +65,27 @@ OVERLOADABLE NSSet *ASTFilter(NSSet *set, BOOL(^block)(id))
         return block(obj);
     }];
 }
+
+OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id))
+{
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(block != nil);
+
+    NSIndexSet *indexes = [set indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return block(obj);
+    }];
+
+    return [NSOrderedSet orderedSetWithArray:[set objectsAtIndexes:indexes]];
+}
+
+OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id, NSUInteger))
+{
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(block != nil);
+
+    NSIndexSet *indexes = [set indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return block(obj, idx);
+    }];
+
+    return [NSOrderedSet orderedSetWithArray:[set objectsAtIndexes:indexes]];
+}

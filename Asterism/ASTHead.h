@@ -16,3 +16,10 @@
 //
 // Returns the first element or `nil` if the array is empty.
 OVERLOADABLE id ASTHead(NSArray *array);
+
+// Returns the first element of an ordered set.
+//
+// set - An ordered set of elements. This argument must not be nil.
+//
+// Returns the first element or `nil` if the ordered set is empty.
+OVERLOADABLE id ASTHead(NSOrderedSet *set);
