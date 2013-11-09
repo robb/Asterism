@@ -34,3 +34,14 @@ OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other)
 
     return [result copy];
 }
+
+OVERLOADABLE NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other)
+{
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(other != nil);
+
+    NSMutableOrderedSet *result = [set mutableCopy];
+    [result intersectOrderedSet:other];
+
+    return [result copy];
+}

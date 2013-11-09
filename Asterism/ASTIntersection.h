@@ -27,3 +27,12 @@ OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other);
 // Returns a set containing the elements of `set` that are also present in
 // `other`.
 OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other);
+
+// Returns the difference between two ordered sets.
+//
+// set   - An ordered set of elements. This argument must not be nil.
+// other - An ordered set of elements. This argument must not be nil.
+//
+// Returns a set containing the elements of `set` that are also present in
+// `other`. The order is being maintained.
+OVERLOADABLE NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other);
