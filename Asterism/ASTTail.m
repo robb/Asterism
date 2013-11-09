@@ -18,3 +18,14 @@ OVERLOADABLE NSArray *ASTTail(NSArray *array)
 
     return [array subarrayWithRange:range];
 }
+
+OVERLOADABLE NSOrderedSet *ASTTail(NSOrderedSet *set)
+{
+    NSCParameterAssert(set != nil);
+
+    if (set.count <= 1) return [NSOrderedSet orderedSet];
+
+    NSRange range = NSMakeRange(1, set.count - 1);
+
+    return [NSOrderedSet orderedSetWithArray:[set.array subarrayWithRange:range]];
+}
