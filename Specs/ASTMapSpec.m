@@ -174,4 +174,63 @@ describe(@"for sets", ^{
     });
 });
 
+describe(@"for ordered sets", ^{
+    it(@"should not call the block when given an empty array", ^{
+        __block NSUInteger calls = 0;
+
+        ASTMap([NSOrderedSet orderedSet], ^(id obj) {
+            return @(calls++);
+        });
+
+        expect(calls).to.equal(0);
+    });
+
+    it(@"should replace the objects with the result of the block", ^{
+        NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+
+        NSOrderedSet *after = ASTMap(before, ASTLift0(description));
+
+        expect(after).to.equal(([NSOrderedSet orderedSetWithArray:@[ @"1", @"2", @"3" ]]));
+    });
+
+    it(@"should remove all elements for which the block returns nil", ^{
+        NSOrderedSet *numbers = [NSOrderedSet orderedSetWithArray:@[ @0, @1, @2, @3 ]];
+
+        NSOrderedSet *even = ASTMap(numbers, ^(NSNumber *number) {
+            return number.integerValue % 2 == 0 ? number : nil;
+        });
+
+        expect(even).to.equal(([NSOrderedSet orderedSetWithArray:@[ @0, @2 ]]));
+    });
+
+    it(@"should call the block once for every object", ^{
+        NSOrderedSet *numbers = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+        __block NSUInteger calls = 0;
+
+        ASTMap(numbers, ^(id obj) {
+            return @(calls++);
+        });
+
+        expect(calls).to.equal(3);
+    });
+
+    it(@"should optionally pass in the index", ^{
+        NSOrderedSet *numbers = [NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]];
+
+        ASTMap(numbers, ^(id obj, NSUInteger idx) {
+            expect(obj).to.equal(@(idx));
+
+            return @(idx);
+        });
+    });
+
+    it(@"should maintain order", ^{
+        NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+
+        NSOrderedSet *after = ASTMap(before, ^(id obj) { return obj; });
+        
+        expect(after).to.equal(before);
+    });
+});
+
 SpecEnd
