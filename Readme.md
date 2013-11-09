@@ -45,6 +45,7 @@ Asterism currently supports the following operations:
 
 * [difference](Asterism/ASTDifference.h)
 * [each](Asterism/ASTEach.h)
+* [empty](Asterism/ASTEmpty.h)
 * [filter](Asterism/ASTFilter.h)
 * [find](Asterism/ASTFind.h)
 * [group](Asterism/ASTGroup.h)
