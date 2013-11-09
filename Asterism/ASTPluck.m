@@ -29,3 +29,13 @@ OVERLOADABLE NSSet *ASTPluck(NSSet *set, NSString *keyPath)
         return [obj valueForKeyPath:keyPath];
     });
 }
+
+OVERLOADABLE NSOrderedSet *ASTPluck(NSOrderedSet *set, NSString *keyPath)
+{
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(keyPath != nil);
+
+    return ASTMap(set, ^id(id obj) {
+        return [obj valueForKeyPath:keyPath];
+    });
+}
