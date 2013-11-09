@@ -25,3 +25,14 @@ OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other)
 
     return [set setByAddingObjectsFromSet:other];
 }
+
+OVERLOADABLE NSOrderedSet *ASTUnion(NSOrderedSet *set, NSOrderedSet *other)
+{
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(other != nil);
+
+    NSMutableOrderedSet *result = [set mutableCopy];
+    [result unionOrderedSet:other];
+
+    return result;
+}
