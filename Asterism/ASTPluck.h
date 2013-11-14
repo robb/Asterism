@@ -10,7 +10,7 @@
 
 #import "ASTConstants.h"
 
-// Extracts a value for a given key path from all elements in an array.
+// Extracts a value for a given key path from all elements in a collection.
 //
 // collection - An object that implements NSFastEnumeration. This argument must
 //              not be nil.
