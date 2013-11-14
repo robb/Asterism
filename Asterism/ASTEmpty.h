@@ -19,5 +19,8 @@ OVERLOADABLE BOOL ASTEmpty(NSDictionary *dictionary);
 // Returns YES if `set` is empty.
 OVERLOADABLE BOOL ASTEmpty(NSSet *set);
 
+// Returns YES if `set` is empty.
+OVERLOADABLE BOOL ASTEmpty(NSOrderedSet *set);
+
 // Returns YES if `collection` is empty.
 OVERLOADABLE BOOL ASTEmpty(id<NSFastEnumeration> collection);

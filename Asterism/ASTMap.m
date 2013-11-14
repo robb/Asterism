@@ -85,3 +85,31 @@ OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj))
 
     return result;
 }
+
+OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj))
+{
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(block != nil);
+
+    return ASTMap(set, ^(id obj, NSUInteger _) {
+        return block(obj);
+    });
+}
+
+OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj, NSUInteger idx))
+{
+    NSCParameterAssert(set != nil);
+    NSCParameterAssert(block != nil);
+
+    NSMutableOrderedSet *result = [NSMutableOrderedSet orderedSet];
+
+    ASTEach(set, ^(id obj, NSUInteger idx) {
+        id transformed = block(obj, idx);
+
+        if (transformed != nil) {
+            [result addObject:transformed];
+        }
+    });
+
+    return result;
+}

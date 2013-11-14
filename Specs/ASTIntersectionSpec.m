@@ -35,4 +35,23 @@ describe(@"for sets", ^{
     });
 });
 
+describe(@"for ordered sets", ^{
+    it(@"should return all values present in both sets", ^{
+        NSOrderedSet *a = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+        NSOrderedSet *b = [NSOrderedSet orderedSetWithArray:@[ @5, @4, @3 ]];
+
+        NSOrderedSet *result = ASTIntersection(a, b);
+
+        expect(result).to.equal(([NSOrderedSet orderedSetWithArray:@[ @3 ]]));
+    });
+
+    it(@"should should maintain order", ^{
+        NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+
+        NSOrderedSet *result = ASTIntersection(set, set);
+
+        expect(result).to.equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]]));
+    });
+});
+
 SpecEnd

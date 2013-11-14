@@ -27,3 +27,12 @@ OVERLOADABLE NSArray *ASTDifference(NSArray *array, NSArray *other);
 // Returns a set containing the elements of `set` that are not present in
 // `other`.
 OVERLOADABLE NSSet *ASTDifference(NSSet *set, NSSet *other);
+
+// Returns the difference between two ordered sets.
+//
+// set   - A set of elements. This argument must not be nil.
+// other - A set of elements. This argument must not be nil.
+//
+// Returns a set containing the elements of `set` that are not present in
+// `other`.
+OVERLOADABLE NSOrderedSet *ASTDifference(NSOrderedSet *set, NSOrderedSet *other);

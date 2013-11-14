@@ -27,3 +27,13 @@ OVERLOADABLE NSArray *ASTUnion(NSArray *array, NSArray *other);
 //
 // Returns a set containing the elements of `set` and `other`.
 OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other);
+
+// Returns the union of two ordered sets.
+//
+// set   - An orderd set of elements. This argument must not be nil.
+// other - An orderd set of elements. This argument must not be nil.
+//
+// Returns an orderd set containing all elements of `set`, concatenated with all
+// elements of `other` not already present in `set`. The order is being
+// maintained.
+OVERLOADABLE NSOrderedSet *ASTUnion(NSOrderedSet *set, NSOrderedSet *other);

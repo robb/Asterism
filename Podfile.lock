@@ -3,8 +3,8 @@ PODS:
   - Specta (0.1.11)
 
 DEPENDENCIES:
-  - Expecta (= 0.2.3)
-  - Specta (= 0.1.11)
+  - Expecta (~> 0.2.3)
+  - Specta (~> 0.1.11)
 
 SPEC CHECKSUMS:
   Expecta: dbc4a27fabb853bdd2e907e33f11ee43a9a47d0c

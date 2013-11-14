@@ -6,26 +6,22 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTMap.h"
-
 #import "ASTPluck.h"
 
-OVERLOADABLE NSArray *ASTPluck(NSArray *array, NSString *keyPath)
+OVERLOADABLE NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPath)
 {
-    NSCParameterAssert(array != nil);
+    NSCParameterAssert(collection != nil);
     NSCParameterAssert(keyPath != nil);
 
-    return ASTMap(array, ^id(id obj) {
-        return [obj valueForKeyPath:keyPath];
-    });
-}
+    NSMutableArray *result = [NSMutableArray array];
 
-OVERLOADABLE NSSet *ASTPluck(NSSet *set, NSString *keyPath)
-{
-    NSCParameterAssert(set != nil);
-    NSCParameterAssert(keyPath != nil);
+    for (id obj in collection) {
+        id value = [obj valueForKeyPath:keyPath];
 
-    return ASTMap(set, ^id(id obj) {
-        return [obj valueForKeyPath:keyPath];
-    });
+        if (value != nil) {
+            [result addObject:value];
+        }
+    }
+
+    return result;
 }

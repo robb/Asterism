@@ -40,4 +40,15 @@ describe(@"for sets", ^{
     });
 });
 
+describe(@"for ordered sets", ^{
+    it(@"should return an ordered of unique objects present in both sets", ^{
+        NSOrderedSet *a = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+        NSOrderedSet *b = [NSOrderedSet orderedSetWithArray:@[ @5, @4, @3 ]];
+
+        NSOrderedSet *result = ASTUnion(a, b);
+
+        expect(result).to.equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2, @3, @5, @4 ]]));
+    });
+});
+
 SpecEnd

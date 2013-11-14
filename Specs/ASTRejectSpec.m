@@ -71,4 +71,30 @@ describe(@"for sets", ^{
     });
 });
 
+describe(@"for ordered sets", ^{
+    NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+
+    it(@"should remove all objects that pass the test", ^{
+        NSOrderedSet *after = ASTReject(before, ^BOOL(NSNumber *obj) {
+            return obj.integerValue % 2 == 1;
+        });
+
+        expect(after).to.equal([NSOrderedSet orderedSetWithObject:@2]);
+    });
+
+    it(@"should optionally pass in the index", ^{
+        NSOrderedSet *after = ASTReject(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
+            return idx < 2;
+        });
+
+        expect(after).to.equal([NSOrderedSet orderedSetWithObject:@3]);
+    });
+
+    it(@"should maintain order", ^{
+        NSOrderedSet *after = ASTReject(before, ^BOOL(NSNumber *obj) { return NO; });
+
+        expect(after).to.equal(before);
+    });
+});
+
 SpecEnd

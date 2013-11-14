@@ -64,3 +64,25 @@ OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj)
 // applied. If `block` returns `nil`, the element is not present in the returned
 // set.
 OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj));
+
+// Maps a block across an ordered set.
+//
+// set   - An orderd set of elements. This argument must not be nil.
+// block - A block that takes an element as its only argument and returns a new
+//         element. The block must not be nil.
+//
+// Returns a set that contains all values of `set` after `block` has been
+// applied. If `block` returns `nil`, the element is not present in the returned
+// set. The order is being maintained.
+OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj));
+
+// Maps a block across an ordered set.
+//
+// set   - An orderd set of elements. This argument must not be nil.
+// block - A block that takes an element and its index in `set` as its
+//         arguments and returns a new element. The block must not be nil.
+//
+// Returns a set that contains all values of `set` after `block` has been
+// applied. If `block` returns `nil`, the element is not present in the returned
+// set. The order is being maintained.
+OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx));
