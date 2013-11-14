@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTMap.h"
-
 #import "ASTPluck.h"
 
 OVERLOADABLE NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPath)
@@ -26,5 +24,4 @@ OVERLOADABLE NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPa
     }
 
     return result;
-
 }
