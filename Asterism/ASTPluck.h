@@ -10,32 +10,14 @@
 
 #import "ASTConstants.h"
 
-// Extracts a value for a given key path from all elements in an array.
+// Extracts a value for a given key path from all elements in a collection.
 //
-// array   - An array of elements. This argument must not be nil.
-// keyPath - A key path. This argument must not be nil.
+// collection - An object that implements NSFastEnumeration. This argument must
+//              not be nil.
+// keyPath    - A key path. This argument must not be nil.
 //
-// Returns an array of the values that the elements in `array` return for
+// Returns an array of the values that the elements in `collection` return for
 // `keyPath`. If an element returns nil when invoked with -valueForKeyPath:,
-// it is not present in the returned array. The order is being maintained.
-OVERLOADABLE NSArray *ASTPluck(NSArray *array, NSString *keyPath);
-
-// Extracts a value for a given key path from all elements in a set.
-//
-// set     - A set of elements. This argument must not be nil.
-// keyPath - A key path. This argument must not be nil.
-//
-// Returns a set of the values that the elements in `set` return for `keyPath`.
-// If an element returns nil when invoked with -valueForKeyPath:,  it is not
-// present in the returned set.
-OVERLOADABLE NSSet *ASTPluck(NSSet *set, NSString *keyPath);
-
-// Extracts a value for a given key path from all elements in an ordered set.
-//
-// set     - An orderd set of elements. This argument must not be nil.
-// keyPath - A key path. This argument must not be nil.
-//
-// Returns an ordered set of the values that the elements in `set` return for
-// `keyPath`. If an element returns nil when invoked with -valueForKeyPath:, it
-// is not present in the returned set. The order is being maintained.
-OVERLOADABLE NSOrderedSet *ASTPluck(NSOrderedSet *set, NSString *keyPath);
+// it is not present in the returned array. If possible, the order is being
+// maintained.
+OVERLOADABLE NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPath);
