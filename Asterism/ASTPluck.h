@@ -12,8 +12,7 @@
 
 // Extracts a value for a given key path from all elements in a collection.
 //
-// collection - An object that implements NSFastEnumeration. This argument must
-//              not be nil.
+// collection - An object that implements NSFastEnumeration.
 // keyPath    - A key path. This argument must not be nil.
 //
 // Returns an array of the values that the elements in `collection` return for
