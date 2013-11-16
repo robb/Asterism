@@ -12,7 +12,7 @@
 
 // Finds an element in an array.
 //
-// array - An array of elements. This argument must not be nil.
+// array - An array of elements.
 // block - A block that takes an element as its only argument and returns `YES`
 //         if it matches the search criteria. The block must not be nil.
 //
@@ -22,7 +22,7 @@ OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj));
 
 // Finds an element in an array.
 //
-// array - An array of elements. This argument must not be nil.
+// array - An array of elements.
 // block - A block that takes an element and its index in `array` as its
 //         arguments and returns `YES` if this is they match the search
 //         criteria. The block must not be nil.
@@ -33,7 +33,7 @@ OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
 
 // Finds a value in a dictionary.
 //
-// dict  - A dictionary of elements. This argument must not be nil.
+// dict  - A dictionary of elements.
 // block - A block that takes a value as its argument and returns `YES` if it
 //         matches the search criteria. The block must not be nil.
 //
@@ -43,7 +43,7 @@ OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id obj));
 
 // Finds a value in a dictionary.
 //
-// dict  - A dictionary of elements. This argument must not be nil.
+// dict  - A dictionary of elements.
 // block - A block that takes a key and its value as its arguments and returns
 //         `YES` if they match the search criteria. The block must not be nil.
 //
