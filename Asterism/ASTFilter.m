@@ -10,7 +10,6 @@
 
 OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id))
 {
-    NSCParameterAssert(array != nil);
     NSCParameterAssert(block != nil);
 
     NSIndexSet *indexes = [array indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
@@ -22,7 +21,6 @@ OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id))
 
 OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id, NSUInteger))
 {
-    NSCParameterAssert(array != nil);
     NSCParameterAssert(block != nil);
 
     NSIndexSet *indexes = [array indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
@@ -34,7 +32,6 @@ OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id, NSUInteger))
 
 OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id))
 {
-    NSCParameterAssert(dict != nil);
     NSCParameterAssert(block != nil);
 
     NSSet *keys = [dict keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
@@ -46,7 +43,6 @@ OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id))
 
 OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id, id))
 {
-    NSCParameterAssert(dict != nil);
     NSCParameterAssert(block != nil);
 
     NSSet *keys = [dict keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
@@ -58,7 +54,6 @@ OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id, id))
 
 OVERLOADABLE NSSet *ASTFilter(NSSet *set, BOOL(^block)(id))
 {
-    NSCParameterAssert(set != nil);
     NSCParameterAssert(block != nil);
 
     return [set objectsPassingTest:^BOOL(id obj, BOOL *stop) {
@@ -68,7 +63,6 @@ OVERLOADABLE NSSet *ASTFilter(NSSet *set, BOOL(^block)(id))
 
 OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id))
 {
-    NSCParameterAssert(set != nil);
     NSCParameterAssert(block != nil);
 
     NSIndexSet *indexes = [set indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
@@ -80,7 +74,6 @@ OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id))
 
 OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id, NSUInteger))
 {
-    NSCParameterAssert(set != nil);
     NSCParameterAssert(block != nil);
 
     NSIndexSet *indexes = [set indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
