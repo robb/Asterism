@@ -12,7 +12,7 @@
 
 // Filters out the elements of an array that pass a test.
 //
-// array - An array of elements. This argument must not be nil.
+// array - An array of elements.
 // block - A block that takes an element as its only argument and returns `YES`
 //         if the element passes the test. The block must no be nil.
 //
@@ -22,7 +22,7 @@ OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj));
 
 // Filters out the elements of an array that pass a test.
 //
-// array - An array of elements. This argument must not be nil.
+// array - An array of elements.
 // block - A block that takes an element as well as its index in `array` as its
 //         arguments and returns `YES` if the element passes the test. The block
 //         must no be nil.
@@ -33,7 +33,7 @@ OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj, NSUInteger 
 
 // Filters out the values of a dictionary that pass a test.
 //
-// dict  - A dictionary of elements. This argument must not be nil.
+// dict  - A dictionary of elements.
 // block - A block that takes a value of `dict` as its only argument and returns
 //         `YES` if the element passes the test. The block must no be nil.
 //
@@ -43,7 +43,7 @@ OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id obj));
 
 // Filters out the keys and values of a dictionary that pass a test.
 //
-// dict  - A dictionary of elements. This argument must not be nil.
+// dict  - A dictionary of elements.
 // block - A block that takes a key and a value of `dict` as its arguments and
 //         returns `YES` if the element passes the test. The block must no be
 //         nil.
@@ -53,7 +53,7 @@ OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id key, id
 
 // Filters out the elements of a set that pass a test.
 //
-// set   - An array of elements. This argument must not be nil.
+// set   - An array of elements.
 // block - A block that takes an element as its only argument and returns `YES`
 //         if the element passes the test. The block must no be nil.
 //
@@ -62,7 +62,7 @@ OVERLOADABLE NSSet *ASTReject(NSSet *set, BOOL(^block)(id obj));
 
 // Filters out the elements of an ordered set that pass a test.
 //
-// set   - An ordered set of elements. This argument must not be nil.
+// set   - An ordered set of elements.
 // block - A block that takes an element as its only argument and returns `YES`
 //         if the element passes the test. The block must no be nil.
 //
@@ -71,7 +71,7 @@ OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj));
 
 // Filters out the elements of an ordered set that pass a test.
 //
-// set   - An ordered set of elements. This argument must not be nil.
+// set   - An ordered set of elements.
 // block - A block that takes an element as well as its index in `set` as its
 //         arguments and returns `YES` if the element passes the test. The block
 //         must no be nil.
