@@ -12,8 +12,8 @@
 
 // Returns the union of two arrays.
 //
-// array - An array of elements. This argument must not be nil.
-// other - An array of elements. This argument must not be nil.
+// array - An array of elements.
+// other - An array of elements.
 //
 // Returns an array containing all elements of `array`, concatenated with all
 // elements of `other` not already present in `array`. The order is being
@@ -22,16 +22,16 @@ OVERLOADABLE NSArray *ASTUnion(NSArray *array, NSArray *other);
 
 // Returns the union two sets.
 //
-// set   - A set of elements. This argument must not be nil.
-// other - A set of elements. This argument must not be nil.
+// set   - A set of elements.
+// other - A set of elements.
 //
 // Returns a set containing the elements of `set` and `other`.
 OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other);
 
 // Returns the union of two ordered sets.
 //
-// set   - An orderd set of elements. This argument must not be nil.
-// other - An orderd set of elements. This argument must not be nil.
+// set   - An orderd set of elements.
+// other - An orderd set of elements.
 //
 // Returns an orderd set containing all elements of `set`, concatenated with all
 // elements of `other` not already present in `set`. The order is being
