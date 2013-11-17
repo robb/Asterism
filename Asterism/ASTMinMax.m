@@ -40,7 +40,7 @@ OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator
     NSCParameterAssert(comparator != nil);
 
     return ASTReduce(collection, ^id(id a, id b) {
-        return comparator(a, b) ==  NSOrderedAscending ? a : b;
+        return comparator(a, b) == NSOrderedAscending ? a : b;
     });
 }
 
@@ -63,7 +63,7 @@ OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator
     NSCParameterAssert(comparator != nil);
 
     return ASTReduce(collection, ^id(id a, id b) {
-        return comparator(a, b) ==  NSOrderedDescending ? a : b;
+        return comparator(a, b) == NSOrderedDescending ? a : b;
     });
 }
 
