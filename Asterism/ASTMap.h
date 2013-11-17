@@ -34,7 +34,7 @@ OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx))
 
 // Maps a block across a dicitonary.
 //
-// dict  - An dictionary of elements.
+// dict  - A dictionary of elements.
 // block - A block that takes a value as its only argument and returns a new
 //         value. The block must not be nil.
 //
@@ -45,7 +45,7 @@ OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj));
 
 // Maps a block across a dicitonary.
 //
-// dict  - An dictionary of elements.
+// dict  - A dictionary of elements.
 // block - A block that takes a key and a value as its arguments and returns a
 //         new value. The block must not be nil.
 //
@@ -54,9 +54,9 @@ OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj));
 // are not present in the returned dictionary.
 OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj));
 
-// Maps a block across an array.
+// Maps a block across a set.
 //
-// set   - An set of elements.
+// set   - A set of elements.
 // block - A block that takes an element as its only argument and returns a new
 //         element. The block must not be nil.
 //
@@ -71,9 +71,9 @@ OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj));
 // block - A block that takes an element as its only argument and returns a new
 //         element. The block must not be nil.
 //
-// Returns a set that contains all values of `set` after `block` has been
-// applied. If `block` returns `nil`, the element is not present in the returned
-// set. The order is being maintained.
+// Returns an ordered set that contains all values of `set` after `block` has
+// been applied. If `block` returns `nil`, the element is not present in the
+// returned set. The order is being maintained.
 OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj));
 
 // Maps a block across an ordered set.
@@ -82,7 +82,7 @@ OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj));
 // block - A block that takes an element and its index in `set` as its
 //         arguments and returns a new element. The block must not be nil.
 //
-// Returns a set that contains all values of `set` after `block` has been
-// applied. If `block` returns `nil`, the element is not present in the returned
-// set. The order is being maintained.
+// Returns an ordered set that contains all values of `set` after `block` has
+// been applied. If `block` returns `nil`, the element is not present in the
+// returned set. The order is being maintained.
 OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx));

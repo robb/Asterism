@@ -53,7 +53,7 @@ OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id key, id
 
 // Filters out the elements of a set that fail a test.
 //
-// set   - An array of elements.
+// set   - A set of elements.
 // block - A block that takes an element as its only argument and returns `YES`
 //         if the element passes the test. The block must no be nil.
 //

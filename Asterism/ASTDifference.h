@@ -30,9 +30,9 @@ OVERLOADABLE NSSet *ASTDifference(NSSet *set, NSSet *other);
 
 // Returns the difference between two ordered sets.
 //
-// set   - A set of elements.
-// other - A set of elements.
+// set   - An ordered set of elements.
+// other - An ordered set of elements.
 //
-// Returns a set containing the elements of `set` that are not present in
-// `other`.
+// Returns an ordered set containing the elements of `set` that are not present
+// in `other`.
 OVERLOADABLE NSOrderedSet *ASTDifference(NSOrderedSet *set, NSOrderedSet *other);
