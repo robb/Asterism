@@ -10,7 +10,6 @@
 
 OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other)
 {
-    if (array == nil && other == nil) return nil;
     if (array == nil) return other;
     if (other == nil) return array;
 
@@ -27,7 +26,6 @@ OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other)
 
 OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other)
 {
-    if (set == nil && other == nil) return nil;
     if (set == nil) return other;
     if (other == nil) return set;
 
@@ -39,7 +37,6 @@ OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other)
 
 OVERLOADABLE NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other)
 {
-    if (set == nil && other == nil) return nil;
     if (set == nil) return other;
     if (other == nil) return set;
 

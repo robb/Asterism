@@ -12,7 +12,6 @@
 
 OVERLOADABLE NSArray *ASTUnion(NSArray *array, NSArray *other)
 {
-    if (array == nil && other == nil) return nil;
     if (array == nil) return other;
     if (other == nil) return array;
 
@@ -21,7 +20,6 @@ OVERLOADABLE NSArray *ASTUnion(NSArray *array, NSArray *other)
 
 OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other)
 {
-    if (set == nil && other == nil) return nil;
     if (set == nil) return other;
     if (other == nil) return set;
 
@@ -30,7 +28,6 @@ OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other)
 
 OVERLOADABLE NSOrderedSet *ASTUnion(NSOrderedSet *set, NSOrderedSet *other)
 {
-    if (set == nil && other == nil) return nil;
     if (set == nil) return other;
     if (other == nil) return set;
 
