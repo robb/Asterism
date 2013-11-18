@@ -12,8 +12,7 @@
 
 // Reduces a collection to a single value.
 //
-// collection - An object that implements NSFastEnumeration. This argument must
-//              not be nil.
+// collection - An object that implements NSFastEnumeration.
 // block      - A block that takes two arguments and returns an object.
 //              The first argument is its last return value or the first element
 //              in the `collection` when it is called for the first time.
@@ -37,8 +36,7 @@ OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, 
 
 // Reduces a collection to a single value.
 //
-// collection - An object that implements NSFastEnumeration. This argument must
-//              not be nil.
+// collection - An object that implements NSFastEnumeration.
 // memo       - The first argument to `block` when it is invoked for the first
 //              time.
 // block      - A block that takes two arguments and returns an object.

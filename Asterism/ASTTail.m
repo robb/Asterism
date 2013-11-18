@@ -10,7 +10,7 @@
 
 OVERLOADABLE NSArray *ASTTail(NSArray *array)
 {
-    NSCParameterAssert(array != nil);
+    if (array == nil) return nil;
 
     if (array.count <= 1) return @[];
 
@@ -21,7 +21,7 @@ OVERLOADABLE NSArray *ASTTail(NSArray *array)
 
 OVERLOADABLE NSOrderedSet *ASTTail(NSOrderedSet *set)
 {
-    NSCParameterAssert(set != nil);
+    if (set == nil) return nil;
 
     if (set.count <= 1) return [NSOrderedSet orderedSet];
 

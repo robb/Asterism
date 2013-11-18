@@ -12,7 +12,7 @@
 
 // Returns all elements of an array after the first one.
 //
-// array - An array of elements. This argument must not be nil.
+// array - An array of elements.
 //
 // Returns all elements after the first one. If the array has less than one
 // element, an empty array is returned.
@@ -20,7 +20,7 @@ OVERLOADABLE NSArray *ASTTail(NSArray *array);
 
 // Returns all elements of an ordered set after the first one.
 //
-// set - An ordered set of elements. This argument must not be nil.
+// set - An ordered set of elements.
 //
 // Returns all elements after the first one. If the set has less than one
 // element, an empty ordered set is returned.

@@ -10,14 +10,10 @@
 
 OVERLOADABLE id ASTHead(NSArray *array)
 {
-    NSCParameterAssert(array != nil);
-
     return array.count > 0 ? array[0] : nil;
 }
 
 OVERLOADABLE id ASTHead(NSOrderedSet *set)
 {
-    NSCParameterAssert(set != nil);
-
     return set.count > 0 ? set[0] : nil;
 }

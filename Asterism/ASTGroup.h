@@ -12,8 +12,7 @@
 
 // Groups the elements in a collection using a block.
 //
-// collection - An object that implements NSFastEnumeration. This argument must
-//              not be nil.
+// collection - An object that implements NSFastEnumeration.
 // block      - A block that takes an element in `collection` as its only
 //              argument and returns a key by which to group the element.
 //              The return value is required to implement NSCopying.

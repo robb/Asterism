@@ -12,24 +12,24 @@
 
 OVERLOADABLE NSArray *ASTUnion(NSArray *array, NSArray *other)
 {
-    NSCParameterAssert(array != nil);
-    NSCParameterAssert(other != nil);
+    if (array == nil) return other;
+    if (other == nil) return array;
 
     return [array arrayByAddingObjectsFromArray:ASTDifference(other, array)];
 }
 
 OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other)
 {
-    NSCParameterAssert(set != nil);
-    NSCParameterAssert(other != nil);
+    if (set == nil) return other;
+    if (other == nil) return set;
 
     return [set setByAddingObjectsFromSet:other];
 }
 
 OVERLOADABLE NSOrderedSet *ASTUnion(NSOrderedSet *set, NSOrderedSet *other)
 {
-    NSCParameterAssert(set != nil);
-    NSCParameterAssert(other != nil);
+    if (set == nil) return other;
+    if (other == nil) return set;
 
     NSMutableOrderedSet *result = [set mutableCopy];
     [result unionOrderedSet:other];
