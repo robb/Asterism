@@ -10,8 +10,8 @@
 
 OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other)
 {
-    NSCParameterAssert(array != nil);
-    NSCParameterAssert(other != nil);
+    if (array == nil) return other;
+    if (other == nil) return array;
 
     NSMutableArray *result = [array mutableCopy];
 
@@ -26,8 +26,8 @@ OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other)
 
 OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other)
 {
-    NSCParameterAssert(set != nil);
-    NSCParameterAssert(other != nil);
+    if (set == nil) return other;
+    if (other == nil) return set;
 
     NSMutableSet *result = [set mutableCopy];
     [result intersectSet:other];
@@ -37,8 +37,8 @@ OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other)
 
 OVERLOADABLE NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other)
 {
-    NSCParameterAssert(set != nil);
-    NSCParameterAssert(other != nil);
+    if (set == nil) return other;
+    if (other == nil) return set;
 
     NSMutableOrderedSet *result = [set mutableCopy];
     [result intersectOrderedSet:other];

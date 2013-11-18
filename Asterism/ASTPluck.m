@@ -10,8 +10,9 @@
 
 OVERLOADABLE NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPath)
 {
-    NSCParameterAssert(collection != nil);
     NSCParameterAssert(keyPath != nil);
+
+    if (collection == nil) return nil;
 
     NSMutableArray *result = [NSMutableArray array];
 

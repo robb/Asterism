@@ -14,8 +14,9 @@
 
 OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj))
 {
-    NSCParameterAssert(array != nil);
     NSCParameterAssert(block != nil);
+
+    if (array == nil) return nil;
 
     return ASTMap(array, ^(id obj, NSUInteger _) {
         return block(obj);
@@ -24,8 +25,9 @@ OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj))
 
 OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx))
 {
-    NSCParameterAssert(array != nil);
     NSCParameterAssert(block != nil);
+
+    if (array == nil) return nil;
 
     NSMutableArray *result = [NSMutableArray array];
 
@@ -42,8 +44,9 @@ OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx))
 
 OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj))
 {
-    NSCParameterAssert(dict != nil);
     NSCParameterAssert(block != nil);
+
+    if (dict == nil) return nil;
 
     return ASTMap(dict, ^(id _, id obj) {
         return block(obj);
@@ -52,8 +55,9 @@ OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj))
 
 OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj))
 {
-    NSCParameterAssert(dict != nil);
     NSCParameterAssert(block != nil);
+
+    if (dict == nil) return nil;
 
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
 
@@ -70,8 +74,9 @@ OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj)
 
 OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj))
 {
-    NSCParameterAssert(set != nil);
     NSCParameterAssert(block != nil);
+
+    if (set == nil) return nil;
 
     NSMutableSet *result = [NSMutableSet set];
 
@@ -88,8 +93,9 @@ OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj))
 
 OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj))
 {
-    NSCParameterAssert(set != nil);
     NSCParameterAssert(block != nil);
+
+    if (set == nil) return nil;
 
     return ASTMap(set, ^(id obj, NSUInteger _) {
         return block(obj);
@@ -98,8 +104,9 @@ OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj))
 
 OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj, NSUInteger idx))
 {
-    NSCParameterAssert(set != nil);
     NSCParameterAssert(block != nil);
+
+    if (set == nil) return nil;
 
     NSMutableOrderedSet *result = [NSMutableOrderedSet orderedSet];
 
