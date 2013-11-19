@@ -16,8 +16,7 @@ static NSComparator const ASTCompare = ^NSComparisonResult(id a, id b) {
     return [a compare:b];
 };
 
-static NSComparator ASTUnboxComparator(NSNumber *(^comparator)(id, id))
-{
+static NSComparator ASTUnboxComparator(NSNumber *(^comparator)(id, id)) {
     return ^NSComparisonResult(id obj1, id obj2) {
         NSNumber *result = comparator(obj1, obj2);
 
@@ -30,13 +29,11 @@ static NSComparator ASTUnboxComparator(NSNumber *(^comparator)(id, id))
 
 #pragma mark - Min
 
-OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection)
-{
+OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection) {
     return ASTMin(collection, ASTCompare);
 }
 
-OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator)
-{
+OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator) {
     NSCParameterAssert(comparator != nil);
 
     return ASTReduce(collection, ^id(id a, id b) {
@@ -44,8 +41,7 @@ OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator
     });
 }
 
-OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSNumber *(^comparator)(id, id))
-{
+OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSNumber *(^comparator)(id, id)) {
     NSCParameterAssert(comparator != nil);
 
     return ASTMin(collection, ASTUnboxComparator(comparator));
@@ -53,13 +49,11 @@ OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSNumber *(^comparator)
 
 #pragma mark - Max
 
-OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection)
-{
+OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection) {
     return ASTMax(collection, ASTCompare);
 }
 
-OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator)
-{
+OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator) {
     NSCParameterAssert(comparator != nil);
 
     return ASTReduce(collection, ^id(id a, id b) {
@@ -67,8 +61,7 @@ OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator
     });
 }
 
-OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSNumber *(^comparator)(id, id))
-{
+OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSNumber *(^comparator)(id, id)) {
     NSCParameterAssert(comparator != nil);
 
     return ASTMax(collection, ASTUnboxComparator(comparator));

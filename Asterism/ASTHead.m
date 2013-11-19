@@ -8,12 +8,10 @@
 
 #import "ASTHead.h"
 
-OVERLOADABLE id ASTHead(NSArray *array)
-{
+OVERLOADABLE id ASTHead(NSArray *array) {
     return array.count > 0 ? array[0] : nil;
 }
 
-OVERLOADABLE id ASTHead(NSOrderedSet *set)
-{
+OVERLOADABLE id ASTHead(NSOrderedSet *set) {
     return set.count > 0 ? set[0] : nil;
 }

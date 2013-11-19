@@ -10,8 +10,7 @@
 
 @implementation LiftTestClassB
 
-- (id)test:(id)argument
-{
+- (id)test:(id)argument {
     return @"success";
 }
 

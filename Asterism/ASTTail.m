@@ -8,8 +8,7 @@
 
 #import "ASTTail.h"
 
-OVERLOADABLE NSArray *ASTTail(NSArray *array)
-{
+OVERLOADABLE NSArray *ASTTail(NSArray *array) {
     if (array == nil) return nil;
 
     if (array.count <= 1) return @[];
@@ -19,8 +18,7 @@ OVERLOADABLE NSArray *ASTTail(NSArray *array)
     return [array subarrayWithRange:range];
 }
 
-OVERLOADABLE NSOrderedSet *ASTTail(NSOrderedSet *set)
-{
+OVERLOADABLE NSOrderedSet *ASTTail(NSOrderedSet *set) {
     if (set == nil) return nil;
 
     if (set.count <= 1) return [NSOrderedSet orderedSet];

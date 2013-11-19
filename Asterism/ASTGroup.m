@@ -8,8 +8,7 @@
 
 #import "ASTGroup.h"
 
-OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id))
-{
+OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id)) {
     NSCParameterAssert(block != nil);
 
     if (collection == nil) return nil;

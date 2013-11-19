@@ -10,8 +10,7 @@
 
 @implementation LiftTestClassA
 
-- (NSInteger)test:(NSInteger)argument
-{
+- (NSInteger)test:(NSInteger)argument {
     return -argument;
 }
 
