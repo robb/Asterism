@@ -50,6 +50,7 @@ Asterism currently supports the following operations:
 * [extend](Asterism/ASTExtend.h)
 * [filter](Asterism/ASTFilter.h)
 * [find](Asterism/ASTFind.h)
+* [flatten](Asterism/ASTFlatten.h)
 * [group](Asterism/ASTGroup.h)
 * [head](Asterism/ASTHead.h)
 * [intersection](Asterism/ASTIntersection.h)
