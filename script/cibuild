@@ -120,12 +120,6 @@ build_scheme ()
 
     local awkstatus=$?
 
-    if [ "$awkstatus" -ne "0" ]
-    then
-        # Unit tests aren't supported.
-        action=build
-    fi
-
     if [ "$awkstatus" -eq "1" ]
     then
         # Build for iOS.
