@@ -9,8 +9,8 @@ export SCRIPT_DIR=$(dirname "$0")
 config ()
 {
     # A whitespace-separated list of executables that must be present and locatable.
-    : ${REQUIRED_TOOLS="xctool gem"}
-
+    : ${REQUIRED_TOOLS="xctool"}
+    
     export REQUIRED_TOOLS
 }
 
@@ -34,8 +34,6 @@ main ()
         echo "*** Updating submodules..."
         update_submodules
     fi
-
-    install_pods
 }
 
 check_deps ()
@@ -69,15 +67,7 @@ update_submodules ()
     git submodule sync --quiet && git submodule update --init && git submodule foreach --quiet bootstrap_submodule
 }
 
-install_pods ()
-{
-    gem update --system
-    gem install cocoapods
-    pod install
-}
-
 export -f bootstrap_submodule
 export -f update_submodules
-export -f install_pods
 
 main
