@@ -10,7 +10,7 @@
 
 #import "ASTConstants.h"
 
-// Fills in missing values from
+// Fills in missing values from another dictionary.
 //
 // dict     - A dictionary.
 // defaults - A dictionary with default values.
