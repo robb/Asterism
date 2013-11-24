@@ -57,6 +57,8 @@
 		54FE96ED17706265006F40AC /* ASTIntersection.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96EC17706265006F40AC /* ASTIntersection.m */; };
 		54FE96EF177068B2006F40AC /* ASTIntersectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96EE177068B2006F40AC /* ASTIntersectionSpec.m */; };
 		6DA0E311E2FE4D0091F50B0D /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B82A91E23E8448D2861527C1 /* libPods-Specs.a */; };
+		DCF5756E18427BE900F0989B /* ASTFlatten.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF5756D18427BE900F0989B /* ASTFlatten.m */; };
+		DCF5757118427F5200F0989B /* ASTFlattenSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF5757018427F5200F0989B /* ASTFlattenSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +163,9 @@
 		54FE96EE177068B2006F40AC /* ASTIntersectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTIntersectionSpec.m; sourceTree = "<group>"; };
 		6F8F6BC620F04200B843D72F /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 		B82A91E23E8448D2861527C1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCF5756C18427BE900F0989B /* ASTFlatten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTFlatten.h; sourceTree = "<group>"; };
+		DCF5756D18427BE900F0989B /* ASTFlatten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTFlatten.m; sourceTree = "<group>"; };
+		DCF5757018427F5200F0989B /* ASTFlattenSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTFlattenSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +242,8 @@
 				54E0ED74175A1ABD0076C6EA /* ASTFilter.m */,
 				5410F3EC177734E700124E45 /* ASTFind.h */,
 				5410F3ED177734E700124E45 /* ASTFind.m */,
+				DCF5756C18427BE900F0989B /* ASTFlatten.h */,
+				DCF5756D18427BE900F0989B /* ASTFlatten.m */,
 				549DFB88175E4DD2005CAD4A /* ASTGroup.h */,
 				549DFB89175E4DD2005CAD4A /* ASTGroup.m */,
 				54E0ED69175A0D5B0076C6EA /* ASTHead.h */,
@@ -287,6 +294,7 @@
 				54A13FCF1842277300CEC841 /* ASTExtendSpec.m */,
 				54A7FD42175CE45D004A7541 /* ASTFilterSpec.m */,
 				54CA8D1B1777396E001BCD9F /* ASTFindSpec.m */,
+				DCF5757018427F5200F0989B /* ASTFlattenSpec.m */,
 				549DFB8D175E5526005CAD4A /* ASTGroupSpec.m */,
 				54E0ED6C175A0DF00076C6EA /* ASTHeadSpec.m */,
 				54FE96EE177068B2006F40AC /* ASTIntersectionSpec.m */,
@@ -453,6 +461,7 @@
 				542C1CB817520F560013D41E /* ASTReduce.m in Sources */,
 				54E0ED6B175A0D5B0076C6EA /* ASTHead.m in Sources */,
 				54E0ED70175A0FAC0076C6EA /* ASTTail.m in Sources */,
+				DCF5756E18427BE900F0989B /* ASTFlatten.m in Sources */,
 				54E0ED75175A1ABD0076C6EA /* ASTFilter.m in Sources */,
 				54A13FCE184222F900CEC841 /* ASTExtend.m in Sources */,
 				549B7264175CFE6700E6A378 /* ASTReject.m in Sources */,
@@ -484,6 +493,7 @@
 				54A13FD01842277300CEC841 /* ASTExtendSpec.m in Sources */,
 				54A7FD43175CE45D004A7541 /* ASTFilterSpec.m in Sources */,
 				549B726A175D08E400E6A378 /* ASTRejectSpec.m in Sources */,
+				DCF5757118427F5200F0989B /* ASTFlattenSpec.m in Sources */,
 				5424E957183D80E800E4EC51 /* ASTDefaultsSpec.m in Sources */,
 				549B726C175D097100E6A378 /* ASTNegateSpec.m in Sources */,
 				54A72CC1175D0FD500D9A05E /* ASTPluckSpec.m in Sources */,
