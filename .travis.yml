@@ -1,7 +1,6 @@
 language: objective-c
 
 before_install:
-    - brew install xctool --HEAD
     - gem update --system
     - gem install cocoapods
 
