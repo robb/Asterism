@@ -130,7 +130,7 @@
 		54D9EE681721543D00383762 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		54D9EE6C1721543D00383762 /* Asterism-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Asterism-Prefix.pch"; sourceTree = "<group>"; };
 		54D9EE6D1721543D00383762 /* Asterism.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Asterism.h; sourceTree = "<group>"; };
-		54D9EE761721543D00383762 /* Specs.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54D9EE761721543D00383762 /* Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Specs.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D9EE771721543D00383762 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		54D9EE791721543D00383762 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		54D9EE811721543D00383762 /* Specs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Specs-Info.plist"; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				54D9EE651721543D00383762 /* libAsterism.a */,
-				54D9EE761721543D00383762 /* Specs.octest */,
+				54D9EE761721543D00383762 /* Specs.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -357,7 +357,7 @@
 			);
 			name = Specs;
 			productName = Specs;
-			productReference = 54D9EE761721543D00383762 /* Specs.octest */;
+			productReference = 54D9EE761721543D00383762 /* Specs.xctest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -604,16 +604,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6F8F6BC620F04200B843D72F /* Pods-Specs.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"$(inherited)",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
 				INFOPLIST_FILE = "Specs/Specs-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -621,16 +616,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6F8F6BC620F04200B843D72F /* Pods-Specs.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"$(inherited)",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
 				INFOPLIST_FILE = "Specs/Specs-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
