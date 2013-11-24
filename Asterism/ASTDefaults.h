@@ -13,7 +13,7 @@
 // Fills in missing values from another dictionary.
 //
 // dict     - A dictionary.
-// defaults - A dictionary with default values.
+// defaults - A dictionary of default values.
 //
 // Returns a dictionary that contains a union of key-value-pairs of dict and
 // defaults. Key-value-pairs of dict will have precedence over those taken from
