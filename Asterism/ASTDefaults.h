@@ -15,7 +15,7 @@
 // dict     - A dictionary.
 // defaults - A dictionary of default values.
 //
-// Returns a dictionary that contains a union of key-value-pairs of dict and
-// defaults. Key-value-pairs of dict will have precedence over those taken from
-// defaults.
+// Returns a new dictionary that contains a union of key-value-pairs of `dict`
+// and `defaults`. Key-value-pairs of `dict` will have precedence over those
+// taken from `defaults`.
 OVERLOADABLE NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults);

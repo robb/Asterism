@@ -22,7 +22,7 @@ it(@"should return the union of both dictionaries", ^{
     expect(ASTExtend(dict, source)).to.equal(result);
 });
 
-it(@"should prefer values from dict over values from defaults", ^{
+it(@"should prefer values from source over values from dict", ^{
     NSDictionary *dict   = @{ @1: @"foo" };
     NSDictionary *source = @{ @1: @"bar" };
     
