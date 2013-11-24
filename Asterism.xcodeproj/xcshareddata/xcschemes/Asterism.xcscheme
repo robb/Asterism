@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "54D9EE751721543D00383762"
-               BuildableName = "Specs.octest"
+               BuildableName = "Specs.xctest"
                BlueprintName = "Specs"
                ReferencedContainer = "container:Asterism.xcodeproj">
             </BuildableReference>
