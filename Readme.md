@@ -43,9 +43,11 @@ ASTEach(posts, ASTPartial(ASTLift(likePost:), user));
 
 Asterism currently supports the following operations:
 
+* [defaults](Asterism/ASTDefaults.h)
 * [difference](Asterism/ASTDifference.h)
 * [each](Asterism/ASTEach.h)
 * [empty](Asterism/ASTEmpty.h)
+* [extend](Asterism/ASTExtend.h)
 * [filter](Asterism/ASTFilter.h)
 * [find](Asterism/ASTFind.h)
 * [group](Asterism/ASTGroup.h)
