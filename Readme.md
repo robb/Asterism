@@ -1,7 +1,7 @@
 # Asterism ⁂
 
 Asterism is yet another functional toolbelt for Objective-C. It tries to be
-typesafe and elegant.
+typesafe and simple.
 
 ```objective-c
 NSDictionary *reviewsByRating = ASTGroup(reviews, ASTLift0(rating));
