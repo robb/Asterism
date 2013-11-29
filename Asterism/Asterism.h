@@ -17,6 +17,7 @@
 #import "ASTFind.h"
 #import "ASTGroup.h"
 #import "ASTHead.h"
+#import "ASTIndexOf.h"
 #import "ASTIntersection.h"
 #import "ASTLift.h"
 #import "ASTMap.h"
