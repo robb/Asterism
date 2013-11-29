@@ -21,8 +21,8 @@ OVERLOADABLE NSUInteger ASTIndexOf(NSArray *array, id obj);
 
 // Finds the index of an object in an ordered set.
 //
-// set  - An ordered set of elements.
-// obj The object to find.
+// set - An ordered set of elements.
+// obj - The object to find.
 //
 // Returns the first index of obj in set or NSNotFound if the object could not
 // be found.
