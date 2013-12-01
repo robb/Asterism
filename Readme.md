@@ -43,6 +43,8 @@ ASTEach(posts, ASTPartial(ASTLift(likePost:), user));
 
 Asterism currently supports the following operations:
 
+* [all](Asterism/ASTAll.h)
+* [any](Asterism/ASTAny.h)
 * [defaults](Asterism/ASTDefaults.h)
 * [difference](Asterism/ASTDifference.h)
 * [each](Asterism/ASTEach.h)
