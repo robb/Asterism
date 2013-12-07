@@ -13,6 +13,7 @@
 		542C1CB817520F560013D41E /* ASTReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = 542C1CB717520F560013D41E /* ASTReduce.m */; };
 		542C1CBA175214B90013D41E /* ASTReduceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 542C1CB9175214B90013D41E /* ASTReduceSpec.m */; };
 		546B5FEE176346AE00AE3EBC /* ASTPartialSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 546B5FED176346AE00AE3EBC /* ASTPartialSpec.m */; };
+		5484EEAB18533FF0000B4D04 /* ASTSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5484EEAA18533FF0000B4D04 /* ASTSize.m */; };
 		54892BAC184AAEFD009CF268 /* ASTAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BAB184AAEFD009CF268 /* ASTAll.m */; };
 		54892BAE184AAFFE009CF268 /* ASTAllSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BAD184AAFFE009CF268 /* ASTAllSpec.m */; };
 		54892BB1184AB0F6009CF268 /* ASTAny.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BB0184AB0F6009CF268 /* ASTAny.m */; };
@@ -99,6 +100,8 @@
 		542C1CB717520F560013D41E /* ASTReduce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTReduce.m; sourceTree = "<group>"; };
 		542C1CB9175214B90013D41E /* ASTReduceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTReduceSpec.m; sourceTree = "<group>"; };
 		546B5FED176346AE00AE3EBC /* ASTPartialSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTPartialSpec.m; sourceTree = "<group>"; };
+		5484EEA918533FF0000B4D04 /* ASTSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTSize.h; sourceTree = "<group>"; };
+		5484EEAA18533FF0000B4D04 /* ASTSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTSize.m; sourceTree = "<group>"; };
 		54892BAA184AAEFD009CF268 /* ASTAll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTAll.h; sourceTree = "<group>"; };
 		54892BAB184AAEFD009CF268 /* ASTAll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTAll.m; sourceTree = "<group>"; };
 		54892BAD184AAFFE009CF268 /* ASTAllSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTAllSpec.m; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				542C1CB717520F560013D41E /* ASTReduce.m */,
 				549B7262175CFE6700E6A378 /* ASTReject.h */,
 				549B7263175CFE6700E6A378 /* ASTReject.m */,
+				5484EEA918533FF0000B4D04 /* ASTSize.h */,
+				5484EEAA18533FF0000B4D04 /* ASTSize.m */,
 				54E0ED6E175A0FAC0076C6EA /* ASTTail.h */,
 				54E0ED6F175A0FAC0076C6EA /* ASTTail.m */,
 				54FE96E1177053FE006F40AC /* ASTUnion.h */,
@@ -492,6 +497,7 @@
 				54CE84C0174D839E006F960A /* ASTLift.m in Sources */,
 				54CE84C0174D839E006F960A /* ASTLift.m in Sources */,
 				357F376323C41EF675D2B956 /* ASTPartial.m in Sources */,
+				5484EEAB18533FF0000B4D04 /* ASTSize.m in Sources */,
 				54FE96DE17704C7F006F40AC /* ASTDifference.m in Sources */,
 				54FE96E3177053FE006F40AC /* ASTUnion.m in Sources */,
 				54FE96ED17706265006F40AC /* ASTIntersection.m in Sources */,
