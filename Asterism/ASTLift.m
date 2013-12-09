@@ -20,8 +20,7 @@
 #define TYPE_EQUAL(OBJC_TYPE, TYPE_TO_ENCODE) \
     (strcmp(OBJC_TYPE, @encode(TYPE_TO_ENCODE)) == 0)
 
-ASTBlockVar ASTLiftVar(SEL selector)
-{
+ASTBlockVar ASTLiftVar(SEL selector) {
     __block const char *currentEncoding = "";
     __block NSInvocation *invocation;
     __block NSMethodSignature *signature;

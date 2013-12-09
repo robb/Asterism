@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ASTDefaults.h"
 #import "ASTDifference.h"
 #import "ASTEach.h"
-#import "ASTEach.h"
+#import "ASTEmpty.h"
+#import "ASTExtend.h"
 #import "ASTFilter.h"
 #import "ASTFind.h"
 #import "ASTGroup.h"
 #import "ASTHead.h"
+#import "ASTIndexOf.h"
 #import "ASTIntersection.h"
 #import "ASTLift.h"
 #import "ASTMap.h"

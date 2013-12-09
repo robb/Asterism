@@ -1,7 +1,7 @@
 # Asterism ⁂
 
 Asterism is yet another functional toolbelt for Objective-C. It tries to be
-typesafe and elegant.
+typesafe and simple.
 
 ```objective-c
 NSDictionary *reviewsByRating = ASTGroup(reviews, ASTLift0(rating));
@@ -43,9 +43,13 @@ ASTEach(posts, ASTPartial(ASTLift(likePost:), user));
 
 Asterism currently supports the following operations:
 
+* [all](Asterism/ASTAll.h)
+* [any](Asterism/ASTAny.h)
+* [defaults](Asterism/ASTDefaults.h)
 * [difference](Asterism/ASTDifference.h)
 * [each](Asterism/ASTEach.h)
 * [empty](Asterism/ASTEmpty.h)
+* [extend](Asterism/ASTExtend.h)
 * [filter](Asterism/ASTFilter.h)
 * [find](Asterism/ASTFind.h)
 * [group](Asterism/ASTGroup.h)
