@@ -13,6 +13,7 @@
 		542C1CB817520F560013D41E /* ASTReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = 542C1CB717520F560013D41E /* ASTReduce.m */; };
 		542C1CBA175214B90013D41E /* ASTReduceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 542C1CB9175214B90013D41E /* ASTReduceSpec.m */; };
 		546B5FEE176346AE00AE3EBC /* ASTPartialSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 546B5FED176346AE00AE3EBC /* ASTPartialSpec.m */; };
+		5477105718562B0000ECC7ED /* ASTLift.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BF174D839E006F960A /* ASTLift.m */; };
 		54892BAC184AAEFD009CF268 /* ASTAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BAB184AAEFD009CF268 /* ASTAll.m */; };
 		54892BAE184AAFFE009CF268 /* ASTAllSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BAD184AAFFE009CF268 /* ASTAllSpec.m */; };
 		54892BB1184AB0F6009CF268 /* ASTAny.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BB0184AB0F6009CF268 /* ASTAny.m */; };
@@ -39,7 +40,6 @@
 		54CA8D1C177739B8001BCD9F /* ASTFindSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CA8D1B1777396E001BCD9F /* ASTFindSpec.m */; };
 		54CE84BB174D74E1006F960A /* ASTMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BA174D74E1006F960A /* ASTMap.m */; };
 		54CE84BD174D78C0006F960A /* ASTMapSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BC174D78C0006F960A /* ASTMapSpec.m */; };
-		54CE84C0174D839E006F960A /* ASTLift.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BF174D839E006F960A /* ASTLift.m */; };
 		54CE84C2174D93A6006F960A /* ASTLiftSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84C1174D93A6006F960A /* ASTLiftSpec.m */; };
 		54D9EE691721543D00383762 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D9EE681721543D00383762 /* Foundation.framework */; };
 		54D9EE6E1721543D00383762 /* Asterism.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 54D9EE6D1721543D00383762 /* Asterism.h */; };
@@ -391,7 +391,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AST;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Robert Böhnke";
 			};
 			buildConfigurationList = 54D9EE601721543D00383762 /* Build configuration list for PBXProject "Asterism" */;
@@ -489,8 +489,7 @@
 				549DFB8A175E4DD2005CAD4A /* ASTGroup.m in Sources */,
 				54A0BB2C175E5F5C001D06E2 /* ASTMinMax.m in Sources */,
 				54DDBE271837EB05002EAEB3 /* ASTDefaults.m in Sources */,
-				54CE84C0174D839E006F960A /* ASTLift.m in Sources */,
-				54CE84C0174D839E006F960A /* ASTLift.m in Sources */,
+				5477105718562B0000ECC7ED /* ASTLift.m in Sources */,
 				357F376323C41EF675D2B956 /* ASTPartial.m in Sources */,
 				54FE96DE17704C7F006F40AC /* ASTDifference.m in Sources */,
 				54FE96E3177053FE006F40AC /* ASTUnion.m in Sources */,
@@ -612,7 +611,6 @@
 				DSTROOT = /tmp/Asterism.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Asterism/Asterism-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -624,7 +622,6 @@
 				DSTROOT = /tmp/Asterism.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Asterism/Asterism-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
