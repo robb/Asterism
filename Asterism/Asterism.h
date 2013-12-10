@@ -27,5 +27,6 @@
 #import "ASTPluck.h"
 #import "ASTReduce.h"
 #import "ASTReject.h"
+#import "ASTSize.h"
 #import "ASTTail.h"
 #import "ASTUnion.h"
