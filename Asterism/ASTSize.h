@@ -12,35 +12,35 @@
 
 // The number of values in an array.
 //
-// array - an array of elements.
+// array - An array of elements.
 //
-// Returns the size of the `array`.
+// Returns the size of `array`.
 OVERLOADABLE NSUInteger ASTSize(NSArray *array);
 
 // The number of values in a dictionary.
 //
-// dictionary - a dictionary set of elements.
+// dictionary - A dictionary of elements.
 //
 // Returns the size of `dictionary`.
 OVERLOADABLE NSUInteger ASTSize(NSDictionary *dictionary);
 
 // The number of values in a set.
 //
-// set - a set of elements.
+// set - A set of elements.
 //
 // Returns the size of `set`.
 OVERLOADABLE NSUInteger ASTSize(NSSet *set);
 
 // The number of values in an ordered set.
 //
-// set - an ordered set of elements.
+// set - An ordered set of elements.
 //
 // Returns the size of `set`.
 OVERLOADABLE NSUInteger ASTSize(NSOrderedSet *set);
 
 // Counts the number of elements in a collection.
 //
-// collection - a collection of elements.
+// collection - A collection of elements.
 //
 // Returns the size of `collection` in O(n).
 OVERLOADABLE NSUInteger ASTSize(id<NSFastEnumeration> collection);
