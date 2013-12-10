@@ -21,7 +21,7 @@ describe(@"for arrays", ^{
 
 describe(@"for dictionaries", ^{
     it(@"should return the number of elements", ^{
-        expect(ASTSize((NSArray *)nil)).to.equal(0);
+        expect(ASTSize((NSDictionary *)nil)).to.equal(0);
         expect(ASTSize(@{})).to.equal(0);
         expect(ASTSize(@{ @"foo": @1 })).to.equal(1);
         expect(ASTSize(@{ @"foo": @1, @"bar": @2 })).to.equal(2);
