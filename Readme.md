@@ -66,3 +66,4 @@ Asterism currently supports the following operations:
 * [size](Asterism/ASTSize.h)
 * [tail](Asterism/ASTTail.h)
 * [union](Asterism/ASTUnion.h)
+* [without](Asterism/ASTWithout.h)
