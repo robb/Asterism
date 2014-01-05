@@ -1,9 +1,164 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
     <title>Asterism</title>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* grid */
+        body {
+            font-size: 1.1250rem;
+            line-height: 2.2500rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 4.5rem;
+            margin-top: 2.25rem;
+            margin-bottom: 2.25rem;
+        }
+
+        h2 {
+            font-size: 2.6875rem;
+            line-height: 4.5rem;
+            margin-top: 2.25rem;
+            margin-bottom: 1.1250rem;
+        }
+
+        h3 {
+            font-size: 2.0000rem;
+            line-height: 2.2500rem;
+            margin-top: 1.1250rem;
+            margin-bottom: 1.1250rem;
+        }
+
+        p, ul {
+            margin-top: 0rem;
+            margin-bottom: 1.1250rem;
+        }
+
+        small, aside {
+            font-size: 0.8750rem;
+        }
+
+        h1 + h2 {
+            margin-top: -2.25rem;
+        }
+
+        /* font size */
+        h1, h2, h3 {
+            font-family: "myriad-pro-condensed", sans-serif;
+        }
+
+        h4 {
+            font-family: "myriad-pro", sans-serif;
+            font-size: 1.1250rem;
+            font-weight: 500;
+
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        p, li {
+            font-family: "myriad-pro", sans-serif;
+            font-size: 1.1250rem;
+            font-weight: 300;
+        }
+
+        pre {
+            font-size: 1rem;
+            line-height: 1.1250rem !important;
+
+            padding: 0.5625rem;
+            margin: -0.5625rem 0 0.5625rem 0;
+
+            background-color: #EFEFEF;
+        }
+
+        header, section, footer {
+            padding: 0.5625rem 1.1250rem;
+        }
+
+        #header {
+            background-color: darkblue;
+            color: white;
+
+            text-align: center;
+        }
+
+        li.argument {
+            list-style: none;
+            padding-left: 0.5625rem;
+        }
+
+        li.argument .argument-name {
+            display: block;
+            margin-left: -0.5625rem;
+        }
+
+        code.argument-name {
+            font-family: "myriad-pro", sans-serif;
+            font-style: italic;
+        }
+    </style>
+
+    <script type="text/javascript" src="//use.typekit.net/qse8qcf.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-    <h1>Initial commit!</h1>
+    <div id="grid">
+
+    </div>
+
+    <header id="header">
+        <h1>Asterism ⁂</h1>
+        <h2 class="subtitle">
+            A simple functional toolbelt for Objective-C
+        </h2>
+    </header>
+
+    <section id="section-about">
+        <p>
+            Asterism is a yet another functional toolbelt for Objective-C.
+            It tries to be typesafe and elegant.
+        </p>
+
+        <h3>How to install</h3>
+        <p>
+            The recommended way to install Asterism is using the excellent
+            CocoaPods:
+        </p>
+
+        <code><pre>
+# Podfile
+pod 'Asterism'
+</pre></code>
+    </section>
+
+    <section id="section-documentation-all">
+        <h3>ASTAll</h3>
+        <p>Tests if all elements in a collection pass a test.</p>
+
+        <h4>Parameters</h4>
+        <ul>
+            <li class="argument">
+                <code class="argument-name">collection</code>
+                a collection of elements.
+            </li>
+            <li class="argument">
+                <code class="argument-name">block</code>
+                A block that takes an element as its only argument and returns <code>YES</code> if the element passes the test. The block must no be <code>nil</code>.
+            </li>
+        </ul>
+
+        <p>Returns <code>YES</code> if all elements in <code class="argument-name">collection</code> pass the test <code class="argument-name">block</code>.</p>
+        <code>OVERLOADABLE BOOL ASTAll(id&lt;NSFastEnumeration&gt; collection, BOOL(^block)(id obj));</code>
+    </section>
 </body>
 </html>
