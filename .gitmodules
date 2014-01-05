@@ -1,0 +1,3 @@
+[submodule "Asterism"]
+	path = Asterism
+	url = https://github.com/robb/Asterism.git
