@@ -18,10 +18,20 @@ OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, id<NSCopyi
     for (id obj in collection) {
         id<NSCopying> key = block(obj);
 
+        if (key == nil) continue;
+
         NSSet *group = dictionary[key] ?: [NSSet set];
 
         dictionary[key] = [group setByAddingObject:obj];
     }
 
     return [dictionary copy];
+}
+
+OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, NSString *keyPath) {
+    NSCParameterAssert(keyPath != nil);
+
+    return ASTGroup(collection, ^(id obj) {
+        return [obj valueForKeyPath:keyPath];
+    });
 }
