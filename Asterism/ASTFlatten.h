@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-// Flattens an array of arrays.
+// Flattens an array a single level.
 //
-// array - An array of array elements.
+// array - An array of elements.
 //
-// Returns a new array that concatenates all array elements in `array`.
+// Returns a new array that concatenates all array elements in `array` while
+// preserving non-array elements.
 NSArray *ASTFlatten(NSArray *array);

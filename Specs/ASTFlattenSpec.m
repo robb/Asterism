@@ -10,9 +10,16 @@
 
 SpecBegin(ASTFlatten)
 
-it(@"should return the concatenation of all array elements", ^{
+it(@"should concatenate all array elements", ^{
     NSArray *array = @[ @[ @1 ], @[ @2 ], @[ @3 ] ];
     NSArray *result = @[ @1, @2, @3 ];
+
+    expect(ASTFlatten(array)).to.equal(result);
+});
+
+it(@"should preserve non-array elements", ^{
+    NSArray *array = @[ @[ @1, @2 ], @3, @[ @4, @5 ] ];
+    NSArray *result = @[ @1, @2, @3, @4, @5 ];
 
     expect(ASTFlatten(array)).to.equal(result);
 });

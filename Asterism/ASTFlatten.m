@@ -11,8 +11,12 @@
 NSArray *ASTFlatten(NSArray *array) {
     NSMutableArray *result = [NSMutableArray array];
 
-    for (NSArray *subarray in array) {
-        [result addObjectsFromArray:subarray];
+    for (NSArray *element in array) {
+        if ([element isKindOfClass:[NSArray class]]) {
+            [result addObjectsFromArray:element];
+        } else {
+            [result addObject:element];
+        }
     }
 
     return result;
