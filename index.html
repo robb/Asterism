@@ -26,7 +26,7 @@
         font-size: 1.4625rem;
         line-height: 1.125rem;
         margin-top: 0rem;
-        margin-bottom: 0rem; }
+        margin-bottom: 1.125rem; }
       
       h4 {
         font-size: 1.125rem;
@@ -34,7 +34,7 @@
         margin-top: 0;
         margin-bottom: 0; }
       
-      p, ul {
+      p, ul, pre {
         margin-top: 0;
         margin-bottom: 1.125rem; }
       
@@ -51,17 +51,19 @@
       p, li {
         font-family: "myriad-pro", sans-serif; }
       
-      code {
-        font-family: "droid-sans-mono", mono-spaced;
-        font-size: 1.0125rem;
+      p code {
         background-color: #efefef;
         border-radius: 3px;
         padding: 3px; }
       
+      pre, code {
+        font-family: "droid-sans-mono", mono-spaced;
+        font-size: 1.0125rem;
+        line-height: 1.125rem; }
+      
       pre {
-        line-height: 1.125rem;
-        padding: 0.5625rem;
-        margin: -0.5625rem 0 0.5625rem 0; }
+        background-color: #efefef;
+        padding: 0.5625rem; }
       
       header, section, footer {
         padding: 0.5625rem 1.125rem; }
@@ -116,8 +118,7 @@
           The recommended way to install Asterism is using the excellent
           CocoaPods:
         </p>
-        <code><pre># Podfile
-        pod 'Asterism'</pre></code>
+        <pre><code>pod 'Asterism'</code></pre>
       </section>
       <section id='section-documentation-all'>
         <article>
@@ -138,7 +139,7 @@
           <p>
             <p>Returns <code>YES</code> if all elements in <code>collection</code> pass the test <code>block</code>.</p>
           </p>
-          <code>OVERLOADABLE BOOL ASTAll(id<NSFastEnumeration> collection, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE BOOL ASTAll(id<NSFastEnumeration> collection, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTAny</h3>
@@ -158,7 +159,7 @@
           <p>
             <p>Returns <code>YES</code> if any of the elements in <code>collection</code> passes the test <code>block</code>.</p>
           </p>
-          <code>OVERLOADABLE BOOL ASTAny(id<NSFastEnumeration> collection, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE BOOL ASTAny(id<NSFastEnumeration> collection, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTDefaults</h3>
@@ -178,7 +179,7 @@
           <p>
             <p>Returns a new dictionary that contains a union of key-value-pairs of <code>dict</code> and <code>defaults</code>. Key-value-pairs of <code>dict</code> will have precedence over those taken from <code>defaults</code>.</p>
           </p>
-          <code>OVERLOADABLE NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults);</code>
+          <pre><code>OVERLOADABLE NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults);</code></pre>
         </article>
         <article>
           <h3>ASTDifference</h3>
@@ -198,7 +199,7 @@
           <p>
             <p>Returns an array containing the elements of <code>array</code> that are not present in <code>other</code>. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSArray *ASTDifference(NSArray *array, NSArray *other);</code>
+          <pre><code>OVERLOADABLE NSArray *ASTDifference(NSArray *array, NSArray *other);</code></pre>
         </article>
         <article>
           <h3>ASTDifference</h3>
@@ -218,7 +219,7 @@
           <p>
             <p>Returns a set containing the elements of <code>set</code> that are not present in <code>other</code>.</p>
           </p>
-          <code>OVERLOADABLE NSSet *ASTDifference(NSSet *set, NSSet *other);</code>
+          <pre><code>OVERLOADABLE NSSet *ASTDifference(NSSet *set, NSSet *other);</code></pre>
         </article>
         <article>
           <h3>ASTDifference</h3>
@@ -238,7 +239,7 @@
           <p>
             <p>Returns an ordered set containing the elements of <code>set</code> that are not present in <code>other</code>.</p>
           </p>
-          <code>OVERLOADABLE NSOrderedSet *ASTDifference(NSOrderedSet *set, NSOrderedSet *other);</code>
+          <pre><code>OVERLOADABLE NSOrderedSet *ASTDifference(NSOrderedSet *set, NSOrderedSet *other);</code></pre>
         </article>
         <article>
           <h3>ASTEach</h3>
@@ -255,7 +256,7 @@
               <p>A block that takes an element as its only argument. The block must not be nil.</p>
             </li>
           </ul>
-          <code>OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id obj));</code>
+          <pre><code>OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTEach</h3>
@@ -272,7 +273,7 @@
               <p>A block that takes an element as its only argument and returns an object. Its return value is discarded. The block must not be nil.</p>
             </li>
           </ul>
-          <code>OVERLOADABLE void ASTEach(NSArray *array, id(^iterator)(id obj));</code>
+          <pre><code>OVERLOADABLE void ASTEach(NSArray *array, id(^iterator)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTEach</h3>
@@ -289,7 +290,7 @@
               <p>A block that takes an element and its index in <code>array</code> as its arguments. The block must not be nil.</p>
             </li>
           </ul>
-          <code>OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id obj, NSUInteger idx));</code>
+          <pre><code>OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id obj, NSUInteger idx));</code></pre>
         </article>
         <article>
           <h3>ASTEach</h3>
@@ -306,7 +307,7 @@
               <p>A block that takes an element as its only argument. The block must not be nil.</p>
             </li>
           </ul>
-          <code>OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id obj));</code>
+          <pre><code>OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTEach</h3>
@@ -323,7 +324,7 @@
               <p>A block that takes an element as its only argument and returns an object. Its return value is discarded. The block must not be nil.</p>
             </li>
           </ul>
-          <code>OVERLOADABLE void ASTEach(NSDictionary *dict, id(^iterator)(id obj));</code>
+          <pre><code>OVERLOADABLE void ASTEach(NSDictionary *dict, id(^iterator)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTEach</h3>
@@ -340,7 +341,7 @@
               <p>A block that takes a key and a value as its arguments. The block must not be nil.</p>
             </li>
           </ul>
-          <code>OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id key, id obj));</code>
+          <pre><code>OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id key, id obj));</code></pre>
         </article>
         <article>
           <h3>ASTEach</h3>
@@ -357,7 +358,7 @@
               <p>A block that takes an element and its index in <code>set</code> as its arguments. The block must not be nil.</p>
             </li>
           </ul>
-          <code>OVERLOADABLE void ASTEach(NSOrderedSet *set, void(^iterator)(id obj, NSUInteger idx));</code>
+          <pre><code>OVERLOADABLE void ASTEach(NSOrderedSet *set, void(^iterator)(id obj, NSUInteger idx));</code></pre>
         </article>
         <article>
           <h3>ASTEach</h3>
@@ -374,7 +375,7 @@
               <p>A block that takes an element as its only argument. The block must not be nil.</p>
             </li>
           </ul>
-          <code>OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, void(^iterator)(id obj));</code>
+          <pre><code>OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, void(^iterator)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTEach</h3>
@@ -391,7 +392,7 @@
               <p>A block that takes an element as its only argument and returns an object. Its return value is discarded. The block must not be nil.</p>
             </li>
           </ul>
-          <code>OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, id(^iterator)(id obj));</code>
+          <pre><code>OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, id(^iterator)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTEmpty</h3>
@@ -400,7 +401,7 @@
           </p>
           <ul>
           </ul>
-          <code>OVERLOADABLE BOOL ASTEmpty(NSArray *array);</code>
+          <pre><code>OVERLOADABLE BOOL ASTEmpty(NSArray *array);</code></pre>
         </article>
         <article>
           <h3>ASTEmpty</h3>
@@ -409,7 +410,7 @@
           </p>
           <ul>
           </ul>
-          <code>OVERLOADABLE BOOL ASTEmpty(NSDictionary *dictionary);</code>
+          <pre><code>OVERLOADABLE BOOL ASTEmpty(NSDictionary *dictionary);</code></pre>
         </article>
         <article>
           <h3>ASTEmpty</h3>
@@ -418,7 +419,7 @@
           </p>
           <ul>
           </ul>
-          <code>OVERLOADABLE BOOL ASTEmpty(NSSet *set);</code>
+          <pre><code>OVERLOADABLE BOOL ASTEmpty(NSSet *set);</code></pre>
         </article>
         <article>
           <h3>ASTEmpty</h3>
@@ -427,7 +428,7 @@
           </p>
           <ul>
           </ul>
-          <code>OVERLOADABLE BOOL ASTEmpty(NSOrderedSet *set);</code>
+          <pre><code>OVERLOADABLE BOOL ASTEmpty(NSOrderedSet *set);</code></pre>
         </article>
         <article>
           <h3>ASTEmpty</h3>
@@ -436,7 +437,7 @@
           </p>
           <ul>
           </ul>
-          <code>OVERLOADABLE BOOL ASTEmpty(id<NSFastEnumeration> collection);</code>
+          <pre><code>OVERLOADABLE BOOL ASTEmpty(id<NSFastEnumeration> collection);</code></pre>
         </article>
         <article>
           <h3>ASTExtend</h3>
@@ -456,7 +457,7 @@
           <p>
             <p>Returns a new dictionary that contains a union of key-value-pairs of <code>dict</code> and <code>source</code>. Key-value-pairs of <code>source</code> will have precedence over those taken from <code>dict</code>.</p>
           </p>
-          <code>OVERLOADABLE NSDictionary *ASTExtend(NSDictionary *dict, NSDictionary *source);</code>
+          <pre><code>OVERLOADABLE NSDictionary *ASTExtend(NSDictionary *dict, NSDictionary *source);</code></pre>
         </article>
         <article>
           <h3>ASTFilter</h3>
@@ -476,7 +477,7 @@
           <p>
             <p>Returns an array of all values in <code>array</code> that pass the test. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTFilter</h3>
@@ -496,7 +497,7 @@
           <p>
             <p>Returns an array of all values in <code>array</code> that pass the test. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));</code>
+          <pre><code>OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));</code></pre>
         </article>
         <article>
           <h3>ASTFilter</h3>
@@ -516,7 +517,7 @@
           <p>
             <p>Returns a dictionary of the keys and values in <code>dict</code> for which the values passed the test.</p>
           </p>
-          <code>OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTFilter</h3>
@@ -536,7 +537,7 @@
           <p>
             <p>Returns a dictionary of the keys and values in <code>dict</code> that passed the test.</p>
           </p>
-          <code>OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id key, id obj));</code>
+          <pre><code>OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id key, id obj));</code></pre>
         </article>
         <article>
           <h3>ASTFilter</h3>
@@ -556,7 +557,7 @@
           <p>
             <p>Returns a set of all values in <code>set</code> that pass the test.</p>
           </p>
-          <code>OVERLOADABLE NSSet *ASTFilter(NSSet *set, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSSet *ASTFilter(NSSet *set, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTFilter</h3>
@@ -576,7 +577,7 @@
           <p>
             <p>Returns an ordered set of all values in <code>set</code> that pass the test.</p>
           </p>
-          <code>OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTFilter</h3>
@@ -596,7 +597,7 @@
           <p>
             <p>Returns an ordered set of all values in <code>set</code> that pass the test. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx));</code>
+          <pre><code>OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx));</code></pre>
         </article>
         <article>
           <h3>ASTFind</h3>
@@ -616,7 +617,7 @@
           <p>
             <p>Returns the first item in <code>array</code> for which <code>block</code> returns <code>YES</code> or <code>nil</code> if no such value was found.</p>
           </p>
-          <code>OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTFind</h3>
@@ -636,7 +637,7 @@
           <p>
             <p>Returns the first item in <code>array</code> for which <code>block</code> returns <code>YES</code> or <code>nil</code> if no such value was found.</p>
           </p>
-          <code>OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));</code>
+          <pre><code>OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));</code></pre>
         </article>
         <article>
           <h3>ASTFind</h3>
@@ -656,7 +657,7 @@
           <p>
             <p>Returns any value in <code>dict</code> for which <code>block</code> returns <code>YES</code> or <code>nil</code> if no such value was found.</p>
           </p>
-          <code>OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTFind</h3>
@@ -676,7 +677,7 @@
           <p>
             <p>Returns any value in <code>dict</code> for which <code>block</code> returns <code>YES</code> or <code>nil</code> if no such value was found.</p>
           </p>
-          <code>OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id key, id obj));</code>
+          <pre><code>OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id key, id obj));</code></pre>
         </article>
         <article>
           <h3>ASTFind</h3>
@@ -696,7 +697,7 @@
           <p>
             <p>Returns a value in <code>collection</code> for which <code>block</code> returns <code>YES</code> or <code>nil</code> if no such value was found. If <code>collection</code> makes an order guarantee, <code>ASTFind</code> will return the first value matching the search criteria.</p>
           </p>
-          <code>OVERLOADABLE id ASTFind(id<NSFastEnumeration> collection, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE id ASTFind(id<NSFastEnumeration> collection, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTGroup</h3>
@@ -704,11 +705,9 @@
             <p>Groups the elements in a collection using a block.</p>
           </p>
           <h4>Examples</h4>
-          <p>
-            <code><pre>NSArray *numbers = @[ @1, @2, @3, @4, @5 ];</pre></code>
-            <code><pre>NSDictionary *grouped = ASTGroup(numbers, ^(NSNumber *number){&#x000A;    return number.integerValue % 2 == 0 ? @"even" : @"odd";&#x000A;});</pre></code>
-            <code><pre>grouped[@"even"];  { @2, @4 }&#x000A;grouped[@"odd"];   { @1, @3, @5 }</pre></code>
-          </p>
+          <pre><code>NSArray *numbers = @[ @1, @2, @3, @4, @5 ];</code></pre>
+          <pre><code>NSDictionary *grouped = ASTGroup(numbers, ^(NSNumber *number){&#x000A;    return number.integerValue % 2 == 0 ? @"even" : @"odd";&#x000A;});</code></pre>
+          <pre><code>grouped[@"even"];  { @2, @4 }&#x000A;grouped[@"odd"];   { @1, @3, @5 }</code></pre>
           <ul>
             <li class='argument'>
               <code class='argument-name'>collection</code>
@@ -722,7 +721,7 @@
           <p>
             <p>Returns a dictionary that maps the keys returned by <code>block</code> to a set of all values in <code>collection</code> that share the same key.</p>
           </p>
-          <code>OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTGroup</h3>
@@ -730,11 +729,9 @@
             <p>Groups the elements in a collection by their value for a given key path.</p>
           </p>
           <h4>Examples</h4>
-          <p>
-            <code><pre>NSArray *numbers = @[ @"foo", @"bar", @"surprise" ];</pre></code>
-            <code><pre>NSDictionary *grouped = ASTGroup(numbers, @"length");</pre></code>
-            <code><pre>grouped[@3];  { @"foo", @"bar" }&#x000A;grouped[@8];  { @"surprise" }</pre></code>
-          </p>
+          <pre><code>NSArray *numbers = @[ @"foo", @"bar", @"surprise" ];</code></pre>
+          <pre><code>NSDictionary *grouped = ASTGroup(numbers, @"length");</code></pre>
+          <pre><code>grouped[@3];  { @"foo", @"bar" }&#x000A;grouped[@8];  { @"surprise" }</code></pre>
           <ul>
             <li class='argument'>
               <code class='argument-name'>collection</code>
@@ -748,7 +745,7 @@
           <p>
             <p>Returns a dictionary that maps the values the elements return for <code>keyPath</code> to a set of all values in <code>collection</code> that share the same key.</p>
           </p>
-          <code>OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, NSString *keyPath);</code>
+          <pre><code>OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, NSString *keyPath);</code></pre>
         </article>
         <article>
           <h3>ASTHead</h3>
@@ -764,7 +761,7 @@
           <p>
             <p>Returns the first element or <code>nil</code> if the array is empty.</p>
           </p>
-          <code>OVERLOADABLE id ASTHead(NSArray *array);</code>
+          <pre><code>OVERLOADABLE id ASTHead(NSArray *array);</code></pre>
         </article>
         <article>
           <h3>ASTHead</h3>
@@ -780,7 +777,7 @@
           <p>
             <p>Returns the first element or <code>nil</code> if the ordered set is empty.</p>
           </p>
-          <code>OVERLOADABLE id ASTHead(NSOrderedSet *set);</code>
+          <pre><code>OVERLOADABLE id ASTHead(NSOrderedSet *set);</code></pre>
         </article>
         <article>
           <h3>ASTIndexOf</h3>
@@ -800,7 +797,7 @@
           <p>
             <p>Returns the first index of obj in array or NSNotFound if the object could not be found.</p>
           </p>
-          <code>OVERLOADABLE NSUInteger ASTIndexOf(NSArray *array, id obj);</code>
+          <pre><code>OVERLOADABLE NSUInteger ASTIndexOf(NSArray *array, id obj);</code></pre>
         </article>
         <article>
           <h3>ASTIndexOf</h3>
@@ -820,7 +817,7 @@
           <p>
             <p>Returns the first index of obj in set or NSNotFound if the object could not be found.</p>
           </p>
-          <code>OVERLOADABLE NSUInteger ASTIndexOf(NSOrderedSet *set, id obj);</code>
+          <pre><code>OVERLOADABLE NSUInteger ASTIndexOf(NSOrderedSet *set, id obj);</code></pre>
         </article>
         <article>
           <h3>ASTIndexOf</h3>
@@ -840,7 +837,7 @@
           <p>
             <p>Returns the first index of obj in collection or NSNotFound if the object could not be found. If collection does not make a guarantee regarding its order, such as NSSet or NSDictionary, the meaning of the return value is undefined.</p>
           </p>
-          <code>OVERLOADABLE NSUInteger ASTIndexOf(id<NSFastEnumeration> collection, id obj);</code>
+          <pre><code>OVERLOADABLE NSUInteger ASTIndexOf(id<NSFastEnumeration> collection, id obj);</code></pre>
         </article>
         <article>
           <h3>ASTIntersection</h3>
@@ -860,7 +857,7 @@
           <p>
             <p>Returns an array containing the elements of <code>array</code> that are also present in <code>other</code>. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other);</code>
+          <pre><code>OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other);</code></pre>
         </article>
         <article>
           <h3>ASTIntersection</h3>
@@ -880,7 +877,7 @@
           <p>
             <p>Returns a set containing the elements of <code>set</code> that are also present in <code>other</code>.</p>
           </p>
-          <code>OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other);</code>
+          <pre><code>OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other);</code></pre>
         </article>
         <article>
           <h3>ASTIntersection</h3>
@@ -900,7 +897,7 @@
           <p>
             <p>Returns a set containing the elements of <code>set</code> that are also present in <code>other</code>. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other);</code>
+          <pre><code>OVERLOADABLE NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other);</code></pre>
         </article>
         <article>
           <h3>ASTLiftVar</h3>
@@ -916,25 +913,43 @@
           <p>
             <p>Returns a varargs block that invokes the <code>selector</code> on its first argument, using all subsequent parameters as arguments. If invoking the selector returns a primitive value, it is automatically boxed in an NSValue or NSNumber. You should use the ASTLift0 or ASTLift macros for improved type-safety.</p>
           </p>
-          <code>ASTBlockVar ASTLiftVar(SEL selector);</code>
+          <pre><code>ASTBlockVar ASTLiftVar(SEL selector);</code></pre>
         </article>
         <article>
-          <h3></h3>
+          <h3>ASTLift0</h3>
+          <p>
+            <p>Lifts a selector into a block.</p>
+          </p>
+          <ul>
+            <li class='argument'>
+              <code class='argument-name'>selector</code>
+              <p>A selector that takes no arguments.</p>
+            </li>
+          </ul>
+          <p>
+            <p>Returns a block of type id (^)(id) that invokes <code>selector</code> on its argument. If invoking the selector returns a primitive value, it is automatically boxed in an NSValue or NSNumber. If the <code>selector</code> on the argument is of type <code>void</code>, the block returns <code>nil</code>.</p>
+          </p>
+          <pre><code>#define ASTLift0(SELECTOR) \</code></pre>
+        </article>
+        <article>
+          <h3>ASTLift</h3>
           <p>
             <p>Lifts a selector into a block.</p>
             
             <p>selector... - A variadic argument of selector components, each ending in &#39;:&#39;.</p>
+            
+            <p>If invoking the selector returns a primitive value, it is automatically boxed
+            in an NSValue or NSNumber.
+            If the <code>selector</code> on the argument is of type <code>void</code>, the block returns <code>nil</code>.</p>
           </p>
           <h4>Examples</h4>
-          <p>
-            <code><pre>id (^block)(id, id, id) = ASTLift(setValue:, forKeyPath:);</pre></code>
-          </p>
+          <pre><code>id (^block)(id, id, id) = ASTLift(setValue:, forKeyPath:);&#x000A;&#x000A;block(a, b, c);  Equivalent to [a setValue:b forKeyPath:c];</code></pre>
           <ul>
           </ul>
           <p>
-            <p>Returns a block of the return-type id that takes on more argument than the number of selector components it was created with. Calling the block invokes <code>selector</code> on its first argument, using the subsequent arguments as parameters. If invoking the selector returns a primitive value, it is automatically boxed in an NSValue or NSNumber. If the <code>selector</code> on the argument is of type <code>void</code>, the block returns <code>nil</code>.</p>
+            <p>Returns a block of the return-type id that takes on more argument than the number of selector components it was created with. Calling the block invokes <code>selector</code> on its first argument, using the subsequent arguments as parameters.</p>
           </p>
-          <code>//    block(a, b, c); // Equivalent to [a setValue:b forKeyPath:c];</code>
+          <pre><code>#define ASTLift(...) \</code></pre>
         </article>
         <article>
           <h3>ASTMap</h3>
@@ -954,7 +969,7 @@
           <p>
             <p>Returns an array that contains all values of <code>array</code> after <code>block</code> has been applied. If <code>block</code> returns <code>nil</code>, the element is not present in the returned array. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTMap</h3>
@@ -974,7 +989,7 @@
           <p>
             <p>Returns an array that contains all values of <code>array</code> after <code>block</code> has been applied. If <code>block</code> returns <code>nil</code>, the element is not present in the returned array. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx));</code>
+          <pre><code>OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx));</code></pre>
         </article>
         <article>
           <h3>ASTMap</h3>
@@ -994,7 +1009,7 @@
           <p>
             <p>Returns a dictionary that contains all keys and values of <code>dict</code> after <code>block</code> has been applied to the value. If <code>block</code> returns <code>nil</code>, the key and value are not present in the returned dictionary.</p>
           </p>
-          <code>OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTMap</h3>
@@ -1014,7 +1029,7 @@
           <p>
             <p>Returns a dictionary that contains all keys and values of <code>dict</code> after <code>block</code> has been applied to them. If <code>block</code> returns <code>nil</code>, the key and value are not present in the returned dictionary.</p>
           </p>
-          <code>OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj));</code>
+          <pre><code>OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj));</code></pre>
         </article>
         <article>
           <h3>ASTMap</h3>
@@ -1034,7 +1049,7 @@
           <p>
             <p>Returns a set that contains all values of <code>set</code> after <code>block</code> has been applied. If <code>block</code> returns <code>nil</code>, the element is not present in the returned set.</p>
           </p>
-          <code>OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTMap</h3>
@@ -1054,7 +1069,7 @@
           <p>
             <p>Returns an ordered set that contains all values of <code>set</code> after <code>block</code> has been applied. If <code>block</code> returns <code>nil</code>, the element is not present in the returned set. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTMap</h3>
@@ -1074,7 +1089,7 @@
           <p>
             <p>Returns an ordered set that contains all values of <code>set</code> after <code>block</code> has been applied. If <code>block</code> returns <code>nil</code>, the element is not present in the returned set. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx));</code>
+          <pre><code>OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx));</code></pre>
         </article>
         <article>
           <h3>ASTMin</h3>
@@ -1090,7 +1105,7 @@
           <p>
             <p>Returns the minimum of the collection by comparing all values by invoking -compare:.</p>
           </p>
-          <code>OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection);</code>
+          <pre><code>OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection);</code></pre>
         </article>
         <article>
           <h3>ASTMin</h3>
@@ -1110,7 +1125,7 @@
           <p>
             <p>Returns the minimum of the collection by comparing all values using <code>comparator</code>.</p>
           </p>
-          <code>OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator);</code>
+          <pre><code>OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator);</code></pre>
         </article>
         <article>
           <h3>ASTMin</h3>
@@ -1130,7 +1145,7 @@
           <p>
             <p>Returns the minimum of the collection by comparing all values using <code>comparator</code>.</p>
           </p>
-          <code>OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSNumber *(^comparator)(id a, id b));</code>
+          <pre><code>OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSNumber *(^comparator)(id a, id b));</code></pre>
         </article>
         <article>
           <h3>ASTMax</h3>
@@ -1146,7 +1161,7 @@
           <p>
             <p>Returns the maximum of the collection by comparing all values by invoking -compare:.</p>
           </p>
-          <code>OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection);</code>
+          <pre><code>OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection);</code></pre>
         </article>
         <article>
           <h3>ASTMax</h3>
@@ -1166,7 +1181,7 @@
           <p>
             <p>Returns the maximum of the collection by comparing all values using <code>comparator</code>.</p>
           </p>
-          <code>OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator);</code>
+          <pre><code>OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator);</code></pre>
         </article>
         <article>
           <h3>ASTMax</h3>
@@ -1186,7 +1201,7 @@
           <p>
             <p>Returns the maximum of the collection by comparing all values using <code>comparator</code>.</p>
           </p>
-          <code>OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSNumber *(^comparator)(id a, id b));</code>
+          <pre><code>OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSNumber *(^comparator)(id a, id b));</code></pre>
         </article>
         <article>
           <h3>ASTNegate</h3>
@@ -1202,7 +1217,7 @@
           <p>
             <p>Returns a new block of the same type that returns the opposite of what <code>block</code> returns.</p>
           </p>
-          <code>OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id)))(id);</code>
+          <pre><code>OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id)))(id);</code></pre>
         </article>
         <article>
           <h3>ASTNegate</h3>
@@ -1218,7 +1233,7 @@
           <p>
             <p>Returns a new block of the same type that returns the opposite of what <code>block</code> returns.</p>
           </p>
-          <code>OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id);</code>
+          <pre><code>OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id);</code></pre>
         </article>
         <article>
           <h3>ASTNegate</h3>
@@ -1234,7 +1249,7 @@
           <p>
             <p>Returns a new block of the same type that returns the opposite of what <code>block</code> returns.</p>
           </p>
-          <code>OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, NSUInteger)))(id, NSUInteger);</code>
+          <pre><code>OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, NSUInteger)))(id, NSUInteger);</code></pre>
         </article>
         <article>
           <h3>ASTPluck</h3>
@@ -1254,7 +1269,7 @@
           <p>
             <p>Returns an array of the values that the elements in <code>collection</code> return for <code>keyPath</code>. If an element returns nil when invoked with -valueForKeyPath:, it is not present in the returned array. If possible, the order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPath);</code>
+          <pre><code>OVERLOADABLE NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPath);</code></pre>
         </article>
         <article>
           <h3>ASTReduce</h3>
@@ -1262,9 +1277,7 @@
             <p>Reduces a collection to a single value.</p>
           </p>
           <h4>Examples</h4>
-          <p>
-            <code><pre>Requivalent to [@"a" stringByAppendingString:@"b"];&#x000A;ASTReduce(@[ @"a", @"b" ], ASTLift(stringByAppendingString:));&#x000A;&#x000A; Requivalent to [[@"a" stringByAppendingString:@"b"] stringByAppendingString:@"c"];&#x000A;ASTReduce(@[ @"a", @"b", @"c" ], ASTLift(stringByAppendingString:));</pre></code>
-          </p>
+          <pre><code>Requivalent to [@"a" stringByAppendingString:@"b"];&#x000A;ASTReduce(@[ @"a", @"b" ], ASTLift(stringByAppendingString:));&#x000A;&#x000A; Requivalent to [[@"a" stringByAppendingString:@"b"] stringByAppendingString:@"c"];&#x000A;ASTReduce(@[ @"a", @"b", @"c" ], ASTLift(stringByAppendingString:));</code></pre>
           <ul>
             <li class='argument'>
               <code class='argument-name'>collection</code>
@@ -1278,7 +1291,7 @@
           <p>
             <p>Returns the last return value of <code>block</code> once it reached the end of <code>collection</code>. If <code>collection</code> has only one element, <code>block</code> is never invoked and the first element is returned. If <code>collection</code> is empty, nil is returned.</p>
           </p>
-          <code>OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj));</code>
+          <pre><code>OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj));</code></pre>
         </article>
         <article>
           <h3>ASTReduce</h3>
@@ -1302,7 +1315,7 @@
           <p>
             <p>Returns the last return value of <code>block</code> once it reached the end of <code>collection</code>. If <code>collection</code> is empty, <code>memo</code> is returned.</p>
           </p>
-          <code>OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj));</code>
+          <pre><code>OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj));</code></pre>
         </article>
         <article>
           <h3>ASTReject</h3>
@@ -1322,7 +1335,7 @@
           <p>
             <p>Returns an array of all values in <code>array</code> that fail the test. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTReject</h3>
@@ -1342,7 +1355,7 @@
           <p>
             <p>Returns an array of all values in <code>array</code> that fail the test. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));</code>
+          <pre><code>OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));</code></pre>
         </article>
         <article>
           <h3>ASTReject</h3>
@@ -1362,7 +1375,7 @@
           <p>
             <p>Returns a dictionary of the keys and values in <code>dict</code> for which the values failed the test.</p>
           </p>
-          <code>OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTReject</h3>
@@ -1382,7 +1395,7 @@
           <p>
             <p>Returns a dictionary of the keys and values in <code>dict</code> that fail the test.</p>
           </p>
-          <code>OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id key, id obj));</code>
+          <pre><code>OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id key, id obj));</code></pre>
         </article>
         <article>
           <h3>ASTReject</h3>
@@ -1402,7 +1415,7 @@
           <p>
             <p>Returns a set of all values in <code>set</code> that fail the test.</p>
           </p>
-          <code>OVERLOADABLE NSSet *ASTReject(NSSet *set, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSSet *ASTReject(NSSet *set, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTReject</h3>
@@ -1422,7 +1435,7 @@
           <p>
             <p>Returns an ordered set of all values in <code>set</code> that fail the test.</p>
           </p>
-          <code>OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj));</code>
+          <pre><code>OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj));</code></pre>
         </article>
         <article>
           <h3>ASTReject</h3>
@@ -1442,7 +1455,7 @@
           <p>
             <p>Returns an ordered set of all values in <code>set</code> that fail the test. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx));</code>
+          <pre><code>OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx));</code></pre>
         </article>
         <article>
           <h3>ASTSize</h3>
@@ -1458,7 +1471,7 @@
           <p>
             <p>Returns the size of <code>array</code>.</p>
           </p>
-          <code>OVERLOADABLE NSUInteger ASTSize(NSArray *array);</code>
+          <pre><code>OVERLOADABLE NSUInteger ASTSize(NSArray *array);</code></pre>
         </article>
         <article>
           <h3>ASTSize</h3>
@@ -1474,7 +1487,7 @@
           <p>
             <p>Returns the size of <code>dictionary</code>.</p>
           </p>
-          <code>OVERLOADABLE NSUInteger ASTSize(NSDictionary *dictionary);</code>
+          <pre><code>OVERLOADABLE NSUInteger ASTSize(NSDictionary *dictionary);</code></pre>
         </article>
         <article>
           <h3>ASTSize</h3>
@@ -1490,7 +1503,7 @@
           <p>
             <p>Returns the size of <code>set</code>.</p>
           </p>
-          <code>OVERLOADABLE NSUInteger ASTSize(NSSet *set);</code>
+          <pre><code>OVERLOADABLE NSUInteger ASTSize(NSSet *set);</code></pre>
         </article>
         <article>
           <h3>ASTSize</h3>
@@ -1506,7 +1519,7 @@
           <p>
             <p>Returns the size of <code>set</code>.</p>
           </p>
-          <code>OVERLOADABLE NSUInteger ASTSize(NSOrderedSet *set);</code>
+          <pre><code>OVERLOADABLE NSUInteger ASTSize(NSOrderedSet *set);</code></pre>
         </article>
         <article>
           <h3>ASTSize</h3>
@@ -1522,7 +1535,7 @@
           <p>
             <p>Returns the size of <code>collection</code> in O(n).</p>
           </p>
-          <code>OVERLOADABLE NSUInteger ASTSize(id<NSFastEnumeration> collection);</code>
+          <pre><code>OVERLOADABLE NSUInteger ASTSize(id<NSFastEnumeration> collection);</code></pre>
         </article>
         <article>
           <h3>ASTTail</h3>
@@ -1538,7 +1551,7 @@
           <p>
             <p>Returns all elements after the first one. If the array has less than one element, an empty array is returned.</p>
           </p>
-          <code>OVERLOADABLE NSArray *ASTTail(NSArray *array);</code>
+          <pre><code>OVERLOADABLE NSArray *ASTTail(NSArray *array);</code></pre>
         </article>
         <article>
           <h3>ASTTail</h3>
@@ -1554,7 +1567,7 @@
           <p>
             <p>Returns all elements after the first one. If the set has less than one element, an empty ordered set is returned.</p>
           </p>
-          <code>OVERLOADABLE NSOrderedSet *ASTTail(NSOrderedSet *set);</code>
+          <pre><code>OVERLOADABLE NSOrderedSet *ASTTail(NSOrderedSet *set);</code></pre>
         </article>
         <article>
           <h3>ASTUnion</h3>
@@ -1574,7 +1587,7 @@
           <p>
             <p>Returns an array containing all elements of <code>array</code>, concatenated with all elements of <code>other</code> not already present in <code>array</code>. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSArray *ASTUnion(NSArray *array, NSArray *other);</code>
+          <pre><code>OVERLOADABLE NSArray *ASTUnion(NSArray *array, NSArray *other);</code></pre>
         </article>
         <article>
           <h3>ASTUnion</h3>
@@ -1594,7 +1607,7 @@
           <p>
             <p>Returns a set containing the elements of <code>set</code> and <code>other</code>.</p>
           </p>
-          <code>OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other);</code>
+          <pre><code>OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other);</code></pre>
         </article>
         <article>
           <h3>ASTUnion</h3>
@@ -1614,7 +1627,7 @@
           <p>
             <p>Returns an orderd set containing all elements of <code>set</code>, concatenated with all elements of <code>other</code> not already present in <code>set</code>. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSOrderedSet *ASTUnion(NSOrderedSet *set, NSOrderedSet *other);</code>
+          <pre><code>OVERLOADABLE NSOrderedSet *ASTUnion(NSOrderedSet *set, NSOrderedSet *other);</code></pre>
         </article>
         <article>
           <h3>ASTWithout</h3>
@@ -1634,7 +1647,7 @@
           <p>
             <p>Returns an array of all values in <code>array</code> that are equal to <code>obj</code>. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSArray *ASTWithout(NSArray *array, id obj);</code>
+          <pre><code>OVERLOADABLE NSArray *ASTWithout(NSArray *array, id obj);</code></pre>
         </article>
         <article>
           <h3>ASTWithout</h3>
@@ -1654,7 +1667,7 @@
           <p>
             <p>Returns a set of all values in <code>set</code> that are equal to <code>obj</code>.</p>
           </p>
-          <code>OVERLOADABLE NSSet *ASTWithout(NSSet *set, id obj);</code>
+          <pre><code>OVERLOADABLE NSSet *ASTWithout(NSSet *set, id obj);</code></pre>
         </article>
         <article>
           <h3>ASTWithout</h3>
@@ -1674,7 +1687,7 @@
           <p>
             <p>Returns an ordered set of all values in <code>set</code> that are equal to <code>obj</code>. The order is being maintained.</p>
           </p>
-          <code>OVERLOADABLE NSOrderedSet *ASTWithout(NSOrderedSet *set, id obj);</code>
+          <pre><code>OVERLOADABLE NSOrderedSet *ASTWithout(NSOrderedSet *set, id obj);</code></pre>
         </article>
       </section>
     </div>

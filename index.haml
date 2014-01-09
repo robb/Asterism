@@ -29,7 +29,7 @@
                 font-size: 1.3 * $base
                 line-height: 1 * $base
                 margin-top: 0 * $base
-                margin-bottom: 0 * $base
+                margin-bottom: 1 * $base
 
             h4
                 font-size: 1 * $base
@@ -37,7 +37,7 @@
                 margin-top: 0
                 margin-bottom: 0
 
-            p, ul
+            p, ul, pre
                 margin-top: 0
                 margin-bottom: 1 * $base
 
@@ -54,19 +54,22 @@
             p, li
                 font-family: "myriad-pro", sans-serif
 
-            code
+            p
+                code
+                    background-color: #EFEFEF
+                    border-radius: 3px
+                    padding: 3px
+
+            pre, code
                 font-family: "droid-sans-mono", mono-spaced
+
                 font-size: 0.9 * $base
-
-                background-color: #EFEFEF
-                border-radius: 3px
-                padding: 3px
-
-            pre
                 line-height: $base
 
+            pre
+                background-color: #EFEFEF
+
                 padding: 0.5 * $base
-                margin: -0.5 * $base 0 0.5 * $base 0
 
             header, section, footer
                 padding: 0.5 * $base 1 * $base
@@ -121,9 +124,8 @@
                     The recommended way to install Asterism is using the excellent
                     CocoaPods:
 
-                %code
-                    %pre
-                        \# Podfile
+                %pre
+                    %code
                         pod 'Asterism'
 
             %section#section-documentation-all
@@ -138,10 +140,9 @@
 
                             - unless method[:tomdoc].examples.empty?
                                 %h4 Examples
-                                %p
-                                    - method[:tomdoc].examples.each do |example|
-                                        %code
-                                            %pre= example
+                                - method[:tomdoc].examples.each do |example|
+                                    %pre
+                                        %code= example
 
                             %ul
                                 - method[:tomdoc].arguments.each do |arg|
@@ -155,4 +156,5 @@
                                     :markdown
                                         #{ret}
 
-                            %code= method[:signature]
+                            %pre
+                                %code= method[:signature]
