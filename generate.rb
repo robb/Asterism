@@ -6,7 +6,7 @@ require 'tomparse'
 docs = Dir["Asterism/Asterism/AST*.h"].map do |filename|
     file = File.read filename
 
-    blocks = file.scan(/((\/\/.*\s)+(.+\;$))/).map { |c| c[0] }
+    blocks = file.scan(/((\/\/.*\s)+((.+\;$)|(^\#.+$)))/).map { |c| c[0] }
 
     # Parse all tomdoc blocks
     blocks.map do |block|
