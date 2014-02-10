@@ -27,7 +27,7 @@ OVERLOADABLE NSUInteger ASTSize(NSOrderedSet *set) {
 OVERLOADABLE NSUInteger ASTSize(id<NSFastEnumeration> collection) {
     NSUInteger size = 0;
 
-    for (id _ in collection) size++;
+    for (__attribute__((unused)) id _ in collection) size++;
 
     return size;
 }

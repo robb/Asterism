@@ -25,9 +25,7 @@ OVERLOADABLE BOOL ASTEmpty(NSOrderedSet *set) {
 }
 
 OVERLOADABLE BOOL ASTEmpty(id<NSFastEnumeration> collection) {
-    for (id _ in collection) {
-        return NO;
-    }
+    for (__attribute__((unused)) id _ in collection) return NO;
 
     return YES;
 }
