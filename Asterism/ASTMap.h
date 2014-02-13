@@ -32,7 +32,7 @@ OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj));
 // array. The order is being maintained.
 OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx));
 
-// Maps a block across a dicitonary.
+// Maps a block across a dictionary.
 //
 // dict  - A dictionary of elements.
 // block - A block that takes a value as its only argument and returns a new
@@ -43,7 +43,7 @@ OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx))
 // value are not present in the returned dictionary.
 OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj));
 
-// Maps a block across a dicitonary.
+// Maps a block across a dictionary.
 //
 // dict  - A dictionary of elements.
 // block - A block that takes a key and a value as its arguments and returns a
@@ -67,7 +67,7 @@ OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj));
 
 // Maps a block across an ordered set.
 //
-// set   - An orderd set of elements.
+// set   - An ordered set of elements.
 // block - A block that takes an element as its only argument and returns a new
 //         element. The block must not be nil.
 //
@@ -78,7 +78,7 @@ OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj));
 
 // Maps a block across an ordered set.
 //
-// set   - An orderd set of elements.
+// set   - An ordered set of elements.
 // block - A block that takes an element and its index in `set` as its
 //         arguments and returns a new element. The block must not be nil.
 //

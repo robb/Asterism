@@ -26,10 +26,10 @@
 //
 // Example
 //
-//     // Requivalent to [@"a" stringByAppendingString:@"b"];
+//     // Equivalent to [@"a" stringByAppendingString:@"b"];
 //     ASTReduce(@[ @"a", @"b" ], ASTLift(stringByAppendingString:));
 //
-//     // Requivalent to [[@"a" stringByAppendingString:@"b"] stringByAppendingString:@"c"];
+//     // Equivalent to [[@"a" stringByAppendingString:@"b"] stringByAppendingString:@"c"];
 //     ASTReduce(@[ @"a", @"b", @"c" ], ASTLift(stringByAppendingString:));
 //
 OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj));
