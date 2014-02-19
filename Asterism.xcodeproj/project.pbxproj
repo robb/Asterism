@@ -192,13 +192,10 @@
 		54FE96EE177068B2006F40AC /* ASTIntersectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTIntersectionSpec.m; sourceTree = "<group>"; };
 		6F8F6BC620F04200B843D72F /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 		B82A91E23E8448D2861527C1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-<<<<<<< HEAD
 		DCFF2F7418B55A04001365BF /* ASTPickSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTPickSpec.m; sourceTree = "<group>"; };
-=======
 		DCF5756C18427BE900F0989B /* ASTFlatten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTFlatten.h; sourceTree = "<group>"; };
 		DCF5756D18427BE900F0989B /* ASTFlatten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTFlatten.m; sourceTree = "<group>"; };
 		DCF5757018427F5200F0989B /* ASTFlattenSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTFlattenSpec.m; sourceTree = "<group>"; };
->>>>>>> master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
