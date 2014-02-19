@@ -14,12 +14,12 @@
 //
 // array - An array of elements.
 //
-// Returns a copy of array shuffled using the Fisher-Yates shuffle.
+// Returns a copy of `array` shuffled using the Fisher-Yates shuffle.
 OVERLOADABLE NSArray *ASTShuffle(NSArray *array);
 
 // Shuffles an ordered set.
 //
 // set - An ordered set of elements.
 //
-// Returns a copy of set shuffled using the Fisher-Yates shuffle.
+// Returns a copy of `set` shuffled using the Fisher-Yates shuffle.
 OVERLOADABLE NSOrderedSet *ASTShuffle(NSOrderedSet *set);
