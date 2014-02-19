@@ -30,5 +30,6 @@
 #import "ASTReduce.h"
 #import "ASTReject.h"
 #import "ASTSize.h"
+#import "ASTShuffle.h"
 #import "ASTTail.h"
 #import "ASTUnion.h"
