@@ -68,6 +68,7 @@
 		54FE96ED17706265006F40AC /* ASTIntersection.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96EC17706265006F40AC /* ASTIntersection.m */; };
 		54FE96EF177068B2006F40AC /* ASTIntersectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96EE177068B2006F40AC /* ASTIntersectionSpec.m */; };
 		6DA0E311E2FE4D0091F50B0D /* libPods-Specs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B82A91E23E8448D2861527C1 /* libPods-Specs.a */; };
+		DCFF2F7518B55A04001365BF /* ASTPickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFF2F7418B55A04001365BF /* ASTPickSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		54FE96EE177068B2006F40AC /* ASTIntersectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTIntersectionSpec.m; sourceTree = "<group>"; };
 		6F8F6BC620F04200B843D72F /* Pods-Specs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs.xcconfig"; path = "Pods/Pods-Specs.xcconfig"; sourceTree = SOURCE_ROOT; };
 		B82A91E23E8448D2861527C1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCFF2F7418B55A04001365BF /* ASTPickSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTPickSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 				54A0BB2D175E647E001D06E2 /* ASTMinMaxSpec.m */,
 				549B726B175D097100E6A378 /* ASTNegateSpec.m */,
 				546B5FED176346AE00AE3EBC /* ASTPartialSpec.m */,
+				DCFF2F7418B55A04001365BF /* ASTPickSpec.m */,
 				54A72CC0175D0FD400D9A05E /* ASTPluckSpec.m */,
 				542C1CB9175214B90013D41E /* ASTReduceSpec.m */,
 				549B7269175D08E400E6A378 /* ASTRejectSpec.m */,
@@ -544,6 +547,7 @@
 				54A0BB2E175E647E001D06E2 /* ASTMinMaxSpec.m in Sources */,
 				54CA8D1C177739B8001BCD9F /* ASTFindSpec.m in Sources */,
 				54CE84C2174D93A6006F960A /* ASTLiftSpec.m in Sources */,
+				DCFF2F7518B55A04001365BF /* ASTPickSpec.m in Sources */,
 				54A7FD3E175CDCCE004A7541 /* LiftTestClassA.m in Sources */,
 				54A7FD41175CDCF9004A7541 /* LiftTestClassB.m in Sources */,
 				546B5FEE176346AE00AE3EBC /* ASTPartialSpec.m in Sources */,
