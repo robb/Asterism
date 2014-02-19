@@ -16,7 +16,7 @@ describe(@"for arrays", ^{
 
         NSArray *shuffled = ASTShuffle(original);
 
-        for(NSNumber *number in original) {
+        for (NSNumber *number in original) {
             expect(shuffled).to.contain(number);
         }
 
@@ -30,7 +30,7 @@ describe(@"for ordered sets", ^{
 
         NSOrderedSet *shuffled = ASTShuffle(original);
 
-        for(NSNumber *number in original) {
+        for (NSNumber *number in original) {
             expect(shuffled).to.contain(number);
         }
 
