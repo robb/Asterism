@@ -60,6 +60,8 @@
 		54E0ED75175A1ABD0076C6EA /* ASTFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED74175A1ABD0076C6EA /* ASTFilter.m */; };
 		54E1B64817215678008A2175 /* ASTEach.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1B64717215678008A2175 /* ASTEach.m */; };
 		54E1B64A17215783008A2175 /* ASTEachSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1B64917215783008A2175 /* ASTEachSpec.m */; };
+		54F4C5DE185C952200E897E7 /* ASTIndexBy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F4C5DD185C952200E897E7 /* ASTIndexBy.m */; };
+		54FB520818BBA7B8005DEB38 /* ASTIndexBySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FB520718BBA7B8005DEB38 /* ASTIndexBySpec.m */; };
 		54FE96DE17704C7F006F40AC /* ASTDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96DD17704C7F006F40AC /* ASTDifference.m */; };
 		54FE96E017704FF7006F40AC /* ASTDifferenceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96DF17704FF7006F40AC /* ASTDifferenceSpec.m */; };
 		54FE96E3177053FE006F40AC /* ASTUnion.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96E2177053FE006F40AC /* ASTUnion.m */; };
@@ -177,6 +179,9 @@
 		54E1B64617215678008A2175 /* ASTEach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTEach.h; sourceTree = "<group>"; };
 		54E1B64717215678008A2175 /* ASTEach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTEach.m; sourceTree = "<group>"; };
 		54E1B64917215783008A2175 /* ASTEachSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTEachSpec.m; sourceTree = "<group>"; };
+		54F4C5DC185C952200E897E7 /* ASTIndexBy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTIndexBy.h; sourceTree = "<group>"; };
+		54F4C5DD185C952200E897E7 /* ASTIndexBy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTIndexBy.m; sourceTree = "<group>"; };
+		54FB520718BBA7B8005DEB38 /* ASTIndexBySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTIndexBySpec.m; sourceTree = "<group>"; };
 		54FE96DC17704C7F006F40AC /* ASTDifference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTDifference.h; sourceTree = "<group>"; };
 		54FE96DD17704C7F006F40AC /* ASTDifference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTDifference.m; sourceTree = "<group>"; };
 		54FE96DF17704FF7006F40AC /* ASTDifferenceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTDifferenceSpec.m; sourceTree = "<group>"; };
@@ -277,6 +282,8 @@
 				549DFB89175E4DD2005CAD4A /* ASTGroup.m */,
 				54E0ED69175A0D5B0076C6EA /* ASTHead.h */,
 				54E0ED6A175A0D5B0076C6EA /* ASTHead.m */,
+				54F4C5DC185C952200E897E7 /* ASTIndexBy.h */,
+				54F4C5DD185C952200E897E7 /* ASTIndexBy.m */,
 				54A140061842415300CEC841 /* ASTIndexOf.h */,
 				54A140071842415300CEC841 /* ASTIndexOf.m */,
 				54FE96EB17706265006F40AC /* ASTIntersection.h */,
@@ -334,6 +341,7 @@
 				DCF5757018427F5200F0989B /* ASTFlattenSpec.m */,
 				549DFB8D175E5526005CAD4A /* ASTGroupSpec.m */,
 				54E0ED6C175A0DF00076C6EA /* ASTHeadSpec.m */,
+				54FB520718BBA7B8005DEB38 /* ASTIndexBySpec.m */,
 				54A140091842439100CEC841 /* ASTIndexOfSpec.m */,
 				54FE96EE177068B2006F40AC /* ASTIntersectionSpec.m */,
 				54CE84C1174D93A6006F960A /* ASTLiftSpec.m */,
@@ -506,6 +514,7 @@
 				DCF5756E18427BE900F0989B /* ASTFlatten.m in Sources */,
 				54E0ED75175A1ABD0076C6EA /* ASTFilter.m in Sources */,
 				54A13FCE184222F900CEC841 /* ASTExtend.m in Sources */,
+				54F4C5DE185C952200E897E7 /* ASTIndexBy.m in Sources */,
 				549B7264175CFE6700E6A378 /* ASTReject.m in Sources */,
 				549B7268175D07CF00E6A378 /* ASTNegate.m in Sources */,
 				54892BAC184AAEFD009CF268 /* ASTAll.m in Sources */,
@@ -547,6 +556,7 @@
 				549DFB8E175E5526005CAD4A /* ASTGroupSpec.m in Sources */,
 				54A0BB2E175E647E001D06E2 /* ASTMinMaxSpec.m in Sources */,
 				54CA8D1C177739B8001BCD9F /* ASTFindSpec.m in Sources */,
+				54FB520818BBA7B8005DEB38 /* ASTIndexBySpec.m in Sources */,
 				54CE84C2174D93A6006F960A /* ASTLiftSpec.m in Sources */,
 				54A7FD3E175CDCCE004A7541 /* LiftTestClassA.m in Sources */,
 				54A7FD41175CDCF9004A7541 /* LiftTestClassB.m in Sources */,
