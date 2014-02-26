@@ -55,6 +55,7 @@ Asterism currently supports the following operations:
 * [flatten](Asterism/ASTFlatten.h)
 * [group](Asterism/ASTGroup.h)
 * [head](Asterism/ASTHead.h)
+* [indexOf](Asterism/ASTIndexOf.h)
 * [intersection](Asterism/ASTIntersection.h)
 * [lift](Asterism/ASTLift.h)
 * [map](Asterism/ASTMap.h)
