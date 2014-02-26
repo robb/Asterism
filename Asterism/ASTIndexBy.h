@@ -52,8 +52,8 @@ OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, id<NSCop
 //
 //     NSDictionary *indexed = ASTIndex(strings, @"length");
 //
-//     grouped[@1]; // @"a"
-//     grouped[@2]; // @"ab"
-//     grouped[@3]; // @"abc"
+//     indexed[@1]; // @"a"
+//     indexed[@2]; // @"ab"
+//     indexed[@3]; // @"abc"
 //
 OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, NSString *keyPath);
