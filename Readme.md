@@ -1,5 +1,7 @@
 # Asterism ⁂
 
+<img src="https://travis-ci.org/robb/Asterism.png?branch=master" align="right">
+
 Asterism is yet another functional toolbelt for Objective-C. It tries to be
 typesafe and simple.
 
