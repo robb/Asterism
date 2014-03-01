@@ -6,15 +6,19 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTGroup.h"
-#import "ASTMap.h"
-#import "ASTPluck.h"
+#import "ASTReduce.h"
 
 #import "ASTIndexBy.h"
 
 OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id)) {
-    return ASTMap(ASTGroup(collection, block), ^(id _, NSSet *group) {
-        return group.anyObject;
+    NSCParameterAssert(block != nil);
+
+    return ASTReduce(collection, [NSMutableDictionary dictionary], ^(NSMutableDictionary *result, id obj) {
+        id key = block(obj);
+
+        if (key != nil) result[key] = obj;
+
+        return result;
     });
 }
 
