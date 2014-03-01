@@ -1,5 +1,9 @@
 # Asterism ⁂
 
+<a href="https://travis-ci.org/robb/Asterism?branch=master">
+    <img src="https://travis-ci.org/robb/Asterism.png?branch=master" align="right">
+</a>
+
 Asterism is yet another functional toolbelt for Objective-C. It tries to be
 typesafe and simple.
 
@@ -55,16 +59,19 @@ Asterism currently supports the following operations:
 * [flatten](Asterism/ASTFlatten.h)
 * [group](Asterism/ASTGroup.h)
 * [head](Asterism/ASTHead.h)
+* [indexOf](Asterism/ASTIndexOf.h)
 * [intersection](Asterism/ASTIntersection.h)
 * [lift](Asterism/ASTLift.h)
 * [map](Asterism/ASTMap.h)
 * [min & max](Asterism/ASTMinMax.h)
 * [negate](Asterism/ASTNegate.h)
 * [partial](Asterism/ASTPartial.h)
+* [pick](Asterism/ASTPick.h)
 * [pluck](Asterism/ASTPluck.h)
 * [reduce](Asterism/ASTReduce.h)
 * [reject](Asterism/ASTReject.h)
 * [size](Asterism/ASTSize.h)
+* [shuffle](Asterism/ASTShuffle.h)
 * [tail](Asterism/ASTTail.h)
 * [union](Asterism/ASTUnion.h)
 * [without](Asterism/ASTWithout.h)
