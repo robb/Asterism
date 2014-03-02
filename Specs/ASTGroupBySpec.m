@@ -1,5 +1,5 @@
 //
-//  ASTGroupSpec.m
+//  ASTGroupBySpec.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/4/13.
@@ -8,14 +8,14 @@
 
 #import "ASTLift.h"
 
-#import "ASTGroup.h"
+#import "ASTGroupBy.h"
 
-SpecBegin(ASTGroup)
+SpecBegin(ASTGroupBy)
 
 NSArray *array = @[ @"Hello", @"Bonjour", @"Hallo", @"Hej" ];
 
 it(@"should return a dictionary of sets, grouped by the blocks return value", ^{
-    NSDictionary *dictionary = ASTGroup(array, ASTLift0(length));
+    NSDictionary *dictionary = ASTGroupBy(array, ASTLift0(length));
 
     expect(dictionary).to.haveCountOf(3);
 
@@ -26,7 +26,7 @@ it(@"should return a dictionary of sets, grouped by the blocks return value", ^{
 });
 
 it(@"should remove elements that grouped by `nil`", ^{
-    NSDictionary *dictionary = ASTGroup(@[ @[ @1 ], @[ @2, @3], @[] ], ASTLift0(firstObject));
+    NSDictionary *dictionary = ASTGroupBy(@[ @[ @1 ], @[ @2, @3 ], @[] ], ASTLift0(firstObject));
 
     expect(dictionary).to.haveCountOf(2);
 
@@ -35,7 +35,7 @@ it(@"should remove elements that grouped by `nil`", ^{
 });
 
 it(@"should return a dictionary of sets, grouped by their value for a key path", ^{
-    NSDictionary *dictionary = ASTGroup(array, @"length");
+    NSDictionary *dictionary = ASTGroupBy(array, @"length");
 
     expect(dictionary).to.haveCountOf(3);
 

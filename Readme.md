@@ -57,7 +57,7 @@ Asterism currently supports the following operations:
 * [filter](Asterism/ASTFilter.h)
 * [find](Asterism/ASTFind.h)
 * [flatten](Asterism/ASTFlatten.h)
-* [group](Asterism/ASTGroup.h)
+* [groupBy](Asterism/ASTGroupBy.h)
 * [head](Asterism/ASTHead.h)
 * [indexBy](Asterism/ASTIndexBy.h)
 * [indexOf](Asterism/ASTIndexOf.h)
