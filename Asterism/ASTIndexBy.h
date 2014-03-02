@@ -26,7 +26,7 @@
 //
 //     NSArray *strings = @[ @"foo", @"bar" ];
 //
-//     NSDictionary *indexed = ASTIndex(strings, ^(NSString *string){
+//     NSDictionary *indexed = ASTIndexBy(strings, ^(NSString *string){
 //         return @([string characterAtIndex:0]);
 //     });
 //
@@ -50,7 +50,7 @@ OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, id<NSCop
 //
 //     NSArray *strings = @[ @"a", @"ab", @"abc" ];
 //
-//     NSDictionary *indexed = ASTIndex(strings, @"length");
+//     NSDictionary *indexed = ASTIndexBy(strings, @"length");
 //
 //     indexed[@1]; // @"a"
 //     indexed[@2]; // @"ab"
