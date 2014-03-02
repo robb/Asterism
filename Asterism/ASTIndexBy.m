@@ -13,6 +13,8 @@
 OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id)) {
     NSCParameterAssert(block != nil);
 
+    if (collection == nil) return nil;
+
     return ASTReduce(collection, [NSMutableDictionary dictionary], ^(NSMutableDictionary *result, id obj) {
         id key = block(obj);
 
