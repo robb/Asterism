@@ -18,6 +18,7 @@
 #import "ASTFlatten.h"
 #import "ASTGroup.h"
 #import "ASTHead.h"
+#import "ASTIndexBy.h"
 #import "ASTIndexOf.h"
 #import "ASTIntersection.h"
 #import "ASTLift.h"

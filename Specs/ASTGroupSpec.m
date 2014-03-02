@@ -12,7 +12,7 @@
 
 SpecBegin(ASTGroup)
 
-NSArray *array = @[  @"Hello", @"Bonjour", @"Hallo", @"Hej" ];
+NSArray *array = @[ @"Hello", @"Bonjour", @"Hallo", @"Hej" ];
 
 it(@"should return a dictionary of sets, grouped by the blocks return value", ^{
     NSDictionary *dictionary = ASTGroup(array, ASTLift0(length));
