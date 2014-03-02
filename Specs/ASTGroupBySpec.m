@@ -26,7 +26,7 @@ it(@"should return a dictionary of sets, grouped by the blocks return value", ^{
 });
 
 it(@"should remove elements that grouped by `nil`", ^{
-    NSDictionary *dictionary = ASTGroupBy(@[ @[@1], @[@2, @3], @[] ], ASTLift0(firstObject));
+    NSDictionary *dictionary = ASTGroupBy(@[ @[ @1 ], @[ @2, @3 ], @[] ], ASTLift0(firstObject));
 
     expect(dictionary).to.haveCountOf(2);
 
