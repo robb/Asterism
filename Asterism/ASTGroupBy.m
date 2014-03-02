@@ -1,14 +1,14 @@
 //
-//  ASTGroup.m
+//  ASTGroupBy.m
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/4/13.
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTGroup.h"
+#import "ASTGroupBy.h"
 
-OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id)) {
+OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id)) {
     NSCParameterAssert(block != nil);
 
     if (collection == nil) return nil;
@@ -20,18 +20,18 @@ OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, id<NSCopyi
 
         if (key == nil) continue;
 
-        NSSet *group = dictionary[key] ?: [NSSet set];
+        NSArray *group = dictionary[key] ?: @[];
 
-        dictionary[key] = [group setByAddingObject:obj];
+        dictionary[key] = [group arrayByAddingObject:obj];
     }
 
-    return [dictionary copy];
+    return dictionary;
 }
 
-OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, NSString *keyPath) {
+OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, NSString *keyPath) {
     NSCParameterAssert(keyPath != nil);
 
-    return ASTGroup(collection, ^(id obj) {
+    return ASTGroupBy(collection, ^(id obj) {
         return [obj valueForKeyPath:keyPath];
     });
 }

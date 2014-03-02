@@ -1,5 +1,5 @@
 //
-//  ASTGroup.h
+//  ASTGroupBy.h
 //  Asterism
 //
 //  Created by Robert Böhnke on 6/4/13.
@@ -25,14 +25,14 @@
 //
 //     NSArray *numbers = @[ @1, @2, @3, @4, @5 ];
 //
-//     NSDictionary *grouped = ASTGroup(numbers, ^(NSNumber *number){
+//     NSDictionary *grouped = ASTGroupBy(numbers, ^(NSNumber *number){
 //         return number.integerValue % 2 == 0 ? @"even" : @"odd";
 //     });
 //
 //     grouped[@"even"]; // { @2, @4 }
 //     grouped[@"odd"];  // { @1, @3, @5 }
 //
-OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
+OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
 
 // Groups the elements in a collection by their value for a given key path.
 //
@@ -48,9 +48,9 @@ OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, id<NSCopyi
 //
 //     NSArray *numbers = @[ @"foo", @"bar", @"surprise" ];
 //
-//     NSDictionary *grouped = ASTGroup(numbers, @"length");
+//     NSDictionary *grouped = ASTGroupBy(numbers, @"length");
 //
 //     grouped[@3]; // { @"foo", @"bar" }
 //     grouped[@8]; // { @"surprise" }
 //
-OVERLOADABLE NSDictionary *ASTGroup(id<NSFastEnumeration> collection, NSString *keyPath);
+OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, NSString *keyPath);
