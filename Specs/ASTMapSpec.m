@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTLift.h"
-
 #import "ASTMap.h"
 
 SpecBegin(ASTMap)
@@ -26,7 +24,9 @@ describe(@"for arrays", ^{
     it(@"should replace the objects with the result of the block", ^{
         NSArray *before = @[ @1, @2, @3 ];
 
-        NSArray *after = ASTMap(before, ASTLift0(description));
+        NSArray *after = ASTMap(before, ^(id obj) {
+            return [obj description];
+        });
 
         expect(after).to.equal((@[ @"1", @"2", @"3" ]));
     });
@@ -83,7 +83,9 @@ describe(@"for dictionaries", ^{
             @"en": @"Hello"
         };
 
-        NSDictionary *after = ASTMap(before, ASTLift0(uppercaseString));
+        NSDictionary *after = ASTMap(before, ^(NSString *string) {
+            return string.uppercaseString;
+        });
 
         expect(after).to.equal((@{
             @"fr": @"BONJOUR",
@@ -144,7 +146,9 @@ describe(@"for sets", ^{
     it(@"should replace the objects with the result of the block", ^{
         NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-        NSSet *after = ASTMap(before, ASTLift0(description));
+        NSSet *after = ASTMap(before, ^(id obj) {
+            return [obj description];
+        });
 
         expect(after).to.equal(([NSSet setWithArray:@[
             @"1", @"2", @"3"
@@ -188,7 +192,9 @@ describe(@"for ordered sets", ^{
     it(@"should replace the objects with the result of the block", ^{
         NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
 
-        NSOrderedSet *after = ASTMap(before, ASTLift0(description));
+        NSOrderedSet *after = ASTMap(before, ^(id obj) {
+            return [obj description];
+        });
 
         expect(after).to.equal(([NSOrderedSet orderedSetWithArray:@[ @"1", @"2", @"3" ]]));
     });

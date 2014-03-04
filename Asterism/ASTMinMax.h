@@ -28,17 +28,6 @@ OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection);
 // `comparator`.
 OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator);
 
-// Returns the minimum of a collection by using a block.
-//
-// collection - An object that implements NSFastEnumeration.
-// comparator - A block that takes two arguments and returns an
-//              NSComparisonResult boxed in an NSNumber.
-//              This argument must not be nil.
-//
-// Returns the minimum of the collection by comparing all values using
-// `comparator`.
-OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSNumber *(^comparator)(id a, id b));
-
 // Returns the maximum of a collection by invoking -compare:.
 //
 // collection - An object that implements NSFastEnumeration.
@@ -56,14 +45,3 @@ OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection);
 // Returns the maximum of the collection by comparing all values using
 // `comparator`.
 OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator);
-
-// Returns the maximum of a collection by using a block.
-//
-// collection - An object that implements NSFastEnumeration.
-// comparator - A block that takes two arguments and returns an
-//              NSComparisonResult boxed in an NSNumber.
-//              This argument must not be nil.
-//
-// Returns the maximum of the collection by comparing all values using
-// `comparator`.
-OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSNumber *(^comparator)(id a, id b));

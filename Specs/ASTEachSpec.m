@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTLift.h"
-
 #import "ASTEach.h"
 
 SpecBegin(ASTEach)
@@ -46,10 +44,6 @@ describe(@"for arrays", ^{
             expect(calls++).to.equal(idx);
         });
     });
-
-    it(@"should work with lifted blocks", ^{
-        ASTEach(@[ @0, @1, @2 ], ASTLift0(description));
-    });
 });
 
 describe(@"for dictionaries", ^{
@@ -82,10 +76,6 @@ describe(@"for dictionaries", ^{
         ASTEach(@{ @"foo": @"FOO" }, ^(id key, id obj) {
             expect([key uppercaseString]).to.equal(obj);
         });
-    });
-
-    it(@"should work with lifted blocks", ^{
-        ASTEach(@{ @"foo": @"FOO" }, ASTLift0(description));
     });
 });
 
@@ -123,10 +113,6 @@ describe(@"for ordered sets", ^{
             expect(calls++).to.equal(idx);
         });
     });
-
-    it(@"should work with lifted blocks", ^{
-        ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ASTLift0(description));
-    });
 });
 
 describe(@"for objects implementing <NSFastEnumeration>", ^{
@@ -152,12 +138,6 @@ describe(@"for objects implementing <NSFastEnumeration>", ^{
         });
 
         expect(calls).to.equal(3);
-    });
-
-    it(@"should work with lifted blocks", ^{
-        id<NSFastEnumeration> enumerable = @[ @1, @2, @3 ];
-
-        ASTEach(enumerable, ASTLift0(description));
     });
 });
 

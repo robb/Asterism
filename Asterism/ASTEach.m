@@ -14,12 +14,6 @@ OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id)) {
     ASTEach((id<NSFastEnumeration>)array, iterator);
 }
 
-OVERLOADABLE void ASTEach(NSArray *array, id(^iterator)(id obj)) {
-    NSCParameterAssert(iterator != nil);
-
-    ASTEach((id<NSFastEnumeration>)array, iterator);
-}
-
 OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id, NSUInteger)) {
     NSCParameterAssert(iterator != nil);
 
@@ -29,14 +23,6 @@ OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id, NSUInteger)) {
 }
 
 OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id obj)) {
-    NSCParameterAssert(iterator != nil);
-
-    ASTEach(dict, ^(id key, id obj) {
-        iterator(obj);
-    });
-}
-
-OVERLOADABLE void ASTEach(NSDictionary *dict, id(^iterator)(id obj)) {
     NSCParameterAssert(iterator != nil);
 
     ASTEach(dict, ^(id key, id obj) {
@@ -61,14 +47,6 @@ OVERLOADABLE void ASTEach(NSOrderedSet *set, void(^iterator)(id, NSUInteger)) {
 }
 
 OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, void(^iterator)(id obj)) {
-    NSCParameterAssert(iterator != nil);
-
-    for (id obj in enumerable) {
-        iterator(obj);
-    }
-}
-
-OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, id(^iterator)(id obj)) {
     NSCParameterAssert(iterator != nil);
 
     for (id obj in enumerable) {
