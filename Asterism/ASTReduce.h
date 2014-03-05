@@ -28,7 +28,7 @@
 //
 //     NSString *(^concat)(NSString *, NSString *) = ^(NSString *a, NSString *b) {
 //         return [a stringByAppendingString:b];
-//     }
+//     };
 //
 //     // Equivalent to [@"a" stringByAppendingString:@"b"];
 //     ASTReduce(@[ @"a", @"b" ], concat);
