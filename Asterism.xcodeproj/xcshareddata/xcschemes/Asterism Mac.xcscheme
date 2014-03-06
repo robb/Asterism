@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "54D9EE641721543D00383762"
-               BuildableName = "libAsterism.a"
-               BlueprintName = "Asterism"
+               BlueprintIdentifier = "54E002A418C920F600B66BC3"
+               BuildableName = "Asterism Mac.framework"
+               BlueprintName = "Asterism Mac"
                ReferencedContainer = "container:Asterism.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "54D9EE751721543D00383762"
-               BuildableName = "Specs.xctest"
-               BlueprintName = "Specs"
+               BlueprintIdentifier = "54E002B918C920F600B66BC3"
+               BuildableName = "Specs-Mac.xctest"
+               BlueprintName = "Specs-Mac"
                ReferencedContainer = "container:Asterism.xcodeproj">
             </BuildableReference>
          </TestableReference>
