@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTLift.h"
-
 #import "ASTIndexBy.h"
 
 SpecBegin(ASTIndexBy)
@@ -16,7 +14,9 @@ NSArray *array = @[ @"Hello", @"Bonjour", @"Hej" ];
 
 describe(@"with blocks", ^{
     it(@"should index elements by the return value", ^{
-        NSDictionary *dictionary = ASTIndexBy(array, ASTLift0(length));
+        NSDictionary *dictionary = ASTIndexBy(array, ^(NSString *string) {
+            return @(string.length);
+        });
 
         expect(dictionary).to.haveCountOf(3);
 

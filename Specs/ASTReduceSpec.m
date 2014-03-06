@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTLift.h"
-
 #import "ASTReduce.h"
 
 SpecBegin(ASTReduce)
@@ -61,7 +59,9 @@ describe(@"reduce", ^{
         });
 
         it(@"should reduce arrays in order", ^{
-            id result = ASTReduce(@[ @"a", @"b", @"c" ], ASTLift(stringByAppendingString:));
+            id result = ASTReduce(@[ @"a", @"b", @"c" ], ^(NSString *memo, NSString *obj) {
+                return [memo stringByAppendingString:obj];
+            });
 
             expect(result).to.equal(@"abc");
         });

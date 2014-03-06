@@ -8,7 +8,7 @@ Asterism is yet another functional toolbelt for Objective-C. It tries to be
 typesafe and simple.
 
 ```objective-c
-NSDictionary *reviewsByRating = ASTGroup(reviews, ASTLift0(rating));
+NSDictionary *reviewsByRating = ASTGroup(reviews, @"rating");
 
 // Log all five star ratings
 ASTEach(reviewsByRating[@5], ^(XYReview *review) {
@@ -20,28 +20,6 @@ XYReview *worstReview = ASTMin(reviews);
 
 I'd like Asterism to eventually offer common methods for data structures for all
 of Cocoa's collections.
-
-## Lifting
-
-A notable feature of Asterism is that it allows you to lift selectors into
-blocks. Together with [partial block evaluation](Asterism/ASTPartial.h), this
-allows you to write very concise code.
-
-```objective-c
-NSArray *files = @[ file1, file2, file3 ];
-
-// Invoke -upload on all files
-ASTEach(files, ASTLift0(upload));
-```
-
-```objective-c
-XYUser *user = [XYUser me];
-
-NSArray *posts = @[ post1, post2, post3 ];
-
-// Invoke -[XYUser likePost:] on user with every post
-ASTEach(posts, ASTPartial(ASTLift(likePost:), user));
-```
 
 ## Supported Operations
 
@@ -62,7 +40,6 @@ Asterism currently supports the following operations:
 * [indexBy](Asterism/ASTIndexBy.h)
 * [indexOf](Asterism/ASTIndexOf.h)
 * [intersection](Asterism/ASTIntersection.h)
-* [lift](Asterism/ASTLift.h)
 * [map](Asterism/ASTMap.h)
 * [min & max](Asterism/ASTMinMax.h)
 * [negate](Asterism/ASTNegate.h)

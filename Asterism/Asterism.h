@@ -21,7 +21,6 @@
 #import "ASTIndexBy.h"
 #import "ASTIndexOf.h"
 #import "ASTIntersection.h"
-#import "ASTLift.h"
 #import "ASTMap.h"
 #import "ASTMinMax.h"
 #import "ASTNegate.h"

@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTLift.h"
-
 #import "ASTGroupBy.h"
 
 SpecBegin(ASTGroupBy)
@@ -15,7 +13,9 @@ SpecBegin(ASTGroupBy)
 NSArray *array = @[ @"Hello", @"Bonjour", @"Hallo", @"Hej" ];
 
 it(@"should return a dictionary of sets, grouped by the blocks return value", ^{
-    NSDictionary *dictionary = ASTGroupBy(array, ASTLift0(length));
+    NSDictionary *dictionary = ASTGroupBy(array, ^(NSString *string) {
+        return @(string.length);
+    });
 
     expect(dictionary).to.haveCountOf(3);
 
@@ -26,7 +26,9 @@ it(@"should return a dictionary of sets, grouped by the blocks return value", ^{
 });
 
 it(@"should remove elements that grouped by `nil`", ^{
-    NSDictionary *dictionary = ASTGroupBy(@[ @[ @1 ], @[ @2, @3 ], @[] ], ASTLift0(firstObject));
+    NSDictionary *dictionary = ASTGroupBy(@[ @[ @1 ], @[ @2, @3 ], @[] ], ^(NSArray *array) {
+        return array.firstObject;
+    });
 
     expect(dictionary).to.haveCountOf(2);
 

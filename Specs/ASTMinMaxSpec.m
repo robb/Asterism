@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTLift.h"
-
 #import "ASTMinMax.h"
 
 SpecBegin(ASTMinMax)
@@ -30,14 +28,6 @@ describe(@"ASTMin", ^{
             expect(minimum).to.equal(-1);
         });
     });
-
-    describe(@"with a block returning an NSNumber", ^{
-        it(@"should return the minimum", ^{
-            NSNumber *minimum = ASTMin(array, ASTLift(compare:));
-
-            expect(minimum).to.equal(-1);
-        });
-    });
 });
 
 describe(@"ASTMax", ^{
@@ -52,14 +42,6 @@ describe(@"ASTMax", ^{
             NSNumber *maximum = ASTMax(array, ^NSComparisonResult(id obj1, id obj2) {
                 return [obj1 compare:obj2];
             });
-
-            expect(maximum).to.equal(9);
-        });
-    });
-
-    describe(@"with a block returning an NSNumber", ^{
-        it(@"should return the maximum", ^{
-            NSNumber *maximum = ASTMax(array, ASTLift(compare:));
 
             expect(maximum).to.equal(9);
         });

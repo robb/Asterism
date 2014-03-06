@@ -26,11 +26,15 @@
 //
 // Example
 //
+//     NSString *(^concat)(NSString *, NSString *) = ^(NSString *a, NSString *b) {
+//         return [a stringByAppendingString:b];
+//     };
+//
 //     // Equivalent to [@"a" stringByAppendingString:@"b"];
-//     ASTReduce(@[ @"a", @"b" ], ASTLift(stringByAppendingString:));
+//     ASTReduce(@[ @"a", @"b" ], concat);
 //
 //     // Equivalent to [[@"a" stringByAppendingString:@"b"] stringByAppendingString:@"c"];
-//     ASTReduce(@[ @"a", @"b", @"c" ], ASTLift(stringByAppendingString:));
+//     ASTReduce(@[ @"a", @"b", @"c" ], concat);
 //
 OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj));
 
