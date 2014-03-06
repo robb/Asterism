@@ -43,7 +43,6 @@ Asterism currently supports the following operations:
 * [map](Asterism/ASTMap.h)
 * [min & max](Asterism/ASTMinMax.h)
 * [negate](Asterism/ASTNegate.h)
-* [partial](Asterism/ASTPartial.h)
 * [pick](Asterism/ASTPick.h)
 * [pluck](Asterism/ASTPluck.h)
 * [reduce](Asterism/ASTReduce.h)
