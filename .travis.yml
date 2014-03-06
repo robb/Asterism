@@ -12,4 +12,4 @@ notifications:
         on_success: change
         on_failure: always
 
-script: script/cibuild Asterism
+script: script/cibuild
