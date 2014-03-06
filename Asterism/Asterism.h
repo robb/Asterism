@@ -24,7 +24,6 @@
 #import "ASTMap.h"
 #import "ASTMinMax.h"
 #import "ASTNegate.h"
-#import "ASTPartial.h"
 #import "ASTPick.h"
 #import "ASTPluck.h"
 #import "ASTReduce.h"
