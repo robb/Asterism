@@ -16,7 +16,7 @@
 #import "ASTFilter.h"
 #import "ASTFind.h"
 #import "ASTFlatten.h"
-#import "ASTGroup.h"
+#import "ASTGroupBy.h"
 #import "ASTHead.h"
 #import "ASTIndexBy.h"
 #import "ASTIndexOf.h"
