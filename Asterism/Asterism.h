@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ASTAll.h"
+#import "ASTAny.h"
 #import "ASTDefaults.h"
 #import "ASTDifference.h"
 #import "ASTEach.h"
@@ -28,7 +30,8 @@
 #import "ASTPluck.h"
 #import "ASTReduce.h"
 #import "ASTReject.h"
-#import "ASTSize.h"
 #import "ASTShuffle.h"
+#import "ASTSize.h"
 #import "ASTTail.h"
 #import "ASTUnion.h"
+#import "ASTWithout.h"
