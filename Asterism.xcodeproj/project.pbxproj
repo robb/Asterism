@@ -644,6 +644,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = AST;
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Robert Böhnke";
 				TargetAttributes = {
