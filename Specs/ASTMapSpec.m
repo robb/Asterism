@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTMap.h"
+#import "Asterism.h"
 
 SpecBegin(ASTMap)
 
@@ -234,7 +234,7 @@ describe(@"for ordered sets", ^{
         NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
 
         NSOrderedSet *after = ASTMap(before, ^(id obj) { return obj; });
-        
+
         expect(after).to.equal(before);
     });
 });

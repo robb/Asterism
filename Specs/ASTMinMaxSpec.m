@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTMinMax.h"
+#import "Asterism.h"
 
 SpecBegin(ASTMinMax)
 

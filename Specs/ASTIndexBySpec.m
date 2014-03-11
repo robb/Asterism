@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTIndexBy.h"
+#import "Asterism.h"
 
 SpecBegin(ASTIndexBy)
 

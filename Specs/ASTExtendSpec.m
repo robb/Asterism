@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTExtend.h"
+#import "Asterism.h"
 
 SpecBegin(ASTExtend)
 
@@ -25,7 +25,7 @@ it(@"should return the union of both dictionaries", ^{
 it(@"should prefer values from source over values from dict", ^{
     NSDictionary *dict   = @{ @1: @"foo" };
     NSDictionary *source = @{ @1: @"bar" };
-    
+
     expect(ASTExtend(dict, source)).to.equal(source);
 });
 

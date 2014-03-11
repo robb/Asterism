@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTFind.h"
+#import "Asterism.h"
 
 SpecBegin(ASTFind)
 
