@@ -8,7 +8,7 @@
 
 #import "ASTGroupBy.h"
 
-OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id)) {
+NSDictionary *__ASTGroupBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id)) {
     NSCParameterAssert(block != nil);
 
     if (collection == nil) return nil;
@@ -28,7 +28,7 @@ OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, id<NSCop
     return dictionary;
 }
 
-OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, NSString *keyPath) {
+NSDictionary *__ASTGroupBy_NSFastEnumeration_keyPath(id<NSFastEnumeration> collection, NSString *keyPath) {
     NSCParameterAssert(keyPath != nil);
 
     return ASTGroupBy(collection, ^(id obj) {
