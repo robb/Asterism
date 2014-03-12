@@ -10,21 +10,21 @@
 
 #import "ASTUnion.h"
 
-OVERLOADABLE NSArray *ASTUnion(NSArray *array, NSArray *other) {
+NSArray *__ASTUnion_NSArray(NSArray *array, NSArray *other) {
     if (array == nil) return other;
     if (other == nil) return array;
 
     return [array arrayByAddingObjectsFromArray:ASTDifference(other, array)];
 }
 
-OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other) {
+NSSet *__ASTUnion_NSSet(NSSet *set, NSSet *other) {
     if (set == nil) return other;
     if (other == nil) return set;
 
     return [set setByAddingObjectsFromSet:other];
 }
 
-OVERLOADABLE NSOrderedSet *ASTUnion(NSOrderedSet *set, NSOrderedSet *other) {
+NSOrderedSet *__ASTUnion_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other) {
     if (set == nil) return other;
     if (other == nil) return set;
 
