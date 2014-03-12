@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASTConstants.h"
+// You should not call these methods directly.
+NSDictionary *__ASTExtend_NSDictionary(NSDictionary *dict, NSDictionary *source);
 
 // Extends a dictionary with values from another dictionary.
 //
@@ -18,4 +19,6 @@
 // Returns a new dictionary that contains a union of key-value-pairs of `dict`
 // and `source`. Key-value-pairs of `source` will have precedence over those
 // taken from `dict`.
-OVERLOADABLE NSDictionary *ASTExtend(NSDictionary *dict, NSDictionary *source);
+static inline __attribute__((overloadable)) NSDictionary *ASTExtend(NSDictionary *dict, NSDictionary *source) {
+    return __ASTExtend_NSDictionary(dict, source);
+}
