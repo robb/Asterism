@@ -8,7 +8,7 @@
 
 #import "ASTPluck.h"
 
-OVERLOADABLE NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPath) {
+NSArray *__ASTPluck_NSFastEnumeration(id<NSFastEnumeration> collection, NSString *keyPath) {
     NSCParameterAssert(keyPath != nil);
 
     if (collection == nil) return nil;

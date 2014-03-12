@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASTConstants.h"
+// You should not call these methods directly.
+NSArray *__ASTPluck_NSFastEnumeration(id<NSFastEnumeration> collection, NSString *keyPath);
 
 // Extracts a value for a given key path from all elements in a collection.
 //
@@ -19,4 +20,6 @@
 // `keyPath`. If an element returns nil when invoked with -valueForKeyPath:,
 // it is not present in the returned array. If possible, the order is being
 // maintained.
-OVERLOADABLE NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPath);
+static inline __attribute__((overloadable)) NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPath) {
+    return __ASTPluck_NSFastEnumeration(collection, keyPath);
+}
