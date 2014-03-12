@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "metamacros.h"
-
 #import "ASTFilter.h"
 #import "ASTNegate.h"
 

@@ -6,8 +6,6 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "metamacros.h"
-
 #import "ASTNegate.h"
 
 BOOL (^__ASTNegate_id(BOOL(^block)(id)))(id) {
