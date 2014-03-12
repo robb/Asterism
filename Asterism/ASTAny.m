@@ -8,7 +8,7 @@
 
 #import "ASTAny.h"
 
-OVERLOADABLE BOOL ASTAny(id<NSFastEnumeration> collection, BOOL(^block)(id)) {
+BOOL __ASTAny_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 
     for (id obj in collection) {
