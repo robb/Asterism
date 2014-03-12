@@ -10,29 +10,20 @@
 
 #import "ASTNegate.h"
 
-#define ASTNegate_parameter(INDEX, MAX, TYPE) \
-        TYPE metamacro_concat(arg, INDEX) \
-        metamacro_if_eq(INDEX, metamacro_dec(MAX))()(,)
+BOOL (^__ASTNegate_id(BOOL(^block)(id)))(id) {
+    return ^BOOL (id arg1){
+        return !block(arg1);
+    };
+}
 
-#define ASTNegate_parameters(...) \
-        metamacro_foreach_cxt(ASTNegate_parameter, , metamacro_argcount(__VA_ARGS__), __VA_ARGS__)
+BOOL (^__ASTNegate_id_id(BOOL(^block)(id, id)))(id, id) {
+    return ^BOOL (id arg1, id arg2){
+        return !block(arg1, arg2);
+    };
+}
 
-#define ASTNegate_argument(INDEX, MAX, TYPE) \
-        metamacro_concat(arg, INDEX) \
-        metamacro_if_eq(INDEX, metamacro_dec(MAX))()(,)
-
-#define ASTNegate_arguments(...) \
-        metamacro_foreach_cxt(ASTNegate_argument, , metamacro_argcount(__VA_ARGS__), __VA_ARGS__)
-
-#define ASTNegate(...) \
-        OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(__VA_ARGS__)))(__VA_ARGS__) \
-        { \
-            NSCParameterAssert(block != nil);\
-            return ^BOOL (ASTNegate_parameters(__VA_ARGS__)) {\
-                return !block(ASTNegate_arguments(__VA_ARGS__)); \
-            }; \
-        }
-
-ASTNegate(id)
-ASTNegate(id, NSUInteger)
-ASTNegate(id, id)
+BOOL (^__ASTNegate_id_NSUInteger(BOOL(^block)(id, NSUInteger)))(id, NSUInteger) {
+    return ^BOOL (id arg1, NSUInteger arg2){
+        return !block(arg1, arg2);
+    };
+}
