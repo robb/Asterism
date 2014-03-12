@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTShuffle.h"
+#import "Asterism.h"
 
 SpecBegin(ASTShuffle)
 
