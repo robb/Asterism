@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASTConstants.h"
+// You should not call these methods directly.
+NSArray *__ASTDifference_NSArray(NSArray *array, NSArray *other);
+NSSet *__ASTDifference_NSSet(NSSet *set, NSSet *other);
+NSOrderedSet *__ASTDifference_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other);
 
 // Returns the difference between two arrays.
 //
@@ -17,7 +20,9 @@
 //
 // Returns an array containing the elements of `array` that are not present in
 // `other`. The order is being maintained.
-OVERLOADABLE NSArray *ASTDifference(NSArray *array, NSArray *other);
+static inline __attribute__((overloadable)) NSArray *ASTDifference(NSArray *array, NSArray *other) {
+    return __ASTDifference_NSArray(array, other);
+}
 
 // Returns the difference between two sets.
 //
@@ -26,7 +31,9 @@ OVERLOADABLE NSArray *ASTDifference(NSArray *array, NSArray *other);
 //
 // Returns a set containing the elements of `set` that are not present in
 // `other`.
-OVERLOADABLE NSSet *ASTDifference(NSSet *set, NSSet *other);
+static inline __attribute__((overloadable)) NSSet *ASTDifference(NSSet *set, NSSet *other) {
+    return __ASTDifference_NSSet(set, other);
+}
 
 // Returns the difference between two ordered sets.
 //
@@ -35,4 +42,6 @@ OVERLOADABLE NSSet *ASTDifference(NSSet *set, NSSet *other);
 //
 // Returns an ordered set containing the elements of `set` that are not present
 // in `other`.
-OVERLOADABLE NSOrderedSet *ASTDifference(NSOrderedSet *set, NSOrderedSet *other);
+static inline __attribute__((overloadable)) NSOrderedSet *ASTDifference(NSOrderedSet *set, NSOrderedSet *other) {
+    return __ASTDifference_NSOrderedSet(set, other);
+}
