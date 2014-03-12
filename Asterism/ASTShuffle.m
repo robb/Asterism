@@ -8,7 +8,7 @@
 
 #import "ASTShuffle.h"
 
-OVERLOADABLE NSArray *ASTShuffle(NSArray *array) {
+NSArray *__ASTShuffle_NSArray(NSArray *array) {
     NSMutableArray *result = [array mutableCopy];
 
     for (NSInteger i = result.count - 1; i > 0; i--) {
@@ -19,7 +19,7 @@ OVERLOADABLE NSArray *ASTShuffle(NSArray *array) {
     return result;
 }
 
-OVERLOADABLE NSOrderedSet *ASTShuffle(NSOrderedSet *set) {
+NSOrderedSet *__ASTShuffle_NSOrderedSet(NSOrderedSet *set) {
     NSMutableOrderedSet *result = [set mutableCopy];
 
     for (NSInteger i = result.count - 1; i > 0; i--) {
