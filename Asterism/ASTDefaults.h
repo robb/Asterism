@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASTConstants.h"
+// You should not call these methods directly.
+NSDictionary *__ASTDefaults_NSDictionary(NSDictionary *dict, NSDictionary *defaults);
 
 // Fills in missing values from another dictionary.
 //
@@ -18,4 +19,6 @@
 // Returns a new dictionary that contains a union of key-value-pairs of `dict`
 // and `defaults`. Key-value-pairs of `dict` will have precedence over those
 // taken from `defaults`.
-OVERLOADABLE NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults);
+static inline __attribute__((overloadable)) NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults) {
+    return __ASTDefaults_NSDictionary(dict, defaults);
+}

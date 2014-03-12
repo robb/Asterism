@@ -8,7 +8,7 @@
 
 #import "ASTDefaults.h"
 
-OVERLOADABLE NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults) {
+NSDictionary *__ASTDefaults_NSDictionary(NSDictionary *dict, NSDictionary *defaults) {
     if (dict == nil) return defaults;
     if (defaults == nil) return dict;
 
