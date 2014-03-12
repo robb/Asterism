@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASTConstants.h"
+// You should not call these methods directly.[]
+NSArray *__ASTWithout_NSArray(NSArray *array, id obj);
+NSSet *__ASTWithout_NSSet(NSSet *set, id obj);
+NSOrderedSet *__ASTWithout_NSOrderedSet(NSOrderedSet *set, id obj);
 
 // Filters out the elements of an array that are equal to a given value.
 //
@@ -17,7 +20,9 @@
 //
 // Returns an array of all values in `array` that are equal to `obj`. The order
 // is being maintained.
-OVERLOADABLE NSArray *ASTWithout(NSArray *array, id obj);
+static inline __attribute__((overloadable)) NSArray *ASTWithout(NSArray *array, id obj) {
+    return __ASTWithout_NSArray(array, obj);
+}
 
 // Filters out the elements of a set that are equal to a given value.
 //
@@ -25,7 +30,9 @@ OVERLOADABLE NSArray *ASTWithout(NSArray *array, id obj);
 // obj - An element to be removed.
 //
 // Returns a set of all values in `set` that are equal to `obj`.
-OVERLOADABLE NSSet *ASTWithout(NSSet *set, id obj);
+static inline __attribute__((overloadable)) NSSet *ASTWithout(NSSet *set, id obj) {
+    return __ASTWithout_NSSet(set, obj);
+}
 
 // Filters out the elements of an ordered set that are equal to a given value.
 //
@@ -34,4 +41,6 @@ OVERLOADABLE NSSet *ASTWithout(NSSet *set, id obj);
 //
 // Returns an ordered set of all values in `set` that are equal to `obj`. The order
 // is being maintained.
-OVERLOADABLE NSOrderedSet *ASTWithout(NSOrderedSet *set, id obj);
+static inline __attribute__((overloadable)) NSOrderedSet *ASTWithout(NSOrderedSet *set, id obj) {
+    return __ASTWithout_NSOrderedSet(set, obj);
+}
