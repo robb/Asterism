@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASTConstants.h"
+// You should not call these methods directly.
+NSUInteger __ASTIndexOf_NSArray(NSArray *array, id obj);
+NSUInteger __ASTIndexOf_NSOrderedSet(NSOrderedSet *set, id obj);
+NSUInteger __ASTIndexOf_NSFastEnumeration(id<NSFastEnumeration> collection, id obj);
 
 // Finds the index of an object in an array.
 //
@@ -17,7 +20,9 @@
 //
 // Returns the first index of obj in array or NSNotFound if the object could not
 // be found.
-OVERLOADABLE NSUInteger ASTIndexOf(NSArray *array, id obj);
+static inline __attribute__((overloadable)) NSUInteger ASTIndexOf(NSArray *array, id obj) {
+    return __ASTIndexOf_NSArray(array, obj);
+}
 
 // Finds the index of an object in an ordered set.
 //
@@ -26,7 +31,9 @@ OVERLOADABLE NSUInteger ASTIndexOf(NSArray *array, id obj);
 //
 // Returns the first index of obj in set or NSNotFound if the object could not
 // be found.
-OVERLOADABLE NSUInteger ASTIndexOf(NSOrderedSet *set, id obj);
+static inline __attribute__((overloadable)) NSUInteger ASTIndexOf(NSOrderedSet *set, id obj) {
+    return __ASTIndexOf_NSOrderedSet(set, obj);
+}
 
 // Finds the index of an object in a collection.
 //
@@ -37,4 +44,6 @@ OVERLOADABLE NSUInteger ASTIndexOf(NSOrderedSet *set, id obj);
 // could not be found. If collection does not make a guarantee regarding its
 // order, such as NSSet or NSDictionary, the meaning of the return value is
 // undefined.
-OVERLOADABLE NSUInteger ASTIndexOf(id<NSFastEnumeration> collection, id obj);
+static inline __attribute__((overloadable)) NSUInteger ASTIndexOf(id<NSFastEnumeration> collection, id obj) {
+    return __ASTIndexOf_NSFastEnumeration(collection, obj);
+}
