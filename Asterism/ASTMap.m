@@ -12,7 +12,7 @@
 
 #pragma mark - Arrays
 
-OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj)) {
+NSArray *__ASTMap_NSArray_withoutIndex(NSArray *array, id(^block)(id obj)) {
     NSCParameterAssert(block != nil);
 
     if (array == nil) return nil;
@@ -22,7 +22,7 @@ OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj)) {
     });
 }
 
-OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx)) {
+NSArray *__ASTMap_NSArray_withIndex(NSArray *array, id(^block)(id obj, NSUInteger idx)) {
     NSCParameterAssert(block != nil);
 
     if (array == nil) return nil;
@@ -40,7 +40,7 @@ OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx))
     return result;
 }
 
-OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj)) {
+NSDictionary *__ASTMap_NSDictionary_values(NSDictionary *dict, id(^block)(id obj)) {
     NSCParameterAssert(block != nil);
 
     if (dict == nil) return nil;
@@ -50,7 +50,7 @@ OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj)) {
     });
 }
 
-OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj)) {
+NSDictionary *__ASTMap_NSDictionary_valuesAndKeys(NSDictionary *dict, id(^block)(id key, id obj)) {
     NSCParameterAssert(block != nil);
 
     if (dict == nil) return nil;
@@ -68,7 +68,7 @@ OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj)
     return result;
 }
 
-OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj)) {
+NSSet *__ASTMap_NSSet(NSSet *set, id(^block)(id obj)) {
     NSCParameterAssert(block != nil);
 
     if (set == nil) return nil;
@@ -86,7 +86,7 @@ OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj)) {
     return result;
 }
 
-OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj)) {
+NSOrderedSet *__ASTMap_NSOrderedSet_withoutIndex(NSOrderedSet *set, id(^block)(id obj)) {
     NSCParameterAssert(block != nil);
 
     if (set == nil) return nil;
@@ -96,7 +96,7 @@ OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj)) {
     });
 }
 
-OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj, NSUInteger idx)) {
+NSOrderedSet *__ASTMap_NSOrderedSet_withIndex(NSOrderedSet *set, id(^block)(id obj, NSUInteger idx)) {
     NSCParameterAssert(block != nil);
 
     if (set == nil) return nil;
