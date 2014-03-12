@@ -8,13 +8,13 @@
 
 #import "ASTEach.h"
 
-OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id)) {
+void __ASTEach_NSArray_withoutIndex(NSArray *array, void(^iterator)(id)) {
     NSCParameterAssert(iterator != nil);
 
     ASTEach((id<NSFastEnumeration>)array, iterator);
 }
 
-OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id, NSUInteger)) {
+void __ASTEach_NSArray_withIndex(NSArray *array, void(^iterator)(id, NSUInteger)) {
     NSCParameterAssert(iterator != nil);
 
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -22,7 +22,7 @@ OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id, NSUInteger)) {
     }];
 }
 
-OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id obj)) {
+void __ASTEach_NSDictionary_values(NSDictionary *dict, void(^iterator)(id obj)) {
     NSCParameterAssert(iterator != nil);
 
     ASTEach(dict, ^(id key, id obj) {
@@ -30,7 +30,7 @@ OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id obj)) {
     });
 }
 
-OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id key, id obj)) {
+void __ASTEach_NSDictionary_valuesAndKeys(NSDictionary *dict, void(^iterator)(id key, id obj)) {
     NSCParameterAssert(iterator != nil);
 
     [dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -38,7 +38,7 @@ OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id key, id obj)) {
     }];
 }
 
-OVERLOADABLE void ASTEach(NSOrderedSet *set, void(^iterator)(id, NSUInteger)) {
+void __ASTEach_NSOrderedSet_withIndex(NSOrderedSet *set, void(^iterator)(id, NSUInteger)) {
     NSCParameterAssert(iterator != nil);
 
     [set enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -46,7 +46,7 @@ OVERLOADABLE void ASTEach(NSOrderedSet *set, void(^iterator)(id, NSUInteger)) {
     }];
 }
 
-OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, void(^iterator)(id obj)) {
+void __ASTEach_NSFastEnumeration_withoutIndex(id<NSFastEnumeration> enumerable, void(^iterator)(id obj)) {
     NSCParameterAssert(iterator != nil);
 
     for (id obj in enumerable) {
