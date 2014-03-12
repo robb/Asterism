@@ -8,7 +8,7 @@
 
 #import "ASTIntersection.h"
 
-OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other) {
+NSArray *__ASTIntersection_NSArray(NSArray *array, NSArray *other) {
     if (array == nil) return other;
     if (other == nil) return array;
 
@@ -23,7 +23,7 @@ OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other) {
     return [result copy];
 }
 
-OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other) {
+NSSet *__ASTIntersection_NSSet(NSSet *set, NSSet *other) {
     if (set == nil) return other;
     if (other == nil) return set;
 
@@ -33,7 +33,7 @@ OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other) {
     return [result copy];
 }
 
-OVERLOADABLE NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other) {
+NSOrderedSet *__ASTIntersection_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other) {
     if (set == nil) return other;
     if (other == nil) return set;
 
