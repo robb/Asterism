@@ -10,7 +10,7 @@
 
 #import "ASTPick.h"
 
-OVERLOADABLE NSDictionary *ASTPick(NSDictionary *dict, NSArray *keys) {
+NSDictionary *__ASTPick_NSDictionary(NSDictionary *dict, NSArray *keys) {
     return ASTFilter(dict, ^BOOL(id key, id obj) {
         return [keys containsObject:key];
     });

@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASTConstants.h"
+// You should not call these methods directly.
+NSDictionary *__ASTPick_NSDictionary(NSDictionary *dict, NSArray *keys);
 
 // Picks the elements of a dictionary that are contained in a given array.
 //
@@ -17,4 +18,6 @@
 //
 // Returns a dictionary of the keys and values in `dict` for which the keys are
 // contained in `keys`.
-OVERLOADABLE NSDictionary *ASTPick(NSDictionary *dict, NSArray *keys);
+static inline __attribute__((overloadable)) NSDictionary *ASTPick(NSDictionary *dict, NSArray *keys) {
+    return __ASTPick_NSDictionary(dict, keys);
+}
