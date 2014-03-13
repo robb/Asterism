@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 // You should not call these methods directly.
 BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
 
