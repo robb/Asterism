@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 NSArray *__ASTMap_NSArray(NSArray *array, id(^block)(id obj));
 NSArray *__ASTMap_NSArray_withIndex(NSArray *array, id(^block)(id obj, NSUInteger idx));
@@ -26,7 +28,7 @@ NSOrderedSet *__ASTMap_NSOrderedSet_withIndex(NSOrderedSet *array, id(^block)(id
 // Returns an array that contains all values of `array` after `block` has been
 // applied. If `block` returns `nil`, the element is not present in the returned
 // array. The order is being maintained.
-static inline __attribute__((overloadable)) NSArray *ASTMap(NSArray *array, id(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj)) {
     return __ASTMap_NSArray(array, block);
 }
 
@@ -39,7 +41,7 @@ static inline __attribute__((overloadable)) NSArray *ASTMap(NSArray *array, id(^
 // Returns an array that contains all values of `array` after `block` has been
 // applied. If `block` returns `nil`, the element is not present in the returned
 // array. The order is being maintained.
-static inline __attribute__((overloadable)) NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx)) {
     return __ASTMap_NSArray_withIndex(array, block);
 }
 
@@ -52,7 +54,7 @@ static inline __attribute__((overloadable)) NSArray *ASTMap(NSArray *array, id(^
 // Returns a dictionary that contains all keys and values of `dict` after
 // `block` has been applied to the value. If `block` returns `nil`, the key and
 // value are not present in the returned dictionary.
-static inline __attribute__((overloadable)) NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj)) {
     return __ASTMap_NSDictionary(dict, block);
 }
 
@@ -65,7 +67,7 @@ static inline __attribute__((overloadable)) NSDictionary *ASTMap(NSDictionary *d
 // Returns a dictionary that contains all keys and values of `dict` after
 // `block` has been applied to them. If `block` returns `nil`, the key and value
 // are not present in the returned dictionary.
-static inline __attribute__((overloadable)) NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj)) {
     return __ASTMap_NSDictionary_keysAndValues(dict, block);
 }
 
@@ -78,7 +80,7 @@ static inline __attribute__((overloadable)) NSDictionary *ASTMap(NSDictionary *d
 // Returns a set that contains all values of `set` after `block` has been
 // applied. If `block` returns `nil`, the element is not present in the returned
 // set.
-static inline __attribute__((overloadable)) NSSet *ASTMap(NSSet *set, id(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj)) {
     return __ASTMap_NSSet(set, block);
 }
 
@@ -91,7 +93,7 @@ static inline __attribute__((overloadable)) NSSet *ASTMap(NSSet *set, id(^block)
 // Returns an ordered set that contains all values of `set` after `block` has
 // been applied. If `block` returns `nil`, the element is not present in the
 // returned set. The order is being maintained.
-static inline __attribute__((overloadable)) NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj)) {
     return __ASTMap_NSOrderedSet(set, block);
 }
 
@@ -104,6 +106,6 @@ static inline __attribute__((overloadable)) NSOrderedSet *ASTMap(NSOrderedSet *s
 // Returns an ordered set that contains all values of `set` after `block` has
 // been applied. If `block` returns `nil`, the element is not present in the
 // returned set. The order is being maintained.
-static inline __attribute__((overloadable)) NSOrderedSet *ASTMap(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx)) {
     return __ASTMap_NSOrderedSet_withIndex(array, block);
 }

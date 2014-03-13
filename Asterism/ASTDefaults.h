@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 NSDictionary *__ASTDefaults_NSDictionary(NSDictionary *dict, NSDictionary *defaults);
 
@@ -19,6 +21,6 @@ NSDictionary *__ASTDefaults_NSDictionary(NSDictionary *dict, NSDictionary *defau
 // Returns a new dictionary that contains a union of key-value-pairs of `dict`
 // and `defaults`. Key-value-pairs of `dict` will have precedence over those
 // taken from `defaults`.
-static inline __attribute__((overloadable)) NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults) {
     return __ASTDefaults_NSDictionary(dict, defaults);
 }

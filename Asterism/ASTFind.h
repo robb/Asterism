@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 id __ASTFind_NSArray(NSArray *array, BOOL(^block)(id obj));
 id __ASTFind_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
@@ -23,7 +25,7 @@ id __ASTFind_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id
 //
 // Returns the first item in `array` for which `block` returns `YES` or `nil` if
 // no such value was found.
-static inline __attribute__((overloadable)) id ASTFind(NSArray *array, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj)) {
     return __ASTFind_NSArray(array, block);
 }
 
@@ -36,7 +38,7 @@ static inline __attribute__((overloadable)) id ASTFind(NSArray *array, BOOL(^blo
 //
 // Returns the first item in `array` for which `block` returns `YES` or `nil` if
 // no such value was found.
-static inline __attribute__((overloadable)) id ASTFind(NSArray *array, BOOL(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj, NSUInteger idx)) {
     return __ASTFind_NSArray_withIndex(array, block);
 }
 
@@ -48,7 +50,7 @@ static inline __attribute__((overloadable)) id ASTFind(NSArray *array, BOOL(^blo
 //
 // Returns any value in `dict` for which `block` returns `YES` or `nil` if no
 // such value was found.
-static inline __attribute__((overloadable)) id ASTFind(NSDictionary *dict, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id obj)) {
     return __ASTFind_NSDictionary(dict, block);
 }
 
@@ -60,7 +62,7 @@ static inline __attribute__((overloadable)) id ASTFind(NSDictionary *dict, BOOL(
 //
 // Returns any value in `dict` for which `block` returns `YES` or `nil` if no
 // such value was found.
-static inline __attribute__((overloadable)) id ASTFind(NSDictionary *dict, BOOL(^block)(id key, id obj)) {
+ASTERISM_OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id key, id obj)) {
     return __ASTFind_NSDictionary_keysAndValues(dict, block);
 }
 
@@ -74,6 +76,6 @@ static inline __attribute__((overloadable)) id ASTFind(NSDictionary *dict, BOOL(
 // Returns a value in `collection` for which `block` returns `YES` or `nil` if
 // no such value was found. If `collection` makes an order guarantee, `ASTFind`
 // will return the first value matching the search criteria.
-static inline __attribute__((overloadable)) id ASTFind(id<NSFastEnumeration> collection, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE id ASTFind(id<NSFastEnumeration> collection, BOOL(^block)(id obj)) {
     return __ASTFind_NSFastEnumeration(collection, block);
 }

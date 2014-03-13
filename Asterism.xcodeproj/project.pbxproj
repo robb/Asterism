@@ -274,6 +274,7 @@
 		54E1B64617215678008A2175 /* ASTEach.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTEach.h; sourceTree = "<group>"; };
 		54E1B64717215678008A2175 /* ASTEach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTEach.m; sourceTree = "<group>"; };
 		54E1B64917215783008A2175 /* ASTEachSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTEachSpec.m; sourceTree = "<group>"; };
+		54EE9AA718D1DD0B0073C37B /* AsterismDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsterismDefines.h; sourceTree = "<group>"; };
 		54F4C5DC185C952200E897E7 /* ASTIndexBy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTIndexBy.h; sourceTree = "<group>"; };
 		54F4C5DD185C952200E897E7 /* ASTIndexBy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTIndexBy.m; sourceTree = "<group>"; };
 		54FB520718BBA7B8005DEB38 /* ASTIndexBySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTIndexBySpec.m; sourceTree = "<group>"; };
@@ -387,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				54D9EE6D1721543D00383762 /* Asterism.h */,
+				54EE9AA718D1DD0B0073C37B /* AsterismDefines.h */,
 				54892BAA184AAEFD009CF268 /* ASTAll.h */,
 				54892BAB184AAEFD009CF268 /* ASTAll.m */,
 				54892BAF184AB0F6009CF268 /* ASTAny.h */,

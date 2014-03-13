@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 NSDictionary *__ASTGroupBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
 NSDictionary *__ASTGroupBy_NSFastEnumeration_keyPath(id<NSFastEnumeration> collection, NSString *keyPath);
@@ -34,7 +36,7 @@ NSDictionary *__ASTGroupBy_NSFastEnumeration_keyPath(id<NSFastEnumeration> colle
 //     grouped[@"even"]; // { @2, @4 }
 //     grouped[@"odd"];  // { @1, @3, @5 }
 //
-static inline __attribute__((overloadable)) NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj)) {
     return __ASTGroupBy_NSFastEnumeration_block(collection, block);
 }
 
@@ -57,6 +59,6 @@ static inline __attribute__((overloadable)) NSDictionary *ASTGroupBy(id<NSFastEn
 //     grouped[@3]; // { @"foo", @"bar" }
 //     grouped[@8]; // { @"surprise" }
 //
-static inline __attribute__((overloadable)) NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, NSString *keyPath) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, NSString *keyPath) {
     return __ASTGroupBy_NSFastEnumeration_keyPath(collection, keyPath);
 }

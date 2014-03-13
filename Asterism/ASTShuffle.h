@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 NSArray *__ASTShuffle_NSArray(NSArray *array);
 NSOrderedSet *__ASTShuffle_NSOrderedSet(NSOrderedSet *set);
@@ -17,7 +19,7 @@ NSOrderedSet *__ASTShuffle_NSOrderedSet(NSOrderedSet *set);
 // array - An array of elements.
 //
 // Returns a copy of `array` shuffled using the Fisher-Yates shuffle.
-static inline __attribute__((overloadable)) NSArray *ASTShuffle(NSArray *array) {
+ASTERISM_OVERLOADABLE NSArray *ASTShuffle(NSArray *array) {
     return __ASTShuffle_NSArray(array);
 }
 
@@ -26,6 +28,6 @@ static inline __attribute__((overloadable)) NSArray *ASTShuffle(NSArray *array) 
 // set - An ordered set of elements.
 //
 // Returns a copy of `set` shuffled using the Fisher-Yates shuffle.
-static inline __attribute__((overloadable)) NSOrderedSet *ASTShuffle(NSOrderedSet *set) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTShuffle(NSOrderedSet *set) {
     return __ASTShuffle_NSOrderedSet(set);
 }

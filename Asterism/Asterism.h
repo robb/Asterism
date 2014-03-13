@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 #import "ASTAll.h"
 #import "ASTAny.h"
 #import "ASTDefaults.h"

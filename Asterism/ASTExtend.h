@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 NSDictionary *__ASTExtend_NSDictionary(NSDictionary *dict, NSDictionary *source);
 
@@ -19,6 +21,6 @@ NSDictionary *__ASTExtend_NSDictionary(NSDictionary *dict, NSDictionary *source)
 // Returns a new dictionary that contains a union of key-value-pairs of `dict`
 // and `source`. Key-value-pairs of `source` will have precedence over those
 // taken from `dict`.
-static inline __attribute__((overloadable)) NSDictionary *ASTExtend(NSDictionary *dict, NSDictionary *source) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTExtend(NSDictionary *dict, NSDictionary *source) {
     return __ASTExtend_NSDictionary(dict, source);
 }

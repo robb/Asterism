@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 NSArray *__ASTReject_NSArray(NSArray *array, BOOL(^block)(id obj));
 NSArray *__ASTReject_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
@@ -25,7 +27,7 @@ NSOrderedSet *__ASTReject_NSOrderedSet_withIndex(NSOrderedSet *set, BOOL(^block)
 //
 // Returns an array of all values in `array` that fail the test. The order is
 // being maintained.
-static inline __attribute__((overloadable)) NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj)) {
     return __ASTReject_NSArray(array, block);
 }
 
@@ -38,7 +40,7 @@ static inline __attribute__((overloadable)) NSArray *ASTReject(NSArray *array, B
 //
 // Returns an array of all values in `array` that fail the test. The order is
 // being maintained.
-static inline __attribute__((overloadable)) NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj, NSUInteger idx)) {
     return __ASTReject_NSArray_withIndex(array, block);
 }
 
@@ -50,7 +52,7 @@ static inline __attribute__((overloadable)) NSArray *ASTReject(NSArray *array, B
 //
 // Returns a dictionary of the keys and values in `dict` for which the values
 // failed the test.
-static inline __attribute__((overloadable)) NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id obj)) {
     return __ASTReject_NSDictionary(dict, block);
 }
 
@@ -62,7 +64,7 @@ static inline __attribute__((overloadable)) NSDictionary *ASTReject(NSDictionary
 //         nil.
 //
 // Returns a dictionary of the keys and values in `dict` that fail the test.
-static inline __attribute__((overloadable)) NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id key, id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id key, id obj)) {
     return __ASTReject_NSDictionary_keysAndValues(dict, block);
 }
 
@@ -73,7 +75,7 @@ static inline __attribute__((overloadable)) NSDictionary *ASTReject(NSDictionary
 //         if the element passes the test. The block must no be nil.
 //
 // Returns a set of all values in `set` that fail the test.
-static inline __attribute__((overloadable)) NSSet *ASTReject(NSSet *set, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSSet *ASTReject(NSSet *set, BOOL(^block)(id obj)) {
     return __ASTReject_NSSet(set, block);
 }
 
@@ -84,7 +86,7 @@ static inline __attribute__((overloadable)) NSSet *ASTReject(NSSet *set, BOOL(^b
 //         if the element passes the test. The block must no be nil.
 //
 // Returns an ordered set of all values in `set` that fail the test.
-static inline __attribute__((overloadable)) NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj)) {
     return __ASTReject_NSOrderedSet(set, block);
 }
 
@@ -97,6 +99,6 @@ static inline __attribute__((overloadable)) NSOrderedSet *ASTReject(NSOrderedSet
 //
 // Returns an ordered set of all values in `set` that fail the test. The order
 // is being maintained.
-static inline __attribute__((overloadable)) NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx)) {
     return __ASTReject_NSOrderedSet_withIndex(set, block);
 }

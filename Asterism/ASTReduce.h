@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 id __ASTReduce_NSFastEnumeration_block(id<NSFastEnumeration> collection, id(^block)(id memo, id obj));
 id __ASTReduce_NSFastEnumeration_memo_block(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj));
@@ -38,7 +40,7 @@ id __ASTReduce_NSFastEnumeration_memo_block(id<NSFastEnumeration> collection, id
 //     // Equivalent to [[@"a" stringByAppendingString:@"b"] stringByAppendingString:@"c"];
 //     ASTReduce(@[ @"a", @"b", @"c" ], concat);
 //
-static inline __attribute__((overloadable)) id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj)) {
+ASTERISM_OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj)) {
     return __ASTReduce_NSFastEnumeration_block(collection, block);
 }
 
@@ -56,6 +58,6 @@ static inline __attribute__((overloadable)) id ASTReduce(id<NSFastEnumeration> c
 //
 // Returns the last return value of `block` once it reached the end of
 // `collection`. If `collection` is empty, `memo` is returned.
-static inline __attribute__((overloadable)) id ASTReduce(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj)) {
+ASTERISM_OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj)) {
     return __ASTReduce_NSFastEnumeration_memo_block(collection, memo, block);
 }

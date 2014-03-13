@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 NSArray *__ASTPluck_NSFastEnumeration(id<NSFastEnumeration> collection, NSString *keyPath);
 
@@ -20,6 +22,6 @@ NSArray *__ASTPluck_NSFastEnumeration(id<NSFastEnumeration> collection, NSString
 // `keyPath`. If an element returns nil when invoked with -valueForKeyPath:,
 // it is not present in the returned array. If possible, the order is being
 // maintained.
-static inline __attribute__((overloadable)) NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPath) {
+ASTERISM_OVERLOADABLE NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPath) {
     return __ASTPluck_NSFastEnumeration(collection, keyPath);
 }

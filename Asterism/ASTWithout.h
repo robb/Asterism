@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.[]
 NSArray *__ASTWithout_NSArray(NSArray *array, id obj);
 NSSet *__ASTWithout_NSSet(NSSet *set, id obj);
@@ -20,7 +22,7 @@ NSOrderedSet *__ASTWithout_NSOrderedSet(NSOrderedSet *set, id obj);
 //
 // Returns an array of all values in `array` that are equal to `obj`. The order
 // is being maintained.
-static inline __attribute__((overloadable)) NSArray *ASTWithout(NSArray *array, id obj) {
+ASTERISM_OVERLOADABLE NSArray *ASTWithout(NSArray *array, id obj) {
     return __ASTWithout_NSArray(array, obj);
 }
 
@@ -30,7 +32,7 @@ static inline __attribute__((overloadable)) NSArray *ASTWithout(NSArray *array, 
 // obj - An element to be removed.
 //
 // Returns a set of all values in `set` that are equal to `obj`.
-static inline __attribute__((overloadable)) NSSet *ASTWithout(NSSet *set, id obj) {
+ASTERISM_OVERLOADABLE NSSet *ASTWithout(NSSet *set, id obj) {
     return __ASTWithout_NSSet(set, obj);
 }
 
@@ -41,6 +43,6 @@ static inline __attribute__((overloadable)) NSSet *ASTWithout(NSSet *set, id obj
 //
 // Returns an ordered set of all values in `set` that are equal to `obj`. The order
 // is being maintained.
-static inline __attribute__((overloadable)) NSOrderedSet *ASTWithout(NSOrderedSet *set, id obj) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTWithout(NSOrderedSet *set, id obj) {
     return __ASTWithout_NSOrderedSet(set, obj);
 }

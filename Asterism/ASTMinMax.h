@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 id __ASTMin_NSFastEnumeration(id<NSFastEnumeration> collection);
 id __ASTMin_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSComparator comparator);
@@ -20,7 +22,7 @@ id __ASTMax_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSCom
 //
 // Returns the minimum of the collection by comparing all values by invoking
 // -compare:.
-static inline __attribute__((overloadable)) id ASTMin(id<NSFastEnumeration> collection) {
+ASTERISM_OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection) {
     return __ASTMin_NSFastEnumeration(collection);
 }
 
@@ -32,7 +34,7 @@ static inline __attribute__((overloadable)) id ASTMin(id<NSFastEnumeration> coll
 //
 // Returns the minimum of the collection by comparing all values using
 // `comparator`.
-static inline __attribute__((overloadable)) id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator) {
+ASTERISM_OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator) {
     return __ASTMin_NSFastEnumeration_comparator(collection, comparator);
 }
 
@@ -42,7 +44,7 @@ static inline __attribute__((overloadable)) id ASTMin(id<NSFastEnumeration> coll
 //
 // Returns the maximum of the collection by comparing all values by invoking
 // -compare:.
-static inline __attribute__((overloadable)) id ASTMax(id<NSFastEnumeration> collection) {
+ASTERISM_OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection) {
     return __ASTMax_NSFastEnumeration(collection);
 }
 
@@ -54,6 +56,6 @@ static inline __attribute__((overloadable)) id ASTMax(id<NSFastEnumeration> coll
 //
 // Returns the maximum of the collection by comparing all values using
 // `comparator`.
-static inline __attribute__((overloadable)) id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator) {
+ASTERISM_OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator) {
     return __ASTMax_NSFastEnumeration_comparator(collection, comparator);
 }

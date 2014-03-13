@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 NSUInteger __ASTSize_NSArray(NSArray *array);
 NSUInteger __ASTSize_NSDictionary(NSDictionary *dictionary);
@@ -20,7 +22,7 @@ NSUInteger __ASTSize_NSFastEnumeration(id<NSFastEnumeration> collection);
 // array - An array of elements.
 //
 // Returns the size of `array`.
-static inline __attribute__((overloadable)) NSUInteger ASTSize(NSArray *array) {
+ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSArray *array) {
     return __ASTSize_NSArray(array);
 }
 
@@ -29,7 +31,7 @@ static inline __attribute__((overloadable)) NSUInteger ASTSize(NSArray *array) {
 // dictionary - A dictionary of elements.
 //
 // Returns the size of `dictionary`.
-static inline __attribute__((overloadable)) NSUInteger ASTSize(NSDictionary *dictionary) {
+ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSDictionary *dictionary) {
     return __ASTSize_NSDictionary(dictionary);
 }
 
@@ -38,7 +40,7 @@ static inline __attribute__((overloadable)) NSUInteger ASTSize(NSDictionary *dic
 // set - A set of elements.
 //
 // Returns the size of `set`.
-static inline __attribute__((overloadable)) NSUInteger ASTSize(NSSet *set) {
+ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSSet *set) {
     return __ASTSize_NSSet(set);
 }
 
@@ -47,7 +49,7 @@ static inline __attribute__((overloadable)) NSUInteger ASTSize(NSSet *set) {
 // set - An ordered set of elements.
 //
 // Returns the size of `set`.
-static inline __attribute__((overloadable)) NSUInteger ASTSize(NSOrderedSet *set) {
+ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSOrderedSet *set) {
     return __ASTSize_NSOrderedSet(set);
 }
 
@@ -56,6 +58,6 @@ static inline __attribute__((overloadable)) NSUInteger ASTSize(NSOrderedSet *set
 // collection - A collection of elements.
 //
 // Returns the size of `collection` in O(n).
-static inline __attribute__((overloadable)) NSUInteger ASTSize(id<NSFastEnumeration> collection) {
+ASTERISM_OVERLOADABLE NSUInteger ASTSize(id<NSFastEnumeration> collection) {
     return __ASTSize_NSFastEnumeration(collection);
 }

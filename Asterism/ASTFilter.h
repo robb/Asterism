@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 NSArray *__ASTFilter_NSArray(NSArray *array, BOOL(^block)(id obj));
 NSArray *__ASTFilter_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
@@ -25,7 +27,7 @@ NSOrderedSet *__ASTFilter_NSOrderedSet_withIndex(NSOrderedSet *array, BOOL(^bloc
 //
 // Returns an array of all values in `array` that pass the test. The order is
 // being maintained.
-static inline __attribute__((overloadable)) NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj)) {
     return __ASTFilter_NSArray(array, block);
 }
 
@@ -38,7 +40,7 @@ static inline __attribute__((overloadable)) NSArray *ASTFilter(NSArray *array, B
 //
 // Returns an array of all values in `array` that pass the test. The order is
 // being maintained.
-static inline __attribute__((overloadable)) NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj, NSUInteger idx)) {
     return __ASTFilter_NSArray_withIndex(array, block);
 }
 
@@ -50,7 +52,7 @@ static inline __attribute__((overloadable)) NSArray *ASTFilter(NSArray *array, B
 //
 // Returns a dictionary of the keys and values in `dict` for which the values
 // passed the test.
-static inline __attribute__((overloadable)) NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id obj)) {
     return __ASTFilter_NSDictionary(dict, block);
 }
 
@@ -62,7 +64,7 @@ static inline __attribute__((overloadable)) NSDictionary *ASTFilter(NSDictionary
 //         nil.
 //
 // Returns a dictionary of the keys and values in `dict` that passed the test.
-static inline __attribute__((overloadable)) NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id key, id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id key, id obj)) {
     return __ASTFilter_NSDictionary_keysAndValues(dict, block);
 }
 
@@ -73,7 +75,7 @@ static inline __attribute__((overloadable)) NSDictionary *ASTFilter(NSDictionary
 //         if the element passes the test. The block must no be nil.
 //
 // Returns a set of all values in `set` that pass the test.
-static inline __attribute__((overloadable)) NSSet *ASTFilter(NSSet *set, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSSet *ASTFilter(NSSet *set, BOOL(^block)(id obj)) {
     return __ASTFilter_NSSet(set, block);
 }
 
@@ -84,7 +86,7 @@ static inline __attribute__((overloadable)) NSSet *ASTFilter(NSSet *set, BOOL(^b
 //         if the element passes the test. The block must no be nil.
 //
 // Returns an ordered set of all values in `set` that pass the test.
-static inline __attribute__((overloadable)) NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id obj)) {
     return __ASTFilter_NSOrderedSet(set, block);
 }
 
@@ -97,6 +99,6 @@ static inline __attribute__((overloadable)) NSOrderedSet *ASTFilter(NSOrderedSet
 //
 // Returns an ordered set of all values in `set` that pass the test. The order
 // is being maintained.
-static inline __attribute__((overloadable)) NSOrderedSet *ASTFilter(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx)) {
     return __ASTFilter_NSOrderedSet_withIndex(array, block);
 }

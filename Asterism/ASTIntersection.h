@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "AsterismDefines.h"
+
 // You should not call these methods directly.
 NSArray *__ASTIntersection_NSArray(NSArray *array, NSArray *other);
 NSSet *__ASTIntersection_NSSet(NSSet *set, NSSet *other);
@@ -20,7 +22,7 @@ NSOrderedSet *__ASTIntersection_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *ot
 //
 // Returns an array containing the elements of `array` that are also present in
 // `other`. The order is being maintained.
-static inline __attribute__((overloadable)) NSArray *ASTIntersection(NSArray *array, NSArray *other) {
+ASTERISM_OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other) {
     return __ASTIntersection_NSArray(array, other);
 }
 
@@ -31,7 +33,7 @@ static inline __attribute__((overloadable)) NSArray *ASTIntersection(NSArray *ar
 //
 // Returns a set containing the elements of `set` that are also present in
 // `other`.
-static inline __attribute__((overloadable)) NSSet *ASTIntersection(NSSet *set, NSSet *other) {
+ASTERISM_OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other) {
     return __ASTIntersection_NSSet(set, other);
 }
 
@@ -42,6 +44,6 @@ static inline __attribute__((overloadable)) NSSet *ASTIntersection(NSSet *set, N
 //
 // Returns a set containing the elements of `set` that are also present in
 // `other`. The order is being maintained.
-static inline __attribute__((overloadable)) NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other) {
     return __ASTIntersection_NSOrderedSet(set, other);
 }
