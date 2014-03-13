@@ -11,7 +11,7 @@
 
 #import "ASTReject.h"
 
-NSArray *__ASTReject_NSArray_withoutIndex(NSArray *array, BOOL(^block)(id)) {
+NSArray *__ASTReject_NSArray(NSArray *array, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 
     return ASTFilter(array, ASTNegate(block));
@@ -23,7 +23,7 @@ NSArray *__ASTReject_NSArray_withIndex(NSArray *array, BOOL(^block)(id, NSUInteg
     return ASTFilter(array, ASTNegate(block));
 }
 
-NSDictionary *__ASTReject_NSDictionary_values(NSDictionary *dict, BOOL(^block)(id)) {
+NSDictionary *__ASTReject_NSDictionary(NSDictionary *dict, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 
     return ASTFilter(dict, ASTNegate(block));
@@ -41,7 +41,7 @@ NSSet *__ASTReject_NSSet(NSSet *set, BOOL(^block)(id obj)) {
     return ASTFilter(set, ASTNegate(block));
 }
 
-NSOrderedSet *__ASTReject_NSOrderedSet_withoutIndex(NSOrderedSet *set, BOOL(^block)(id obj)) {
+NSOrderedSet *__ASTReject_NSOrderedSet(NSOrderedSet *set, BOOL(^block)(id obj)) {
     NSCParameterAssert(block != nil);
 
     return ASTFilter(set, ASTNegate(block));

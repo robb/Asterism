@@ -8,7 +8,7 @@
 
 #import "ASTFilter.h"
 
-NSArray *__ASTFilter_NSArray_withoutIndex(NSArray *array, BOOL(^block)(id)) {
+NSArray *__ASTFilter_NSArray(NSArray *array, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 
     NSIndexSet *indexes = [array indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
@@ -28,7 +28,7 @@ NSArray *__ASTFilter_NSArray_withIndex(NSArray *array, BOOL(^block)(id, NSUInteg
     return [array objectsAtIndexes:indexes];
 }
 
-NSDictionary *__ASTFilter_NSDictionary_values(NSDictionary *dict, BOOL(^block)(id)) {
+NSDictionary *__ASTFilter_NSDictionary(NSDictionary *dict, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 
     NSSet *keys = [dict keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
@@ -38,7 +38,7 @@ NSDictionary *__ASTFilter_NSDictionary_values(NSDictionary *dict, BOOL(^block)(i
     return [dict dictionaryWithValuesForKeys:keys.allObjects];
 }
 
-NSDictionary *__ASTFilter_NSDictionary_valuesAndKeys(NSDictionary *dict, BOOL(^block)(id, id)) {
+NSDictionary *__ASTFilter_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id, id)) {
     NSCParameterAssert(block != nil);
 
     NSSet *keys = [dict keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
@@ -56,7 +56,7 @@ NSSet *__ASTFilter_NSSet(NSSet *set, BOOL(^block)(id)) {
     }];
 }
 
-NSOrderedSet *__ASTFilter_NSOrderedSet_withoutIndex(NSOrderedSet *set, BOOL(^block)(id)) {
+NSOrderedSet *__ASTFilter_NSOrderedSet(NSOrderedSet *set, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 
     NSIndexSet *indexes = [set indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {

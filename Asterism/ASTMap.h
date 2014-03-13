@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 // You should not call these methods directly.
-NSArray *__ASTMap_NSArray_withoutIndex(NSArray *array, id(^block)(id obj));
+NSArray *__ASTMap_NSArray(NSArray *array, id(^block)(id obj));
 NSArray *__ASTMap_NSArray_withIndex(NSArray *array, id(^block)(id obj, NSUInteger idx));
-NSDictionary *__ASTMap_NSDictionary_values(NSDictionary *dict, id(^block)(id obj));
-NSDictionary *__ASTMap_NSDictionary_valuesAndKeys(NSDictionary *dict, id(^block)(id key, id obj));
+NSDictionary *__ASTMap_NSDictionary(NSDictionary *dict, id(^block)(id obj));
+NSDictionary *__ASTMap_NSDictionary_keysAndValues(NSDictionary *dict, id(^block)(id key, id obj));
 NSSet *__ASTMap_NSSet(NSSet *set, id(^block)(id obj));
-NSOrderedSet *__ASTMap_NSOrderedSet_withoutIndex(NSOrderedSet *set, id(^block)(id obj));
+NSOrderedSet *__ASTMap_NSOrderedSet(NSOrderedSet *set, id(^block)(id obj));
 NSOrderedSet *__ASTMap_NSOrderedSet_withIndex(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx));
 
 // Maps a block across an array.
@@ -27,7 +27,7 @@ NSOrderedSet *__ASTMap_NSOrderedSet_withIndex(NSOrderedSet *array, id(^block)(id
 // applied. If `block` returns `nil`, the element is not present in the returned
 // array. The order is being maintained.
 static inline __attribute__((overloadable)) NSArray *ASTMap(NSArray *array, id(^block)(id obj)) {
-    return __ASTMap_NSArray_withoutIndex(array, block);
+    return __ASTMap_NSArray(array, block);
 }
 
 // Maps a block across an array.
@@ -53,7 +53,7 @@ static inline __attribute__((overloadable)) NSArray *ASTMap(NSArray *array, id(^
 // `block` has been applied to the value. If `block` returns `nil`, the key and
 // value are not present in the returned dictionary.
 static inline __attribute__((overloadable)) NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj)) {
-    return __ASTMap_NSDictionary_values(dict, block);
+    return __ASTMap_NSDictionary(dict, block);
 }
 
 // Maps a block across a dictionary.
@@ -66,7 +66,7 @@ static inline __attribute__((overloadable)) NSDictionary *ASTMap(NSDictionary *d
 // `block` has been applied to them. If `block` returns `nil`, the key and value
 // are not present in the returned dictionary.
 static inline __attribute__((overloadable)) NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj)) {
-    return __ASTMap_NSDictionary_valuesAndKeys(dict, block);
+    return __ASTMap_NSDictionary_keysAndValues(dict, block);
 }
 
 // Maps a block across a set.
@@ -92,7 +92,7 @@ static inline __attribute__((overloadable)) NSSet *ASTMap(NSSet *set, id(^block)
 // been applied. If `block` returns `nil`, the element is not present in the
 // returned set. The order is being maintained.
 static inline __attribute__((overloadable)) NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj)) {
-    return __ASTMap_NSOrderedSet_withoutIndex(set, block);
+    return __ASTMap_NSOrderedSet(set, block);
 }
 
 // Maps a block across an ordered set.

@@ -12,7 +12,7 @@
 
 #pragma mark - Arrays
 
-NSArray *__ASTMap_NSArray_withoutIndex(NSArray *array, id(^block)(id obj)) {
+NSArray *__ASTMap_NSArray(NSArray *array, id(^block)(id obj)) {
     NSCParameterAssert(block != nil);
 
     if (array == nil) return nil;
@@ -40,7 +40,7 @@ NSArray *__ASTMap_NSArray_withIndex(NSArray *array, id(^block)(id obj, NSUIntege
     return result;
 }
 
-NSDictionary *__ASTMap_NSDictionary_values(NSDictionary *dict, id(^block)(id obj)) {
+NSDictionary *__ASTMap_NSDictionary(NSDictionary *dict, id(^block)(id obj)) {
     NSCParameterAssert(block != nil);
 
     if (dict == nil) return nil;
@@ -50,7 +50,7 @@ NSDictionary *__ASTMap_NSDictionary_values(NSDictionary *dict, id(^block)(id obj
     });
 }
 
-NSDictionary *__ASTMap_NSDictionary_valuesAndKeys(NSDictionary *dict, id(^block)(id key, id obj)) {
+NSDictionary *__ASTMap_NSDictionary_keysAndValues(NSDictionary *dict, id(^block)(id key, id obj)) {
     NSCParameterAssert(block != nil);
 
     if (dict == nil) return nil;
@@ -86,7 +86,7 @@ NSSet *__ASTMap_NSSet(NSSet *set, id(^block)(id obj)) {
     return result;
 }
 
-NSOrderedSet *__ASTMap_NSOrderedSet_withoutIndex(NSOrderedSet *set, id(^block)(id obj)) {
+NSOrderedSet *__ASTMap_NSOrderedSet(NSOrderedSet *set, id(^block)(id obj)) {
     NSCParameterAssert(block != nil);
 
     if (set == nil) return nil;

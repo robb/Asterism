@@ -8,7 +8,7 @@
 
 #import "ASTFind.h"
 
-id __ASTFind_NSArray_withoutIndex(NSArray *array, BOOL(^block)(id)) {
+id __ASTFind_NSArray(NSArray *array, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 
     if (array == nil) return nil;
@@ -32,7 +32,7 @@ id __ASTFind_NSArray_withIndex(NSArray *array, BOOL(^block)(id, NSUInteger)) {
     return index == NSNotFound ? nil : array[index];
 }
 
-id __ASTFind_NSDictionary_values(NSDictionary *dict, BOOL(^block)(id)) {
+id __ASTFind_NSDictionary(NSDictionary *dict, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 
     for (id key in dict) {
@@ -44,7 +44,7 @@ id __ASTFind_NSDictionary_values(NSDictionary *dict, BOOL(^block)(id)) {
     return nil;
 }
 
-id __ASTFind_NSDictionary_valuesAndKeys(NSDictionary *dict, BOOL(^block)(id, id)) {
+id __ASTFind_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id, id)) {
     NSCParameterAssert(block != nil);
 
     for (id key in dict) {
@@ -56,7 +56,7 @@ id __ASTFind_NSDictionary_valuesAndKeys(NSDictionary *dict, BOOL(^block)(id, id)
     return nil;
 }
 
-id __ASTFind_NSFastEnumeration_withoutIndex(id<NSFastEnumeration> collection, BOOL(^block)(id obj)) {
+id __ASTFind_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj)) {
     NSCParameterAssert(block != nil);
 
     for (id obj in collection) {

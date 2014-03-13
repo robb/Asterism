@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 // You should not call these methods directly.
-void __ASTEach_NSArray_withoutIndex(NSArray *array, void(^iterator)(id obj));
+void __ASTEach_NSArray(NSArray *array, void(^iterator)(id obj));
 void __ASTEach_NSArray_withIndex(NSArray *array, void(^iterator)(id obj, NSUInteger idx));
-void __ASTEach_NSDictionary_values(NSDictionary *dict, void(^iterator)(id obj));
-void __ASTEach_NSDictionary_valuesAndKeys(NSDictionary *dict, void(^iterator)(id key, id obj));
+void __ASTEach_NSDictionary(NSDictionary *dict, void(^iterator)(id obj));
+void __ASTEach_NSDictionary_keysAndValues(NSDictionary *dict, void(^iterator)(id key, id obj));
 void __ASTEach_NSOrderedSet_withIndex(NSOrderedSet *set, void(^iterator)(id obj, NSUInteger idx));
-void __ASTEach_NSFastEnumeration_withoutIndex(id<NSFastEnumeration> enumerable, void(^iterator)(id obj));
+void __ASTEach_NSFastEnumeration(id<NSFastEnumeration> enumerable, void(^iterator)(id obj));
 
 // Iterates over all elements of an array.
 //
@@ -22,7 +22,7 @@ void __ASTEach_NSFastEnumeration_withoutIndex(id<NSFastEnumeration> enumerable, 
 // iterator - A block that takes an element as its only argument. The block must
 //            not be nil.
 static inline __attribute__((overloadable)) void ASTEach(NSArray *array, void(^iterator)(id obj)) {
-    __ASTEach_NSArray_withoutIndex(array, iterator);
+    __ASTEach_NSArray(array, iterator);
 }
 
 // Iterates over all elements of an array, as well as their indexes.
@@ -40,7 +40,7 @@ static inline __attribute__((overloadable)) void ASTEach(NSArray *array, void(^i
 // iterator - A block that takes an element as its only argument. The block must
 //            not be nil.
 static inline __attribute__((overloadable)) void ASTEach(NSDictionary *dict, void(^iterator)(id obj)) {
-    __ASTEach_NSDictionary_values(dict, iterator);
+    __ASTEach_NSDictionary(dict, iterator);
 }
 
 // Iterates over all keys and values of a dictionary.
@@ -49,7 +49,7 @@ static inline __attribute__((overloadable)) void ASTEach(NSDictionary *dict, voi
 // iterator - A block that takes a key and a value as its arguments. The block
 //            must not be nil.
 static inline __attribute__((overloadable)) void ASTEach(NSDictionary *dict, void(^iterator)(id key, id obj)) {
-    __ASTEach_NSDictionary_valuesAndKeys(dict, iterator);
+    __ASTEach_NSDictionary_keysAndValues(dict, iterator);
 }
 
 // Iterates over all elements of an ordered set, as well as their indexes.
@@ -67,5 +67,5 @@ static inline __attribute__((overloadable)) void ASTEach(NSOrderedSet *set, void
 // iterator   - A block that takes an element as its only argument. The block
 //              must not be nil.
 static inline __attribute__((overloadable)) void ASTEach(id<NSFastEnumeration> enumerable, void(^iterator)(id obj)) {
-    __ASTEach_NSFastEnumeration_withoutIndex(enumerable, iterator);
+    __ASTEach_NSFastEnumeration(enumerable, iterator);
 }

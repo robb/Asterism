@@ -8,7 +8,7 @@
 
 #import "ASTEach.h"
 
-void __ASTEach_NSArray_withoutIndex(NSArray *array, void(^iterator)(id)) {
+void __ASTEach_NSArray(NSArray *array, void(^iterator)(id)) {
     NSCParameterAssert(iterator != nil);
 
     ASTEach((id<NSFastEnumeration>)array, iterator);
@@ -22,7 +22,7 @@ void __ASTEach_NSArray_withIndex(NSArray *array, void(^iterator)(id, NSUInteger)
     }];
 }
 
-void __ASTEach_NSDictionary_values(NSDictionary *dict, void(^iterator)(id obj)) {
+void __ASTEach_NSDictionary(NSDictionary *dict, void(^iterator)(id obj)) {
     NSCParameterAssert(iterator != nil);
 
     ASTEach(dict, ^(id key, id obj) {
@@ -30,7 +30,7 @@ void __ASTEach_NSDictionary_values(NSDictionary *dict, void(^iterator)(id obj)) 
     });
 }
 
-void __ASTEach_NSDictionary_valuesAndKeys(NSDictionary *dict, void(^iterator)(id key, id obj)) {
+void __ASTEach_NSDictionary_keysAndValues(NSDictionary *dict, void(^iterator)(id key, id obj)) {
     NSCParameterAssert(iterator != nil);
 
     [dict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -46,7 +46,7 @@ void __ASTEach_NSOrderedSet_withIndex(NSOrderedSet *set, void(^iterator)(id, NSU
     }];
 }
 
-void __ASTEach_NSFastEnumeration_withoutIndex(id<NSFastEnumeration> enumerable, void(^iterator)(id obj)) {
+void __ASTEach_NSFastEnumeration(id<NSFastEnumeration> enumerable, void(^iterator)(id obj)) {
     NSCParameterAssert(iterator != nil);
 
     for (id obj in enumerable) {

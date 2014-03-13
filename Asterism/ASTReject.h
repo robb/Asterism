@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 // You should not call these methods directly.
-NSArray *__ASTReject_NSArray_withoutIndex(NSArray *array, BOOL(^block)(id obj));
+NSArray *__ASTReject_NSArray(NSArray *array, BOOL(^block)(id obj));
 NSArray *__ASTReject_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
-NSDictionary *__ASTReject_NSDictionary_values(NSDictionary *dict, BOOL(^block)(id obj));
+NSDictionary *__ASTReject_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj));
 NSDictionary *__ASTReject_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id key, id obj));
 NSSet *__ASTReject_NSSet(NSSet *set, BOOL(^block)(id obj));
-NSOrderedSet *__ASTReject_NSOrderedSet_withoutIndex(NSOrderedSet *set, BOOL(^block)(id obj));
+NSOrderedSet *__ASTReject_NSOrderedSet(NSOrderedSet *set, BOOL(^block)(id obj));
 NSOrderedSet *__ASTReject_NSOrderedSet_withIndex(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx));
 
 // Filters out the elements of an array that pass a test.
@@ -26,7 +26,7 @@ NSOrderedSet *__ASTReject_NSOrderedSet_withIndex(NSOrderedSet *set, BOOL(^block)
 // Returns an array of all values in `array` that fail the test. The order is
 // being maintained.
 static inline __attribute__((overloadable)) NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj)) {
-    return __ASTReject_NSArray_withoutIndex(array, block);
+    return __ASTReject_NSArray(array, block);
 }
 
 // Filters out the elements of an array that pass a test.
@@ -51,7 +51,7 @@ static inline __attribute__((overloadable)) NSArray *ASTReject(NSArray *array, B
 // Returns a dictionary of the keys and values in `dict` for which the values
 // failed the test.
 static inline __attribute__((overloadable)) NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id obj)) {
-    return __ASTReject_NSDictionary_values(dict, block);
+    return __ASTReject_NSDictionary(dict, block);
 }
 
 // Filters out the keys and values of a dictionary that pass a test.
@@ -85,7 +85,7 @@ static inline __attribute__((overloadable)) NSSet *ASTReject(NSSet *set, BOOL(^b
 //
 // Returns an ordered set of all values in `set` that fail the test.
 static inline __attribute__((overloadable)) NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj)) {
-    return __ASTReject_NSOrderedSet_withoutIndex(set, block);
+    return __ASTReject_NSOrderedSet(set, block);
 }
 
 // Filters out the elements of an ordered set that pass a test.

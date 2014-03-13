@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 // You should not call these methods directly.
-NSArray *__ASTFilter_NSArray_withoutIndex(NSArray *array, BOOL(^block)(id obj));
+NSArray *__ASTFilter_NSArray(NSArray *array, BOOL(^block)(id obj));
 NSArray *__ASTFilter_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
-NSDictionary *__ASTFilter_NSDictionary_values(NSDictionary *dict, BOOL(^block)(id obj));
-NSDictionary *__ASTFilter_NSDictionary_valuesAndKeys(NSDictionary *dict, BOOL(^block)(id key, id obj));
+NSDictionary *__ASTFilter_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj));
+NSDictionary *__ASTFilter_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id key, id obj));
 NSSet *__ASTFilter_NSSet(NSSet *set, BOOL(^block)(id obj));
-NSOrderedSet *__ASTFilter_NSOrderedSet_withoutIndex(NSOrderedSet *set, BOOL(^block)(id obj));
+NSOrderedSet *__ASTFilter_NSOrderedSet(NSOrderedSet *set, BOOL(^block)(id obj));
 NSOrderedSet *__ASTFilter_NSOrderedSet_withIndex(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx));
 
 // Filters out the elements of an array that fail a test.
@@ -26,7 +26,7 @@ NSOrderedSet *__ASTFilter_NSOrderedSet_withIndex(NSOrderedSet *array, BOOL(^bloc
 // Returns an array of all values in `array` that pass the test. The order is
 // being maintained.
 static inline __attribute__((overloadable)) NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj)) {
-    return __ASTFilter_NSArray_withoutIndex(array, block);
+    return __ASTFilter_NSArray(array, block);
 }
 
 // Filters out the elements of an array that fail a test.
@@ -51,7 +51,7 @@ static inline __attribute__((overloadable)) NSArray *ASTFilter(NSArray *array, B
 // Returns a dictionary of the keys and values in `dict` for which the values
 // passed the test.
 static inline __attribute__((overloadable)) NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id obj)) {
-    return __ASTFilter_NSDictionary_values(dict, block);
+    return __ASTFilter_NSDictionary(dict, block);
 }
 
 // Filters out the keys and values of a dictionary that fail a test.
@@ -63,7 +63,7 @@ static inline __attribute__((overloadable)) NSDictionary *ASTFilter(NSDictionary
 //
 // Returns a dictionary of the keys and values in `dict` that passed the test.
 static inline __attribute__((overloadable)) NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id key, id obj)) {
-    return __ASTFilter_NSDictionary_valuesAndKeys(dict, block);
+    return __ASTFilter_NSDictionary_keysAndValues(dict, block);
 }
 
 // Filters out the elements of a set that fail a test.
@@ -85,7 +85,7 @@ static inline __attribute__((overloadable)) NSSet *ASTFilter(NSSet *set, BOOL(^b
 //
 // Returns an ordered set of all values in `set` that pass the test.
 static inline __attribute__((overloadable)) NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id obj)) {
-    return __ASTFilter_NSOrderedSet_withoutIndex(set, block);
+    return __ASTFilter_NSOrderedSet(set, block);
 }
 
 // Filters out the elements of an ordered set that fail a test.
