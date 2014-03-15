@@ -8,39 +8,56 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASTConstants.h"
+#import "AsterismDefines.h"
+
+// You should not call these methods directly.
+NSUInteger __ASTSize_NSArray(NSArray *array);
+NSUInteger __ASTSize_NSDictionary(NSDictionary *dictionary);
+NSUInteger __ASTSize_NSSet(NSSet *set);
+NSUInteger __ASTSize_NSOrderedSet(NSOrderedSet *set);
+NSUInteger __ASTSize_NSFastEnumeration(id<NSFastEnumeration> collection);
 
 // The number of values in an array.
 //
 // array - An array of elements.
 //
 // Returns the size of `array`.
-OVERLOADABLE NSUInteger ASTSize(NSArray *array);
+ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSArray *array) {
+    return __ASTSize_NSArray(array);
+}
 
 // The number of values in a dictionary.
 //
 // dictionary - A dictionary of elements.
 //
 // Returns the size of `dictionary`.
-OVERLOADABLE NSUInteger ASTSize(NSDictionary *dictionary);
+ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSDictionary *dictionary) {
+    return __ASTSize_NSDictionary(dictionary);
+}
 
 // The number of values in a set.
 //
 // set - A set of elements.
 //
 // Returns the size of `set`.
-OVERLOADABLE NSUInteger ASTSize(NSSet *set);
+ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSSet *set) {
+    return __ASTSize_NSSet(set);
+}
 
 // The number of values in an ordered set.
 //
 // set - An ordered set of elements.
 //
 // Returns the size of `set`.
-OVERLOADABLE NSUInteger ASTSize(NSOrderedSet *set);
+ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSOrderedSet *set) {
+    return __ASTSize_NSOrderedSet(set);
+}
 
 // Counts the number of elements in a collection.
 //
 // collection - A collection of elements.
 //
 // Returns the size of `collection` in O(n).
-OVERLOADABLE NSUInteger ASTSize(id<NSFastEnumeration> collection);
+ASTERISM_OVERLOADABLE NSUInteger ASTSize(id<NSFastEnumeration> collection) {
+    return __ASTSize_NSFastEnumeration(collection);
+}

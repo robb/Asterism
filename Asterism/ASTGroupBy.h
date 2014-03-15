@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASTConstants.h"
+#import "AsterismDefines.h"
+
+// You should not call these methods directly.
+NSDictionary *__ASTGroupBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
+NSDictionary *__ASTGroupBy_NSFastEnumeration_keyPath(id<NSFastEnumeration> collection, NSString *keyPath);
 
 // Groups the elements in a collection using a block.
 //
@@ -32,7 +36,9 @@
 //     grouped[@"even"]; // { @2, @4 }
 //     grouped[@"odd"];  // { @1, @3, @5 }
 //
-OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
+ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj)) {
+    return __ASTGroupBy_NSFastEnumeration_block(collection, block);
+}
 
 // Groups the elements in a collection by their value for a given key path.
 //
@@ -53,4 +59,6 @@ OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, id<NSCop
 //     grouped[@3]; // { @"foo", @"bar" }
 //     grouped[@8]; // { @"surprise" }
 //
-OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, NSString *keyPath);
+ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, NSString *keyPath) {
+    return __ASTGroupBy_NSFastEnumeration_keyPath(collection, keyPath);
+}

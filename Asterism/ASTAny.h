@@ -6,7 +6,12 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "ASTConstants.h"
+#import <Foundation/Foundation.h>
+
+#import "AsterismDefines.h"
+
+// You should not call these methods directly.
+BOOL __ASTAny_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
 
 // Tests if any element in a collection passes a test.
 //
@@ -15,4 +20,6 @@
 //              `YES` if the element passes the test. The block must no be nil.
 //
 // Returns `YES` if any of the elements in `collection` passes the test `block`.
-OVERLOADABLE BOOL ASTAny(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
+ASTERISM_OVERLOADABLE BOOL ASTAny(id<NSFastEnumeration> collection, BOOL(^block)(id obj)) {
+    return __ASTAny_NSFastEnumeration(collection, block);
+}

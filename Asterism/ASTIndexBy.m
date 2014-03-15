@@ -10,7 +10,7 @@
 
 #import "ASTIndexBy.h"
 
-OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id)) {
+NSDictionary *__ASTIndexBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id)) {
     NSCParameterAssert(block != nil);
 
     if (collection == nil) return nil;
@@ -24,7 +24,7 @@ OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, id<NSCop
     });
 }
 
-OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, NSString *keyPath) {
+NSDictionary *__ASTIndexBy_NSFastEnumeration_keyPath(id<NSFastEnumeration> collection, NSString *keyPath) {
     return ASTIndexBy(collection, ^(id obj) {
         return [obj valueForKeyPath:keyPath];
     });

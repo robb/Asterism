@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASTConstants.h"
+#import "AsterismDefines.h"
+
+// You should not call these methods directly.
+NSDictionary *__ASTIndexBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
+NSDictionary *__ASTIndexBy_NSFastEnumeration_keyPath(id<NSFastEnumeration> collection, NSString *keyPath);
 
 // Indexes the elements of a collection using a block.
 //
@@ -33,7 +37,9 @@
 //     indexed[@"f"]; // @"foo"
 //     indexed[@"b"]; // @"bar"
 //
-OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
+ASTERISM_OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj)) {
+    return __ASTIndexBy_NSFastEnumeration_block(collection, block);
+}
 
 // Indexes the elements in a collection by their value for a given key path.
 //
@@ -56,4 +62,6 @@ OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, id<NSCop
 //     indexed[@2]; // @"ab"
 //     indexed[@3]; // @"abc"
 //
-OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, NSString *keyPath);
+ASTERISM_OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, NSString *keyPath) {
+    return __ASTIndexBy_NSFastEnumeration_keyPath(collection, keyPath);
+}

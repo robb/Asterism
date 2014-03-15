@@ -18,11 +18,11 @@ static NSComparator const ASTCompare = ^NSComparisonResult(id a, id b) {
 
 #pragma mark - Min
 
-OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection) {
+id __ASTMin_NSFastEnumeration(id<NSFastEnumeration> collection) {
     return ASTMin(collection, ASTCompare);
 }
 
-OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator) {
+id __ASTMin_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSComparator comparator) {
     NSCParameterAssert(comparator != nil);
 
     return ASTReduce(collection, ^id(id a, id b) {
@@ -32,11 +32,11 @@ OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator
 
 #pragma mark - Max
 
-OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection) {
+id __ASTMax_NSFastEnumeration(id<NSFastEnumeration> collection) {
     return ASTMax(collection, ASTCompare);
 }
 
-OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator) {
+id __ASTMax_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSComparator comparator) {
     NSCParameterAssert(comparator != nil);
 
     return ASTReduce(collection, ^id(id a, id b) {

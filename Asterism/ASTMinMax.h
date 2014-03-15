@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASTConstants.h"
+#import "AsterismDefines.h"
+
+// You should not call these methods directly.
+id __ASTMin_NSFastEnumeration(id<NSFastEnumeration> collection);
+id __ASTMin_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSComparator comparator);
+id __ASTMax_NSFastEnumeration(id<NSFastEnumeration> collection);
+id __ASTMax_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSComparator comparator);
 
 // Returns the minimum of a collection by invoking -compare:.
 //
@@ -16,7 +22,9 @@
 //
 // Returns the minimum of the collection by comparing all values by invoking
 // -compare:.
-OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection);
+ASTERISM_OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection) {
+    return __ASTMin_NSFastEnumeration(collection);
+}
 
 // Returns the minimum of a collection by using an NSComparator.
 //
@@ -26,7 +34,9 @@ OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection);
 //
 // Returns the minimum of the collection by comparing all values using
 // `comparator`.
-OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator);
+ASTERISM_OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator) {
+    return __ASTMin_NSFastEnumeration_comparator(collection, comparator);
+}
 
 // Returns the maximum of a collection by invoking -compare:.
 //
@@ -34,7 +44,9 @@ OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator
 //
 // Returns the maximum of the collection by comparing all values by invoking
 // -compare:.
-OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection);
+ASTERISM_OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection) {
+    return __ASTMax_NSFastEnumeration(collection);
+}
 
 // Returns the maximum of a collection by using an NSComparator.
 //
@@ -44,4 +56,6 @@ OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection);
 //
 // Returns the maximum of the collection by comparing all values using
 // `comparator`.
-OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator);
+ASTERISM_OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator) {
+    return __ASTMax_NSFastEnumeration_comparator(collection, comparator);
+}

@@ -8,7 +8,7 @@
 
 #import "ASTFlatten.h"
 
-NSArray *ASTFlatten(NSArray *array) {
+NSArray *__ASTFlatten_NSArray(NSArray *array) {
     NSMutableArray *result = [NSMutableArray array];
 
     for (NSArray *element in array) {

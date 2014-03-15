@@ -8,7 +8,7 @@
 
 #import "ASTExtend.h"
 
-OVERLOADABLE NSDictionary *ASTExtend(NSDictionary *dict, NSDictionary *source) {
+NSDictionary *__ASTExtend_NSDictionary(NSDictionary *dict, NSDictionary *source) {
     if (dict == nil) return source;
     if (source == nil) return dict;
 

@@ -8,7 +8,7 @@
 
 #import "ASTDifference.h"
 
-OVERLOADABLE NSArray *ASTDifference(NSArray *array, NSArray *other) {
+NSArray *__ASTDifference_NSArray(NSArray *array, NSArray *other) {
     if (array == nil) return nil;
     if (other == nil) return array;
 
@@ -19,7 +19,7 @@ OVERLOADABLE NSArray *ASTDifference(NSArray *array, NSArray *other) {
     return [result copy];
 }
 
-OVERLOADABLE NSSet *ASTDifference(NSSet *set, NSSet *other) {
+NSSet *__ASTDifference_NSSet(NSSet *set, NSSet *other) {
     if (set == nil) return nil;
     if (other == nil) return set;
 
@@ -30,7 +30,7 @@ OVERLOADABLE NSSet *ASTDifference(NSSet *set, NSSet *other) {
     return [result copy];
 }
 
-OVERLOADABLE NSOrderedSet *ASTDifference(NSOrderedSet *set, NSOrderedSet *other) {
+NSOrderedSet *__ASTDifference_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other) {
     if (set == nil) return nil;
     if (other == nil) return set;
 

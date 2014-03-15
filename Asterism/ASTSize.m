@@ -8,23 +8,23 @@
 
 #import "ASTSize.h"
 
-OVERLOADABLE NSUInteger ASTSize(NSArray *array) {
+NSUInteger __ASTSize_NSArray(NSArray *array) {
     return array.count;
 }
 
-OVERLOADABLE NSUInteger ASTSize(NSDictionary *dictionary) {
+NSUInteger __ASTSize_NSDictionary(NSDictionary *dictionary) {
     return dictionary.count;
 }
 
-OVERLOADABLE NSUInteger ASTSize(NSSet *set) {
+NSUInteger __ASTSize_NSSet(NSSet *set) {
     return set.count;
 }
 
-OVERLOADABLE NSUInteger ASTSize(NSOrderedSet *set) {
+NSUInteger __ASTSize_NSOrderedSet(NSOrderedSet *set) {
     return set.count;
 }
 
-OVERLOADABLE NSUInteger ASTSize(id<NSFastEnumeration> collection) {
+NSUInteger __ASTSize_NSFastEnumeration(id<NSFastEnumeration> collection) {
     NSUInteger size = 0;
 
     for (__attribute__((unused)) id _ in collection) size++;

@@ -8,7 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-#import "ASTConstants.h"
+#import "AsterismDefines.h"
+
+// You should not call these methods directly.
+BOOL (^__ASTNegate_id(BOOL(^block)(id)))(id);
+BOOL (^__ASTNegate_id_id(BOOL(^block)(id, id)))(id, id);
+BOOL (^__ASTNegate_id_NSUInteger(BOOL(^block)(id, NSUInteger)))(id, NSUInteger);
 
 // Negates a block.
 //
@@ -17,7 +22,9 @@
 //
 // Returns a new block of the same type that returns the opposite of what
 // `block` returns.
-OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id)))(id);
+ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id)))(id) {
+    return __ASTNegate_id(block);
+}
 
 // Negates a block.
 //
@@ -26,7 +33,9 @@ OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id)))(id);
 //
 // Returns a new block of the same type that returns the opposite of what
 // `block` returns.
-OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id);
+ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id) {
+    return __ASTNegate_id_id(block);
+}
 
 // Negates a block.
 //
@@ -36,4 +45,6 @@ OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id);
 //
 // Returns a new block of the same type that returns the opposite of what
 // `block` returns.
-OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, NSUInteger)))(id, NSUInteger);
+ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, NSUInteger)))(id, NSUInteger) {
+    return __ASTNegate_id_NSUInteger(block);
+}

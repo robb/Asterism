@@ -10,19 +10,19 @@
 
 #import "ASTWithout.h"
 
-OVERLOADABLE NSArray *ASTWithout(NSArray *collection, id obj) {
+NSArray *__ASTWithout_NSArray(NSArray *collection, id obj) {
     return ASTReject(collection, ^BOOL(id other) {
         return [obj isEqual:other];
     });
 }
 
-OVERLOADABLE NSSet *ASTWithout(NSSet *set, id obj) {
+NSSet *__ASTWithout_NSSet(NSSet *set, id obj) {
     return ASTReject(set, ^BOOL(id other) {
         return [obj isEqual:other];
     });
 }
 
-OVERLOADABLE NSOrderedSet *ASTWithout(NSOrderedSet *set, id obj) {
+NSOrderedSet *__ASTWithout_NSOrderedSet(NSOrderedSet *set, id obj) {
     return ASTReject(set, ^BOOL(id other) {
         return [obj isEqual:other];
     });

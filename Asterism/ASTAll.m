@@ -8,7 +8,7 @@
 
 #import "ASTAll.h"
 
-OVERLOADABLE BOOL ASTAll(id<NSFastEnumeration> collection, BOOL(^block)(id)) {
+BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 
     BOOL didTest = NO;

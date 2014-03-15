@@ -8,7 +8,7 @@
 
 #import "ASTReduce.h"
 
-OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj)) {
+id __ASTReduce_NSFastEnumeration_block(id<NSFastEnumeration> collection, id(^block)(id memo, id obj)) {
     NSCParameterAssert(block != nil);
 
     id current;
@@ -27,7 +27,7 @@ OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, 
     return current;
 }
 
-OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj)) {
+id __ASTReduce_NSFastEnumeration_memo_block(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj)) {
     NSCParameterAssert(block != nil);
 
     id current = memo;

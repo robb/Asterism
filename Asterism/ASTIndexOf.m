@@ -8,15 +8,15 @@
 
 #import "ASTIndexOf.h"
 
-OVERLOADABLE NSUInteger ASTIndexOf(NSArray *array, id obj) {
+NSUInteger __ASTIndexOf_NSArray(NSArray *array, id obj) {
     return [array indexOfObject:obj];
 }
 
-OVERLOADABLE NSUInteger ASTIndexOf(NSOrderedSet *set, id obj) {
+NSUInteger __ASTIndexOf_NSOrderedSet(NSOrderedSet *set, id obj) {
     return [set indexOfObject:obj];
 }
 
-OVERLOADABLE NSUInteger ASTIndexOf(id<NSFastEnumeration> collection, id obj) {
+NSUInteger __ASTIndexOf_NSFastEnumeration(id<NSFastEnumeration> collection, id obj) {
     if (collection == nil || obj == nil) return NSNotFound;
 
     NSUInteger index = 0;

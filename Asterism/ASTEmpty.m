@@ -8,23 +8,23 @@
 
 #import "ASTEmpty.h"
 
-OVERLOADABLE BOOL ASTEmpty(NSArray *array) {
+BOOL __ASTEmpty_NSArray(NSArray *array) {
     return array.count == 0;
 }
 
-OVERLOADABLE BOOL ASTEmpty(NSDictionary *dictionary) {
+BOOL __ASTEmpty_NSDictionary(NSDictionary *dictionary) {
     return dictionary.count == 0;
 }
 
-OVERLOADABLE BOOL ASTEmpty(NSSet *set) {
+BOOL __ASTEmpty_NSSet(NSSet *set) {
     return set.count == 0;
 }
 
-OVERLOADABLE BOOL ASTEmpty(NSOrderedSet *set) {
+BOOL __ASTEmpty_NSOrderedSet(NSOrderedSet *set) {
     return set.count == 0;
 }
 
-OVERLOADABLE BOOL ASTEmpty(id<NSFastEnumeration> collection) {
+BOOL __ASTEmpty_NSFastEnumeration(id<NSFastEnumeration> collection) {
     for (__attribute__((unused)) id _ in collection) return NO;
 
     return YES;

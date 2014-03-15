@@ -6,50 +6,48 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "metamacros.h"
-
 #import "ASTFilter.h"
 #import "ASTNegate.h"
 
 #import "ASTReject.h"
 
-OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id)) {
+NSArray *__ASTReject_NSArray(NSArray *array, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 
     return ASTFilter(array, ASTNegate(block));
 }
 
-OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id, NSUInteger)) {
+NSArray *__ASTReject_NSArray_withIndex(NSArray *array, BOOL(^block)(id, NSUInteger)) {
     NSCParameterAssert(block != nil);
 
     return ASTFilter(array, ASTNegate(block));
 }
 
-OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id)) {
+NSDictionary *__ASTReject_NSDictionary(NSDictionary *dict, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 
     return ASTFilter(dict, ASTNegate(block));
 }
 
-OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id key, id obj)) {
+NSDictionary *__ASTReject_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id key, id obj)) {
     NSCParameterAssert(block != nil);
 
     return ASTFilter(dict, ASTNegate(block));
 }
 
-OVERLOADABLE NSSet *ASTReject(NSSet *set, BOOL(^block)(id obj)) {
+NSSet *__ASTReject_NSSet(NSSet *set, BOOL(^block)(id obj)) {
     NSCParameterAssert(block != nil);
 
     return ASTFilter(set, ASTNegate(block));
 }
 
-OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj)) {
+NSOrderedSet *__ASTReject_NSOrderedSet(NSOrderedSet *set, BOOL(^block)(id obj)) {
     NSCParameterAssert(block != nil);
 
     return ASTFilter(set, ASTNegate(block));
 }
 
-OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx)) {
+NSOrderedSet *__ASTReject_NSOrderedSet_withIndex(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx)) {
     NSCParameterAssert(block != nil);
 
     return ASTFilter(set, ASTNegate(block));
