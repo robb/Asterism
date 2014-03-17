@@ -13,6 +13,9 @@
 // You should not call these methods directly.
 ASTERISM_USE_INSTEAD(ASTExtend) NSDictionary *__ASTExtend_NSDictionary(NSDictionary *dict, NSDictionary *source);
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // Extends a dictionary with values from another dictionary.
 //
 // dict   - A dictionary.
@@ -24,3 +27,5 @@ ASTERISM_USE_INSTEAD(ASTExtend) NSDictionary *__ASTExtend_NSDictionary(NSDiction
 ASTERISM_OVERLOADABLE NSDictionary *ASTExtend(NSDictionary *dict, NSDictionary *source) {
     return __ASTExtend_NSDictionary(dict, source);
 }
+
+#pragma clang diagnostic pop

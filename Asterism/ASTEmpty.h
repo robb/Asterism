@@ -17,6 +17,9 @@ ASTERISM_USE_INSTEAD(ASTEmpty) BOOL __ASTEmpty_NSSet(NSSet *set);
 ASTERISM_USE_INSTEAD(ASTEmpty) BOOL __ASTEmpty_NSOrderedSet(NSOrderedSet *set);
 ASTERISM_USE_INSTEAD(ASTEmpty) BOOL __ASTEmpty_NSFastEnumeration(id<NSFastEnumeration> collection);
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // Returns YES if `array` is empty.
 ASTERISM_OVERLOADABLE BOOL ASTEmpty(NSArray *array) {
     return __ASTEmpty_NSArray(array);
@@ -41,3 +44,5 @@ ASTERISM_OVERLOADABLE BOOL ASTEmpty(NSOrderedSet *set) {
 ASTERISM_OVERLOADABLE BOOL ASTEmpty(id<NSFastEnumeration> collection) {
     return __ASTEmpty_NSFastEnumeration(collection);
 }
+
+#pragma clang diagnostic pop

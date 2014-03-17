@@ -19,6 +19,9 @@ ASTERISM_USE_INSTEAD(ASTReject) NSSet *__ASTReject_NSSet(NSSet *set, BOOL(^block
 ASTERISM_USE_INSTEAD(ASTReject) NSOrderedSet *__ASTReject_NSOrderedSet(NSOrderedSet *set, BOOL(^block)(id obj));
 ASTERISM_USE_INSTEAD(ASTReject) NSOrderedSet *__ASTReject_NSOrderedSet_withIndex(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx));
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // Filters out the elements of an array that pass a test.
 //
 // array - An array of elements.
@@ -102,3 +105,5 @@ ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx)) {
     return __ASTReject_NSOrderedSet_withIndex(set, block);
 }
+
+#pragma clang diagnostic pop

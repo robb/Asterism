@@ -17,6 +17,9 @@ ASTERISM_USE_INSTEAD(ASTSize) NSUInteger __ASTSize_NSSet(NSSet *set);
 ASTERISM_USE_INSTEAD(ASTSize) NSUInteger __ASTSize_NSOrderedSet(NSOrderedSet *set);
 ASTERISM_USE_INSTEAD(ASTSize) NSUInteger __ASTSize_NSFastEnumeration(id<NSFastEnumeration> collection);
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // The number of values in an array.
 //
 // array - An array of elements.
@@ -61,3 +64,5 @@ ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSOrderedSet *set) {
 ASTERISM_OVERLOADABLE NSUInteger ASTSize(id<NSFastEnumeration> collection) {
     return __ASTSize_NSFastEnumeration(collection);
 }
+
+#pragma clang diagnostic pop

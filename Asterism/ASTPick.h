@@ -13,6 +13,9 @@
 // You should not call these methods directly.
 ASTERISM_USE_INSTEAD(ASTPick) NSDictionary *__ASTPick_NSDictionary(NSDictionary *dict, NSArray *keys);
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // Picks the elements of a dictionary that are contained in a given array.
 //
 // dict - A dictionary of elements.
@@ -23,3 +26,5 @@ ASTERISM_USE_INSTEAD(ASTPick) NSDictionary *__ASTPick_NSDictionary(NSDictionary 
 ASTERISM_OVERLOADABLE NSDictionary *ASTPick(NSDictionary *dict, NSArray *keys) {
     return __ASTPick_NSDictionary(dict, keys);
 }
+
+#pragma clang diagnostic pop

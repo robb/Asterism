@@ -14,6 +14,9 @@
 ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
 ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSFastEnumeration_keyPath(id<NSFastEnumeration> collection, NSString *keyPath);
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // Groups the elements in a collection using a block.
 //
 // collection - An object that implements NSFastEnumeration.
@@ -62,3 +65,5 @@ ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection,
 ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, NSString *keyPath) {
     return __ASTGroupBy_NSFastEnumeration_keyPath(collection, keyPath);
 }
+
+#pragma clang diagnostic pop

@@ -15,6 +15,9 @@ ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id(BOOL(^block)(id)))(id);
 ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id_id(BOOL(^block)(id, id)))(id, id);
 ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id_NSUInteger(BOOL(^block)(id, NSUInteger)))(id, NSUInteger);
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // Negates a block.
 //
 // block - takes a single argument of type id and returns a BOOL.
@@ -48,3 +51,5 @@ ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id) {
 ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, NSUInteger)))(id, NSUInteger) {
     return __ASTNegate_id_NSUInteger(block);
 }
+
+#pragma clang diagnostic pop

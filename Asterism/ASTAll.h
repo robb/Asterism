@@ -13,6 +13,9 @@
 // You should not call these methods directly.
 ASTERISM_USE_INSTEAD(ASTAll) BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // Tests if all elements in a collection pass a test.
 //
 // collection - a collection of elements.
@@ -23,3 +26,5 @@ ASTERISM_USE_INSTEAD(ASTAll) BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeratio
 ASTERISM_OVERLOADABLE BOOL ASTAll(id<NSFastEnumeration> collection, BOOL(^block)(id obj)) {
     return __ASTAll_NSFastEnumeration(collection, block);
 }
+
+#pragma clang diagnostic pop

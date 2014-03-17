@@ -18,6 +18,9 @@ ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSDictionary_keysAndValues(NSDictio
 ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSOrderedSet_withIndex(NSOrderedSet *set, void(^iterator)(id obj, NSUInteger idx));
 ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSFastEnumeration(id<NSFastEnumeration> enumerable, void(^iterator)(id obj));
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // Iterates over all elements of an array.
 //
 // array    - An array of elements.
@@ -71,3 +74,5 @@ ASTERISM_OVERLOADABLE void ASTEach(NSOrderedSet *set, void(^iterator)(id obj, NS
 ASTERISM_OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, void(^iterator)(id obj)) {
     __ASTEach_NSFastEnumeration(enumerable, iterator);
 }
+
+#pragma clang diagnostic pop

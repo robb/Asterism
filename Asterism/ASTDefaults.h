@@ -13,6 +13,9 @@
 // You should not call these methods directly.
 ASTERISM_USE_INSTEAD(ASTDefaults) NSDictionary *__ASTDefaults_NSDictionary(NSDictionary *dict, NSDictionary *defaults);
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // Fills in missing values from another dictionary.
 //
 // dict     - A dictionary.
@@ -24,3 +27,5 @@ ASTERISM_USE_INSTEAD(ASTDefaults) NSDictionary *__ASTDefaults_NSDictionary(NSDic
 ASTERISM_OVERLOADABLE NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults) {
     return __ASTDefaults_NSDictionary(dict, defaults);
 }
+
+#pragma clang diagnostic pop

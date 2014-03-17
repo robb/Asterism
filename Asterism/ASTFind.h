@@ -17,6 +17,9 @@ ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSDictionary(NSDictionary *dict, BOOL
 ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id key, id obj));
 ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // Finds an element in an array.
 //
 // array - An array of elements.
@@ -79,3 +82,5 @@ ASTERISM_OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id key, id obj
 ASTERISM_OVERLOADABLE id ASTFind(id<NSFastEnumeration> collection, BOOL(^block)(id obj)) {
     return __ASTFind_NSFastEnumeration(collection, block);
 }
+
+#pragma clang diagnostic pop

@@ -15,6 +15,9 @@ ASTERISM_USE_INSTEAD(ASTIntersection) NSArray *__ASTIntersection_NSArray(NSArray
 ASTERISM_USE_INSTEAD(ASTIntersection) NSSet *__ASTIntersection_NSSet(NSSet *set, NSSet *other);
 ASTERISM_USE_INSTEAD(ASTIntersection) NSOrderedSet *__ASTIntersection_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other);
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // Returns the intersection of two arrays.
 //
 // array - An array of elements.
@@ -47,3 +50,5 @@ ASTERISM_OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other) {
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other) {
     return __ASTIntersection_NSOrderedSet(set, other);
 }
+
+#pragma clang diagnostic pop

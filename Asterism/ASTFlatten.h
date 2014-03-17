@@ -13,6 +13,9 @@
 // You should not call these methods directly.
 ASTERISM_USE_INSTEAD(ASTFlatten) NSArray *__ASTFlatten_NSArray(NSArray *array);
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 // Flattens an array a single level.
 //
 // array - An array of elements.
@@ -22,3 +25,5 @@ ASTERISM_USE_INSTEAD(ASTFlatten) NSArray *__ASTFlatten_NSArray(NSArray *array);
 ASTERISM_OVERLOADABLE NSArray *ASTFlatten(NSArray *array) {
     return __ASTFlatten_NSArray(array);
 }
+
+#pragma clang diagnostic pop
