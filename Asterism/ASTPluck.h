@@ -11,7 +11,7 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTPluck_NSFastEnumeration(id<NSFastEnumeration> collection, NSString *keyPath);
+ASTERISM_USE_INSTEAD(ASTPluck) NSArray *__ASTPluck_NSFastEnumeration(id<NSFastEnumeration> collection, NSString *keyPath);
 
 // Extracts a value for a given key path from all elements in a collection.
 //

@@ -11,7 +11,7 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTAll) BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
 
 // Tests if all elements in a collection pass a test.
 //

@@ -11,8 +11,8 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSDictionary *__ASTIndexBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
-NSDictionary *__ASTIndexBy_NSFastEnumeration_keyPath(id<NSFastEnumeration> collection, NSString *keyPath);
+ASTERISM_USE_INSTEAD(ASTIndexBy) NSDictionary *__ASTIndexBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTIndexBy) NSDictionary *__ASTIndexBy_NSFastEnumeration_keyPath(id<NSFastEnumeration> collection, NSString *keyPath);
 
 // Indexes the elements of a collection using a block.
 //

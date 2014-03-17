@@ -11,9 +11,9 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.[]
-NSArray *__ASTWithout_NSArray(NSArray *array, id obj);
-NSSet *__ASTWithout_NSSet(NSSet *set, id obj);
-NSOrderedSet *__ASTWithout_NSOrderedSet(NSOrderedSet *set, id obj);
+ASTERISM_USE_INSTEAD(ASTWithout) NSArray *__ASTWithout_NSArray(NSArray *array, id obj);
+ASTERISM_USE_INSTEAD(ASTWithout) NSSet *__ASTWithout_NSSet(NSSet *set, id obj);
+ASTERISM_USE_INSTEAD(ASTWithout) NSOrderedSet *__ASTWithout_NSOrderedSet(NSOrderedSet *set, id obj);
 
 // Filters out the elements of an array that are equal to a given value.
 //

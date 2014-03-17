@@ -11,7 +11,7 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSDictionary *__ASTPick_NSDictionary(NSDictionary *dict, NSArray *keys);
+ASTERISM_USE_INSTEAD(ASTPick) NSDictionary *__ASTPick_NSDictionary(NSDictionary *dict, NSArray *keys);
 
 // Picks the elements of a dictionary that are contained in a given array.
 //

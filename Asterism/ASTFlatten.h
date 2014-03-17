@@ -11,7 +11,7 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTFlatten_NSArray(NSArray *array);
+ASTERISM_USE_INSTEAD(ASTFlatten) NSArray *__ASTFlatten_NSArray(NSArray *array);
 
 // Flattens an array a single level.
 //

@@ -11,11 +11,11 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-id __ASTFind_NSArray(NSArray *array, BOOL(^block)(id obj));
-id __ASTFind_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
-id __ASTFind_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj));
-id __ASTFind_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id key, id obj));
-id __ASTFind_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSArray(NSArray *array, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id key, id obj));
+ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
 
 // Finds an element in an array.
 //

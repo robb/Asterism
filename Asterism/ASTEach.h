@@ -11,12 +11,12 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-void __ASTEach_NSArray(NSArray *array, void(^iterator)(id obj));
-void __ASTEach_NSArray_withIndex(NSArray *array, void(^iterator)(id obj, NSUInteger idx));
-void __ASTEach_NSDictionary(NSDictionary *dict, void(^iterator)(id obj));
-void __ASTEach_NSDictionary_keysAndValues(NSDictionary *dict, void(^iterator)(id key, id obj));
-void __ASTEach_NSOrderedSet_withIndex(NSOrderedSet *set, void(^iterator)(id obj, NSUInteger idx));
-void __ASTEach_NSFastEnumeration(id<NSFastEnumeration> enumerable, void(^iterator)(id obj));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSArray(NSArray *array, void(^iterator)(id obj));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSArray_withIndex(NSArray *array, void(^iterator)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSDictionary(NSDictionary *dict, void(^iterator)(id obj));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSDictionary_keysAndValues(NSDictionary *dict, void(^iterator)(id key, id obj));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSOrderedSet_withIndex(NSOrderedSet *set, void(^iterator)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSFastEnumeration(id<NSFastEnumeration> enumerable, void(^iterator)(id obj));
 
 // Iterates over all elements of an array.
 //

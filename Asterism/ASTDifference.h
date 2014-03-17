@@ -11,9 +11,9 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTDifference_NSArray(NSArray *array, NSArray *other);
-NSSet *__ASTDifference_NSSet(NSSet *set, NSSet *other);
-NSOrderedSet *__ASTDifference_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other);
+ASTERISM_USE_INSTEAD(ASTDifference) NSArray *__ASTDifference_NSArray(NSArray *array, NSArray *other);
+ASTERISM_USE_INSTEAD(ASTDifference) NSSet *__ASTDifference_NSSet(NSSet *set, NSSet *other);
+ASTERISM_USE_INSTEAD(ASTDifference) NSOrderedSet *__ASTDifference_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other);
 
 // Returns the difference between two arrays.
 //

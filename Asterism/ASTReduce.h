@@ -11,8 +11,8 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-id __ASTReduce_NSFastEnumeration_block(id<NSFastEnumeration> collection, id(^block)(id memo, id obj));
-id __ASTReduce_NSFastEnumeration_memo_block(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj));
+ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSFastEnumeration_block(id<NSFastEnumeration> collection, id(^block)(id memo, id obj));
+ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSFastEnumeration_memo_block(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj));
 
 // Reduces a collection to a single value.
 //

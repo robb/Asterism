@@ -11,13 +11,13 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTFilter_NSArray(NSArray *array, BOOL(^block)(id obj));
-NSArray *__ASTFilter_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
-NSDictionary *__ASTFilter_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj));
-NSDictionary *__ASTFilter_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id key, id obj));
-NSSet *__ASTFilter_NSSet(NSSet *set, BOOL(^block)(id obj));
-NSOrderedSet *__ASTFilter_NSOrderedSet(NSOrderedSet *set, BOOL(^block)(id obj));
-NSOrderedSet *__ASTFilter_NSOrderedSet_withIndex(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTFilter) NSArray *__ASTFilter_NSArray(NSArray *array, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFilter) NSArray *__ASTFilter_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTFilter) NSDictionary *__ASTFilter_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFilter) NSDictionary *__ASTFilter_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id key, id obj));
+ASTERISM_USE_INSTEAD(ASTFilter) NSSet *__ASTFilter_NSSet(NSSet *set, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFilter) NSOrderedSet *__ASTFilter_NSOrderedSet(NSOrderedSet *set, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFilter) NSOrderedSet *__ASTFilter_NSOrderedSet_withIndex(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx));
 
 // Filters out the elements of an array that fail a test.
 //

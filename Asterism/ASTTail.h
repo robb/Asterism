@@ -11,8 +11,8 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTTail_NSArray(NSArray *array);
-NSOrderedSet *__ASTTail_NSOrderedSet(NSOrderedSet *set);
+ASTERISM_USE_INSTEAD(ASTTail) NSArray *__ASTTail_NSArray(NSArray *array);
+ASTERISM_USE_INSTEAD(ASTTail) NSOrderedSet *__ASTTail_NSOrderedSet(NSOrderedSet *set);
 
 // Returns all elements of an array after the first one.
 //

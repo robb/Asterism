@@ -7,3 +7,5 @@
 //
 
 #define ASTERISM_OVERLOADABLE static inline __attribute__((overloadable))
+
+#define ASTERISM_USE_INSTEAD(METHOD) __attribute__((deprecated("Don't call this method directly. You should use " # METHOD " instead.")))

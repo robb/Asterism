@@ -11,11 +11,11 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-BOOL __ASTEmpty_NSArray(NSArray *array);
-BOOL __ASTEmpty_NSDictionary(NSDictionary *dictionary);
-BOOL __ASTEmpty_NSSet(NSSet *set);
-BOOL __ASTEmpty_NSOrderedSet(NSOrderedSet *set);
-BOOL __ASTEmpty_NSFastEnumeration(id<NSFastEnumeration> collection);
+ASTERISM_USE_INSTEAD(ASTEmpty) BOOL __ASTEmpty_NSArray(NSArray *array);
+ASTERISM_USE_INSTEAD(ASTEmpty) BOOL __ASTEmpty_NSDictionary(NSDictionary *dictionary);
+ASTERISM_USE_INSTEAD(ASTEmpty) BOOL __ASTEmpty_NSSet(NSSet *set);
+ASTERISM_USE_INSTEAD(ASTEmpty) BOOL __ASTEmpty_NSOrderedSet(NSOrderedSet *set);
+ASTERISM_USE_INSTEAD(ASTEmpty) BOOL __ASTEmpty_NSFastEnumeration(id<NSFastEnumeration> collection);
 
 // Returns YES if `array` is empty.
 ASTERISM_OVERLOADABLE BOOL ASTEmpty(NSArray *array) {

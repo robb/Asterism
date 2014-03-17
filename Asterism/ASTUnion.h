@@ -11,9 +11,9 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTUnion_NSArray(NSArray *array, NSArray *other);
-NSSet *__ASTUnion_NSSet(NSSet *set, NSSet *other);
-NSOrderedSet *__ASTUnion_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other);
+ASTERISM_USE_INSTEAD(ASTUnion) NSArray *__ASTUnion_NSArray(NSArray *array, NSArray *other);
+ASTERISM_USE_INSTEAD(ASTUnion) NSSet *__ASTUnion_NSSet(NSSet *set, NSSet *other);
+ASTERISM_USE_INSTEAD(ASTUnion) NSOrderedSet *__ASTUnion_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other);
 
 // Returns the union of two arrays.
 //

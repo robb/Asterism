@@ -11,7 +11,7 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSDictionary *__ASTDefaults_NSDictionary(NSDictionary *dict, NSDictionary *defaults);
+ASTERISM_USE_INSTEAD(ASTDefaults) NSDictionary *__ASTDefaults_NSDictionary(NSDictionary *dict, NSDictionary *defaults);
 
 // Fills in missing values from another dictionary.
 //

@@ -11,11 +11,11 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSUInteger __ASTSize_NSArray(NSArray *array);
-NSUInteger __ASTSize_NSDictionary(NSDictionary *dictionary);
-NSUInteger __ASTSize_NSSet(NSSet *set);
-NSUInteger __ASTSize_NSOrderedSet(NSOrderedSet *set);
-NSUInteger __ASTSize_NSFastEnumeration(id<NSFastEnumeration> collection);
+ASTERISM_USE_INSTEAD(ASTSize) NSUInteger __ASTSize_NSArray(NSArray *array);
+ASTERISM_USE_INSTEAD(ASTSize) NSUInteger __ASTSize_NSDictionary(NSDictionary *dictionary);
+ASTERISM_USE_INSTEAD(ASTSize) NSUInteger __ASTSize_NSSet(NSSet *set);
+ASTERISM_USE_INSTEAD(ASTSize) NSUInteger __ASTSize_NSOrderedSet(NSOrderedSet *set);
+ASTERISM_USE_INSTEAD(ASTSize) NSUInteger __ASTSize_NSFastEnumeration(id<NSFastEnumeration> collection);
 
 // The number of values in an array.
 //

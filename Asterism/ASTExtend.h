@@ -11,7 +11,7 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSDictionary *__ASTExtend_NSDictionary(NSDictionary *dict, NSDictionary *source);
+ASTERISM_USE_INSTEAD(ASTExtend) NSDictionary *__ASTExtend_NSDictionary(NSDictionary *dict, NSDictionary *source);
 
 // Extends a dictionary with values from another dictionary.
 //

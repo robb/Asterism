@@ -11,8 +11,8 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTShuffle_NSArray(NSArray *array);
-NSOrderedSet *__ASTShuffle_NSOrderedSet(NSOrderedSet *set);
+ASTERISM_USE_INSTEAD(ASTShuffle) NSArray *__ASTShuffle_NSArray(NSArray *array);
+ASTERISM_USE_INSTEAD(ASTShuffle) NSOrderedSet *__ASTShuffle_NSOrderedSet(NSOrderedSet *set);
 
 // Shuffles an array.
 //
