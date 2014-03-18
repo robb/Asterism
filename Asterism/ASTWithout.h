@@ -11,9 +11,12 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.[]
-NSArray *__ASTWithout_NSArray(NSArray *array, id obj);
-NSSet *__ASTWithout_NSSet(NSSet *set, id obj);
-NSOrderedSet *__ASTWithout_NSOrderedSet(NSOrderedSet *set, id obj);
+ASTERISM_USE_INSTEAD(ASTWithout) NSArray *__ASTWithout_NSArray(NSArray *array, id obj);
+ASTERISM_USE_INSTEAD(ASTWithout) NSSet *__ASTWithout_NSSet(NSSet *set, id obj);
+ASTERISM_USE_INSTEAD(ASTWithout) NSOrderedSet *__ASTWithout_NSOrderedSet(NSOrderedSet *set, id obj);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Filters out the elements of an array that are equal to a given value.
 //
@@ -46,3 +49,5 @@ ASTERISM_OVERLOADABLE NSSet *ASTWithout(NSSet *set, id obj) {
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTWithout(NSOrderedSet *set, id obj) {
     return __ASTWithout_NSOrderedSet(set, obj);
 }
+
+#pragma clang diagnostic pop

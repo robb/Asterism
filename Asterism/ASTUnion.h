@@ -11,9 +11,12 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTUnion_NSArray(NSArray *array, NSArray *other);
-NSSet *__ASTUnion_NSSet(NSSet *set, NSSet *other);
-NSOrderedSet *__ASTUnion_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other);
+ASTERISM_USE_INSTEAD(ASTUnion) NSArray *__ASTUnion_NSArray(NSArray *array, NSArray *other);
+ASTERISM_USE_INSTEAD(ASTUnion) NSSet *__ASTUnion_NSSet(NSSet *set, NSSet *other);
+ASTERISM_USE_INSTEAD(ASTUnion) NSOrderedSet *__ASTUnion_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Returns the union of two arrays.
 //
@@ -48,3 +51,5 @@ ASTERISM_OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other) {
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTUnion(NSOrderedSet *set, NSOrderedSet *other) {
     return __ASTUnion_NSOrderedSet(set, other);
 }
+
+#pragma clang diagnostic pop

@@ -11,9 +11,12 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-BOOL (^__ASTNegate_id(BOOL(^block)(id)))(id);
-BOOL (^__ASTNegate_id_id(BOOL(^block)(id, id)))(id, id);
-BOOL (^__ASTNegate_id_NSUInteger(BOOL(^block)(id, NSUInteger)))(id, NSUInteger);
+ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id(BOOL(^block)(id)))(id);
+ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id_id(BOOL(^block)(id, id)))(id, id);
+ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id_NSUInteger(BOOL(^block)(id, NSUInteger)))(id, NSUInteger);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Negates a block.
 //
@@ -48,3 +51,5 @@ ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id) {
 ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, NSUInteger)))(id, NSUInteger) {
     return __ASTNegate_id_NSUInteger(block);
 }
+
+#pragma clang diagnostic pop

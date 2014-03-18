@@ -11,7 +11,10 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTPluck_NSFastEnumeration(id<NSFastEnumeration> collection, NSString *keyPath);
+ASTERISM_USE_INSTEAD(ASTPluck) NSArray *__ASTPluck_NSFastEnumeration(id<NSFastEnumeration> collection, NSString *keyPath);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Extracts a value for a given key path from all elements in a collection.
 //
@@ -25,3 +28,5 @@ NSArray *__ASTPluck_NSFastEnumeration(id<NSFastEnumeration> collection, NSString
 ASTERISM_OVERLOADABLE NSArray *ASTPluck(id<NSFastEnumeration> collection, NSString *keyPath) {
     return __ASTPluck_NSFastEnumeration(collection, keyPath);
 }
+
+#pragma clang diagnostic pop

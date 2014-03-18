@@ -11,8 +11,11 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-id __ASTHead_NSArray(NSArray *array);
-id __ASTHead_NSOrderedSet(NSOrderedSet *set);
+ASTERISM_USE_INSTEAD(ASTHead) id __ASTHead_NSArray(NSArray *array);
+ASTERISM_USE_INSTEAD(ASTHead) id __ASTHead_NSOrderedSet(NSOrderedSet *set);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Returns the first element of an array.
 //
@@ -31,3 +34,5 @@ ASTERISM_OVERLOADABLE id ASTHead(NSArray *array) {
 ASTERISM_OVERLOADABLE id ASTHead(NSOrderedSet *set) {
     return __ASTHead_NSOrderedSet(set);
 }
+
+#pragma clang diagnostic pop

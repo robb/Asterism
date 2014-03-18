@@ -11,9 +11,12 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTDifference_NSArray(NSArray *array, NSArray *other);
-NSSet *__ASTDifference_NSSet(NSSet *set, NSSet *other);
-NSOrderedSet *__ASTDifference_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other);
+ASTERISM_USE_INSTEAD(ASTDifference) NSArray *__ASTDifference_NSArray(NSArray *array, NSArray *other);
+ASTERISM_USE_INSTEAD(ASTDifference) NSSet *__ASTDifference_NSSet(NSSet *set, NSSet *other);
+ASTERISM_USE_INSTEAD(ASTDifference) NSOrderedSet *__ASTDifference_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Returns the difference between two arrays.
 //
@@ -47,3 +50,5 @@ ASTERISM_OVERLOADABLE NSSet *ASTDifference(NSSet *set, NSSet *other) {
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTDifference(NSOrderedSet *set, NSOrderedSet *other) {
     return __ASTDifference_NSOrderedSet(set, other);
 }
+
+#pragma clang diagnostic pop

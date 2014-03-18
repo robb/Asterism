@@ -11,13 +11,16 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTReject_NSArray(NSArray *array, BOOL(^block)(id obj));
-NSArray *__ASTReject_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
-NSDictionary *__ASTReject_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj));
-NSDictionary *__ASTReject_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id key, id obj));
-NSSet *__ASTReject_NSSet(NSSet *set, BOOL(^block)(id obj));
-NSOrderedSet *__ASTReject_NSOrderedSet(NSOrderedSet *set, BOOL(^block)(id obj));
-NSOrderedSet *__ASTReject_NSOrderedSet_withIndex(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTReject) NSArray *__ASTReject_NSArray(NSArray *array, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTReject) NSArray *__ASTReject_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTReject) NSDictionary *__ASTReject_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTReject) NSDictionary *__ASTReject_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id key, id obj));
+ASTERISM_USE_INSTEAD(ASTReject) NSSet *__ASTReject_NSSet(NSSet *set, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTReject) NSOrderedSet *__ASTReject_NSOrderedSet(NSOrderedSet *set, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTReject) NSOrderedSet *__ASTReject_NSOrderedSet_withIndex(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx));
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Filters out the elements of an array that pass a test.
 //
@@ -102,3 +105,5 @@ ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx)) {
     return __ASTReject_NSOrderedSet_withIndex(set, block);
 }
+
+#pragma clang diagnostic pop

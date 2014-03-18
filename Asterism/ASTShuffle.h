@@ -11,8 +11,11 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTShuffle_NSArray(NSArray *array);
-NSOrderedSet *__ASTShuffle_NSOrderedSet(NSOrderedSet *set);
+ASTERISM_USE_INSTEAD(ASTShuffle) NSArray *__ASTShuffle_NSArray(NSArray *array);
+ASTERISM_USE_INSTEAD(ASTShuffle) NSOrderedSet *__ASTShuffle_NSOrderedSet(NSOrderedSet *set);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Shuffles an array.
 //
@@ -31,3 +34,5 @@ ASTERISM_OVERLOADABLE NSArray *ASTShuffle(NSArray *array) {
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTShuffle(NSOrderedSet *set) {
     return __ASTShuffle_NSOrderedSet(set);
 }
+
+#pragma clang diagnostic pop

@@ -11,7 +11,10 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTAll) BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Tests if all elements in a collection pass a test.
 //
@@ -23,3 +26,5 @@ BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(i
 ASTERISM_OVERLOADABLE BOOL ASTAll(id<NSFastEnumeration> collection, BOOL(^block)(id obj)) {
     return __ASTAll_NSFastEnumeration(collection, block);
 }
+
+#pragma clang diagnostic pop

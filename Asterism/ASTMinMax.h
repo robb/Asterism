@@ -11,10 +11,13 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-id __ASTMin_NSFastEnumeration(id<NSFastEnumeration> collection);
-id __ASTMin_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSComparator comparator);
-id __ASTMax_NSFastEnumeration(id<NSFastEnumeration> collection);
-id __ASTMax_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSComparator comparator);
+ASTERISM_USE_INSTEAD(ASTMin) id __ASTMin_NSFastEnumeration(id<NSFastEnumeration> collection);
+ASTERISM_USE_INSTEAD(ASTMin) id __ASTMin_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSComparator comparator);
+ASTERISM_USE_INSTEAD(ASTMax) id __ASTMax_NSFastEnumeration(id<NSFastEnumeration> collection);
+ASTERISM_USE_INSTEAD(ASTMax) id __ASTMax_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSComparator comparator);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Returns the minimum of a collection by invoking -compare:.
 //
@@ -59,3 +62,5 @@ ASTERISM_OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection) {
 ASTERISM_OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator) {
     return __ASTMax_NSFastEnumeration_comparator(collection, comparator);
 }
+
+#pragma clang diagnostic pop

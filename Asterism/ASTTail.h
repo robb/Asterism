@@ -11,8 +11,11 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTTail_NSArray(NSArray *array);
-NSOrderedSet *__ASTTail_NSOrderedSet(NSOrderedSet *set);
+ASTERISM_USE_INSTEAD(ASTTail) NSArray *__ASTTail_NSArray(NSArray *array);
+ASTERISM_USE_INSTEAD(ASTTail) NSOrderedSet *__ASTTail_NSOrderedSet(NSOrderedSet *set);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Returns all elements of an array after the first one.
 //
@@ -33,3 +36,5 @@ ASTERISM_OVERLOADABLE NSArray *ASTTail(NSArray *array) {
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTTail(NSOrderedSet *set) {
     return __ASTTail_NSOrderedSet(set);
 }
+
+#pragma clang diagnostic pop

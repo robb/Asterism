@@ -11,9 +11,12 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTIntersection_NSArray(NSArray *array, NSArray *other);
-NSSet *__ASTIntersection_NSSet(NSSet *set, NSSet *other);
-NSOrderedSet *__ASTIntersection_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other);
+ASTERISM_USE_INSTEAD(ASTIntersection) NSArray *__ASTIntersection_NSArray(NSArray *array, NSArray *other);
+ASTERISM_USE_INSTEAD(ASTIntersection) NSSet *__ASTIntersection_NSSet(NSSet *set, NSSet *other);
+ASTERISM_USE_INSTEAD(ASTIntersection) NSOrderedSet *__ASTIntersection_NSOrderedSet(NSOrderedSet *set, NSOrderedSet *other);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Returns the intersection of two arrays.
 //
@@ -47,3 +50,5 @@ ASTERISM_OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other) {
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other) {
     return __ASTIntersection_NSOrderedSet(set, other);
 }
+
+#pragma clang diagnostic pop

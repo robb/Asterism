@@ -11,9 +11,12 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSUInteger __ASTIndexOf_NSArray(NSArray *array, id obj);
-NSUInteger __ASTIndexOf_NSOrderedSet(NSOrderedSet *set, id obj);
-NSUInteger __ASTIndexOf_NSFastEnumeration(id<NSFastEnumeration> collection, id obj);
+ASTERISM_USE_INSTEAD(ASTIndexOf) NSUInteger __ASTIndexOf_NSArray(NSArray *array, id obj);
+ASTERISM_USE_INSTEAD(ASTIndexOf) NSUInteger __ASTIndexOf_NSOrderedSet(NSOrderedSet *set, id obj);
+ASTERISM_USE_INSTEAD(ASTIndexOf) NSUInteger __ASTIndexOf_NSFastEnumeration(id<NSFastEnumeration> collection, id obj);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Finds the index of an object in an array.
 //
@@ -49,3 +52,5 @@ ASTERISM_OVERLOADABLE NSUInteger ASTIndexOf(NSOrderedSet *set, id obj) {
 ASTERISM_OVERLOADABLE NSUInteger ASTIndexOf(id<NSFastEnumeration> collection, id obj) {
     return __ASTIndexOf_NSFastEnumeration(collection, obj);
 }
+
+#pragma clang diagnostic pop

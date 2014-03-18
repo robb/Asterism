@@ -11,7 +11,10 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSDictionary *__ASTDefaults_NSDictionary(NSDictionary *dict, NSDictionary *defaults);
+ASTERISM_USE_INSTEAD(ASTDefaults) NSDictionary *__ASTDefaults_NSDictionary(NSDictionary *dict, NSDictionary *defaults);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Fills in missing values from another dictionary.
 //
@@ -24,3 +27,5 @@ NSDictionary *__ASTDefaults_NSDictionary(NSDictionary *dict, NSDictionary *defau
 ASTERISM_OVERLOADABLE NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults) {
     return __ASTDefaults_NSDictionary(dict, defaults);
 }
+
+#pragma clang diagnostic pop

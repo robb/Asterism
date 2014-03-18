@@ -11,13 +11,16 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-NSArray *__ASTMap_NSArray(NSArray *array, id(^block)(id obj));
-NSArray *__ASTMap_NSArray_withIndex(NSArray *array, id(^block)(id obj, NSUInteger idx));
-NSDictionary *__ASTMap_NSDictionary(NSDictionary *dict, id(^block)(id obj));
-NSDictionary *__ASTMap_NSDictionary_keysAndValues(NSDictionary *dict, id(^block)(id key, id obj));
-NSSet *__ASTMap_NSSet(NSSet *set, id(^block)(id obj));
-NSOrderedSet *__ASTMap_NSOrderedSet(NSOrderedSet *set, id(^block)(id obj));
-NSOrderedSet *__ASTMap_NSOrderedSet_withIndex(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTMap) NSArray *__ASTMap_NSArray(NSArray *array, id(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTMap) NSArray *__ASTMap_NSArray_withIndex(NSArray *array, id(^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTMap) NSDictionary *__ASTMap_NSDictionary(NSDictionary *dict, id(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTMap) NSDictionary *__ASTMap_NSDictionary_keysAndValues(NSDictionary *dict, id(^block)(id key, id obj));
+ASTERISM_USE_INSTEAD(ASTMap) NSSet *__ASTMap_NSSet(NSSet *set, id(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTMap) NSOrderedSet *__ASTMap_NSOrderedSet(NSOrderedSet *set, id(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTMap) NSOrderedSet *__ASTMap_NSOrderedSet_withIndex(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx));
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
 // Maps a block across an array.
 //
@@ -109,3 +112,5 @@ ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj)
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx)) {
     return __ASTMap_NSOrderedSet_withIndex(array, block);
 }
+
+#pragma clang diagnostic pop
