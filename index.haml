@@ -116,13 +116,13 @@
         %div#content
             %section#section-about
                 %p
-                    Asterism is a yet another functional toolbelt for Objective-C.
-                    It tries to be typesafe and elegant.
+                    Asterism is a yet another functional toolbelt for
+                    Objective-C. It tries to be typesafe and elegant.
 
                 %h3 How to install
                 %p
-                    The recommended way to install Asterism is using the excellent
-                    CocoaPods:
+                    The recommended way to install Asterism is using the
+                    excellent CocoaPods:
 
                 %pre
                     %code
@@ -133,16 +133,13 @@
                     - file.each do |method|
                         %article
                             %h3= method[:name]
+
+                            %pre
+                                %code&= method[:signature].sub("ASTERISM_OVERLOADABLE ", "")
+
                             %p
                                 :markdown
                                     #{method[:tomdoc].description}
-
-
-                            - unless method[:tomdoc].examples.empty?
-                                %h4 Examples
-                                - method[:tomdoc].examples.each do |example|
-                                    %pre
-                                        %code= example
 
                             %ul
                                 - method[:tomdoc].arguments.each do |arg|
@@ -151,10 +148,12 @@
                                         :markdown
                                             #{arg.description}
 
+                            - unless method[:tomdoc].examples.empty?
+                                %h4 Examples
+                                %pre
+                                    %code= method[:tomdoc].examples.join("\n\n")
+
                             - method[:tomdoc].returns.each do |ret|
                                 %p
                                     :markdown
                                         #{ret}
-
-                            %pre
-                                %code= method[:signature]
