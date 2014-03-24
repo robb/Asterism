@@ -59,7 +59,7 @@
       pre, code {
         font-family: "droid-sans-mono", mono-spaced;
         font-size: 1.0125rem;
-        line-height: 1.125rem; }
+        line-height: 1.6875rem; }
       
       pre {
         background-color: #efefef;
@@ -96,6 +96,69 @@
         background: none;
         padding: 0; }
     </style>
+    <style>
+      .hll { background-color: #ffffcc }
+      .c { color: #408080; font-style: italic } /* Comment */
+      .err { border: 1px solid #FF0000 } /* Error */
+      .k { color: #008000; font-weight: bold } /* Keyword */
+      .o { color: #666666 } /* Operator */
+      .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+      .cp { color: #BC7A00 } /* Comment.Preproc */
+      .c1 { color: #408080; font-style: italic } /* Comment.Single */
+      .cs { color: #408080; font-style: italic } /* Comment.Special */
+      .gd { color: #A00000 } /* Generic.Deleted */
+      .ge { font-style: italic } /* Generic.Emph */
+      .gr { color: #FF0000 } /* Generic.Error */
+      .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+      .gi { color: #00A000 } /* Generic.Inserted */
+      .go { color: #888888 } /* Generic.Output */
+      .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+      .gs { font-weight: bold } /* Generic.Strong */
+      .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+      .gt { color: #0044DD } /* Generic.Traceback */
+      .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+      .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+      .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+      .kp { color: #008000 } /* Keyword.Pseudo */
+      .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+      .kt { color: #B00040 } /* Keyword.Type */
+      .m { color: #666666 } /* Literal.Number */
+      .s { color: #BA2121 } /* Literal.String */
+      .na { color: #7D9029 } /* Name.Attribute */
+      .nb { color: #008000 } /* Name.Builtin */
+      .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+      .no { color: #880000 } /* Name.Constant */
+      .nd { color: #AA22FF } /* Name.Decorator */
+      .ni { color: #999999; font-weight: bold } /* Name.Entity */
+      .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+      .nf { color: #0000FF } /* Name.Function */
+      .nl { color: #A0A000 } /* Name.Label */
+      .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+      .nt { color: #008000; font-weight: bold } /* Name.Tag */
+      .nv { color: #19177C } /* Name.Variable */
+      .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+      .w { color: #bbbbbb } /* Text.Whitespace */
+      .mf { color: #666666 } /* Literal.Number.Float */
+      .mh { color: #666666 } /* Literal.Number.Hex */
+      .mi { color: #666666 } /* Literal.Number.Integer */
+      .mo { color: #666666 } /* Literal.Number.Oct */
+      .sb { color: #BA2121 } /* Literal.String.Backtick */
+      .sc { color: #BA2121 } /* Literal.String.Char */
+      .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+      .s2 { color: #BA2121 } /* Literal.String.Double */
+      .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+      .sh { color: #BA2121 } /* Literal.String.Heredoc */
+      .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+      .sx { color: #008000 } /* Literal.String.Other */
+      .sr { color: #BB6688 } /* Literal.String.Regex */
+      .s1 { color: #BA2121 } /* Literal.String.Single */
+      .ss { color: #19177C } /* Literal.String.Symbol */
+      .bp { color: #008000 } /* Name.Builtin.Pseudo */
+      .vc { color: #19177C } /* Name.Variable.Class */
+      .vg { color: #19177C } /* Name.Variable.Global */
+      .vi { color: #19177C } /* Name.Variable.Instance */
+      .il { color: #666666 } /* Literal.Number.Integer.Long */
+    </style>
     <script src='//use.typekit.net/qse8qcf.js' type='text/javascript'></script>
     <script type='text/javascript'>
       try{Typekit.load();}catch(e){}
@@ -119,12 +182,12 @@
           The recommended way to install Asterism is using the
           excellent CocoaPods:
         </p>
-        <pre><code>pod 'Asterism'</code></pre>
+        <pre><code><span class="n">pod</span> <span class="s1">&#39;Asterism&#39;</span></code></pre>
       </section>
       <section id='section-documentation-all'>
         <h3 id='method-ASTAll'>ASTAll</h3>
         <article id='ASTERISM_OVERLOADABLE BOOL ASTAll(id&lt;NSFastEnumeration&gt; collection, BOOL(^block)(id obj))'>
-          <pre><code>BOOL ASTAll(id&lt;NSFastEnumeration&gt; collection, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="kt">BOOL</span> <span class="n">ASTAll</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Tests if all elements in a collection pass a test.</p>
           </p>
@@ -144,7 +207,7 @@
         </article>
         <h3 id='method-ASTAny'>ASTAny</h3>
         <article id='ASTERISM_OVERLOADABLE BOOL ASTAny(id&lt;NSFastEnumeration&gt; collection, BOOL(^block)(id obj))'>
-          <pre><code>BOOL ASTAny(id&lt;NSFastEnumeration&gt; collection, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="kt">BOOL</span> <span class="n">ASTAny</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Tests if any element in a collection passes a test.</p>
           </p>
@@ -164,7 +227,7 @@
         </article>
         <h3 id='method-ASTDefaults'>ASTDefaults</h3>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults)'>
-          <pre><code>NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults)</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTDefaults</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">defaults</span><span class="p">)</span></code></pre>
           <p>
             <p>Fills in missing values from another dictionary.</p>
           </p>
@@ -184,7 +247,7 @@
         </article>
         <h3 id='method-ASTDifference'>ASTDifference</h3>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTDifference(NSArray *array, NSArray *other)'>
-          <pre><code>NSArray *ASTDifference(NSArray *array, NSArray *other)</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTDifference</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the difference between two arrays.</p>
           </p>
@@ -203,7 +266,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSSet *ASTDifference(NSSet *set, NSSet *other)'>
-          <pre><code>NSSet *ASTDifference(NSSet *set, NSSet *other)</code></pre>
+          <pre><code><span class="n">NSSet</span> <span class="o">*</span><span class="n">ASTDifference</span><span class="p">(</span><span class="n">NSSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="n">NSSet</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the difference between two sets.</p>
           </p>
@@ -222,7 +285,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTDifference(NSOrderedSet *set, NSOrderedSet *other)'>
-          <pre><code>NSOrderedSet *ASTDifference(NSOrderedSet *set, NSOrderedSet *other)</code></pre>
+          <pre><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTDifference</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the difference between two ordered sets.</p>
           </p>
@@ -242,7 +305,7 @@
         </article>
         <h3 id='method-ASTEach'>ASTEach</h3>
         <article id='ASTERISM_OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id obj))'>
-          <pre><code>void ASTEach(NSArray *array, void(^iterator)(id obj))</code></pre>
+          <pre><code><span class="kt">void</span> <span class="n">ASTEach</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="n">iterator</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Iterates over all elements of an array.</p>
           </p>
@@ -258,7 +321,7 @@
           </ul>
         </article>
         <article id='ASTERISM_OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id obj, NSUInteger idx))'>
-          <pre><code>void ASTEach(NSArray *array, void(^iterator)(id obj, NSUInteger idx))</code></pre>
+          <pre><code><span class="kt">void</span> <span class="n">ASTEach</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="n">iterator</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">idx</span><span class="p">))</span></code></pre>
           <p>
             <p>Iterates over all elements of an array, as well as their indexes.</p>
           </p>
@@ -274,7 +337,7 @@
           </ul>
         </article>
         <article id='ASTERISM_OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id obj))'>
-          <pre><code>void ASTEach(NSDictionary *dict, void(^iterator)(id obj))</code></pre>
+          <pre><code><span class="kt">void</span> <span class="n">ASTEach</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="n">iterator</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Iterates over all values of a dictionary.</p>
           </p>
@@ -290,7 +353,7 @@
           </ul>
         </article>
         <article id='ASTERISM_OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id key, id obj))'>
-          <pre><code>void ASTEach(NSDictionary *dict, void(^iterator)(id key, id obj))</code></pre>
+          <pre><code><span class="kt">void</span> <span class="n">ASTEach</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="n">iterator</span><span class="p">)(</span><span class="kt">id</span> <span class="n">key</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Iterates over all keys and values of a dictionary.</p>
           </p>
@@ -306,7 +369,7 @@
           </ul>
         </article>
         <article id='ASTERISM_OVERLOADABLE void ASTEach(NSOrderedSet *set, void(^iterator)(id obj, NSUInteger idx))'>
-          <pre><code>void ASTEach(NSOrderedSet *set, void(^iterator)(id obj, NSUInteger idx))</code></pre>
+          <pre><code><span class="kt">void</span> <span class="n">ASTEach</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="n">iterator</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">idx</span><span class="p">))</span></code></pre>
           <p>
             <p>Iterates over all elements of an ordered set, as well as their indexes.</p>
           </p>
@@ -322,7 +385,7 @@
           </ul>
         </article>
         <article id='ASTERISM_OVERLOADABLE void ASTEach(id&lt;NSFastEnumeration&gt; enumerable, void(^iterator)(id obj))'>
-          <pre><code>void ASTEach(id&lt;NSFastEnumeration&gt; enumerable, void(^iterator)(id obj))</code></pre>
+          <pre><code><span class="kt">void</span> <span class="n">ASTEach</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">enumerable</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="o">^</span><span class="n">iterator</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Iterates over elements in a collection.</p>
           </p>
@@ -339,7 +402,7 @@
         </article>
         <h3 id='method-ASTEmpty'>ASTEmpty</h3>
         <article id='ASTERISM_OVERLOADABLE BOOL ASTEmpty(NSArray *array)'>
-          <pre><code>BOOL ASTEmpty(NSArray *array)</code></pre>
+          <pre><code><span class="kt">BOOL</span> <span class="n">ASTEmpty</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns YES if <code>array</code> is empty.</p>
           </p>
@@ -347,7 +410,7 @@
           </ul>
         </article>
         <article id='ASTERISM_OVERLOADABLE BOOL ASTEmpty(NSDictionary *dictionary)'>
-          <pre><code>BOOL ASTEmpty(NSDictionary *dictionary)</code></pre>
+          <pre><code><span class="kt">BOOL</span> <span class="n">ASTEmpty</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dictionary</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns YES if <code>dictionary</code> is empty.</p>
           </p>
@@ -355,7 +418,7 @@
           </ul>
         </article>
         <article id='ASTERISM_OVERLOADABLE BOOL ASTEmpty(NSSet *set)'>
-          <pre><code>BOOL ASTEmpty(NSSet *set)</code></pre>
+          <pre><code><span class="kt">BOOL</span> <span class="n">ASTEmpty</span><span class="p">(</span><span class="n">NSSet</span> <span class="o">*</span><span class="n">set</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns YES if <code>set</code> is empty.</p>
           </p>
@@ -363,7 +426,7 @@
           </ul>
         </article>
         <article id='ASTERISM_OVERLOADABLE BOOL ASTEmpty(NSOrderedSet *set)'>
-          <pre><code>BOOL ASTEmpty(NSOrderedSet *set)</code></pre>
+          <pre><code><span class="kt">BOOL</span> <span class="n">ASTEmpty</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns YES if <code>set</code> is empty.</p>
           </p>
@@ -371,7 +434,7 @@
           </ul>
         </article>
         <article id='ASTERISM_OVERLOADABLE BOOL ASTEmpty(id&lt;NSFastEnumeration&gt; collection)'>
-          <pre><code>BOOL ASTEmpty(id&lt;NSFastEnumeration&gt; collection)</code></pre>
+          <pre><code><span class="kt">BOOL</span> <span class="n">ASTEmpty</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns YES if <code>collection</code> is empty.</p>
           </p>
@@ -380,7 +443,7 @@
         </article>
         <h3 id='method-ASTExtend'>ASTExtend</h3>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTExtend(NSDictionary *dict, NSDictionary *source)'>
-          <pre><code>NSDictionary *ASTExtend(NSDictionary *dict, NSDictionary *source)</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTExtend</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">source</span><span class="p">)</span></code></pre>
           <p>
             <p>Extends a dictionary with values from another dictionary.</p>
           </p>
@@ -400,7 +463,7 @@
         </article>
         <h3 id='method-ASTFilter'>ASTFilter</h3>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj))'>
-          <pre><code>NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTFilter</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the elements of an array that fail a test.</p>
           </p>
@@ -419,7 +482,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj, NSUInteger idx))'>
-          <pre><code>NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj, NSUInteger idx))</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTFilter</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">idx</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the elements of an array that fail a test.</p>
           </p>
@@ -438,7 +501,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id obj))'>
-          <pre><code>NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTFilter</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the values of a dictionary that fail a test.</p>
           </p>
@@ -457,7 +520,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id key, id obj))'>
-          <pre><code>NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id key, id obj))</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTFilter</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">key</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the keys and values of a dictionary that fail a test.</p>
           </p>
@@ -476,7 +539,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSSet *ASTFilter(NSSet *set, BOOL(^block)(id obj))'>
-          <pre><code>NSSet *ASTFilter(NSSet *set, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSSet</span> <span class="o">*</span><span class="n">ASTFilter</span><span class="p">(</span><span class="n">NSSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the elements of a set that fail a test.</p>
           </p>
@@ -495,7 +558,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id obj))'>
-          <pre><code>NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTFilter</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the elements of an ordered set that fail a test.</p>
           </p>
@@ -514,7 +577,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx))'>
-          <pre><code>NSOrderedSet *ASTFilter(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx))</code></pre>
+          <pre><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTFilter</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">idx</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the elements of an ordered set that fail a test.</p>
           </p>
@@ -534,7 +597,7 @@
         </article>
         <h3 id='method-ASTFind'>ASTFind</h3>
         <article id='ASTERISM_OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj))'>
-          <pre><code>id ASTFind(NSArray *array, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTFind</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Finds an element in an array.</p>
           </p>
@@ -553,7 +616,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj, NSUInteger idx))'>
-          <pre><code>id ASTFind(NSArray *array, BOOL(^block)(id obj, NSUInteger idx))</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTFind</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">idx</span><span class="p">))</span></code></pre>
           <p>
             <p>Finds an element in an array.</p>
           </p>
@@ -572,7 +635,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id obj))'>
-          <pre><code>id ASTFind(NSDictionary *dict, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTFind</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Finds a value in a dictionary.</p>
           </p>
@@ -591,7 +654,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id key, id obj))'>
-          <pre><code>id ASTFind(NSDictionary *dict, BOOL(^block)(id key, id obj))</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTFind</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">key</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Finds a value in a dictionary.</p>
           </p>
@@ -610,7 +673,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE id ASTFind(id&lt;NSFastEnumeration&gt; collection, BOOL(^block)(id obj))'>
-          <pre><code>id ASTFind(id&lt;NSFastEnumeration&gt; collection, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTFind</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Finds a value in a collection.</p>
           </p>
@@ -630,7 +693,7 @@
         </article>
         <h3 id='method-ASTFlatten'>ASTFlatten</h3>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTFlatten(NSArray *array)'>
-          <pre><code>NSArray *ASTFlatten(NSArray *array)</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTFlatten</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">)</span></code></pre>
           <p>
             <p>Flattens an array a single level.</p>
           </p>
@@ -646,7 +709,7 @@
         </article>
         <h3 id='method-ASTGroupBy'>ASTGroupBy</h3>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(id&lt;NSFastEnumeration&gt; collection, id&lt;NSCopying&gt; (^block)(id obj))'>
-          <pre><code>NSDictionary *ASTGroupBy(id&lt;NSFastEnumeration&gt; collection, id&lt;NSCopying&gt; (^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTGroupBy</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">id</span><span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Groups the elements in a collection using a block.</p>
           </p>
@@ -661,13 +724,13 @@
             </li>
           </ul>
           <h4>Examples</h4>
-          <pre><code>NSArray *numbers = @[ @1, @2, @3, @4, @5 ];&#x000A;&#x000A;NSDictionary *grouped = ASTGroupBy(numbers, ^(NSNumber *number){&#x000A;    return number.integerValue % 2 == 0 ? @"even" : @"odd";&#x000A;});&#x000A;&#x000A;grouped[@"even"]; // { @2, @4 }&#x000A;grouped[@"odd"];  // { @1, @3, @5 }</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">numbers</span> <span class="o">=</span> <span class="p">@[</span> <span class="mi">@1</span><span class="p">,</span> <span class="mi">@2</span><span class="p">,</span> <span class="mi">@3</span><span class="p">,</span> <span class="mi">@4</span><span class="p">,</span> <span class="mi">@5</span> <span class="p">];</span>&#x000A;&#x000A;<span class="n">NSDictionary</span> <span class="o">*</span><span class="n">grouped</span> <span class="o">=</span> <span class="n">ASTGroupBy</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="o">^</span><span class="p">(</span><span class="n">NSNumber</span> <span class="o">*</span><span class="n">number</span><span class="p">){</span>&#x000A;    <span class="k">return</span> <span class="n">number</span><span class="p">.</span><span class="n">integerValue</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s">@&quot;even&quot;</span> <span class="o">:</span> <span class="s">@&quot;odd&quot;</span><span class="p">;</span>&#x000A;<span class="p">});</span>&#x000A;&#x000A;<span class="n">grouped</span><span class="p">[</span><span class="s">@&quot;even&quot;</span><span class="p">];</span> <span class="c1">// { @2, @4 }</span>&#x000A;<span class="n">grouped</span><span class="p">[</span><span class="s">@&quot;odd&quot;</span><span class="p">];</span>  <span class="c1">// { @1, @3, @5 }</span></code></pre>
           <p>
             <p>Returns a dictionary that maps the keys returned by <code>block</code> to a set of all values in <code>collection</code> that share the same key.</p>
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(id&lt;NSFastEnumeration&gt; collection, NSString *keyPath)'>
-          <pre><code>NSDictionary *ASTGroupBy(id&lt;NSFastEnumeration&gt; collection, NSString *keyPath)</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTGroupBy</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">keyPath</span><span class="p">)</span></code></pre>
           <p>
             <p>Groups the elements in a collection by their value for a given key path.</p>
           </p>
@@ -682,14 +745,14 @@
             </li>
           </ul>
           <h4>Examples</h4>
-          <pre><code>NSArray *numbers = @[ @"foo", @"bar", @"surprise" ];&#x000A;&#x000A;NSDictionary *grouped = ASTGroupBy(numbers, @"length");&#x000A;&#x000A;grouped[@3]; // { @"foo", @"bar" }&#x000A;grouped[@8]; // { @"surprise" }</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">numbers</span> <span class="o">=</span> <span class="p">@[</span> <span class="s">@&quot;foo&quot;</span><span class="p">,</span> <span class="s">@&quot;bar&quot;</span><span class="p">,</span> <span class="s">@&quot;surprise&quot;</span> <span class="p">];</span>&#x000A;&#x000A;<span class="n">NSDictionary</span> <span class="o">*</span><span class="n">grouped</span> <span class="o">=</span> <span class="n">ASTGroupBy</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="s">@&quot;length&quot;</span><span class="p">);</span>&#x000A;&#x000A;<span class="n">grouped</span><span class="p">[</span><span class="mi">@3</span><span class="p">];</span> <span class="c1">// { @&quot;foo&quot;, @&quot;bar&quot; }</span>&#x000A;<span class="n">grouped</span><span class="p">[</span><span class="mi">@8</span><span class="p">];</span> <span class="c1">// { @&quot;surprise&quot; }</span></code></pre>
           <p>
             <p>Returns a dictionary that maps the values the elements return for <code>keyPath</code> to a set of all values in <code>collection</code> that share the same key.</p>
           </p>
         </article>
         <h3 id='method-ASTHead'>ASTHead</h3>
         <article id='ASTERISM_OVERLOADABLE id ASTHead(NSArray *array)'>
-          <pre><code>id ASTHead(NSArray *array)</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTHead</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the first element of an array.</p>
           </p>
@@ -704,7 +767,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE id ASTHead(NSOrderedSet *set)'>
-          <pre><code>id ASTHead(NSOrderedSet *set)</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTHead</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the first element of an ordered set.</p>
           </p>
@@ -720,7 +783,7 @@
         </article>
         <h3 id='method-ASTIndexBy'>ASTIndexBy</h3>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTIndexBy(id&lt;NSFastEnumeration&gt; collection, id&lt;NSCopying&gt; (^block)(id obj))'>
-          <pre><code>NSDictionary *ASTIndexBy(id&lt;NSFastEnumeration&gt; collection, id&lt;NSCopying&gt; (^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTIndexBy</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">id</span><span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Indexes the elements of a collection using a block.</p>
           </p>
@@ -735,13 +798,13 @@
             </li>
           </ul>
           <h4>Examples</h4>
-          <pre><code>NSArray *strings = @[ @"foo", @"bar" ];&#x000A;&#x000A;NSDictionary *indexed = ASTIndexBy(strings, ^(NSString *string){&#x000A;    return @([string characterAtIndex:0]);&#x000A;});&#x000A;&#x000A;indexed[@"f"]; // @"foo"&#x000A;indexed[@"b"]; // @"bar"</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">strings</span> <span class="o">=</span> <span class="p">@[</span> <span class="s">@&quot;foo&quot;</span><span class="p">,</span> <span class="s">@&quot;bar&quot;</span> <span class="p">];</span>&#x000A;&#x000A;<span class="n">NSDictionary</span> <span class="o">*</span><span class="n">indexed</span> <span class="o">=</span> <span class="n">ASTIndexBy</span><span class="p">(</span><span class="n">strings</span><span class="p">,</span> <span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">string</span><span class="p">){</span>&#x000A;    <span class="k">return</span> <span class="p">@([</span><span class="n">string</span> <span class="n">characterAtIndex</span><span class="o">:</span><span class="mi">0</span><span class="p">]);</span>&#x000A;<span class="p">});</span>&#x000A;&#x000A;<span class="n">indexed</span><span class="p">[</span><span class="s">@&quot;f&quot;</span><span class="p">];</span> <span class="c1">// @&quot;foo&quot;</span>&#x000A;<span class="n">indexed</span><span class="p">[</span><span class="s">@&quot;b&quot;</span><span class="p">];</span> <span class="c1">// @&quot;bar&quot;</span></code></pre>
           <p>
             <p>Returns a dictionary that maps the keys returned by <code>block</code> to the respective input value. If <code>block</code> returns the same value for multiple values, an arbitrary value is chosen.</p>
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTIndexBy(id&lt;NSFastEnumeration&gt; collection, NSString *keyPath)'>
-          <pre><code>NSDictionary *ASTIndexBy(id&lt;NSFastEnumeration&gt; collection, NSString *keyPath)</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTIndexBy</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">keyPath</span><span class="p">)</span></code></pre>
           <p>
             <p>Indexes the elements in a collection by their value for a given key path.</p>
           </p>
@@ -756,14 +819,14 @@
             </li>
           </ul>
           <h4>Examples</h4>
-          <pre><code>NSArray *strings = @[ @"a", @"ab", @"abc" ];&#x000A;&#x000A;NSDictionary *indexed = ASTIndexBy(strings, @"length");&#x000A;&#x000A;indexed[@1]; // @"a"&#x000A;indexed[@2]; // @"ab"&#x000A;indexed[@3]; // @"abc"</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">strings</span> <span class="o">=</span> <span class="p">@[</span> <span class="s">@&quot;a&quot;</span><span class="p">,</span> <span class="s">@&quot;ab&quot;</span><span class="p">,</span> <span class="s">@&quot;abc&quot;</span> <span class="p">];</span>&#x000A;&#x000A;<span class="n">NSDictionary</span> <span class="o">*</span><span class="n">indexed</span> <span class="o">=</span> <span class="n">ASTIndexBy</span><span class="p">(</span><span class="n">strings</span><span class="p">,</span> <span class="s">@&quot;length&quot;</span><span class="p">);</span>&#x000A;&#x000A;<span class="n">indexed</span><span class="p">[</span><span class="mi">@1</span><span class="p">];</span> <span class="c1">// @&quot;a&quot;</span>&#x000A;<span class="n">indexed</span><span class="p">[</span><span class="mi">@2</span><span class="p">];</span> <span class="c1">// @&quot;ab&quot;</span>&#x000A;<span class="n">indexed</span><span class="p">[</span><span class="mi">@3</span><span class="p">];</span> <span class="c1">// @&quot;abc&quot;</span></code></pre>
           <p>
             <p>Returns a dictionary that maps the values the elements return for <code>keyPath</code> to the respective input value. Multiple values return the same value for <code>keyPath</code>, an arbitrary element is chosen.</p>
           </p>
         </article>
         <h3 id='method-ASTIndexOf'>ASTIndexOf</h3>
         <article id='ASTERISM_OVERLOADABLE NSUInteger ASTIndexOf(NSArray *array, id obj)'>
-          <pre><code>NSUInteger ASTIndexOf(NSArray *array, id obj)</code></pre>
+          <pre><code><span class="n">NSUInteger</span> <span class="n">ASTIndexOf</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">)</span></code></pre>
           <p>
             <p>Finds the index of an object in an array.</p>
           </p>
@@ -782,7 +845,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSUInteger ASTIndexOf(NSOrderedSet *set, id obj)'>
-          <pre><code>NSUInteger ASTIndexOf(NSOrderedSet *set, id obj)</code></pre>
+          <pre><code><span class="n">NSUInteger</span> <span class="n">ASTIndexOf</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">)</span></code></pre>
           <p>
             <p>Finds the index of an object in an ordered set.</p>
           </p>
@@ -801,7 +864,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSUInteger ASTIndexOf(id&lt;NSFastEnumeration&gt; collection, id obj)'>
-          <pre><code>NSUInteger ASTIndexOf(id&lt;NSFastEnumeration&gt; collection, id obj)</code></pre>
+          <pre><code><span class="n">NSUInteger</span> <span class="n">ASTIndexOf</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">)</span></code></pre>
           <p>
             <p>Finds the index of an object in a collection.</p>
           </p>
@@ -821,7 +884,7 @@
         </article>
         <h3 id='method-ASTIntersection'>ASTIntersection</h3>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTIntersection(NSArray *array, NSArray *other)'>
-          <pre><code>NSArray *ASTIntersection(NSArray *array, NSArray *other)</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTIntersection</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the intersection of two arrays.</p>
           </p>
@@ -840,7 +903,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSSet *ASTIntersection(NSSet *set, NSSet *other)'>
-          <pre><code>NSSet *ASTIntersection(NSSet *set, NSSet *other)</code></pre>
+          <pre><code><span class="n">NSSet</span> <span class="o">*</span><span class="n">ASTIntersection</span><span class="p">(</span><span class="n">NSSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="n">NSSet</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the difference between two sets.</p>
           </p>
@@ -859,7 +922,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other)'>
-          <pre><code>NSOrderedSet *ASTIntersection(NSOrderedSet *set, NSOrderedSet *other)</code></pre>
+          <pre><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTIntersection</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the difference between two ordered sets.</p>
           </p>
@@ -879,7 +942,7 @@
         </article>
         <h3 id='method-ASTMap'>ASTMap</h3>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj))'>
-          <pre><code>NSArray *ASTMap(NSArray *array, id(^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTMap</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">id</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Maps a block across an array.</p>
           </p>
@@ -898,7 +961,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx))'>
-          <pre><code>NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx))</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTMap</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">id</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">idx</span><span class="p">))</span></code></pre>
           <p>
             <p>Maps a block across an array.</p>
           </p>
@@ -917,7 +980,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj))'>
-          <pre><code>NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTMap</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">id</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Maps a block across a dictionary.</p>
           </p>
@@ -936,7 +999,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj))'>
-          <pre><code>NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj))</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTMap</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">id</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">key</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Maps a block across a dictionary.</p>
           </p>
@@ -955,7 +1018,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj))'>
-          <pre><code>NSSet *ASTMap(NSSet *set, id(^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSSet</span> <span class="o">*</span><span class="n">ASTMap</span><span class="p">(</span><span class="n">NSSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">id</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Maps a block across a set.</p>
           </p>
@@ -974,7 +1037,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj))'>
-          <pre><code>NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTMap</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">id</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Maps a block across an ordered set.</p>
           </p>
@@ -993,7 +1056,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx))'>
-          <pre><code>NSOrderedSet *ASTMap(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx))</code></pre>
+          <pre><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTMap</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">id</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">idx</span><span class="p">))</span></code></pre>
           <p>
             <p>Maps a block across an ordered set.</p>
           </p>
@@ -1013,7 +1076,7 @@
         </article>
         <h3 id='method-ASTMin'>ASTMin</h3>
         <article id='ASTERISM_OVERLOADABLE id ASTMin(id&lt;NSFastEnumeration&gt; collection)'>
-          <pre><code>id ASTMin(id&lt;NSFastEnumeration&gt; collection)</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTMin</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the minimum of a collection by invoking -compare:.</p>
           </p>
@@ -1028,7 +1091,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE id ASTMin(id&lt;NSFastEnumeration&gt; collection, NSComparator comparator)'>
-          <pre><code>id ASTMin(id&lt;NSFastEnumeration&gt; collection, NSComparator comparator)</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTMin</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="n">NSComparator</span> <span class="n">comparator</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the minimum of a collection by using an NSComparator.</p>
           </p>
@@ -1048,7 +1111,7 @@
         </article>
         <h3 id='method-ASTMax'>ASTMax</h3>
         <article id='ASTERISM_OVERLOADABLE id ASTMax(id&lt;NSFastEnumeration&gt; collection)'>
-          <pre><code>id ASTMax(id&lt;NSFastEnumeration&gt; collection)</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTMax</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the maximum of a collection by invoking -compare:.</p>
           </p>
@@ -1063,7 +1126,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE id ASTMax(id&lt;NSFastEnumeration&gt; collection, NSComparator comparator)'>
-          <pre><code>id ASTMax(id&lt;NSFastEnumeration&gt; collection, NSComparator comparator)</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTMax</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="n">NSComparator</span> <span class="n">comparator</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the maximum of a collection by using an NSComparator.</p>
           </p>
@@ -1083,7 +1146,7 @@
         </article>
         <h3 id='method-ASTNegate'>ASTNegate</h3>
         <article id='ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id)))(id)'>
-          <pre><code>BOOL (^ASTNegate(BOOL(^block)(id)))(id)</code></pre>
+          <pre><code><span class="kt">BOOL</span> <span class="p">(</span><span class="o">^</span><span class="n">ASTNegate</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span><span class="p">)))(</span><span class="kt">id</span><span class="p">)</span></code></pre>
           <p>
             <p>Negates a block.</p>
           </p>
@@ -1098,7 +1161,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id)'>
-          <pre><code>BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id)</code></pre>
+          <pre><code><span class="kt">BOOL</span> <span class="p">(</span><span class="o">^</span><span class="n">ASTNegate</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span><span class="p">,</span> <span class="kt">id</span><span class="p">)))(</span><span class="kt">id</span><span class="p">,</span> <span class="kt">id</span><span class="p">)</span></code></pre>
           <p>
             <p>Negates a block.</p>
           </p>
@@ -1113,7 +1176,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, NSUInteger)))(id, NSUInteger)'>
-          <pre><code>BOOL (^ASTNegate(BOOL(^block)(id, NSUInteger)))(id, NSUInteger)</code></pre>
+          <pre><code><span class="kt">BOOL</span> <span class="p">(</span><span class="o">^</span><span class="n">ASTNegate</span><span class="p">(</span><span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span><span class="p">,</span> <span class="n">NSUInteger</span><span class="p">)))(</span><span class="kt">id</span><span class="p">,</span> <span class="n">NSUInteger</span><span class="p">)</span></code></pre>
           <p>
             <p>Negates a block.</p>
           </p>
@@ -1129,7 +1192,7 @@
         </article>
         <h3 id='method-ASTPick'>ASTPick</h3>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTPick(NSDictionary *dict, NSArray *keys)'>
-          <pre><code>NSDictionary *ASTPick(NSDictionary *dict, NSArray *keys)</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTPick</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">keys</span><span class="p">)</span></code></pre>
           <p>
             <p>Picks the elements of a dictionary that are contained in a given array.</p>
           </p>
@@ -1149,7 +1212,7 @@
         </article>
         <h3 id='method-ASTPluck'>ASTPluck</h3>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTPluck(id&lt;NSFastEnumeration&gt; collection, NSString *keyPath)'>
-          <pre><code>NSArray *ASTPluck(id&lt;NSFastEnumeration&gt; collection, NSString *keyPath)</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTPluck</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">keyPath</span><span class="p">)</span></code></pre>
           <p>
             <p>Extracts a value for a given key path from all elements in a collection.</p>
           </p>
@@ -1169,7 +1232,7 @@
         </article>
         <h3 id='method-ASTReduce'>ASTReduce</h3>
         <article id='ASTERISM_OVERLOADABLE id ASTReduce(id&lt;NSFastEnumeration&gt; collection, id(^block)(id memo, id obj))'>
-          <pre><code>id ASTReduce(id&lt;NSFastEnumeration&gt; collection, id(^block)(id memo, id obj))</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTReduce</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">id</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">memo</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Reduces a collection to a single value.</p>
           </p>
@@ -1184,13 +1247,13 @@
             </li>
           </ul>
           <h4>Examples</h4>
-          <pre><code>NSString *(^concat)(NSString *, NSString *) = ^(NSString *a, NSString *b) {&#x000A;    return [a stringByAppendingString:b];&#x000A;};&#x000A;&#x000A;// Equivalent to [@"a" stringByAppendingString:@"b"];&#x000A;ASTReduce(@[ @"a", @"b" ], concat);&#x000A;&#x000A;// Equivalent to [[@"a" stringByAppendingString:@"b"] stringByAppendingString:@"c"];&#x000A;ASTReduce(@[ @"a", @"b", @"c" ], concat);</code></pre>
+          <pre><code><span class="n">NSString</span> <span class="o">*</span><span class="p">(</span><span class="o">^</span><span class="n">concat</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span> <span class="o">=</span> <span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="k">return</span> <span class="p">[</span><span class="n">a</span> <span class="n">stringByAppendingString</span><span class="o">:</span><span class="n">b</span><span class="p">];</span>&#x000A;<span class="p">};</span>&#x000A;&#x000A;<span class="c1">// Equivalent to [@&quot;a&quot; stringByAppendingString:@&quot;b&quot;];</span>&#x000A;<span class="n">ASTReduce</span><span class="p">(@[</span> <span class="s">@&quot;a&quot;</span><span class="p">,</span> <span class="s">@&quot;b&quot;</span> <span class="p">],</span> <span class="n">concat</span><span class="p">);</span>&#x000A;&#x000A;<span class="c1">// Equivalent to [[@&quot;a&quot; stringByAppendingString:@&quot;b&quot;] stringByAppendingString:@&quot;c&quot;];</span>&#x000A;<span class="n">ASTReduce</span><span class="p">(@[</span> <span class="s">@&quot;a&quot;</span><span class="p">,</span> <span class="s">@&quot;b&quot;</span><span class="p">,</span> <span class="s">@&quot;c&quot;</span> <span class="p">],</span> <span class="n">concat</span><span class="p">);</span></code></pre>
           <p>
             <p>Returns the last return value of <code>block</code> once it reached the end of <code>collection</code>. If <code>collection</code> has only one element, <code>block</code> is never invoked and the first element is returned. If <code>collection</code> is empty, nil is returned.</p>
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE id ASTReduce(id&lt;NSFastEnumeration&gt; collection, id memo, id(^block)(id memo, id obj))'>
-          <pre><code>id ASTReduce(id&lt;NSFastEnumeration&gt; collection, id memo, id(^block)(id memo, id obj))</code></pre>
+          <pre><code><span class="kt">id</span> <span class="n">ASTReduce</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">id</span> <span class="n">memo</span><span class="p">,</span> <span class="kt">id</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">memo</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Reduces a collection to a single value.</p>
           </p>
@@ -1214,7 +1277,7 @@
         </article>
         <h3 id='method-ASTReject'>ASTReject</h3>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj))'>
-          <pre><code>NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTReject</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the elements of an array that pass a test.</p>
           </p>
@@ -1233,7 +1296,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj, NSUInteger idx))'>
-          <pre><code>NSArray *ASTReject(NSArray *array, BOOL(^block)(id obj, NSUInteger idx))</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTReject</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">idx</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the elements of an array that pass a test.</p>
           </p>
@@ -1252,7 +1315,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id obj))'>
-          <pre><code>NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTReject</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the values of a dictionary that pass a test.</p>
           </p>
@@ -1271,7 +1334,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id key, id obj))'>
-          <pre><code>NSDictionary *ASTReject(NSDictionary *dict, BOOL(^block)(id key, id obj))</code></pre>
+          <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTReject</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">key</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the keys and values of a dictionary that pass a test.</p>
           </p>
@@ -1290,7 +1353,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSSet *ASTReject(NSSet *set, BOOL(^block)(id obj))'>
-          <pre><code>NSSet *ASTReject(NSSet *set, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSSet</span> <span class="o">*</span><span class="n">ASTReject</span><span class="p">(</span><span class="n">NSSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the elements of a set that pass a test.</p>
           </p>
@@ -1309,7 +1372,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj))'>
-          <pre><code>NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj))</code></pre>
+          <pre><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTReject</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the elements of an ordered set that pass a test.</p>
           </p>
@@ -1328,7 +1391,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx))'>
-          <pre><code>NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(^block)(id obj, NSUInteger idx))</code></pre>
+          <pre><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTReject</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">idx</span><span class="p">))</span></code></pre>
           <p>
             <p>Filters out the elements of an ordered set that pass a test.</p>
           </p>
@@ -1348,7 +1411,7 @@
         </article>
         <h3 id='method-ASTShuffle'>ASTShuffle</h3>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTShuffle(NSArray *array)'>
-          <pre><code>NSArray *ASTShuffle(NSArray *array)</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTShuffle</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">)</span></code></pre>
           <p>
             <p>Shuffles an array.</p>
           </p>
@@ -1363,7 +1426,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTShuffle(NSOrderedSet *set)'>
-          <pre><code>NSOrderedSet *ASTShuffle(NSOrderedSet *set)</code></pre>
+          <pre><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTShuffle</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">)</span></code></pre>
           <p>
             <p>Shuffles an ordered set.</p>
           </p>
@@ -1379,7 +1442,7 @@
         </article>
         <h3 id='method-ASTSize'>ASTSize</h3>
         <article id='ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSArray *array)'>
-          <pre><code>NSUInteger ASTSize(NSArray *array)</code></pre>
+          <pre><code><span class="n">NSUInteger</span> <span class="n">ASTSize</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">)</span></code></pre>
           <p>
             <p>The number of values in an array.</p>
           </p>
@@ -1394,7 +1457,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSDictionary *dictionary)'>
-          <pre><code>NSUInteger ASTSize(NSDictionary *dictionary)</code></pre>
+          <pre><code><span class="n">NSUInteger</span> <span class="n">ASTSize</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dictionary</span><span class="p">)</span></code></pre>
           <p>
             <p>The number of values in a dictionary.</p>
           </p>
@@ -1409,7 +1472,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSSet *set)'>
-          <pre><code>NSUInteger ASTSize(NSSet *set)</code></pre>
+          <pre><code><span class="n">NSUInteger</span> <span class="n">ASTSize</span><span class="p">(</span><span class="n">NSSet</span> <span class="o">*</span><span class="n">set</span><span class="p">)</span></code></pre>
           <p>
             <p>The number of values in a set.</p>
           </p>
@@ -1424,7 +1487,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSOrderedSet *set)'>
-          <pre><code>NSUInteger ASTSize(NSOrderedSet *set)</code></pre>
+          <pre><code><span class="n">NSUInteger</span> <span class="n">ASTSize</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">)</span></code></pre>
           <p>
             <p>The number of values in an ordered set.</p>
           </p>
@@ -1439,7 +1502,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSUInteger ASTSize(id&lt;NSFastEnumeration&gt; collection)'>
-          <pre><code>NSUInteger ASTSize(id&lt;NSFastEnumeration&gt; collection)</code></pre>
+          <pre><code><span class="n">NSUInteger</span> <span class="n">ASTSize</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">)</span></code></pre>
           <p>
             <p>Counts the number of elements in a collection.</p>
           </p>
@@ -1455,7 +1518,7 @@
         </article>
         <h3 id='method-ASTTail'>ASTTail</h3>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTTail(NSArray *array)'>
-          <pre><code>NSArray *ASTTail(NSArray *array)</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTTail</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns all elements of an array after the first one.</p>
           </p>
@@ -1470,7 +1533,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTTail(NSOrderedSet *set)'>
-          <pre><code>NSOrderedSet *ASTTail(NSOrderedSet *set)</code></pre>
+          <pre><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTTail</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns all elements of an ordered set after the first one.</p>
           </p>
@@ -1486,7 +1549,7 @@
         </article>
         <h3 id='method-ASTUnion'>ASTUnion</h3>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTUnion(NSArray *array, NSArray *other)'>
-          <pre><code>NSArray *ASTUnion(NSArray *array, NSArray *other)</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTUnion</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="n">NSArray</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the union of two arrays.</p>
           </p>
@@ -1505,7 +1568,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other)'>
-          <pre><code>NSSet *ASTUnion(NSSet *set, NSSet *other)</code></pre>
+          <pre><code><span class="n">NSSet</span> <span class="o">*</span><span class="n">ASTUnion</span><span class="p">(</span><span class="n">NSSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="n">NSSet</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the union two sets.</p>
           </p>
@@ -1524,7 +1587,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTUnion(NSOrderedSet *set, NSOrderedSet *other)'>
-          <pre><code>NSOrderedSet *ASTUnion(NSOrderedSet *set, NSOrderedSet *other)</code></pre>
+          <pre><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTUnion</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></code></pre>
           <p>
             <p>Returns the union of two ordered sets.</p>
           </p>
@@ -1544,7 +1607,7 @@
         </article>
         <h3 id='method-ASTWithout'>ASTWithout</h3>
         <article id='ASTERISM_OVERLOADABLE NSArray *ASTWithout(NSArray *array, id obj)'>
-          <pre><code>NSArray *ASTWithout(NSArray *array, id obj)</code></pre>
+          <pre><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTWithout</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">)</span></code></pre>
           <p>
             <p>Filters out the elements of an array that are equal to a given value.</p>
           </p>
@@ -1563,7 +1626,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSSet *ASTWithout(NSSet *set, id obj)'>
-          <pre><code>NSSet *ASTWithout(NSSet *set, id obj)</code></pre>
+          <pre><code><span class="n">NSSet</span> <span class="o">*</span><span class="n">ASTWithout</span><span class="p">(</span><span class="n">NSSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">)</span></code></pre>
           <p>
             <p>Filters out the elements of a set that are equal to a given value.</p>
           </p>
@@ -1582,7 +1645,7 @@
           </p>
         </article>
         <article id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTWithout(NSOrderedSet *set, id obj)'>
-          <pre><code>NSOrderedSet *ASTWithout(NSOrderedSet *set, id obj)</code></pre>
+          <pre><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTWithout</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">)</span></code></pre>
           <p>
             <p>Filters out the elements of an ordered set that are equal to a given value.</p>
           </p>

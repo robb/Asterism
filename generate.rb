@@ -1,4 +1,5 @@
 require 'haml'
+require 'pygments'
 require 'sass'
 require 'tomparse'
 
