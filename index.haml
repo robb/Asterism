@@ -3,6 +3,17 @@
         %title Asterism
 
         :sass
+            $base-hue: 224
+
+            $white: hsl($base-hue, 10, 98)
+
+            $lightest: hsl($base-hue, 14, 88)
+            $light:    hsl($base-hue, 28, 87)
+            $mid:      hsl($base-hue, 40, 70)
+            $darker:   hsl($base-hue, 48, 40)
+            $darkest:  hsl($base-hue, 65, 20)
+            $black:    hsl($base-hue, 80,  8)
+
             *
                 margin: 0
                 padding: 0
@@ -10,13 +21,31 @@
             $base: 1.1250rem
 
             body
+                color: $black
+                background-color: $lightest
+
                 font-size: $base
                 line-height: 2 * $base
+
+            article
+                max-width: 46 * $base
+
+                margin: 2 * $base
+                padding: 1.2 * $base
+
+                background-color: $white
+
+                border-radius: 2px
+
+                section
+                    margin-top: 3 * $base
+
+                h3 + section
+                    margin-top: 0 * $base !important
 
             h1
                 font-size: 3.5 * $base
                 line-height: 4 * $base
-                margin-top: 2 * $base
                 margin-bottom: 2 * $base
 
             h2
@@ -33,7 +62,6 @@
 
             h4
                 font-size: 1 * $base
-                font-weight: bold
                 margin-top: 0
                 margin-bottom: 0
 
@@ -41,53 +69,43 @@
                 margin-top: 0
                 margin-bottom: 1 * $base
 
+                &:last-child
+                    margin-bottom: 0
+
             small
                 font-size: 0.666 * $base
 
-            h1, h2, h3
-                font-family: "myriad-pro-condensed", sans-serif
-
-            h4
+            h1, h2, h3, h4
                 font-family: "myriad-pro", sans-serif
-                font-weight: 500
 
             p, li
                 font-family: "myriad-pro", sans-serif
 
             p
                 code
-                    background-color: #EFEFEF
+                    background-color: $light
                     border-radius: 3px
-                    padding: 3px
+                    padding: 4px
 
             pre, code
                 font-family: "droid-sans-mono", mono-spaced
 
                 font-size: 0.9 * $base
-                line-height: 1.5 * $base
+                line-height: 1.4 * $base
 
             pre
-                background-color: #EFEFEF
+                background-color: $light
 
-                padding: 0.5 * $base
+                padding: $base
+                margin: $base -1.2 * $base
 
                 overflow-x: scroll
 
-            header, section, footer
-                padding: 0.5 * $base 1 * $base
+                &.signature
+                    $border-width: 0.25
 
-            #content
-                margin: auto
-                max-width: 40 * $base
-
-            article
-                margin-bottom: 3 * $base
-
-            #header
-                background-color: darkblue
-                color: white
-
-                text-align: center
+                    border-left: $border-width * $base solid $darker
+                    padding-left: (1.2 - $border-width) * $base
 
             li.argument
                 list-style: none
@@ -113,57 +131,55 @@
             try{Typekit.load();}catch(e){}
 
     %body
-        %header#header
+        %article#about
             %h1 Asterism
             %h2.subtitle
                 A simple functional toolbelt for Objective-C
 
-        %div#content
-            %section#section-about
-                %p
-                    Asterism is a yet another functional toolbelt for
-                    Objective-C. It tries to be typesafe and elegant.
+            %p
+                Asterism is a yet another functional toolbelt for
+                Objective-C. It tries to be typesafe and elegant.
 
-                %h3 How to install
-                %p
-                    The recommended way to install Asterism is using the
-                    excellent CocoaPods:
+            %h3 How to install
+            %p
+                The recommended way to install Asterism is using the
+                excellent CocoaPods:
 
-                %pre
-                    - guide = "pod 'Asterism'"
-                    %code= Pygments.highlight(guide, :options => {:lexer => 'ruby', :nowrap => true} )
+            %pre
+                - guide = "pod 'Asterism'"
+                %code= Pygments.highlight(guide, :options => {:lexer => 'ruby', :nowrap => true} )
 
-            %section#section-documentation-all
-                - docs.each do |methods|
-                    - groups = methods.group_by{|m| m[:name]}
-                    - groups.each_pair do |(name, methods)|
-                        %h3{ :id => "method-#{name}" }= name
+        - docs.each do |methods|
+            - groups = methods.group_by{|m| m[:name]}
+            - groups.each_pair do |(name, methods)|
+                %article{ :id => "method-#{name}" }
+                    %h3= name
 
-                        - methods.each do |method|
-                            %article{ :id => "#{method[:signature]}" }
+                    - methods.each do |method|
+                        %section{ :id => "#{method[:signature]}" }
 
-                                %pre
-                                    - signature = method[:signature].sub("ASTERISM_OVERLOADABLE ", "")
-                                    %code= Pygments.highlight(signature, :options => {:lexer => 'objc', :nowrap => true} )
+                            %pre{ :class => 'signature' }
+                                - signature = method[:signature].sub("ASTERISM_OVERLOADABLE ", "")
+                                %code= Pygments.highlight(signature, :options => {:lexer => 'objc', :nowrap => true} )
 
+                            %p
+                                :markdown
+                                    #{method[:tomdoc].description}
+
+                            %ul
+                                - method[:tomdoc].arguments.each do |arg|
+                                    %li.argument
+                                        %code.argument-name= arg.name
+                                        :markdown
+                                            #{arg.description}
+
+                            - unless method[:tomdoc].examples.empty?
+                                %h4 Examples
+                                %pre{ :class => 'example' }
+                                    - examples = method[:tomdoc].examples.join("\n\n")
+                                    %code= Pygments.highlight(examples, :options => {:lexer => 'objc', :nowrap => true} )
+
+                            - method[:tomdoc].returns.each do |ret|
                                 %p
                                     :markdown
-                                        #{method[:tomdoc].description}
-
-                                %ul
-                                    - method[:tomdoc].arguments.each do |arg|
-                                        %li.argument
-                                            %code.argument-name= arg.name
-                                            :markdown
-                                                #{arg.description}
-
-                                - unless method[:tomdoc].examples.empty?
-                                    %h4 Examples
-                                    %pre
-                                        - examples = method[:tomdoc].examples.join("\n\n")
-                                        %code= Pygments.highlight(examples, :options => {:lexer => 'objc', :nowrap => true} )
-
-                                - method[:tomdoc].returns.each do |ret|
-                                    %p
-                                        :markdown
-                                            #{ret}
+                                        #{ret}
