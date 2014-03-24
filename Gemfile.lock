@@ -1,0 +1,18 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    haml (4.0.5)
+      tilt
+    redcarpet (3.1.1)
+    sass (3.3.4)
+    tilt (2.0.1)
+    tomparse (0.4.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  haml
+  redcarpet
+  sass
+  tomparse
