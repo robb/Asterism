@@ -71,6 +71,8 @@
 
                 padding: 0.5 * $base
 
+                overflow-x: scroll
+
             header, section, footer
                 padding: 0.5 * $base 1 * $base
 
@@ -129,31 +131,34 @@
                         pod 'Asterism'
 
             %section#section-documentation-all
-                - docs.each do |file|
-                    - file.each do |method|
-                        %article
-                            %h3= method[:name]
+                - docs.each do |methods|
+                    - groups = methods.group_by{|m| m[:name]}
+                    - groups.each_pair do |(name, methods)|
+                        %h3{ :id => "method-#{name}" }= name
 
-                            %pre
-                                %code&= method[:signature].sub("ASTERISM_OVERLOADABLE ", "")
+                        - methods.each do |method|
+                            %article{ :id => "#{method[:signature]}" }
 
-                            %p
-                                :markdown
-                                    #{method[:tomdoc].description}
-
-                            %ul
-                                - method[:tomdoc].arguments.each do |arg|
-                                    %li.argument
-                                        %code.argument-name= arg.name
-                                        :markdown
-                                            #{arg.description}
-
-                            - unless method[:tomdoc].examples.empty?
-                                %h4 Examples
                                 %pre
-                                    %code= method[:tomdoc].examples.join("\n\n")
+                                    %code&= method[:signature].sub("ASTERISM_OVERLOADABLE ", "")
 
-                            - method[:tomdoc].returns.each do |ret|
                                 %p
                                     :markdown
-                                        #{ret}
+                                        #{method[:tomdoc].description}
+
+                                %ul
+                                    - method[:tomdoc].arguments.each do |arg|
+                                        %li.argument
+                                            %code.argument-name= arg.name
+                                            :markdown
+                                                #{arg.description}
+
+                                - unless method[:tomdoc].examples.empty?
+                                    %h4 Examples
+                                    %pre
+                                        %code= method[:tomdoc].examples.join("\n\n")
+
+                                - method[:tomdoc].returns.each do |ret|
+                                    %p
+                                        :markdown
+                                            #{ret}
