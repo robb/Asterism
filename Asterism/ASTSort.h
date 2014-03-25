@@ -28,7 +28,7 @@ ASTERISM_OVERLOADABLE NSArray *ASTSort(NSArray *array) {
     return __ASTSort_NSArray(array);
 }
 
-// Sorts an array using `-compare:`.
+// Sorts an array using a custom comparator.
 //
 // array      - An array of elements.
 // comparator - An NSComparator used to compare the values. This argument must
@@ -48,7 +48,7 @@ ASTERISM_OVERLOADABLE NSOrderedSet *ASTSort(NSOrderedSet *set) {
     return __ASTSort_NSOrderedSet(set);
 }
 
-// Sorts an ordered set using `-compare:`.
+// Sorts an ordered set using a custom comparator.
 //
 // set        - An ordered set of elements.
 // comparator - An NSComparator used to compare the values. This argument must
