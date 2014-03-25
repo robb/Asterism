@@ -34,6 +34,7 @@
 #import "ASTReject.h"
 #import "ASTShuffle.h"
 #import "ASTSize.h"
+#import "ASTSort.h"
 #import "ASTTail.h"
 #import "ASTUnion.h"
 #import "ASTWithout.h"
