@@ -8,6 +8,14 @@
 
 #import "ASTGroupBy.h"
 
+NSDictionary *__ASTGroupBy_NSDictionary_block(NSDictionary *dict, id<NSCopying> (^block)(id obj)) {
+    return ASTGroupBy(dict.allValues, block);
+}
+
+NSDictionary *__ASTGroupBy_NSDictionary_keyPath(NSDictionary *dict, NSString *keyPath) {
+    return ASTGroupBy(dict.allValues, keyPath);
+}
+
 NSDictionary *__ASTGroupBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id)) {
     NSCParameterAssert(block != nil);
 

@@ -11,11 +11,40 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
+ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSDictionary_block(NSDictionary *dict, id<NSCopying> (^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSDictionary_keyPath(NSDictionary *dict, NSString *keyPath);
 ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
 ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSFastEnumeration_keyPath(id<NSFastEnumeration> collection, NSString *keyPath);
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
+// Groups the values of a dictionary using a block.
+//
+// dict  - A dictionary of elements.
+// block - A block that takes a value of `dict` as its only argument and returns
+//         a key by which to group the element.
+//         The return value is required to implement NSCopying.
+//         The block must not be nil.
+//
+// Returns a dictionary that maps the keys returned by `block` to a set of all
+// values of `dict` that share the same key.
+ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(NSDictionary *dict, id<NSCopying> (^block)(id obj)) {
+    return __ASTGroupBy_NSDictionary_block(dict, block);
+}
+
+// Groups the values of a dictionary by their value for a given key path.
+//
+// dict     - A dictionary of elements.
+// key path - A key path for which the values of `dict` return either an object
+//            that implements NSCopying or nil.
+//            This parameter must not be nil.
+//
+// Returns a dictionary that maps the values the elements return for `keyPath`
+// to a set of all values of `dict` that share the same key.
+ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(NSDictionary *dict, NSString *keyPath) {
+    return __ASTGroupBy_NSDictionary_keyPath(dict, keyPath);
+}
 
 // Groups the elements in a collection using a block.
 //
