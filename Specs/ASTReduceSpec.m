@@ -10,6 +10,10 @@
 
 SpecBegin(ASTReduce)
 
+NSNumber *(^add)(NSNumber *, NSNumber *) = ^(NSNumber *memo, NSNumber *obj) {
+    return @(memo.doubleValue + obj.doubleValue);
+};
+
 describe(@"reduce", ^{
     describe(@"for objects implementing <NSFastEnumeration>", ^{
         describe(@"when given an intial value", ^{
@@ -24,11 +28,15 @@ describe(@"reduce", ^{
             });
 
             it(@"should use the inital value in the first iteration", ^{
-                id result = ASTReduce(@[ @1, @2, @3 ], @4, ^(NSNumber *memo, NSNumber *obj) {
-                    return @(memo.doubleValue + obj.doubleValue);
-                });
+                id result = ASTReduce(@[ @1, @2, @3 ], @4, add);
 
                 expect(result).to.equal(10);
+            });
+
+            it(@"should  use the values of dictionaries", ^{
+                NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
+
+                expect(ASTReduce(dict, @4, add)).to.equal(10);
             });
         });
 
@@ -50,11 +58,15 @@ describe(@"reduce", ^{
             });
 
             it(@"should reduce the collection starting from the first value", ^{
-                id result = ASTReduce(@[ @1, @2, @3 ], ^(NSNumber *memo, NSNumber *obj) {
-                    return @(memo.doubleValue + obj.doubleValue);
-                });
+                id result = ASTReduce(@[ @1, @2, @3 ], add);
 
                 expect(result).to.equal(6);
+            });
+
+            it(@"should  use the values of dictionaries", ^{
+                NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
+
+                expect(ASTReduce(dict, add)).to.equal(6);
             });
         });
 
