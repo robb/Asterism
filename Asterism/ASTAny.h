@@ -19,7 +19,7 @@ ASTERISM_USE_INSTEAD(ASTAny) BOOL __ASTAny_NSFastEnumeration(id<NSFastEnumeratio
 
 // Tests if any value in a dictionary passes a test.
 //
-// dict  - a dictionary of elements.
+// dict  - A dictionary of elements.
 // block - A block that takes a value of `dict` as its only argument and returns
 //         `YES` if the element passes the test. The block must no be nil.
 //
@@ -30,7 +30,7 @@ ASTERISM_OVERLOADABLE BOOL ASTAny(NSDictionary *dict, BOOL(^block)(id obj)) {
 
 // Tests if any element in a collection passes a test.
 //
-// collection - a collection of elements.
+// collection - A collection of elements.
 // block      - A block that takes an element as its only argument and returns
 //              `YES` if the element passes the test. The block must no be nil.
 //
