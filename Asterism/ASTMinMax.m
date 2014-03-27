@@ -18,6 +18,14 @@ static NSComparator const ASTCompare = ^NSComparisonResult(id a, id b) {
 
 #pragma mark - Min
 
+id __ASTMin_NSDictionary(NSDictionary *dict) {
+    return ASTMin(dict.allValues);
+}
+
+id __ASTMin_NSDictionary_comparator(NSDictionary *dict, NSComparator comparator) {
+    return ASTMin(dict.allValues, comparator);
+}
+
 id __ASTMin_NSFastEnumeration(id<NSFastEnumeration> collection) {
     return ASTMin(collection, ASTCompare);
 }
@@ -31,6 +39,14 @@ id __ASTMin_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSCom
 }
 
 #pragma mark - Max
+
+id __ASTMax_NSDictionary(NSDictionary *dict) {
+    return ASTMax(dict.allValues);
+}
+
+id __ASTMax_NSDictionary_comparator(NSDictionary *dict, NSComparator comparator) {
+    return ASTMax(dict.allValues, comparator);
+}
 
 id __ASTMax_NSFastEnumeration(id<NSFastEnumeration> collection) {
     return ASTMax(collection, ASTCompare);
