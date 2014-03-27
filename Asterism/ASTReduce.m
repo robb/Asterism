@@ -8,6 +8,14 @@
 
 #import "ASTReduce.h"
 
+id __ASTReduce_NSDictionary_block(NSDictionary *dict, id(^block)(id memo, id obj)) {
+    return ASTReduce(dict.allValues, block);
+}
+
+id __ASTReduce_NSDictionary_memo_block(NSDictionary *dict, id memo, id(^block)(id memo, id obj)) {
+    return ASTReduce(dict.allValues, memo, block);
+}
+
 id __ASTReduce_NSFastEnumeration_block(id<NSFastEnumeration> collection, id(^block)(id memo, id obj)) {
     NSCParameterAssert(block != nil);
 

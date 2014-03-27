@@ -8,6 +8,10 @@
 
 #import "ASTAny.h"
 
+BOOL __ASTAny_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj)) {
+    return ASTAny(dict.allValues, block);
+}
+
 BOOL __ASTAny_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 

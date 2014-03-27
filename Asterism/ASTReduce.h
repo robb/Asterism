@@ -11,11 +11,45 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
+ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSDictionary_block(NSDictionary *dict, id(^block)(id memo, id obj));
+ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSDictionary_memo_block(NSDictionary *dict, id memo, id(^block)(id memo, id obj));
 ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSFastEnumeration_block(id<NSFastEnumeration> collection, id(^block)(id memo, id obj));
 ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSFastEnumeration_memo_block(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj));
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
+// Reduces a dictionary to a single value.
+//
+// dict  - An object that implements NSFastEnumeration.
+// block - A block that takes two arguments and returns an object.
+//         The first argument is its last return value or a value of `dict` when
+//         it is called for the first time.
+//         The second argument is the next value of `dict`.
+//         The block must not be nil.
+//
+// Returns the last return value of `block` once it reached the end of
+// `dict`. If `dict` has only one value, `block` is never invoked and that
+// value. If `dict` is empty, nil is returned.
+ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, id(^block)(id memo, id obj)) {
+    return __ASTReduce_NSDictionary_block(dict, block);
+}
+
+// Reduces a dictionary to a single value.
+//
+// dict  - An object that implements NSFastEnumeration.
+// memo  - The first argument to `block` when it is invoked for the first time.
+// block - A block that takes two arguments and returns an object.
+//         The first argument is its last return value or `memo` when it
+//         is called for the first time.
+//         The second argument is the next value of `dict`.
+//         The block must not be nil.
+//
+// Returns the last return value of `block` once it reached the end of
+// `dict`. If `dict` is empty, `memo` is returned.
+ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, id memo, id(^block)(id memo, id obj)) {
+    return __ASTReduce_NSDictionary_memo_block(dict, memo, block);
+}
 
 // Reduces a collection to a single value.
 //

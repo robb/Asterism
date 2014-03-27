@@ -47,4 +47,18 @@ it(@"should return a dictionary of sets, grouped by their value for a key path",
     expect(dictionary[@7]).to.contain(@"Bonjour");
 });
 
+it(@"should use the values of dictionaries", ^{
+    NSDictionary *dict = @{ @"foo": @"Hello" };
+
+    NSDictionary *blockResult = ASTGroupBy(dict, ^(NSString *string) {
+        return @(string.length);
+    });
+
+    expect(blockResult[@5]).to.contain(@"Hello");
+
+    NSDictionary *keyPathResult = ASTGroupBy(dict, @"length");
+
+    expect(keyPathResult[@5]).to.contain(@"Hello");
+});
+
 SpecEnd
