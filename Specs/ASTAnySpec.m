@@ -11,7 +11,7 @@
 SpecBegin(ASTAny)
 
 it(@"should return NO for empty collections", ^{
-    expect(ASTAny(nil, ^(id obj){ return NO; })).to.beFalsy();
+    expect(ASTAny((id<NSFastEnumeration>)nil, ^(id obj){ return NO; })).to.beFalsy();
 
     expect(ASTAny(@[], ^(id obj){ return NO; })).to.beFalsy();
 });
@@ -30,6 +30,12 @@ it(@"should return NO if all elements fail the test", ^{
     NSArray *numbers = @[ @2, @4, @6, @8 ];
 
     expect(ASTAny(numbers, isOdd)).to.beFalsy();
+});
+
+it(@"should use the values of dictionaries", ^{
+    NSDictionary *dict = @{ @"foo": @1 };
+
+    expect(ASTAny(dict, isOdd)).to.beTruthy();
 });
 
 SpecEnd
