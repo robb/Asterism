@@ -38,4 +38,18 @@ describe(@"with keypaths", ^{
     });
 });
 
+it(@"should use the values of dictionaries", ^{
+    NSDictionary *dict = @{ @"foo": @"Hello" };
+
+    NSDictionary *blockResult = ASTIndexBy(dict, ^(NSString *string) {
+        return @(string.length);
+    });
+
+    expect(blockResult[@5]).to.equal(@"Hello");
+
+    NSDictionary *keyPathResult = ASTIndexBy(dict, @"length");
+
+    expect(keyPathResult[@5]).to.equal(@"Hello");
+});
+
 SpecEnd
