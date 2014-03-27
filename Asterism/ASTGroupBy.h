@@ -23,7 +23,7 @@ ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSFastEnumeration_ke
 //
 // dict  - A dictionary of elements.
 // block - A block that takes a value of `dict` as its only argument and returns
-//         a key by which to group the element.
+//         a key by which to group the value.
 //         The return value is required to implement NSCopying.
 //         The block must not be nil.
 //
@@ -40,8 +40,8 @@ ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(NSDictionary *dict, id<NSCopying>
 //            that implements NSCopying or nil.
 //            This parameter must not be nil.
 //
-// Returns a dictionary that maps the values the elements return for `keyPath`
-// to a set of all values of `dict` that share the same key.
+// Returns a dictionary that maps the keys that the values in `dict` return for
+// `keyPath` to a set of all values of `dict` that share the same key.
 ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(NSDictionary *dict, NSString *keyPath) {
     return __ASTGroupBy_NSDictionary_keyPath(dict, keyPath);
 }

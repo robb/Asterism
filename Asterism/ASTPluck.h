@@ -23,7 +23,7 @@ ASTERISM_USE_INSTEAD(ASTPluck) NSArray *__ASTPluck_NSFastEnumeration(id<NSFastEn
 // keyPath - A key path. This argument must not be nil.
 //
 // Returns a dictionary mapping the original keys to the values that the
-// values in `dict` return for `keyPath`. If an element returns nil when invoked
+// values in `dict` return for `keyPath`. If a value returns nil when invoked
 // with -valueForKeyPath:, it is not present in the returned dictionary.
 ASTERISM_OVERLOADABLE NSDictionary *ASTPluck(NSDictionary *dictionary, NSString *keyPath) {
     return __ASTPluck_NSDictionary(dictionary, keyPath);
