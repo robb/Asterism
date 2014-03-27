@@ -8,6 +8,10 @@
 
 #import "ASTAll.h"
 
+BOOL __ASTAll_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj)) {
+    return ASTAll(dict.allValues, block);
+}
+
 BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id)) {
     NSCParameterAssert(block != nil);
 
