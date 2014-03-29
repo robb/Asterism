@@ -182,6 +182,25 @@
     </article>
     <article id='method-ASTAll'>
       <h3>ASTAll</h3>
+      <section id='ASTERISM_OVERLOADABLE BOOL ASTAll(NSDictionary *dict, BOOL(^block)(id obj))'>
+        <pre class='signature'><code><span class="kt">BOOL</span> <span class="n">ASTAll</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
+        <p>
+          <p>Tests if all values in a dictionary pass a test.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>A dictionary of elements.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>block</code>
+            <p>A block that takes a value of <code>dict</code> as its only argument and returns <code>YES</code> if the value passes the test. The block must no be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns <code>YES</code> if all values in <code>dict</code> pass the test <code>block</code>.</p>
+        </p>
+      </section>
       <section id='ASTERISM_OVERLOADABLE BOOL ASTAll(id&lt;NSFastEnumeration&gt; collection, BOOL(^block)(id obj))'>
         <pre class='signature'><code><span class="kt">BOOL</span> <span class="n">ASTAll</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
         <p>
@@ -190,7 +209,7 @@
         <ul>
           <li class='argument'>
             <code class='argument-name'>collection</code>
-            <p>a collection of elements.</p>
+            <p>A collection of elements.</p>
           </li>
           <li class='argument'>
             <code class='argument-name'>block</code>
@@ -204,6 +223,25 @@
     </article>
     <article id='method-ASTAny'>
       <h3>ASTAny</h3>
+      <section id='ASTERISM_OVERLOADABLE BOOL ASTAny(NSDictionary *dict, BOOL(^block)(id obj))'>
+        <pre class='signature'><code><span class="kt">BOOL</span> <span class="n">ASTAny</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
+        <p>
+          <p>Tests if any value in a dictionary passes a test.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>A dictionary of elements.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>block</code>
+            <p>A block that takes a value of <code>dict</code> as its only argument and returns <code>YES</code> if the value passes the test. The block must no be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns <code>YES</code> if any of the values in <code>dict</code> passes the test <code>block</code>.</p>
+        </p>
+      </section>
       <section id='ASTERISM_OVERLOADABLE BOOL ASTAny(id&lt;NSFastEnumeration&gt; collection, BOOL(^block)(id obj))'>
         <pre class='signature'><code><span class="kt">BOOL</span> <span class="n">ASTAny</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">BOOL</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
         <p>
@@ -212,7 +250,7 @@
         <ul>
           <li class='argument'>
             <code class='argument-name'>collection</code>
-            <p>a collection of elements.</p>
+            <p>A collection of elements.</p>
           </li>
           <li class='argument'>
             <code class='argument-name'>block</code>
@@ -724,6 +762,44 @@
     </article>
     <article id='method-ASTGroupBy'>
       <h3>ASTGroupBy</h3>
+      <section id='ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(NSDictionary *dict, id&lt;NSCopying&gt; (^block)(id obj))'>
+        <pre class='signature'><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTGroupBy</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">id</span><span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
+        <p>
+          <p>Groups the values of a dictionary using a block.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>A dictionary of elements.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>block</code>
+            <p>A block that takes a value of <code>dict</code> as its only argument and returns a key by which to group the value. The return value is required to implement NSCopying. The block must not be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns a dictionary that maps the keys returned by <code>block</code> to a set of all values of <code>dict</code> that share the same key.</p>
+        </p>
+      </section>
+      <section id='ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(NSDictionary *dict, NSString *keyPath)'>
+        <pre class='signature'><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTGroupBy</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">keyPath</span><span class="p">)</span></code></pre>
+        <p>
+          <p>Groups the values of a dictionary by their value for a given key path.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>A dictionary of elements.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>key path</code>
+            <p>A key path for which the values of <code>dict</code> return either an object that implements NSCopying or nil. This parameter must not be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns a dictionary that maps the keys that the values in <code>dict</code> return for <code>keyPath</code> to a set of all values of <code>dict</code> that share the same key.</p>
+        </p>
+      </section>
       <section id='ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(id&lt;NSFastEnumeration&gt; collection, id&lt;NSCopying&gt; (^block)(id obj))'>
         <pre class='signature'><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTGroupBy</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">id</span><span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
         <p>
@@ -802,6 +878,44 @@
     </article>
     <article id='method-ASTIndexBy'>
       <h3>ASTIndexBy</h3>
+      <section id='ASTERISM_OVERLOADABLE NSDictionary *ASTIndexBy(NSDictionary *dict, id&lt;NSCopying&gt; (^block)(id obj))'>
+        <pre class='signature'><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTIndexBy</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">id</span><span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
+        <p>
+          <p>Indexes the values of a dictionary using a block.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>A dictionary of elements.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>block</code>
+            <p>A block that takes a value of <code>dict</code> as its only argument and returns a key by which to index the element. The return value is required to implement NSCopying. The block must not be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns a dictionary that maps the keys returned by <code>block</code> to the respective input value. If <code>block</code> returns the same value for multiple values, an arbitrary value is chosen.</p>
+        </p>
+      </section>
+      <section id='ASTERISM_OVERLOADABLE NSDictionary *ASTIndexBy(NSDictionary *dict, NSString *keyPath)'>
+        <pre class='signature'><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTIndexBy</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">keyPath</span><span class="p">)</span></code></pre>
+        <p>
+          <p>Indexes the values of a dictionary by their value for a given key path.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>A dictionary of elements.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>key path</code>
+            <p>A key path for which the values of <code>dict</code> return either an object that implements NSCopying or nil. This parameter must not be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns a dictionary that maps the values the elements return for <code>keyPath</code> to the respective input value. If multiple values return the same value for <code>keyPath</code>, an arbitrary element is chosen.</p>
+        </p>
+      </section>
       <section id='ASTERISM_OVERLOADABLE NSDictionary *ASTIndexBy(id&lt;NSFastEnumeration&gt; collection, id&lt;NSCopying&gt; (^block)(id obj))'>
         <pre class='signature'><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTIndexBy</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">id</span><span class="o">&lt;</span><span class="n">NSCopying</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
         <p>
@@ -841,7 +955,7 @@
         <h4>Examples</h4>
         <pre class='example'><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">strings</span> <span class="o">=</span> <span class="p">@[</span> <span class="s">@&quot;a&quot;</span><span class="p">,</span> <span class="s">@&quot;ab&quot;</span><span class="p">,</span> <span class="s">@&quot;abc&quot;</span> <span class="p">];</span>&#x000A;&#x000A;<span class="n">NSDictionary</span> <span class="o">*</span><span class="n">indexed</span> <span class="o">=</span> <span class="n">ASTIndexBy</span><span class="p">(</span><span class="n">strings</span><span class="p">,</span> <span class="s">@&quot;length&quot;</span><span class="p">);</span>&#x000A;&#x000A;<span class="n">indexed</span><span class="p">[</span><span class="mi">@1</span><span class="p">];</span> <span class="c1">// @&quot;a&quot;</span>&#x000A;<span class="n">indexed</span><span class="p">[</span><span class="mi">@2</span><span class="p">];</span> <span class="c1">// @&quot;ab&quot;</span>&#x000A;<span class="n">indexed</span><span class="p">[</span><span class="mi">@3</span><span class="p">];</span> <span class="c1">// @&quot;abc&quot;</span></code></pre>
         <p>
-          <p>Returns a dictionary that maps the values the elements return for <code>keyPath</code> to the respective input value. Multiple values return the same value for <code>keyPath</code>, an arbitrary element is chosen.</p>
+          <p>Returns a dictionary that maps the values the elements return for <code>keyPath</code> to the respective input value. If multiple values return the same value for <code>keyPath</code>, an arbitrary element is chosen.</p>
         </p>
       </section>
     </article>
@@ -1103,6 +1217,40 @@
     </article>
     <article id='method-ASTMin'>
       <h3>ASTMin</h3>
+      <section id='ASTERISM_OVERLOADABLE id ASTMin(NSDictionary *dict)'>
+        <pre class='signature'><code><span class="kt">id</span> <span class="n">ASTMin</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">)</span></code></pre>
+        <p>
+          <p>Returns the minimum of the values of a dictionary by invoking -compare:.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>A dictionary of elements.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns the minimum of the values of <code>dict</code> comparing all values by invoking -compare:.</p>
+        </p>
+      </section>
+      <section id='ASTERISM_OVERLOADABLE id ASTMin(NSDictionary *dict, NSComparator comparator)'>
+        <pre class='signature'><code><span class="kt">id</span> <span class="n">ASTMin</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="n">NSComparator</span> <span class="n">comparator</span><span class="p">)</span></code></pre>
+        <p>
+          <p>Returns the minimum of the values of a dictionary by using an NSComparator.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>A dictionary of elements.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>comparator</code>
+            <p>An NSComparator used to compare the values. This argument must not be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns the minimum of the values of <code>dict</code> comparing all values using <code>comparator</code>.</p>
+        </p>
+      </section>
       <section id='ASTERISM_OVERLOADABLE id ASTMin(id&lt;NSFastEnumeration&gt; collection)'>
         <pre class='signature'><code><span class="kt">id</span> <span class="n">ASTMin</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">)</span></code></pre>
         <p>
@@ -1140,6 +1288,40 @@
     </article>
     <article id='method-ASTMax'>
       <h3>ASTMax</h3>
+      <section id='ASTERISM_OVERLOADABLE id ASTMax(NSDictionary *dict)'>
+        <pre class='signature'><code><span class="kt">id</span> <span class="n">ASTMax</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">)</span></code></pre>
+        <p>
+          <p>Returns the maximum of the values of a dictionary by invoking -compare:.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>A dictionary of elements.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns the maximum of the values of <code>dict</code> comparing all values by invoking -compare:.</p>
+        </p>
+      </section>
+      <section id='ASTERISM_OVERLOADABLE id ASTMax(NSDictionary *dict, NSComparator comparator)'>
+        <pre class='signature'><code><span class="kt">id</span> <span class="n">ASTMax</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="n">NSComparator</span> <span class="n">comparator</span><span class="p">)</span></code></pre>
+        <p>
+          <p>Returns the maximum of the values of a dictionary by using an NSComparator.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>A dictionary of elements.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>comparator</code>
+            <p>An NSComparator used to compare the values. This argument must not be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns the maximum of the values of <code>dict</code> comparing all values using <code>comparator</code>.</p>
+        </p>
+      </section>
       <section id='ASTERISM_OVERLOADABLE id ASTMax(id&lt;NSFastEnumeration&gt; collection)'>
         <pre class='signature'><code><span class="kt">id</span> <span class="n">ASTMax</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">)</span></code></pre>
         <p>
@@ -1247,6 +1429,25 @@
     </article>
     <article id='method-ASTPluck'>
       <h3>ASTPluck</h3>
+      <section id='ASTERISM_OVERLOADABLE NSDictionary *ASTPluck(NSDictionary *dictionary, NSString *keyPath)'>
+        <pre class='signature'><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">ASTPluck</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dictionary</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">keyPath</span><span class="p">)</span></code></pre>
+        <p>
+          <p>Extracts a value for a given key path from all values of a dictionary.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>A dictionary of elements.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>keyPath</code>
+            <p>A key path. This argument must not be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns a dictionary mapping the original keys to the values that the values in <code>dict</code> return for <code>keyPath</code>. If a value returns nil when invoked with -valueForKeyPath:, it is not present in the returned dictionary.</p>
+        </p>
+      </section>
       <section id='ASTERISM_OVERLOADABLE NSArray *ASTPluck(id&lt;NSFastEnumeration&gt; collection, NSString *keyPath)'>
         <pre class='signature'><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTPluck</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">keyPath</span><span class="p">)</span></code></pre>
         <p>
@@ -1269,6 +1470,48 @@
     </article>
     <article id='method-ASTReduce'>
       <h3>ASTReduce</h3>
+      <section id='ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, id(^block)(id memo, id obj))'>
+        <pre class='signature'><code><span class="kt">id</span> <span class="n">ASTReduce</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">id</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">memo</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
+        <p>
+          <p>Reduces a dictionary to a single value.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>An object that implements NSFastEnumeration.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>block</code>
+            <p>A block that takes two arguments and returns an object. The first argument is its last return value or a value of <code>dict</code> when it is called for the first time. The second argument is the next value of <code>dict</code>. The block must not be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns the last return value of <code>block</code> once it reached the end of <code>dict</code>. If <code>dict</code> has only one value, <code>block</code> is never invoked and that value. If <code>dict</code> is empty, nil is returned.</p>
+        </p>
+      </section>
+      <section id='ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, id memo, id(^block)(id memo, id obj))'>
+        <pre class='signature'><code><span class="kt">id</span> <span class="n">ASTReduce</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">dict</span><span class="p">,</span> <span class="kt">id</span> <span class="n">memo</span><span class="p">,</span> <span class="kt">id</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">memo</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
+        <p>
+          <p>Reduces a dictionary to a single value.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>dict</code>
+            <p>An object that implements NSFastEnumeration.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>memo</code>
+            <p>The first argument to <code>block</code> when it is invoked for the first time.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>block</code>
+            <p>A block that takes two arguments and returns an object. The first argument is its last return value or <code>memo</code> when it is called for the first time. The second argument is the next value of <code>dict</code>. The block must not be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns the last return value of <code>block</code> once it reached the end of <code>dict</code>. If <code>dict</code> is empty, <code>memo</code> is returned.</p>
+        </p>
+      </section>
       <section id='ASTERISM_OVERLOADABLE id ASTReduce(id&lt;NSFastEnumeration&gt; collection, id(^block)(id memo, id obj))'>
         <pre class='signature'><code><span class="kt">id</span> <span class="n">ASTReduce</span><span class="p">(</span><span class="kt">id</span><span class="o">&lt;</span><span class="n">NSFastEnumeration</span><span class="o">&gt;</span> <span class="n">collection</span><span class="p">,</span> <span class="kt">id</span><span class="p">(</span><span class="o">^</span><span class="n">block</span><span class="p">)(</span><span class="kt">id</span> <span class="n">memo</span><span class="p">,</span> <span class="kt">id</span> <span class="n">obj</span><span class="p">))</span></code></pre>
         <p>
@@ -1561,6 +1804,77 @@
         </p>
       </section>
     </article>
+    <article id='method-ASTSort'>
+      <h3>ASTSort</h3>
+      <section id='ASTERISM_OVERLOADABLE NSArray *ASTSort(NSArray *array)'>
+        <pre class='signature'><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTSort</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">)</span></code></pre>
+        <p>
+          <p>Sorts an array using <code>-compare:</code>.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>array</code>
+            <p>An array of elements.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns a copy of <code>array</code>, sorted using <code>-compare:</code>.</p>
+        </p>
+      </section>
+      <section id='ASTERISM_OVERLOADABLE NSArray *ASTSort(NSArray *array, NSComparator comparator)'>
+        <pre class='signature'><code><span class="n">NSArray</span> <span class="o">*</span><span class="n">ASTSort</span><span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="n">NSComparator</span> <span class="n">comparator</span><span class="p">)</span></code></pre>
+        <p>
+          <p>Sorts an array using a custom comparator.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>array</code>
+            <p>An array of elements.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>comparator</code>
+            <p>An NSComparator used to compare the values. This argument must not be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns a copy of <code>array</code>, sorted using <code>comparator</code>.</p>
+        </p>
+      </section>
+      <section id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTSort(NSOrderedSet *set)'>
+        <pre class='signature'><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTSort</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">)</span></code></pre>
+        <p>
+          <p>Sorts an ordered set using <code>-compare:</code>.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>set</code>
+            <p>An array of elements.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns a copy of <code>set</code>, sorted using <code>-compare:</code>.</p>
+        </p>
+      </section>
+      <section id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTSort(NSOrderedSet *set, NSComparator comparator)'>
+        <pre class='signature'><code><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">ASTSort</span><span class="p">(</span><span class="n">NSOrderedSet</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="n">NSComparator</span> <span class="n">comparator</span><span class="p">)</span></code></pre>
+        <p>
+          <p>Sorts an ordered set using a custom comparator.</p>
+        </p>
+        <ul>
+          <li class='argument'>
+            <code class='argument-name'>set</code>
+            <p>An ordered set of elements.</p>
+          </li>
+          <li class='argument'>
+            <code class='argument-name'>comparator</code>
+            <p>An NSComparator used to compare the values. This argument must not be nil.</p>
+          </li>
+        </ul>
+        <p>
+          <p>Returns a copy of <code>set</code>, sorted using <code>comparator</code>.</p>
+        </p>
+      </section>
+    </article>
     <article id='method-ASTTail'>
       <h3>ASTTail</h3>
       <section id='ASTERISM_OVERLOADABLE NSArray *ASTTail(NSArray *array)'>
@@ -1672,7 +1986,7 @@
           </li>
         </ul>
         <p>
-          <p>Returns an array of all values in <code>array</code> that are equal to <code>obj</code>. The order is being maintained.</p>
+          <p>Returns an array of all values in <code>array</code> that are not equal to <code>obj</code>. The order is being maintained.</p>
         </p>
       </section>
       <section id='ASTERISM_OVERLOADABLE NSSet *ASTWithout(NSSet *set, id obj)'>
@@ -1691,7 +2005,7 @@
           </li>
         </ul>
         <p>
-          <p>Returns a set of all values in <code>set</code> that are equal to <code>obj</code>.</p>
+          <p>Returns a set of all values in <code>set</code> that are not equal to <code>obj</code>.</p>
         </p>
       </section>
       <section id='ASTERISM_OVERLOADABLE NSOrderedSet *ASTWithout(NSOrderedSet *set, id obj)'>
@@ -1710,7 +2024,7 @@
           </li>
         </ul>
         <p>
-          <p>Returns an ordered set of all values in <code>set</code> that are equal to <code>obj</code>. The order is being maintained.</p>
+          <p>Returns an ordered set of all values in <code>set</code> that are not equal to <code>obj</code>. The order is being maintained.</p>
         </p>
       </section>
     </article>

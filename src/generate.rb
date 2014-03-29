@@ -23,6 +23,6 @@ docs = Dir["Asterism/Asterism/AST*.h"].map do |filename|
     end
 end
 
-index = Haml::Engine.new(File.read 'index.haml')
+index = Haml::Engine.new(File.read 'src/index.haml')
 
 puts index.render Object.new, :docs => docs
