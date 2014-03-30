@@ -18,9 +18,6 @@ ASTEach(reviewsByRating[@5], ^(XYReview *review) {
 XYReview *worstReview = ASTMin(reviews);
 ```
 
-I'd like Asterism to eventually offer common methods for data structures for all
-of Cocoa's collections.
-
 ## Supported Operations
 
 Asterism currently supports the following operations:
