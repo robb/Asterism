@@ -1,7 +1,7 @@
 # Asterism ⁂
 
 <a href="https://travis-ci.org/robb/Asterism?branch=master">
-    <img src="https://travis-ci.org/robb/Asterism.png?branch=master" align="right">
+    <img src="https://travis-ci.org/robb/Asterism.svg?branch=master" align="right">
 </a>
 
 Asterism is yet another functional toolbelt for Objective-C. It tries to be
