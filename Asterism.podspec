@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.author       = { "Robert Böhnke" => "robb@robb.is" }
   s.source       = { :git => "https://github.com/robb/Asterism.git", :tag => "1.0.0-RC3" }
 
-  s.ios.deployment_target = '0.5'
+  s.ios.deployment_target = '5.0'
   s.osx.deployment_target = '10.8'
 
   s.source_files = 'Asterism', 'Asterism/**/*.{h,m}'
