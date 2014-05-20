@@ -7,46 +7,29 @@
 Asterism is yet another functional toolbelt for Objective-C. It tries to be
 typesafe and simple.
 
-```objective-c
-NSDictionary *reviewsByRating = ASTGroup(reviews, @"rating");
+Using common higher-order functions such as `map`, `reduce` and `filter`,
+Asterism allows you to manipulate Foundation's data structures with ease.
 
-// Log all five star ratings
-ASTEach(reviewsByRating[@5], ^(XYReview *review) {
-    NSLog(@"%@", review);
+It makes use of overloaded C-Functions to keep its interface simple while
+maintaining compile-time safety. For instance, `ASTEach` takes different blocks
+depending on the data structure it operates on:
+
+```objective-c
+ASTEach([ @"a", @"b", @"c" ], ^(NSNumber *letter) {
+    NSLog(@"%@", letter);
 });
 
-XYReview *worstReview = ASTMin(reviews);
+ASTEach([ @"a", @"b", @"c" ], ^(NSNumber *letter, NSUInteger index) {
+    NSLog(@"%u: %@", index, letter);
+});
+
+ASTEach(@{ @"foo": @"bar" }, ^(NSString *key, NSString *value) {
+    NSLog(@"%@: %@", key, value);
+});
 ```
 
-## Supported Operations
+[This page](http://robb.github.io/Asterism/) you can find extensive
+[documentation on all of Asterism's methods.
 
-Asterism currently supports the following operations:
-
-* [all](Asterism/ASTAll.h)
-* [any](Asterism/ASTAny.h)
-* [defaults](Asterism/ASTDefaults.h)
-* [difference](Asterism/ASTDifference.h)
-* [each](Asterism/ASTEach.h)
-* [empty](Asterism/ASTEmpty.h)
-* [extend](Asterism/ASTExtend.h)
-* [filter](Asterism/ASTFilter.h)
-* [find](Asterism/ASTFind.h)
-* [flatten](Asterism/ASTFlatten.h)
-* [groupBy](Asterism/ASTGroupBy.h)
-* [head](Asterism/ASTHead.h)
-* [indexBy](Asterism/ASTIndexBy.h)
-* [indexOf](Asterism/ASTIndexOf.h)
-* [intersection](Asterism/ASTIntersection.h)
-* [map](Asterism/ASTMap.h)
-* [min & max](Asterism/ASTMinMax.h)
-* [negate](Asterism/ASTNegate.h)
-* [pick](Asterism/ASTPick.h)
-* [pluck](Asterism/ASTPluck.h)
-* [reduce](Asterism/ASTReduce.h)
-* [reject](Asterism/ASTReject.h)
-* [shuffle](Asterism/ASTShuffle.h)
-* [size](Asterism/ASTSize.h)
-* [sort](Asterism/ASTSort.h)
-* [tail](Asterism/ASTTail.h)
-* [union](Asterism/ASTUnion.h)
-* [without](Asterism/ASTWithout.h)
+Asterism was written by <a href="http://robb.is">Robert
+Böhnke</a> and is <a href="http://opensource.org/licenses/MIT">MIT licensed</a>.
