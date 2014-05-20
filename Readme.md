@@ -28,8 +28,8 @@ ASTEach(@{ @"foo": @"bar" }, ^(NSString *key, NSString *value) {
 });
 ```
 
-[This page](http://robb.github.io/Asterism/) you can find extensive
-[documentation on all of Asterism's methods.
+[This page](http://robb.github.io/Asterism/) provides extensive documentation on
+all of Asterism's methods.
 
 Asterism was written by <a href="http://robb.is">Robert
 Böhnke</a> and is <a href="http://opensource.org/licenses/MIT">MIT licensed</a>.
