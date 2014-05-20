@@ -26,9 +26,43 @@
                 font-size: $base
                 line-height: 2 * $base
 
-            article
-                max-width: 46 * $base
+                margin: auto
 
+                display: -webkit-flex
+                display: flex
+
+                -webkit-flex-flow: row
+                flex-flow: row
+
+                -webkit-justify-content: center
+                justify-content: center
+
+                -webkit-align-content: center
+                align-content: center
+
+                -webkit-align-items: flex-start
+                align-items: flex-start
+
+            #container
+                -webkit-order: 1
+                order: 1
+
+                -webkit-flex: 1 1 auto
+                flex: 1 1 auto
+
+            #navigation
+                -webkit-order: 0
+                order: 0
+
+                -webkit-flex: 0 0 auto
+                flex: 0 0 auto
+
+                li
+                    list-style: none
+                    font-size: 0.9 * $base
+                    line-height: 1.4 * $base
+
+            article, nav
                 margin: 2 * $base
                 padding: 1.2 * $base
 
@@ -36,11 +70,19 @@
 
                 border-radius: 2px
 
+            article
+                margin-left: 0
+
+                max-width: 40 * $base
+
                 section
                     margin-top: 3 * $base
 
                 h3 + section
                     margin-top: 0 * $base !important
+
+            nav
+                width: 8 * $base
 
             h1
                 font-size: 3.5 * $base
@@ -55,7 +97,7 @@
 
             h3
                 font-size: 1.3 * $base
-                line-height: 1 * $base
+                line-height: 2 * $base
                 margin-top: 0 * $base
                 margin-bottom: 1 * $base
 
@@ -63,6 +105,9 @@
                 font-size: 1 * $base
                 margin-top: 0
                 margin-bottom: 0
+
+            a, a:visited
+                color: $darker
 
             p, ul, pre
                 margin-top: 0
@@ -75,7 +120,7 @@
                 font-size: 0.666 * $base
 
             h1, h2, h3, h4
-                font-family: "myriad-pro", "HelveticaNeue-Regular", sans-serif
+                font-family: "Avenir", "HelveticaNeue-Regular", sans-serif
                 font-weight: 500
 
             p, li
@@ -131,55 +176,131 @@
             try{Typekit.load();}catch(e){}
 
     %body
-        %article#about
-            %h1 Asterism
-            %h2.subtitle
-                A simple functional toolbelt for Objective-C
+        #container
+            %article#about
+                :markdown
+                    # Asterism
+                    ## A simple functional toolbelt for Objective-C
 
-            %p
-                Asterism is a yet another functional toolbelt for
-                Objective-C. It tries to be typesafe and elegant.
+                    Asterism is a yet another functional toolbelt for
+                    Objective-C. It tries to be typesafe and elegant.
 
-            %h3 How to install
-            %p
-                The recommended way to install Asterism is using the
-                excellent CocoaPods:
+                %pre
+                    - example = """
+                    - NSDictionary *reviewsByRating = ASTGroup(reviews, @\"rating\");
+                    -
+                    - ASTEach(reviewsByRating[@5], ^(XYReview *review) {
+                    -     NSLog(@\"%@\", review.text);
+                    - });
+                    -
+                    - XYReview *worstReview = ASTMin(reviews);
+                    - """
+                    %code= Pygments.highlight(example, :options => {:lexer => 'objc', :nowrap => true} )
 
-            %pre
-                - guide = "pod 'Asterism'"
-                %code= Pygments.highlight(guide, :options => {:lexer => 'ruby', :nowrap => true} )
+                %h3
+                    What is Asterism?
 
-        - docs.each do |methods|
-            - groups = methods.group_by{|m| m[:name]}
-            - groups.each_pair do |(name, methods)|
-                %article{ :id => "method-#{name}" }
-                    %h3= name
+                %p
+                    Asterism is a simple library for transforming Foundation's
+                    data structures using common higher-order functions such as
+                    <code>map</code>, <code>reduce</code> and
+                    <code>filter</code>.
 
-                    - methods.each do |method|
-                        %section{ :id => "#{method[:signature]}" }
+                %p
+                    It makes use of overloaded C-Functions to unify its
+                    interface while maintaining compile-time safety.
 
-                            %pre{ :class => 'signature' }
-                                - signature = method[:signature].sub("ASTERISM_OVERLOADABLE ", "")
-                                %code= Pygments.highlight(signature, :options => {:lexer => 'objc', :nowrap => true} )
+                %h3
+                    How does Asterism compare to
+                    %a{ :href => 'https://github.com/zwaldowski/BlocksKit' } BlocksKit
+                    or
+                    %a{ :href => 'https://github.com/supermarin/ObjectiveSugar' } ObjectiveSugar
+                    ?
 
-                            %p
-                                :markdown
-                                    #{method[:tomdoc].description}
+                %p
+                    BlocksKit adds additional block-support to a wide range of
+                    UIKit classes, whereas Asterism's primary focus is providing
+                    higher-order functions to transform the most common
+                    Foundation data structures.
 
-                            %ul
-                                - method[:tomdoc].arguments.each do |arg|
-                                    %li.argument
-                                        %code.argument-name= arg.name
-                                        :markdown
-                                            #{arg.description}
+                %p
+                    Objective-Sugar use a more Ruby-inspired syntax, Asterism is
+                    currently exclusively using overloaded C-Functions.
 
-                            - unless method[:tomdoc].examples.empty?
-                                %h4 Examples
-                                %pre{ :class => 'example' }
-                                    - examples = method[:tomdoc].examples.join("\n\n")
-                                    %code= Pygments.highlight(examples, :options => {:lexer => 'objc', :nowrap => true} )
+                %p
+                    Since both BlocksKit and Objective-Sugar use categories,
+                    they can't create methods that operate on protocols, such as
+                    <code>NSFastEnumeration</code>.
 
-                            - method[:tomdoc].returns.each do |ret|
+                %p
+                    That being said, both are well tested and written by smart
+                    people. If Asterism should not be your thing, do check them
+                    out.
+
+                %h3{ :id => 'install-guide' } How to install Asterism
+
+                %p
+                    The recommended way to install Asterism is using the
+                    excellent CocoaPods:
+
+                %pre
+                    - guide = "pod 'Asterism', '1.0.0-RC3'"
+                    %code= Pygments.highlight(guide, :options => {:lexer => 'ruby', :nowrap => true} )
+
+                %p
+                    Alternatively, you can
+                    %a{ :href => 'https://github.com/robb/Asterism' } find the code on GitHub
+                    \.
+
+            - docs.each do |methods|
+                - groups = methods.group_by{|m| m[:name]}
+                - groups.each_pair do |(name, methods)|
+                    %article{ :id => "method-#{name}" }
+                        %h3= name
+
+                        - methods.each do |method|
+                            %section{ :id => "#{method[:signature]}" }
+
+                                %pre{ :class => 'signature' }
+                                    - signature = method[:signature].sub("ASTERISM_OVERLOADABLE ", "")
+                                    %code= Pygments.highlight(signature, :options => {:lexer => 'objc', :nowrap => true} )
+
                                 %p
                                     :markdown
-                                        #{ret}
+                                        #{method[:tomdoc].description}
+
+                                %ul
+                                    - method[:tomdoc].arguments.each do |arg|
+                                        %li.argument
+                                            %code.argument-name= arg.name
+                                            :markdown
+                                                #{arg.description}
+
+                                - unless method[:tomdoc].examples.empty?
+                                    %h4 Examples
+                                    %pre{ :class => 'example' }
+                                        - examples = method[:tomdoc].examples.join("\n\n")
+                                        %code= Pygments.highlight(examples, :options => {:lexer => 'objc', :nowrap => true} )
+
+                                - method[:tomdoc].returns.each do |ret|
+                                    %p
+                                        :markdown
+                                            #{ret}
+
+        %nav#navigation
+            %h4 Asterism
+
+            %ul
+                %li
+                    %a{ :href => "\#about" } About Asterism
+                %li
+                    %a{ :href => "\#install-guide" } How to install
+
+            %h4 Methods
+            %ul
+                - docs.each do |methods|
+                    - groups = methods.group_by{|m| m[:name]}
+                    - groups.each_pair do |(name, methods)|
+                        %li
+                            %a{ :href => "\#method-#{name}" }
+                                #{ name }
