@@ -1,5 +1,6 @@
 %html
     %head
+        %meta{ :charset => 'utf8' }
         %title Asterism
 
         :sass
@@ -117,7 +118,7 @@
                     margin-bottom: 0
 
             small
-                font-size: 0.666 * $base
+                font-size: 0.9 * $base
 
             h1, h2, h3, h4
                 font-family: "Avenir", "HelveticaNeue-Regular", sans-serif
@@ -178,44 +179,45 @@
     %body
         #container
             %article#about
-                :markdown
-                    # Asterism
-                    ## A simple functional toolbelt for Objective-C
+                %h1 Asterism
+                %h2 A simple functional toolbelt for Objective-C
 
+                %p
                     Asterism is a yet another functional toolbelt for
                     Objective-C. It tries to be typesafe and elegant.
 
+                %p
+                    Using common higher-order functions such as
+                    <code>map</code>, <code>reduce</code> and
+                    <code>filter</code>, Asterism allows you to manipulate
+                    Foundation's data structures with ease.
+
+                %p
+                    It makes use of overloaded C-Functions to keep its interface
+                    simple while maintaining compile-time safety.
+                    For instance, <code>ASTEach</code> takes different blocks
+                    depending on the data structure it operates on:
+
                 %pre
                     - example = """
-                    - NSDictionary *reviewsByRating = ASTGroup(reviews, @\"rating\");
+                    -ASTEach([ @\"a\", @\"b\", @\"c\" ], ^(NSNumber *letter) {
+                    -    NSLog(@\"%@\", letter);
+                    -});
                     -
-                    - ASTEach(reviewsByRating[@5], ^(XYReview *review) {
-                    -     NSLog(@\"%@\", review.text);
-                    - });
+                    -ASTEach([ @\"a\", @\"b\", @\"c\" ], ^(NSNumber *letter, NSUInteger index) {
+                    -    NSLog(@\"%u: %@\", index, letter);
+                    -});
                     -
-                    - XYReview *worstReview = ASTMin(reviews);
-                    - """
+                    -ASTEach(@{ @\"foo\": @\"bar\" }, ^(NSString *key, NSString *value) {
+                    -    NSLog(@\"%@: %@\", key, value);
+                    -});
+                    -"""
                     %code= Pygments.highlight(example, :options => {:lexer => 'objc', :nowrap => true} )
 
                 %h3
-                    What is Asterism?
-
-                %p
-                    Asterism is a simple library for transforming Foundation's
-                    data structures using common higher-order functions such as
-                    <code>map</code>, <code>reduce</code> and
-                    <code>filter</code>.
-
-                %p
-                    It makes use of overloaded C-Functions to unify its
-                    interface while maintaining compile-time safety.
-
-                %h3
                     How does Asterism compare to
-                    %a{ :href => 'https://github.com/zwaldowski/BlocksKit' } BlocksKit
-                    or
-                    %a{ :href => 'https://github.com/supermarin/ObjectiveSugar' } ObjectiveSugar
-                    ?
+                    <a href="https://github.com/zwaldowski/BlocksKit">BlocksKit</a> or
+                    <a href="https://github.com/supermarin/ObjectiveSugar">ObjectiveSugar</a>?
 
                 %p
                     BlocksKit adds additional block-support to a wide range of
@@ -249,8 +251,9 @@
 
                 %p
                     Alternatively, you can
-                    %a{ :href => 'https://github.com/robb/Asterism' } find the code on GitHub
-                    \.
+                    <a href="https://github.com/robb/Asterism">find the code on GitHub</a>.<br>
+                    Asterism was written by <a href="http://robb.is">Robert
+                    Böhnke</a> and is <a href="http://opensource.org/licenses/MIT">MIT licensed</a>.
 
             - docs.each do |methods|
                 - groups = methods.group_by{|m| m[:name]}
@@ -304,3 +307,6 @@
                         %li
                             %a{ :href => "\#method-#{name}" }
                                 #{ name }
+
+            %p
+                %small Made with &#x1F496; by <a href="http://robb.is">Robert Böhnke</a>

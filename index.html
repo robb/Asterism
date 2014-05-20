@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta charset='utf8'>
     <title>Asterism</title>
     <style>
       * {
@@ -88,7 +89,7 @@
           margin-bottom: 0; }
       
       small {
-        font-size: 0.74925rem; }
+        font-size: 1.0125rem; }
       
       h1, h2, h3, h4 {
         font-family: "Avenir", "HelveticaNeue-Regular", sans-serif;
@@ -203,31 +204,28 @@
     <div id='container'>
       <article id='about'>
         <h1>Asterism</h1>
-        
         <h2>A simple functional toolbelt for Objective-C</h2>
-        
-        <p>Asterism is a yet another functional toolbelt for
-        Objective-C. It tries to be typesafe and elegant.</p>
-        <pre><code><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">reviewsByRating</span> <span class="o">=</span> <span class="n">ASTGroup</span><span class="p">(</span><span class="n">reviews</span><span class="p">,</span> <span class="s">@&quot;rating&quot;</span><span class="p">);</span>&#x000A;&#x000A; <span class="n">ASTEach</span><span class="p">(</span><span class="n">reviewsByRating</span><span class="p">[</span><span class="mi">@5</span><span class="p">],</span> <span class="o">^</span><span class="p">(</span><span class="n">XYReview</span> <span class="o">*</span><span class="n">review</span><span class="p">)</span> <span class="p">{</span>&#x000A;     <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="n">review</span><span class="p">.</span><span class="n">text</span><span class="p">);</span>&#x000A; <span class="p">});</span>&#x000A;&#x000A; <span class="n">XYReview</span> <span class="o">*</span><span class="n">worstReview</span> <span class="o">=</span> <span class="n">ASTMin</span><span class="p">(</span><span class="n">reviews</span><span class="p">);</span></code></pre>
-        <h3>
-          What is Asterism?
-        </h3>
         <p>
-          Asterism is a simple library for transforming Foundation's
-          data structures using common higher-order functions such as
+          Asterism is a yet another functional toolbelt for
+          Objective-C. It tries to be typesafe and elegant.
+        </p>
+        <p>
+          Using common higher-order functions such as
           <code>map</code>, <code>reduce</code> and
-          <code>filter</code>.
+          <code>filter</code>, Asterism allows you to manipulate
+          Foundation's data structures with ease.
         </p>
         <p>
-          It makes use of overloaded C-Functions to unify its
-          interface while maintaining compile-time safety.
+          It makes use of overloaded C-Functions to keep its interface
+          simple while maintaining compile-time safety.
+          For instance, <code>ASTEach</code> takes different blocks
+          depending on the data structure it operates on:
         </p>
+        <pre><code><span class="n">ASTEach</span><span class="p">([</span> <span class="s">@&quot;a&quot;</span><span class="p">,</span> <span class="s">@&quot;b&quot;</span><span class="p">,</span> <span class="s">@&quot;c&quot;</span> <span class="p">],</span> <span class="o">^</span><span class="p">(</span><span class="n">NSNumber</span> <span class="o">*</span><span class="n">letter</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,</span> <span class="n">letter</span><span class="p">);</span>&#x000A;<span class="p">});</span>&#x000A;&#x000A;<span class="n">ASTEach</span><span class="p">([</span> <span class="s">@&quot;a&quot;</span><span class="p">,</span> <span class="s">@&quot;b&quot;</span><span class="p">,</span> <span class="s">@&quot;c&quot;</span> <span class="p">],</span> <span class="o">^</span><span class="p">(</span><span class="n">NSNumber</span> <span class="o">*</span><span class="n">letter</span><span class="p">,</span> <span class="n">NSUInteger</span> <span class="n">index</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%u: %@&quot;</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">letter</span><span class="p">);</span>&#x000A;<span class="p">});</span>&#x000A;&#x000A;<span class="n">ASTEach</span><span class="p">(@{</span> <span class="s">@&quot;foo&quot;</span><span class="o">:</span> <span class="s">@&quot;bar&quot;</span> <span class="p">},</span> <span class="o">^</span><span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">key</span><span class="p">,</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>&#x000A;    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@: %@&quot;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>&#x000A;<span class="p">});</span></code></pre>
         <h3>
           How does Asterism compare to
-          <a href='https://github.com/zwaldowski/BlocksKit'>BlocksKit</a>
-          or
-          <a href='https://github.com/supermarin/ObjectiveSugar'>ObjectiveSugar</a>
-          ?
+          <a href="https://github.com/zwaldowski/BlocksKit">BlocksKit</a> or
+          <a href="https://github.com/supermarin/ObjectiveSugar">ObjectiveSugar</a>?
         </h3>
         <p>
           BlocksKit adds additional block-support to a wide range of
@@ -257,8 +255,9 @@
         <pre><code><span class="n">pod</span> <span class="s1">&#39;Asterism&#39;</span><span class="p">,</span> <span class="s1">&#39;1.0.0-RC3&#39;</span></code></pre>
         <p>
           Alternatively, you can
-          <a href='https://github.com/robb/Asterism'>find the code on GitHub</a>
-          .
+          <a href="https://github.com/robb/Asterism">find the code on GitHub</a>.<br>
+          Asterism was written by <a href="http://robb.is">Robert
+          Böhnke</a> and is <a href="http://opensource.org/licenses/MIT">MIT licensed</a>.
         </p>
       </article>
       <article id='method-ASTAll'>
@@ -2268,6 +2267,9 @@
           </a>
         </li>
       </ul>
+      <p>
+        <small>Made with &#x1F496; by <a href="http://robb.is">Robert Böhnke</a></small>
+      </p>
     </nav>
   </body>
 </html>
