@@ -200,11 +200,11 @@
 
                 %pre
                     - example = """
-                    -ASTEach(@[ @\"a\", @\"b\", @\"c\" ], ^(NSNumber *letter) {
+                    -ASTEach(@[ @\"a\", @\"b\", @\"c\" ], ^(NSString *letter) {
                     -    NSLog(@\"%@\", letter);
                     -});
                     -
-                    -ASTEach(@[ @\"a\", @\"b\", @\"c\" ], ^(NSNumber *letter, NSUInteger index) {
+                    -ASTEach(@[ @\"a\", @\"b\", @\"c\" ], ^(NSString *letter, NSUInteger index) {
                     -    NSLog(@\"%u: %@\", index, letter);
                     -});
                     -
