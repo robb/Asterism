@@ -15,11 +15,11 @@ maintaining compile-time safety. For instance, `ASTEach` takes different blocks
 depending on the data structure it operates on:
 
 ```objective-c
-ASTEach([ @"a", @"b", @"c" ], ^(NSNumber *letter) {
+ASTEach(@[ @"a", @"b", @"c" ], ^(NSNumber *letter) {
     NSLog(@"%@", letter);
 });
 
-ASTEach([ @"a", @"b", @"c" ], ^(NSNumber *letter, NSUInteger index) {
+ASTEach(@[ @"a", @"b", @"c" ], ^(NSNumber *letter, NSUInteger index) {
     NSLog(@"%u: %@", index, letter);
 });
 
