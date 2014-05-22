@@ -27,6 +27,10 @@
 		54892BAE184AAFFE009CF268 /* ASTAllSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BAD184AAFFE009CF268 /* ASTAllSpec.m */; };
 		54892BB1184AB0F6009CF268 /* ASTAny.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BB0184AB0F6009CF268 /* ASTAny.m */; };
 		54892BB3184AB268009CF268 /* ASTAnySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BB2184AB268009CF268 /* ASTAnySpec.m */; };
+		549965DB192E1BB200242F07 /* metamacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 549965DA192E1BB200242F07 /* metamacros.h */; };
+		549965DD192E1E6600242F07 /* ASTChainSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 549965DC192E1E6600242F07 /* ASTChainSpec.m */; };
+		549965DE192E1E6C00242F07 /* ASTChainSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 549965DC192E1E6600242F07 /* ASTChainSpec.m */; };
+		549965DF192E35AB00242F07 /* ASTChain.h in Headers */ = {isa = PBXBuildFile; fileRef = 549965D7192E1B7700242F07 /* ASTChain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		549B7264175CFE6700E6A378 /* ASTReject.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B7263175CFE6700E6A378 /* ASTReject.m */; };
 		549B7268175D07CF00E6A378 /* ASTNegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B7267175D07CF00E6A378 /* ASTNegate.m */; };
 		549B726A175D08E400E6A378 /* ASTRejectSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B7269175D08E400E6A378 /* ASTRejectSpec.m */; };
@@ -222,6 +226,9 @@
 		54892BAF184AB0F6009CF268 /* ASTAny.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTAny.h; sourceTree = "<group>"; };
 		54892BB0184AB0F6009CF268 /* ASTAny.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTAny.m; sourceTree = "<group>"; };
 		54892BB2184AB268009CF268 /* ASTAnySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTAnySpec.m; sourceTree = "<group>"; };
+		549965D7192E1B7700242F07 /* ASTChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTChain.h; sourceTree = "<group>"; };
+		549965DA192E1BB200242F07 /* metamacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
+		549965DC192E1E6600242F07 /* ASTChainSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTChainSpec.m; sourceTree = "<group>"; };
 		549B7262175CFE6700E6A378 /* ASTReject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTReject.h; sourceTree = "<group>"; };
 		549B7263175CFE6700E6A378 /* ASTReject.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = ASTReject.m; sourceTree = "<group>"; };
 		549B7266175D07CF00E6A378 /* ASTNegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTNegate.h; sourceTree = "<group>"; };
@@ -399,6 +406,7 @@
 				54892BAB184AAEFD009CF268 /* ASTAll.m */,
 				54892BAF184AB0F6009CF268 /* ASTAny.h */,
 				54892BB0184AB0F6009CF268 /* ASTAny.m */,
+				549965D7192E1B7700242F07 /* ASTChain.h */,
 				54DDBE251837EB05002EAEB3 /* ASTDefaults.h */,
 				54DDBE261837EB05002EAEB3 /* ASTDefaults.m */,
 				54FE96DC17704C7F006F40AC /* ASTDifference.h */,
@@ -451,6 +459,7 @@
 				54FE96E2177053FE006F40AC /* ASTUnion.m */,
 				545059C1186274E100A062D9 /* ASTWithout.h */,
 				545059C2186274E100A062D9 /* ASTWithout.m */,
+				549965DA192E1BB200242F07 /* metamacros.h */,
 				54D9EE6B1721543D00383762 /* Supporting Files */,
 			);
 			path = Asterism;
@@ -470,6 +479,7 @@
 			children = (
 				54892BAD184AAFFE009CF268 /* ASTAllSpec.m */,
 				54892BB2184AB268009CF268 /* ASTAnySpec.m */,
+				549965DC192E1E6600242F07 /* ASTChainSpec.m */,
 				5424E956183D80E800E4EC51 /* ASTDefaultsSpec.m */,
 				54FE96DF17704FF7006F40AC /* ASTDifferenceSpec.m */,
 				54E1B64917215783008A2175 /* ASTEachSpec.m */,
@@ -543,9 +553,11 @@
 				54E002FC18C921A500B66BC3 /* ASTIntersection.h in Headers */,
 				54E002FB18C921A500B66BC3 /* ASTIndexOf.h in Headers */,
 				54E002F618C921A500B66BC3 /* ASTFind.h in Headers */,
+				549965DF192E35AB00242F07 /* ASTChain.h in Headers */,
 				54E0030518C921A500B66BC3 /* ASTSize.h in Headers */,
 				54E0030318C921A500B66BC3 /* ASTReject.h in Headers */,
 				54E002F918C921A500B66BC3 /* ASTHead.h in Headers */,
+				549965DB192E1BB200242F07 /* metamacros.h in Headers */,
 				54E002EF18C921A500B66BC3 /* ASTAny.h in Headers */,
 				54E0030418C921A500B66BC3 /* ASTShuffle.h in Headers */,
 				54E002FF18C921A500B66BC3 /* ASTNegate.h in Headers */,
@@ -830,6 +842,7 @@
 				5484EEAD1854C6AF000B4D04 /* ASTSizeSpec.m in Sources */,
 				5424E957183D80E800E4EC51 /* ASTDefaultsSpec.m in Sources */,
 				549B726C175D097100E6A378 /* ASTNegateSpec.m in Sources */,
+				549965DD192E1E6600242F07 /* ASTChainSpec.m in Sources */,
 				54A72CC1175D0FD500D9A05E /* ASTPluckSpec.m in Sources */,
 				549DFB8E175E5526005CAD4A /* ASTGroupBySpec.m in Sources */,
 				54A0BB2E175E647E001D06E2 /* ASTMinMaxSpec.m in Sources */,
@@ -900,6 +913,7 @@
 				54E0032218C925F700B66BC3 /* ASTShuffleSpec.m in Sources */,
 				54E0031A18C925F700B66BC3 /* ASTMapSpec.m in Sources */,
 				54E0031218C925F700B66BC3 /* ASTFilterSpec.m in Sources */,
+				549965DE192E1E6C00242F07 /* ASTChainSpec.m in Sources */,
 				54E0031F18C925F700B66BC3 /* ASTReduceSpec.m in Sources */,
 				54E0032018C925F700B66BC3 /* ASTRejectSpec.m in Sources */,
 				54E0030D18C925F700B66BC3 /* ASTDefaultsSpec.m in Sources */,

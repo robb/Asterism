@@ -12,6 +12,7 @@
 
 #import "ASTAll.h"
 #import "ASTAny.h"
+#import "ASTChain.h"
 #import "ASTDefaults.h"
 #import "ASTDifference.h"
 #import "ASTEach.h"
