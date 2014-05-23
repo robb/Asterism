@@ -315,7 +315,8 @@
                     - groups = methods.group_by{|m| m[:name]}
                     - groups.each_pair do |(name, methods)|
                         %li
-                            %a{ :href => "\#method-#{name}" }
+                            %a{ :href => "\#method-#{name}",
+                                :onclick => "ga('send', 'pageview', '/\#method-#{name}')" }
                                 #{ name }
 
             %p
