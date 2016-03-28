@@ -2,39 +2,44 @@
 //  Asterism.h
 //  Asterism
 //
-//  Created by Robert Böhnke on 4/19/13.
-//  Copyright (c) 2013 Robert Böhnke. All rights reserved.
+//  Created by Gregory Combs on 3/26/16.
+//  Copyright © 2016 Robert Böhnke. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-#import "AsterismDefines.h"
+//! Project version number for Asterism.
+FOUNDATION_EXPORT double AsterismVersionNumber;
 
-#import "ASTAll.h"
-#import "ASTAny.h"
-#import "ASTDefaults.h"
-#import "ASTDifference.h"
-#import "ASTEach.h"
-#import "ASTEmpty.h"
-#import "ASTExtend.h"
-#import "ASTFilter.h"
-#import "ASTFind.h"
-#import "ASTFlatten.h"
-#import "ASTGroupBy.h"
-#import "ASTHead.h"
-#import "ASTIndexBy.h"
-#import "ASTIndexOf.h"
-#import "ASTIntersection.h"
-#import "ASTMap.h"
-#import "ASTMinMax.h"
-#import "ASTNegate.h"
-#import "ASTPick.h"
-#import "ASTPluck.h"
-#import "ASTReduce.h"
-#import "ASTReject.h"
-#import "ASTShuffle.h"
-#import "ASTSize.h"
-#import "ASTSort.h"
-#import "ASTTail.h"
-#import "ASTUnion.h"
-#import "ASTWithout.h"
+//! Project version string for Asterism.
+FOUNDATION_EXPORT const unsigned char AsterismVersionString[];
+
+#import <Asterism/ASTAll.h>
+#import <Asterism/ASTAny.h>
+#import <Asterism/ASTDefaults.h>
+#import <Asterism/ASTDifference.h>
+#import <Asterism/ASTEach.h>
+#import <Asterism/ASTEmpty.h>
+#import <Asterism/AsterismDefines.h>
+#import <Asterism/ASTExtend.h>
+#import <Asterism/ASTFilter.h>
+#import <Asterism/ASTFind.h>
+#import <Asterism/ASTFlatten.h>
+#import <Asterism/ASTGroupBy.h>
+#import <Asterism/ASTHead.h>
+#import <Asterism/ASTIndexBy.h>
+#import <Asterism/ASTIndexOf.h>
+#import <Asterism/ASTIntersection.h>
+#import <Asterism/ASTMap.h>
+#import <Asterism/ASTMinMax.h>
+#import <Asterism/ASTNegate.h>
+#import <Asterism/ASTPick.h>
+#import <Asterism/ASTPluck.h>
+#import <Asterism/ASTReduce.h>
+#import <Asterism/ASTReject.h>
+#import <Asterism/ASTShuffle.h>
+#import <Asterism/ASTSize.h>
+#import <Asterism/ASTSort.h>
+#import <Asterism/ASTTail.h>
+#import <Asterism/ASTUnion.h>
+#import <Asterism/ASTWithout.h>
