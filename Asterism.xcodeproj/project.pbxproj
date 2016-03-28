@@ -125,9 +125,95 @@
 		37FA5D621CA8632B0078AC84 /* ASTUnionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D2D1CA8632B0078AC84 /* ASTUnionTests.m */; };
 		37FA5D631CA8632B0078AC84 /* ASTWithoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D2E1CA8632B0078AC84 /* ASTWithoutTests.m */; };
 		37FA5D641CA8632B0078AC84 /* ASTWithoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D2E1CA8632B0078AC84 /* ASTWithoutTests.m */; };
-		5481CD9318E1911500342C59 /* ASTSort.h in Headers */ = {isa = PBXBuildFile; fileRef = 5481CD9118E1911500342C59 /* ASTSort.h */; };
+		37FA5D9B1CA9B0850078AC84 /* AsterismDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 54EE9AA718D1DD0B0073C37B /* AsterismDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5D9C1CA9B0850078AC84 /* ASTAll.h in Headers */ = {isa = PBXBuildFile; fileRef = 54892BAA184AAEFD009CF268 /* ASTAll.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5D9D1CA9B0850078AC84 /* ASTAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BAB184AAEFD009CF268 /* ASTAll.m */; };
+		37FA5D9E1CA9B0850078AC84 /* ASTAny.h in Headers */ = {isa = PBXBuildFile; fileRef = 54892BAF184AB0F6009CF268 /* ASTAny.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5D9F1CA9B0850078AC84 /* ASTAny.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BB0184AB0F6009CF268 /* ASTAny.m */; };
+		37FA5DA01CA9B0850078AC84 /* ASTDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 54DDBE251837EB05002EAEB3 /* ASTDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DA11CA9B0850078AC84 /* ASTDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DDBE261837EB05002EAEB3 /* ASTDefaults.m */; };
+		37FA5DA21CA9B0850078AC84 /* ASTDifference.h in Headers */ = {isa = PBXBuildFile; fileRef = 54FE96DC17704C7F006F40AC /* ASTDifference.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DA31CA9B0850078AC84 /* ASTDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96DD17704C7F006F40AC /* ASTDifference.m */; };
+		37FA5DA41CA9B0850078AC84 /* ASTEach.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E1B64617215678008A2175 /* ASTEach.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DA51CA9B0850078AC84 /* ASTEach.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1B64717215678008A2175 /* ASTEach.m */; };
+		37FA5DA61CA9B0850078AC84 /* ASTEmpty.h in Headers */ = {isa = PBXBuildFile; fileRef = 54AD1DF417AF31130001971C /* ASTEmpty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DA71CA9B0850078AC84 /* ASTEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AD1DF517AF31130001971C /* ASTEmpty.m */; };
+		37FA5DA81CA9B0850078AC84 /* ASTExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A13FCC184222F900CEC841 /* ASTExtend.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DA91CA9B0850078AC84 /* ASTExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A13FCD184222F900CEC841 /* ASTExtend.m */; };
+		37FA5DAA1CA9B0850078AC84 /* ASTFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E0ED73175A1ABD0076C6EA /* ASTFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DAB1CA9B0850078AC84 /* ASTFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED74175A1ABD0076C6EA /* ASTFilter.m */; };
+		37FA5DAC1CA9B0850078AC84 /* ASTFind.h in Headers */ = {isa = PBXBuildFile; fileRef = 5410F3EC177734E700124E45 /* ASTFind.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DAD1CA9B0850078AC84 /* ASTFind.m in Sources */ = {isa = PBXBuildFile; fileRef = 5410F3ED177734E700124E45 /* ASTFind.m */; };
+		37FA5DAE1CA9B0850078AC84 /* ASTFlatten.h in Headers */ = {isa = PBXBuildFile; fileRef = DCF5756C18427BE900F0989B /* ASTFlatten.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DAF1CA9B0850078AC84 /* ASTFlatten.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF5756D18427BE900F0989B /* ASTFlatten.m */; };
+		37FA5DB01CA9B0850078AC84 /* ASTGroupBy.h in Headers */ = {isa = PBXBuildFile; fileRef = 549DFB88175E4DD2005CAD4A /* ASTGroupBy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DB11CA9B0850078AC84 /* ASTGroupBy.m in Sources */ = {isa = PBXBuildFile; fileRef = 549DFB89175E4DD2005CAD4A /* ASTGroupBy.m */; };
+		37FA5DB21CA9B0850078AC84 /* ASTHead.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E0ED69175A0D5B0076C6EA /* ASTHead.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DB31CA9B0850078AC84 /* ASTHead.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED6A175A0D5B0076C6EA /* ASTHead.m */; };
+		37FA5DB41CA9B0850078AC84 /* ASTIndexBy.h in Headers */ = {isa = PBXBuildFile; fileRef = 54F4C5DC185C952200E897E7 /* ASTIndexBy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DB51CA9B0850078AC84 /* ASTIndexBy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F4C5DD185C952200E897E7 /* ASTIndexBy.m */; };
+		37FA5DB61CA9B0850078AC84 /* ASTIndexOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A140061842415300CEC841 /* ASTIndexOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DB71CA9B0850078AC84 /* ASTIndexOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A140071842415300CEC841 /* ASTIndexOf.m */; };
+		37FA5DB81CA9B0850078AC84 /* ASTIntersection.h in Headers */ = {isa = PBXBuildFile; fileRef = 54FE96EB17706265006F40AC /* ASTIntersection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DB91CA9B0850078AC84 /* ASTIntersection.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96EC17706265006F40AC /* ASTIntersection.m */; };
+		37FA5DBA1CA9B0850078AC84 /* ASTMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 54CE84B9174D74E1006F960A /* ASTMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DBB1CA9B0850078AC84 /* ASTMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CE84BA174D74E1006F960A /* ASTMap.m */; };
+		37FA5DBC1CA9B0850078AC84 /* ASTMinMax.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A0BB2A175E5F5C001D06E2 /* ASTMinMax.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DBD1CA9B0850078AC84 /* ASTMinMax.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A0BB2B175E5F5C001D06E2 /* ASTMinMax.m */; };
+		37FA5DBE1CA9B0850078AC84 /* ASTNegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 549B7266175D07CF00E6A378 /* ASTNegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DBF1CA9B0850078AC84 /* ASTNegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B7267175D07CF00E6A378 /* ASTNegate.m */; };
+		37FA5DC01CA9B0850078AC84 /* ASTPick.h in Headers */ = {isa = PBXBuildFile; fileRef = 5474241E1872FFF6006B190F /* ASTPick.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DC11CA9B0850078AC84 /* ASTPick.m in Sources */ = {isa = PBXBuildFile; fileRef = 5474241F1872FFF6006B190F /* ASTPick.m */; };
+		37FA5DC21CA9B0850078AC84 /* ASTPluck.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A72CBD175D0F4F00D9A05E /* ASTPluck.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DC31CA9B0850078AC84 /* ASTPluck.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A72CBE175D0F4F00D9A05E /* ASTPluck.m */; };
+		37FA5DC41CA9B0850078AC84 /* ASTReduce.h in Headers */ = {isa = PBXBuildFile; fileRef = 542C1CB617520F560013D41E /* ASTReduce.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DC51CA9B0850078AC84 /* ASTReduce.m in Sources */ = {isa = PBXBuildFile; fileRef = 542C1CB717520F560013D41E /* ASTReduce.m */; };
+		37FA5DC61CA9B0850078AC84 /* ASTReject.h in Headers */ = {isa = PBXBuildFile; fileRef = 549B7262175CFE6700E6A378 /* ASTReject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DC71CA9B0850078AC84 /* ASTReject.m in Sources */ = {isa = PBXBuildFile; fileRef = 549B7263175CFE6700E6A378 /* ASTReject.m */; };
+		37FA5DC81CA9B0850078AC84 /* ASTShuffle.h in Headers */ = {isa = PBXBuildFile; fileRef = 54289FDF18AA3B8200681E49 /* ASTShuffle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DC91CA9B0850078AC84 /* ASTShuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = 54289FE018AA3B8200681E49 /* ASTShuffle.m */; };
+		37FA5DCA1CA9B0850078AC84 /* ASTSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 5484EEA918533FF0000B4D04 /* ASTSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DCB1CA9B0850078AC84 /* ASTSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5484EEAA18533FF0000B4D04 /* ASTSize.m */; };
+		37FA5DCC1CA9B0850078AC84 /* ASTSort.h in Headers */ = {isa = PBXBuildFile; fileRef = 5481CD9118E1911500342C59 /* ASTSort.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DCD1CA9B0850078AC84 /* ASTSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 5481CD9218E1911500342C59 /* ASTSort.m */; };
+		37FA5DCE1CA9B0850078AC84 /* ASTTail.h in Headers */ = {isa = PBXBuildFile; fileRef = 54E0ED6E175A0FAC0076C6EA /* ASTTail.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DCF1CA9B0850078AC84 /* ASTTail.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED6F175A0FAC0076C6EA /* ASTTail.m */; };
+		37FA5DD01CA9B0850078AC84 /* ASTUnion.h in Headers */ = {isa = PBXBuildFile; fileRef = 54FE96E1177053FE006F40AC /* ASTUnion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DD11CA9B0850078AC84 /* ASTUnion.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96E2177053FE006F40AC /* ASTUnion.m */; };
+		37FA5DD21CA9B0850078AC84 /* ASTWithout.h in Headers */ = {isa = PBXBuildFile; fileRef = 545059C1186274E100A062D9 /* ASTWithout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DD31CA9B0850078AC84 /* ASTWithout.m in Sources */ = {isa = PBXBuildFile; fileRef = 545059C2186274E100A062D9 /* ASTWithout.m */; };
+		37FA5DD41CA9B0C50078AC84 /* Asterism.h in Headers */ = {isa = PBXBuildFile; fileRef = 37FA5CB41CA717E10078AC84 /* Asterism.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37FA5DDE1CA9B1B10078AC84 /* Asterism.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FA5D931CA9B0290078AC84 /* Asterism.framework */; };
+		37FA5DE41CA9B2060078AC84 /* ASTAllTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5CC01CA717E20078AC84 /* ASTAllTests.m */; };
+		37FA5DE51CA9B2060078AC84 /* ASTAnyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D141CA8632B0078AC84 /* ASTAnyTests.m */; };
+		37FA5DE61CA9B2060078AC84 /* ASTDefaultsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D151CA8632B0078AC84 /* ASTDefaultsTests.m */; };
+		37FA5DE71CA9B2060078AC84 /* ASTDifferenceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D161CA8632B0078AC84 /* ASTDifferenceTests.m */; };
+		37FA5DE81CA9B2060078AC84 /* ASTEachTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D171CA8632B0078AC84 /* ASTEachTests.m */; };
+		37FA5DE91CA9B2060078AC84 /* ASTEmptyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D181CA8632B0078AC84 /* ASTEmptyTests.m */; };
+		37FA5DEA1CA9B2060078AC84 /* ASTExtendTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D191CA8632B0078AC84 /* ASTExtendTests.m */; };
+		37FA5DEB1CA9B2060078AC84 /* ASTFilterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D1A1CA8632B0078AC84 /* ASTFilterTests.m */; };
+		37FA5DEC1CA9B2060078AC84 /* ASTFindTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D1B1CA8632B0078AC84 /* ASTFindTests.m */; };
+		37FA5DED1CA9B2060078AC84 /* ASTFlattenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D1C1CA8632B0078AC84 /* ASTFlattenTests.m */; };
+		37FA5DEE1CA9B2060078AC84 /* ASTGroupByTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D1D1CA8632B0078AC84 /* ASTGroupByTests.m */; };
+		37FA5DEF1CA9B2060078AC84 /* ASTHeadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D1E1CA8632B0078AC84 /* ASTHeadTests.m */; };
+		37FA5DF01CA9B2060078AC84 /* ASTIndexByTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D1F1CA8632B0078AC84 /* ASTIndexByTests.m */; };
+		37FA5DF11CA9B2060078AC84 /* ASTIndexOfTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D201CA8632B0078AC84 /* ASTIndexOfTests.m */; };
+		37FA5DF21CA9B2060078AC84 /* ASTIntersectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D211CA8632B0078AC84 /* ASTIntersectionTests.m */; };
+		37FA5DF31CA9B2060078AC84 /* ASTMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D221CA8632B0078AC84 /* ASTMapTests.m */; };
+		37FA5DF41CA9B2060078AC84 /* ASTMinMaxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D231CA8632B0078AC84 /* ASTMinMaxTests.m */; };
+		37FA5DF51CA9B2060078AC84 /* ASTNegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D241CA8632B0078AC84 /* ASTNegateTests.m */; };
+		37FA5DF61CA9B2060078AC84 /* ASTPickTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D251CA8632B0078AC84 /* ASTPickTests.m */; };
+		37FA5DF71CA9B2060078AC84 /* ASTPluckTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D261CA8632B0078AC84 /* ASTPluckTests.m */; };
+		37FA5DF81CA9B2060078AC84 /* ASTReduceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D271CA8632B0078AC84 /* ASTReduceTests.m */; };
+		37FA5DF91CA9B2060078AC84 /* ASTRejectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D281CA8632B0078AC84 /* ASTRejectTests.m */; };
+		37FA5DFA1CA9B2060078AC84 /* ASTShuffleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D291CA8632B0078AC84 /* ASTShuffleTests.m */; };
+		37FA5DFB1CA9B2060078AC84 /* ASTSizeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D2A1CA8632B0078AC84 /* ASTSizeTests.m */; };
+		37FA5DFC1CA9B2060078AC84 /* ASTSortTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D2B1CA8632B0078AC84 /* ASTSortTests.m */; };
+		37FA5DFD1CA9B2060078AC84 /* ASTTailTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D2C1CA8632B0078AC84 /* ASTTailTests.m */; };
+		37FA5DFE1CA9B2060078AC84 /* ASTUnionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D2D1CA8632B0078AC84 /* ASTUnionTests.m */; };
+		37FA5DFF1CA9B2060078AC84 /* ASTWithoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37FA5D2E1CA8632B0078AC84 /* ASTWithoutTests.m */; };
+		5481CD9318E1911500342C59 /* ASTSort.h in Headers */ = {isa = PBXBuildFile; fileRef = 5481CD9118E1911500342C59 /* ASTSort.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5481CD9518E1911500342C59 /* ASTSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 5481CD9218E1911500342C59 /* ASTSort.m */; };
-		54E002A718C920F600B66BC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E002A618C920F600B66BC3 /* Cocoa.framework */; };
 		54E002D118C9217400B66BC3 /* ASTAll.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BAB184AAEFD009CF268 /* ASTAll.m */; };
 		54E002D218C9217400B66BC3 /* ASTAny.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BB0184AB0F6009CF268 /* ASTAny.m */; };
 		54E002D318C9217400B66BC3 /* ASTDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DDBE261837EB05002EAEB3 /* ASTDefaults.m */; };
@@ -199,11 +285,16 @@
 			remoteGlobalIDString = 54E002A418C920F600B66BC3;
 			remoteInfo = "Asterism-OSX";
 		};
+		37FA5DDF1CA9B1B10078AC84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54D9EE5D1721543D00383762 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37FA5D921CA9B0290078AC84;
+			remoteInfo = "Asterism-tvOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1CD63CF9E0F2485BA53ABD3F /* libPods-Specs Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DF1EE3B4CF8488A957C4F12 /* Pods-Specs-Mac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs-Mac.xcconfig"; path = "Pods/Pods-Specs-Mac.xcconfig"; sourceTree = "<group>"; };
 		37FA5CB21CA717E10078AC84 /* Asterism.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Asterism.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FA5CB41CA717E10078AC84 /* Asterism.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Asterism.h; sourceTree = "<group>"; };
 		37FA5CB61CA717E10078AC84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -238,6 +329,8 @@
 		37FA5D2C1CA8632B0078AC84 /* ASTTailTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTTailTests.m; sourceTree = "<group>"; };
 		37FA5D2D1CA8632B0078AC84 /* ASTUnionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTUnionTests.m; sourceTree = "<group>"; };
 		37FA5D2E1CA8632B0078AC84 /* ASTWithoutTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTWithoutTests.m; sourceTree = "<group>"; };
+		37FA5D931CA9B0290078AC84 /* Asterism.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Asterism.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37FA5DD91CA9B1B10078AC84 /* AsterismTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsterismTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5410F3EC177734E700124E45 /* ASTFind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASTFind.h; sourceTree = "<group>"; };
 		5410F3ED177734E700124E45 /* ASTFind.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASTFind.m; sourceTree = "<group>"; };
 		54289FDF18AA3B8200681E49 /* ASTShuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTShuffle.h; sourceTree = "<group>"; };
@@ -276,12 +369,9 @@
 		54CE84BA174D74E1006F960A /* ASTMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTMap.m; sourceTree = "<group>"; };
 		54D9EE681721543D00383762 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		54D9EE6C1721543D00383762 /* Asterism-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Asterism-Prefix.pch"; sourceTree = "<group>"; };
-		54D9EE771721543D00383762 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		54D9EE791721543D00383762 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		54DDBE251837EB05002EAEB3 /* ASTDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTDefaults.h; sourceTree = "<group>"; };
 		54DDBE261837EB05002EAEB3 /* ASTDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTDefaults.m; sourceTree = "<group>"; };
 		54E002A518C920F600B66BC3 /* Asterism.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Asterism.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		54E002A618C920F600B66BC3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		54E002A918C920F600B66BC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		54E002AA18C920F600B66BC3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		54E002AB18C920F600B66BC3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -304,13 +394,8 @@
 		54FE96E2177053FE006F40AC /* ASTUnion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTUnion.m; sourceTree = "<group>"; };
 		54FE96EB17706265006F40AC /* ASTIntersection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTIntersection.h; sourceTree = "<group>"; };
 		54FE96EC17706265006F40AC /* ASTIntersection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTIntersection.m; sourceTree = "<group>"; };
-		B82A91E23E8448D2861527C1 /* libPods-Specs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDA19C241F4D44F0B975FC27 /* Pods-Specs-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Specs-iOS.xcconfig"; path = "Pods/Pods-Specs-iOS.xcconfig"; sourceTree = "<group>"; };
-		C4093E44AB444844BDA5BE39 /* libPods-Specs-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC8E36076A274B9EA31FD4AE /* libPods-Specs iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCF5756C18427BE900F0989B /* ASTFlatten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASTFlatten.h; sourceTree = "<group>"; };
 		DCF5756D18427BE900F0989B /* ASTFlatten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASTFlatten.m; sourceTree = "<group>"; };
-		EA1FDD2A156F432D9E892442 /* libPods-Specs-Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Specs-Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,26 +422,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37FA5D8F1CA9B0290078AC84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FA5DD61CA9B1B10078AC84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FA5DDE1CA9B1B10078AC84 /* Asterism.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		54E002A118C920F600B66BC3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54E002A718C920F600B66BC3 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		37FA5CB31CA717E10078AC84 /* Asterism */ = {
-			isa = PBXGroup;
-			children = (
-				37FA5CB41CA717E10078AC84 /* Asterism.h */,
-				37FA5CB61CA717E10078AC84 /* Info.plist */,
-			);
-			path = Asterism;
-			sourceTree = "<group>";
-		};
 		37FA5CBF1CA717E20078AC84 /* AsterismTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,13 +487,9 @@
 			isa = PBXGroup;
 			children = (
 				54D9EE6A1721543D00383762 /* Asterism */,
-				54D9EE7F1721543D00383762 /* Specs */,
-				37FA5CB31CA717E10078AC84 /* Asterism */,
 				37FA5CBF1CA717E20078AC84 /* AsterismTests */,
 				54D9EE671721543D00383762 /* Frameworks */,
 				54D9EE661721543D00383762 /* Products */,
-				1DF1EE3B4CF8488A957C4F12 /* Pods-Specs-Mac.xcconfig */,
-				BDA19C241F4D44F0B975FC27 /* Pods-Specs-iOS.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -414,6 +500,8 @@
 				37FA5CB21CA717E10078AC84 /* Asterism.framework */,
 				37FA5CBB1CA717E20078AC84 /* AsterismTests.xctest */,
 				37FA5D071CA71B350078AC84 /* AsterismTests.xctest */,
+				37FA5D931CA9B0290078AC84 /* Asterism.framework */,
+				37FA5DD91CA9B1B10078AC84 /* AsterismTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -422,16 +510,8 @@
 			isa = PBXGroup;
 			children = (
 				54D9EE681721543D00383762 /* Foundation.framework */,
-				54D9EE771721543D00383762 /* SenTestingKit.framework */,
-				54D9EE791721543D00383762 /* UIKit.framework */,
-				B82A91E23E8448D2861527C1 /* libPods-Specs.a */,
-				54E002A618C920F600B66BC3 /* Cocoa.framework */,
 				54E002BB18C920F600B66BC3 /* XCTest.framework */,
 				54E002A818C920F600B66BC3 /* Other Frameworks */,
-				1CD63CF9E0F2485BA53ABD3F /* libPods-Specs Mac.a */,
-				CC8E36076A274B9EA31FD4AE /* libPods-Specs iOS.a */,
-				EA1FDD2A156F432D9E892442 /* libPods-Specs-Mac.a */,
-				C4093E44AB444844BDA5BE39 /* libPods-Specs-iOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -504,17 +584,12 @@
 		54D9EE6B1721543D00383762 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				37FA5CB41CA717E10078AC84 /* Asterism.h */,
 				54D9EE6C1721543D00383762 /* Asterism-Prefix.pch */,
+				37FA5CB61CA717E10078AC84 /* Info.plist */,
 				54E0030918C921FC00B66BC3 /* Asterism-Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		54D9EE7F1721543D00383762 /* Specs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Specs;
 			sourceTree = "<group>";
 		};
 		54E002A818C920F600B66BC3 /* Other Frameworks */ = {
@@ -564,6 +639,43 @@
 				37FA5CD41CA719C50078AC84 /* ASTGroupBy.h in Headers */,
 				37FA5CCF1CA719C50078AC84 /* ASTEmpty.h in Headers */,
 				37FA5CDA1CA719C50078AC84 /* ASTMinMax.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FA5D901CA9B0290078AC84 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FA5DB61CA9B0850078AC84 /* ASTIndexOf.h in Headers */,
+				37FA5DAC1CA9B0850078AC84 /* ASTFind.h in Headers */,
+				37FA5DAA1CA9B0850078AC84 /* ASTFilter.h in Headers */,
+				37FA5DB01CA9B0850078AC84 /* ASTGroupBy.h in Headers */,
+				37FA5DAE1CA9B0850078AC84 /* ASTFlatten.h in Headers */,
+				37FA5DCC1CA9B0850078AC84 /* ASTSort.h in Headers */,
+				37FA5DCA1CA9B0850078AC84 /* ASTSize.h in Headers */,
+				37FA5DBE1CA9B0850078AC84 /* ASTNegate.h in Headers */,
+				37FA5DBC1CA9B0850078AC84 /* ASTMinMax.h in Headers */,
+				37FA5DCE1CA9B0850078AC84 /* ASTTail.h in Headers */,
+				37FA5DA41CA9B0850078AC84 /* ASTEach.h in Headers */,
+				37FA5DB81CA9B0850078AC84 /* ASTIntersection.h in Headers */,
+				37FA5DC61CA9B0850078AC84 /* ASTReject.h in Headers */,
+				37FA5DC41CA9B0850078AC84 /* ASTReduce.h in Headers */,
+				37FA5DA81CA9B0850078AC84 /* ASTExtend.h in Headers */,
+				37FA5DC01CA9B0850078AC84 /* ASTPick.h in Headers */,
+				37FA5D9B1CA9B0850078AC84 /* AsterismDefines.h in Headers */,
+				37FA5DB21CA9B0850078AC84 /* ASTHead.h in Headers */,
+				37FA5DC81CA9B0850078AC84 /* ASTShuffle.h in Headers */,
+				37FA5D9C1CA9B0850078AC84 /* ASTAll.h in Headers */,
+				37FA5DBA1CA9B0850078AC84 /* ASTMap.h in Headers */,
+				37FA5D9E1CA9B0850078AC84 /* ASTAny.h in Headers */,
+				37FA5DA01CA9B0850078AC84 /* ASTDefaults.h in Headers */,
+				37FA5DC21CA9B0850078AC84 /* ASTPluck.h in Headers */,
+				37FA5DB41CA9B0850078AC84 /* ASTIndexBy.h in Headers */,
+				37FA5DD01CA9B0850078AC84 /* ASTUnion.h in Headers */,
+				37FA5DA21CA9B0850078AC84 /* ASTDifference.h in Headers */,
+				37FA5DA61CA9B0850078AC84 /* ASTEmpty.h in Headers */,
+				37FA5DD41CA9B0C50078AC84 /* Asterism.h in Headers */,
+				37FA5DD21CA9B0850078AC84 /* ASTWithout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +773,42 @@
 			productReference = 37FA5D071CA71B350078AC84 /* AsterismTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		37FA5D921CA9B0290078AC84 /* Asterism-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37FA5D981CA9B0290078AC84 /* Build configuration list for PBXNativeTarget "Asterism-tvOS" */;
+			buildPhases = (
+				37FA5D8E1CA9B0290078AC84 /* Sources */,
+				37FA5D8F1CA9B0290078AC84 /* Frameworks */,
+				37FA5D901CA9B0290078AC84 /* Headers */,
+				37FA5D911CA9B0290078AC84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Asterism-tvOS";
+			productName = "Asterism-tvOS";
+			productReference = 37FA5D931CA9B0290078AC84 /* Asterism.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		37FA5DD81CA9B1B10078AC84 /* AsterismTests-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37FA5DE11CA9B1B10078AC84 /* Build configuration list for PBXNativeTarget "AsterismTests-tvOS" */;
+			buildPhases = (
+				37FA5DD51CA9B1B10078AC84 /* Sources */,
+				37FA5DD61CA9B1B10078AC84 /* Frameworks */,
+				37FA5DD71CA9B1B10078AC84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37FA5DE01CA9B1B10078AC84 /* PBXTargetDependency */,
+			);
+			name = "AsterismTests-tvOS";
+			productName = "AsterismTests-tvOS";
+			productReference = 37FA5DD91CA9B1B10078AC84 /* AsterismTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		54E002A418C920F600B66BC3 /* Asterism-OSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54E002CD18C920F600B66BC3 /* Build configuration list for PBXNativeTarget "Asterism-OSX" */;
@@ -699,6 +847,12 @@
 					37FA5D061CA71B350078AC84 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
+					37FA5D921CA9B0290078AC84 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					37FA5DD81CA9B1B10078AC84 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 54D9EE601721543D00383762 /* Build configuration list for PBXProject "Asterism" */;
@@ -717,6 +871,8 @@
 				37FA5CBA1CA717E10078AC84 /* AsterismTests-iOS */,
 				54E002A418C920F600B66BC3 /* Asterism-OSX */,
 				37FA5D061CA71B350078AC84 /* AsterismTests-OSX */,
+				37FA5D921CA9B0290078AC84 /* Asterism-tvOS */,
+				37FA5DD81CA9B1B10078AC84 /* AsterismTests-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -737,6 +893,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		37FA5D051CA71B350078AC84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FA5D911CA9B0290078AC84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FA5DD71CA9B1B10078AC84 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -858,6 +1028,76 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		37FA5D8E1CA9B0290078AC84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FA5DAD1CA9B0850078AC84 /* ASTFind.m in Sources */,
+				37FA5DB91CA9B0850078AC84 /* ASTIntersection.m in Sources */,
+				37FA5DA71CA9B0850078AC84 /* ASTEmpty.m in Sources */,
+				37FA5DC11CA9B0850078AC84 /* ASTPick.m in Sources */,
+				37FA5DA51CA9B0850078AC84 /* ASTEach.m in Sources */,
+				37FA5DC91CA9B0850078AC84 /* ASTShuffle.m in Sources */,
+				37FA5DCD1CA9B0850078AC84 /* ASTSort.m in Sources */,
+				37FA5D9D1CA9B0850078AC84 /* ASTAll.m in Sources */,
+				37FA5DBD1CA9B0850078AC84 /* ASTMinMax.m in Sources */,
+				37FA5DB71CA9B0850078AC84 /* ASTIndexOf.m in Sources */,
+				37FA5DC31CA9B0850078AC84 /* ASTPluck.m in Sources */,
+				37FA5DD11CA9B0850078AC84 /* ASTUnion.m in Sources */,
+				37FA5DA31CA9B0850078AC84 /* ASTDifference.m in Sources */,
+				37FA5DBF1CA9B0850078AC84 /* ASTNegate.m in Sources */,
+				37FA5DB11CA9B0850078AC84 /* ASTGroupBy.m in Sources */,
+				37FA5DD31CA9B0850078AC84 /* ASTWithout.m in Sources */,
+				37FA5DB51CA9B0850078AC84 /* ASTIndexBy.m in Sources */,
+				37FA5DC71CA9B0850078AC84 /* ASTReject.m in Sources */,
+				37FA5DCB1CA9B0850078AC84 /* ASTSize.m in Sources */,
+				37FA5DBB1CA9B0850078AC84 /* ASTMap.m in Sources */,
+				37FA5DB31CA9B0850078AC84 /* ASTHead.m in Sources */,
+				37FA5DAB1CA9B0850078AC84 /* ASTFilter.m in Sources */,
+				37FA5DCF1CA9B0850078AC84 /* ASTTail.m in Sources */,
+				37FA5DA11CA9B0850078AC84 /* ASTDefaults.m in Sources */,
+				37FA5D9F1CA9B0850078AC84 /* ASTAny.m in Sources */,
+				37FA5DA91CA9B0850078AC84 /* ASTExtend.m in Sources */,
+				37FA5DAF1CA9B0850078AC84 /* ASTFlatten.m in Sources */,
+				37FA5DC51CA9B0850078AC84 /* ASTReduce.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37FA5DD51CA9B1B10078AC84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FA5DFC1CA9B2060078AC84 /* ASTSortTests.m in Sources */,
+				37FA5DE61CA9B2060078AC84 /* ASTDefaultsTests.m in Sources */,
+				37FA5DE71CA9B2060078AC84 /* ASTDifferenceTests.m in Sources */,
+				37FA5DF01CA9B2060078AC84 /* ASTIndexByTests.m in Sources */,
+				37FA5DF21CA9B2060078AC84 /* ASTIntersectionTests.m in Sources */,
+				37FA5DFA1CA9B2060078AC84 /* ASTShuffleTests.m in Sources */,
+				37FA5DF91CA9B2060078AC84 /* ASTRejectTests.m in Sources */,
+				37FA5DFF1CA9B2060078AC84 /* ASTWithoutTests.m in Sources */,
+				37FA5DEF1CA9B2060078AC84 /* ASTHeadTests.m in Sources */,
+				37FA5DFD1CA9B2060078AC84 /* ASTTailTests.m in Sources */,
+				37FA5DE51CA9B2060078AC84 /* ASTAnyTests.m in Sources */,
+				37FA5DFE1CA9B2060078AC84 /* ASTUnionTests.m in Sources */,
+				37FA5DF81CA9B2060078AC84 /* ASTReduceTests.m in Sources */,
+				37FA5DE81CA9B2060078AC84 /* ASTEachTests.m in Sources */,
+				37FA5DF61CA9B2060078AC84 /* ASTPickTests.m in Sources */,
+				37FA5DE41CA9B2060078AC84 /* ASTAllTests.m in Sources */,
+				37FA5DF51CA9B2060078AC84 /* ASTNegateTests.m in Sources */,
+				37FA5DEB1CA9B2060078AC84 /* ASTFilterTests.m in Sources */,
+				37FA5DFB1CA9B2060078AC84 /* ASTSizeTests.m in Sources */,
+				37FA5DF41CA9B2060078AC84 /* ASTMinMaxTests.m in Sources */,
+				37FA5DEC1CA9B2060078AC84 /* ASTFindTests.m in Sources */,
+				37FA5DEA1CA9B2060078AC84 /* ASTExtendTests.m in Sources */,
+				37FA5DF71CA9B2060078AC84 /* ASTPluckTests.m in Sources */,
+				37FA5DED1CA9B2060078AC84 /* ASTFlattenTests.m in Sources */,
+				37FA5DE91CA9B2060078AC84 /* ASTEmptyTests.m in Sources */,
+				37FA5DF31CA9B2060078AC84 /* ASTMapTests.m in Sources */,
+				37FA5DEE1CA9B2060078AC84 /* ASTGroupByTests.m in Sources */,
+				37FA5DF11CA9B2060078AC84 /* ASTIndexOfTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		54E002A018C920F600B66BC3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -905,6 +1145,11 @@
 			isa = PBXTargetDependency;
 			target = 54E002A418C920F600B66BC3 /* Asterism-OSX */;
 			targetProxy = 37FA5D0D1CA71B350078AC84 /* PBXContainerItemProxy */;
+		};
+		37FA5DE01CA9B1B10078AC84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37FA5D921CA9B0290078AC84 /* Asterism-tvOS */;
+			targetProxy = 37FA5DDF1CA9B1B10078AC84 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1096,6 +1341,132 @@
 			};
 			name = Release;
 		};
+		37FA5D991CA9B0290078AC84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = Asterism/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.Asterism-tvOS";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		37FA5D9A1CA9B0290078AC84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = Asterism/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.Asterism-tvOS";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		37FA5DE21CA9B1B10078AC84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = AsterismTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.AsterismTests-tvOS";
+				PRODUCT_NAME = AsterismTests;
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		37FA5DE31CA9B1B10078AC84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = AsterismTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.AsterismTests-tvOS";
+				PRODUCT_NAME = AsterismTests;
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
 		54D9EE881721543D00383762 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1181,6 +1552,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "Asterism/Asterism-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.Asterism-OSX";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -1212,6 +1584,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "Asterism/Asterism-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.Asterism-OSX";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = framework;
@@ -1228,6 +1601,7 @@
 				37FA5CC51CA717E20078AC84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37FA5CC61CA717E20078AC84 /* Build configuration list for PBXNativeTarget "AsterismTests-iOS" */ = {
 			isa = XCConfigurationList;
@@ -1236,12 +1610,30 @@
 				37FA5CC81CA717E20078AC84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37FA5D0F1CA71B350078AC84 /* Build configuration list for PBXNativeTarget "AsterismTests-OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37FA5D101CA71B350078AC84 /* Debug */,
 				37FA5D111CA71B350078AC84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37FA5D981CA9B0290078AC84 /* Build configuration list for PBXNativeTarget "Asterism-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37FA5D991CA9B0290078AC84 /* Debug */,
+				37FA5D9A1CA9B0290078AC84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		37FA5DE11CA9B1B10078AC84 /* Build configuration list for PBXNativeTarget "AsterismTests-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37FA5DE21CA9B1B10078AC84 /* Debug */,
+				37FA5DE31CA9B1B10078AC84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
