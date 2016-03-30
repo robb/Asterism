@@ -4,8 +4,6 @@ BEGIN {
 
 /Targets:/ {
     while (getline && $0 != "") {
-        if ($0 ~ /Specs/) continue;
-
         sub(/^ +/, "");
         print "'" $0 "'";
     }

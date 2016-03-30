@@ -6,21 +6,21 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTNegate)
+QuickSpecBegin(ASTNegateSpec)
 
 BOOL (^block)(id) = ^BOOL(id obj) {
     return YES;
 };
 
 it(@"should return a block", ^{
-    expect(ASTNegate(block)).notTo.beNil();
+    expect(ASTNegate(block)).toNot(beNil());
 });
 
 it(@"should return a block that returns the opposite of the original block", ^{
-    expect(block(nil)).to.beTruthy();
-    expect(ASTNegate(block)(nil)).to.beFalsy();
+    expect(@(block(nil))).to(beTruthy());
+    expect(@(ASTNegate(block)(nil))).to(beFalsy());
 });
 
-SpecEnd
+QuickSpecEnd

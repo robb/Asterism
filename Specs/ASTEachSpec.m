@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTEach)
+QuickSpecBegin(ASTEachSpec)
 
 describe(@"for arrays", ^{
     it(@"should not call the block when given an empty array", ^{
@@ -18,7 +18,7 @@ describe(@"for arrays", ^{
             calls++;
         });
 
-        expect(calls).to.equal(0);
+        expect(@(calls)).to(equal(@0));
     });
 
     it(@"should call the block once for every object", ^{
@@ -28,12 +28,12 @@ describe(@"for arrays", ^{
             calls++;
         });
 
-        expect(calls).to.equal(3);
+        expect(@(calls)).to(equal(@3));
     });
 
     it(@"should optionally pass in the index", ^{
         ASTEach(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
-            expect(obj).to.equal(@(idx));
+            expect(obj).to(equal(@(idx)));
         });
     });
 
@@ -41,7 +41,7 @@ describe(@"for arrays", ^{
         __block NSUInteger calls = 0;
 
         ASTEach(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
-            expect(calls++).to.equal(idx);
+            expect(@(calls++)).to(equal(@(idx)));
         });
     });
 });
@@ -54,7 +54,7 @@ describe(@"for dictionaries", ^{
             calls++;
         });
 
-        expect(calls).to.equal(0);
+        expect(@(calls)).to(equal(@0));
     });
 
     it(@"should call the block once for every key-value-pair", ^{
@@ -69,12 +69,12 @@ describe(@"for dictionaries", ^{
             calls++;
         });
 
-        expect(calls).to.equal(2);
+        expect(@(calls)).to(equal(@2));
     });
 
     it(@"should optionally pass in the key", ^{
         ASTEach(@{ @"foo": @"FOO" }, ^(id key, id obj) {
-            expect([key uppercaseString]).to.equal(obj);
+            expect([key uppercaseString]).to(equal(obj));
         });
     });
 });
@@ -87,7 +87,7 @@ describe(@"for ordered sets", ^{
             calls++;
         });
 
-        expect(calls).to.equal(0);
+        expect(@(calls)).to(equal(@0));
     });
 
     it(@"should call the block once for every object", ^{
@@ -97,12 +97,12 @@ describe(@"for ordered sets", ^{
             calls++;
         });
 
-        expect(calls).to.equal(3);
+        expect(@(calls)).to(equal(@3));
     });
 
     it(@"should optionally pass in the index", ^{
         ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ^(id obj, NSUInteger idx) {
-            expect(obj).to.equal(@(idx));
+            expect(obj).to(equal(@(idx)));
         });
     });
 
@@ -110,10 +110,11 @@ describe(@"for ordered sets", ^{
         __block NSUInteger calls = 0;
 
         ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ^(id obj, NSUInteger idx) {
-            expect(calls++).to.equal(idx);
+            expect(@(calls++)).to(equal(@(idx)));
         });
     });
 });
+
 
 describe(@"for objects implementing <NSFastEnumeration>", ^{
     it(@"should not call the block when given an empty collection", ^{
@@ -125,7 +126,7 @@ describe(@"for objects implementing <NSFastEnumeration>", ^{
             calls++;
         });
 
-        expect(calls).to.equal(0);
+        expect(@(calls)).to(equal(@0));
     });
 
     it(@"should call the block once for every object", ^{
@@ -137,8 +138,8 @@ describe(@"for objects implementing <NSFastEnumeration>", ^{
             calls++;
         });
 
-        expect(calls).to.equal(3);
+        expect(@(calls)).to(equal(@3));
     });
 });
 
-SpecEnd
+QuickSpecEnd

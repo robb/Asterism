@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTDifference)
+QuickSpecBegin(ASTDifferenceSpec)
 
 describe(@"for arrays", ^{
     it(@"should return all values from the first array that are not present in the other", ^{
@@ -16,7 +16,7 @@ describe(@"for arrays", ^{
 
         NSArray *result = ASTDifference(before, @[ @3, @4 ]);
 
-        expect(result).to.equal((@[ @1, @2 ]));
+        expect(result).to(equal((@[ @1, @2 ])));
     });
 
     it(@"should preserve the order of the first array", ^{
@@ -24,7 +24,7 @@ describe(@"for arrays", ^{
 
         NSArray *result = ASTDifference(before, @[ @2, @4 ]);
 
-        expect(result).to.equal((@[ @1, @3 ]));
+        expect(result).to(equal((@[ @1, @3 ])));
     });
 });
 
@@ -34,7 +34,7 @@ describe(@"for sets", ^{
 
         NSSet *result = ASTDifference(before, [NSSet setWithArray:@[ @3, @4 ]]);
 
-        expect(result).to.equal(([NSSet setWithArray:@[ @1, @2 ]]));
+        expect(result).to(equal(([NSSet setWithArray:@[ @1, @2 ]])));
     });
 });
 
@@ -44,8 +44,8 @@ describe(@"for ordered sets", ^{
 
         NSOrderedSet *result = ASTDifference(before, [NSOrderedSet orderedSetWithArray:@[ @3, @4 ]]);
 
-        expect(result).to.equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]]));
+        expect(result).to(equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]])));
     });
 });
 
-SpecEnd
+QuickSpecEnd

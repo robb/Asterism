@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTMap)
+QuickSpecBegin(ASTMapSpec)
 
 describe(@"for arrays", ^{
     it(@"should not call the block when given an empty array", ^{
@@ -18,7 +18,7 @@ describe(@"for arrays", ^{
             return @(calls++);
         });
 
-        expect(calls).to.equal(0);
+        expect(@(calls)).to(equal(@0));
     });
 
     it(@"should replace the objects with the result of the block", ^{
@@ -28,7 +28,7 @@ describe(@"for arrays", ^{
             return [obj description];
         });
 
-        expect(after).to.equal((@[ @"1", @"2", @"3" ]));
+        expect(after).to(equal((@[ @"1", @"2", @"3" ])));
     });
 
     it(@"should remove all elements for which the block returns nil", ^{
@@ -36,7 +36,7 @@ describe(@"for arrays", ^{
             return number.integerValue % 2 == 0 ? number : nil;
         });
 
-        expect(even).to.equal((@[ @0, @2 ]));
+        expect(even).to(equal((@[ @0, @2 ])));
     });
 
     it(@"should call the block once for every object", ^{
@@ -46,12 +46,12 @@ describe(@"for arrays", ^{
             return @(calls++);
         });
 
-        expect(calls).to.equal(3);
+        expect(@(calls)).to(equal(@3));
     });
 
     it(@"should optionally pass in the index", ^{
         ASTMap(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
-            expect(obj).to.equal(@(idx));
+            expect(obj).to(equal(@(idx)));
 
             return @(idx);
         });
@@ -62,7 +62,7 @@ describe(@"for arrays", ^{
 
         NSArray *after = ASTMap(before, ^(id obj) { return obj; });
 
-        expect(after).to.equal(before);
+        expect(after).to(equal(before));
     });
 });
 
@@ -74,7 +74,7 @@ describe(@"for dictionaries", ^{
             return @(calls++);
         });
 
-        expect(calls).to.equal(0);
+        expect(@(calls)).to(equal(@0));
     });
 
     it(@"should replace the values with the result of the block", ^{
@@ -87,10 +87,10 @@ describe(@"for dictionaries", ^{
             return string.uppercaseString;
         });
 
-        expect(after).to.equal((@{
+        expect(after).to(equal((@{
             @"fr": @"BONJOUR",
             @"en": @"HELLO"
-        }));
+        })));
     });
 
     it(@"should remove all elements for which the block returns nil", ^{
@@ -103,9 +103,9 @@ describe(@"for dictionaries", ^{
             return [string isEqual:@"Bonjour"] ? string : nil;
         });
 
-        expect(after).to.equal(@{
+        expect(after).to(equal(@{
             @"fr": @"Bonjour"
-        });
+        }));
     });
 
     it(@"should call the block once for every key-value-pair", ^{
@@ -120,12 +120,12 @@ describe(@"for dictionaries", ^{
             return @(calls++);
         });
 
-        expect(calls).to.equal(2);
+        expect(@(calls)).to(equal(@2));
     });
 
     it(@"should optionally pass in the key", ^{
         ASTMap(@{ @"foo": @"FOO" }, ^(id key, id obj) {
-            expect([key uppercaseString]).to.equal(obj);
+            expect([key uppercaseString]).to(equal(obj));
 
             return obj;
         });
@@ -140,7 +140,7 @@ describe(@"for sets", ^{
             return @(calls++);
         });
 
-        expect(calls).to.equal(0);
+        expect(@(calls)).to(equal(@0));
     });
 
     it(@"should replace the objects with the result of the block", ^{
@@ -150,9 +150,9 @@ describe(@"for sets", ^{
             return [obj description];
         });
 
-        expect(after).to.equal(([NSSet setWithArray:@[
+        expect(after).to(equal(([NSSet setWithArray:@[
             @"1", @"2", @"3"
-        ]]));
+        ]])));
     });
 
     it(@"should remove all elements for which the block returns nil", ^{
@@ -162,7 +162,7 @@ describe(@"for sets", ^{
             return number.integerValue % 2 == 0 ? number : nil;
         });
 
-        expect(even).to.equal(([NSSet setWithArray:@[ @0, @2 ]]));
+        expect(even).to(equal(([NSSet setWithArray:@[ @0, @2 ]])));
     });
 
     it(@"should call the block once for every object", ^{
@@ -174,7 +174,7 @@ describe(@"for sets", ^{
             return @(calls++);
         });
 
-        expect(calls).to.equal(3);
+        expect(@(calls)).to(equal(@3));
     });
 });
 
@@ -186,7 +186,7 @@ describe(@"for ordered sets", ^{
             return @(calls++);
         });
 
-        expect(calls).to.equal(0);
+        expect(@(calls)).to(equal(@0));
     });
 
     it(@"should replace the objects with the result of the block", ^{
@@ -196,7 +196,7 @@ describe(@"for ordered sets", ^{
             return [obj description];
         });
 
-        expect(after).to.equal(([NSOrderedSet orderedSetWithArray:@[ @"1", @"2", @"3" ]]));
+        expect(after).to(equal(([NSOrderedSet orderedSetWithArray:@[ @"1", @"2", @"3" ]])));
     });
 
     it(@"should remove all elements for which the block returns nil", ^{
@@ -206,7 +206,7 @@ describe(@"for ordered sets", ^{
             return number.integerValue % 2 == 0 ? number : nil;
         });
 
-        expect(even).to.equal(([NSOrderedSet orderedSetWithArray:@[ @0, @2 ]]));
+        expect(even).to(equal(([NSOrderedSet orderedSetWithArray:@[ @0, @2 ]])));
     });
 
     it(@"should call the block once for every object", ^{
@@ -217,14 +217,14 @@ describe(@"for ordered sets", ^{
             return @(calls++);
         });
 
-        expect(calls).to.equal(3);
+        expect(@(calls)).to(equal(@3));
     });
 
     it(@"should optionally pass in the index", ^{
         NSOrderedSet *numbers = [NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]];
 
         ASTMap(numbers, ^(id obj, NSUInteger idx) {
-            expect(obj).to.equal(@(idx));
+            expect(obj).to(equal(@(idx)));
 
             return @(idx);
         });
@@ -235,8 +235,8 @@ describe(@"for ordered sets", ^{
 
         NSOrderedSet *after = ASTMap(before, ^(id obj) { return obj; });
 
-        expect(after).to.equal(before);
+        expect(after).to(equal(before));
     });
 });
 
-SpecEnd
+QuickSpecEnd

@@ -4,12 +4,14 @@ before_install:
     - brew update || true
     - brew install xctool || true
     - brew upgrade xctool || true
-    - gem update --system
-    - gem install cocoapods
+    - brew install carthage || true
+    - brew upgrade carthage || true
 
 notifications:
     email:
         on_success: change
         on_failure: always
 
-script: script/cibuild
+script: 
+    carthage update --platform iOS,OSX
+    script/cibuild

@@ -1,6 +1,5 @@
 #ifdef __OBJC__
-    #import <Specta/Specta.h>
-
-    #define EXP_SHORTHAND
-    #import <Expecta/Expecta.h>
+    @import Nimble;
+    @import Quick;
+    #import <Asterism/Asterism.h>
 #endif

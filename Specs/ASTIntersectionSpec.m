@@ -6,21 +6,21 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTIntersection)
+QuickSpecBegin(ASTIntersectionSpec)
 
 describe(@"for arrays", ^{
     it(@"should return all values present in both arrays", ^{
         NSArray *result = ASTIntersection(@[ @1, @2, @3 ], @[ @3, @4, @5 ]);
 
-        expect(result).to.equal((@[ @3 ]));
+        expect(result).to(equal((@[ @3 ])));
     });
 
     it(@"should maintain order", ^{
         NSArray *result = ASTIntersection(@[ @1, @2, @3 ], @[ @1, @2, @3 ]);
 
-        expect(result).to.equal((@[ @1, @2, @3 ]));
+        expect(result).to(equal((@[ @1, @2, @3 ])));
     });
 });
 
@@ -31,7 +31,7 @@ describe(@"for sets", ^{
 
         NSSet *result = ASTIntersection(a, b);
 
-        expect(result).to.equal(([NSSet setWithArray:@[ @3 ]]));
+        expect(result).to(equal(([NSSet setWithArray:@[ @3 ]])));
     });
 });
 
@@ -42,7 +42,7 @@ describe(@"for ordered sets", ^{
 
         NSOrderedSet *result = ASTIntersection(a, b);
 
-        expect(result).to.equal(([NSOrderedSet orderedSetWithArray:@[ @3 ]]));
+        expect(result).to(equal(([NSOrderedSet orderedSetWithArray:@[ @3 ]])));
     });
 
     it(@"should should maintain order", ^{
@@ -50,8 +50,8 @@ describe(@"for ordered sets", ^{
 
         NSOrderedSet *result = ASTIntersection(set, set);
 
-        expect(result).to.equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]]));
+        expect(result).to(equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]])));
     });
 });
 
-SpecEnd
+QuickSpecEnd

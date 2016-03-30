@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTIndexBy)
+QuickSpecBegin(ASTIndexBySpec)
 
 NSArray *array = @[ @"Hello", @"Bonjour", @"Hej" ];
 
@@ -18,11 +18,11 @@ describe(@"with blocks", ^{
             return @(string.length);
         });
 
-        expect(dictionary).to.haveCountOf(3);
+        expect(@(dictionary.count)).to(equal(@3));
 
-        expect(dictionary[@3]).to.equal(@"Hej");
-        expect(dictionary[@5]).to.equal(@"Hello");
-        expect(dictionary[@7]).to.equal(@"Bonjour");
+        expect(dictionary[@3]).to(contain(@"Hej"));
+        expect(dictionary[@5]).to(contain(@"Hello"));
+        expect(dictionary[@7]).to(contain(@"Bonjour"));
     });
 });
 
@@ -30,11 +30,11 @@ describe(@"with keypaths", ^{
     it(@"should index elements by the return value", ^{
         NSDictionary *dictionary = ASTIndexBy(array, @"length");
 
-        expect(dictionary).to.haveCountOf(3);
+        expect(@(dictionary.count)).to(equal(@3));
 
-        expect(dictionary[@3]).to.equal(@"Hej");
-        expect(dictionary[@5]).to.equal(@"Hello");
-        expect(dictionary[@7]).to.equal(@"Bonjour");
+        expect(dictionary[@3]).to(contain(@"Hej"));
+        expect(dictionary[@5]).to(contain(@"Hello"));
+        expect(dictionary[@7]).to(contain(@"Bonjour"));
     });
 });
 
@@ -45,11 +45,11 @@ it(@"should use the values of dictionaries", ^{
         return @(string.length);
     });
 
-    expect(blockResult[@5]).to.equal(@"Hello");
+    expect(blockResult[@5]).to(contain(@"Hello"));
 
     NSDictionary *keyPathResult = ASTIndexBy(dict, @"length");
 
-    expect(keyPathResult[@5]).to.equal(@"Hello");
+    expect(keyPathResult[@5]).to(contain(@"Hello"));
 });
 
-SpecEnd
+QuickSpecEnd

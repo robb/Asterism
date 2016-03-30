@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTReduce)
+QuickSpecBegin(ASTReduceSpec)
 
 NSNumber *(^add)(NSNumber *, NSNumber *) = ^(NSNumber *memo, NSNumber *obj) {
     return @(memo.doubleValue + obj.doubleValue);
@@ -24,19 +24,19 @@ describe(@"reduce", ^{
                     return nil;
                 });
 
-                expect(result).to.equal(initial);
+                expect(result).to(equal(initial));
             });
 
             it(@"should use the inital value in the first iteration", ^{
                 id result = ASTReduce(@[ @1, @2, @3 ], @4, add);
 
-                expect(result).to.equal(10);
+                expect(result).to(equal(@10));
             });
 
             it(@"should  use the values of dictionaries", ^{
                 NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
 
-                expect(ASTReduce(dict, @4, add)).to.equal(10);
+                expect(ASTReduce(dict, @4, add)).to(equal(@10));
             });
         });
 
@@ -46,7 +46,7 @@ describe(@"reduce", ^{
                     return nil;
                 });
 
-                expect(result).to.beNil();
+                expect(result).to(beNil());
             });
 
             it(@"should return the single value of a collection with one member", ^{
@@ -54,19 +54,19 @@ describe(@"reduce", ^{
                     return nil;
                 });
 
-                expect(result).to.equal(1);
+                expect(result).to(equal(@1));
             });
 
             it(@"should reduce the collection starting from the first value", ^{
                 id result = ASTReduce(@[ @1, @2, @3 ], add);
 
-                expect(result).to.equal(6);
+                expect(result).to(equal(@6));
             });
 
             it(@"should  use the values of dictionaries", ^{
                 NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
 
-                expect(ASTReduce(dict, add)).to.equal(6);
+                expect(ASTReduce(dict, add)).to(equal(@6));
             });
         });
 
@@ -75,9 +75,9 @@ describe(@"reduce", ^{
                 return [memo stringByAppendingString:obj];
             });
 
-            expect(result).to.equal(@"abc");
+            expect(result).to(equal(@"abc"));
         });
     });
 });
 
-SpecEnd
+QuickSpecEnd

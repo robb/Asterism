@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTPick)
+QuickSpecBegin(ASTPickSpec)
 
 it(@"should pick only the given keys", ^{
     NSDictionary *dict = @{ @"foo": @"foo", @"bar": @"bar" };
     NSArray *keys = @[ @"foo" ];
 
-    expect(ASTPick(dict, keys)).to.equal(@{ @"foo": @"foo" });
+    expect(ASTPick(dict, keys)).to(equal(@{ @"foo": @"foo" }));
 });
 
-SpecEnd
+QuickSpecEnd

@@ -6,28 +6,28 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTHead)
+QuickSpecBegin(ASTHeadSpec)
 
 describe(@"for arrays", ^{
     it(@"should return nil if the array is empty", ^{
-        expect(ASTHead(@[])).to.beNil();
+        expect(ASTHead(@[])).to(beNil());
     });
 
     it(@"should return the first element", ^{
-        expect(ASTHead(@[ @1, @2 ])).to.equal(@1);
+        expect(ASTHead(@[ @1, @2 ])).to(equal(@1));
     });
 });
 
 describe(@"for ordered sets", ^{
     it(@"should return nil if the set is empty", ^{
-        expect(ASTHead([NSOrderedSet orderedSet])).to.beNil();
+        expect(ASTHead([NSOrderedSet orderedSet])).to(beNil());
     });
 
     it(@"should return the first element", ^{
-        expect(ASTHead([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]])).to.equal(@1);
+        expect(ASTHead([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]])).to(equal(@1));
     });
 });
 
-SpecEnd
+QuickSpecEnd

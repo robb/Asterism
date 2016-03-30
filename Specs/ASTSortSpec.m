@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTSort)
+QuickSpecBegin(ASTSortSpec)
 
 describe(@"for arrays", ^{
     describe(@"without a comparator", ^{
@@ -16,7 +16,7 @@ describe(@"for arrays", ^{
             NSArray *input = @[ @2, @4, @-2, @9 ];
             NSArray *expected = @[ @-2, @2, @4, @9 ];
 
-            expect(ASTSort(input)).to.equal(expected);
+            expect(ASTSort(input)).to(equal(expected));
         });
     });
 
@@ -29,7 +29,7 @@ describe(@"for arrays", ^{
                 return [@(a.length) compare:@(b.length)];
             };
 
-            expect(ASTSort(input, sortByLength)).to.equal(expected);
+            expect(ASTSort(input, sortByLength)).to(equal(expected));
         });
     });
 });
@@ -40,7 +40,7 @@ describe(@"for ordered sets", ^{
             NSOrderedSet *input = [NSOrderedSet orderedSetWithArray:@[ @2, @4, @-2, @9 ]];
             NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:@[ @-2, @2, @4, @9 ]];
 
-            expect(ASTSort(input)).to.equal(expected);
+            expect(ASTSort(input)).to(equal(expected));
         });
     });
 
@@ -53,9 +53,9 @@ describe(@"for ordered sets", ^{
                 return [@(a.length) compare:@(b.length)];
             };
 
-            expect(ASTSort(input, sortByLength)).to.equal(expected);
+            expect(ASTSort(input, sortByLength)).to(equal(expected));
         });
     });
 });
 
-SpecEnd
+QuickSpecEnd

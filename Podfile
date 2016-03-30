@@ -1,13 +1,19 @@
-target 'Specs-Mac', :exclusive => true do
-  platform :osx, '10.8'
+use_frameworks!
 
-  pod 'Specta',  '~> 0.2.1'
-  pod 'Expecta', '~> 0.3.1'
+def testing_pods
+    pod 'Quick', '~> 0.9.1'
+    pod 'Nimble', '~> 3.2.0'
 end
 
-target 'Specs-iOS', :exclusive => true do
-  platform :ios, '6.0'
+target 'AsterismSpecs-OSX' do
+    platform :osx, '10.9'
 
-  pod 'Specta',  '~> 0.2.1'
-  pod 'Expecta', '~> 0.3.1'
+    testing_pods
 end
+
+target 'AsterismSpecs-iOS' do
+    platform :ios, '9.2'
+
+    testing_pods
+end
+
