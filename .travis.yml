@@ -14,5 +14,5 @@ notifications:
         on_failure: always
 
 script: 
-    carthage update --platform iOS,OSX
-    script/cibuild
+    - carthage update --platform iOS,Mac
+    - script/cibuild
