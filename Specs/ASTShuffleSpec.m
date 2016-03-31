@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTShuffle)
+QuickSpecBegin(ASTShuffleSpec)
 
 describe(@"for arrays", ^{
     it(@"should shuffle the array", ^{
@@ -17,10 +17,10 @@ describe(@"for arrays", ^{
         NSArray *shuffled = ASTShuffle(original);
 
         for (NSNumber *number in original) {
-            expect(shuffled).to.contain(number);
+            expect(shuffled).to(contain(number));
         }
 
-        expect(original).notTo.equal(shuffled);
+        expect(original).toNot(equal(shuffled));
     });
 });
 
@@ -31,11 +31,11 @@ describe(@"for ordered sets", ^{
         NSOrderedSet *shuffled = ASTShuffle(original);
 
         for (NSNumber *number in original) {
-            expect(shuffled).to.contain(number);
+            expect(@([shuffled containsObject:number])).to(beTruthy());
         }
 
-        expect(original).notTo.equal(shuffled);
+        expect(original).toNot(equal(shuffled));
     });
 });
 
-SpecEnd
+QuickSpecEnd

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTFilter)
+QuickSpecBegin(ASTFilterSpec)
 
 describe(@"for arrays", ^{
     NSArray *before = @[ @1, @2, @3 ];
@@ -18,7 +18,7 @@ describe(@"for arrays", ^{
             return obj.integerValue % 2 == 1;
         });
 
-        expect(after).to.equal((@[ @1, @3 ]));
+        expect(after).to(equal((@[ @1, @3 ])));
     });
 
     it(@"should optionally pass in the index", ^{
@@ -26,13 +26,13 @@ describe(@"for arrays", ^{
             return idx < 2;
         });
 
-        expect(after).to.equal((@[ @1, @2 ]));
+        expect(after).to(equal((@[ @1, @2 ])));
     });
 
     it(@"should maintain order", ^{
         NSArray *after = ASTFilter(before, ^BOOL(NSNumber *obj) { return YES; });
 
-        expect(after).to.equal(before);
+        expect(after).to(equal(before));
     });
 });
 
@@ -47,7 +47,7 @@ describe(@"for dictionaries", ^{
             return [obj isEqualToString:@"Bonjour"];
         });
 
-        expect(after).to.equal((@{ @"fr": @"Bonjour" }));
+        expect(after).to(equal((@{ @"fr": @"Bonjour" })));
     });
 
     it(@"should optionally pass in the key", ^{
@@ -55,7 +55,7 @@ describe(@"for dictionaries", ^{
             return [key isEqualToString:@"fr"];
         });
 
-        expect(after).to.equal((@{ @"fr": @"Bonjour" }));
+        expect(after).to(equal((@{ @"fr": @"Bonjour" })));
     });
 });
 
@@ -67,7 +67,7 @@ describe(@"for sets", ^{
             return obj.integerValue % 2 == 1;
         });
 
-        expect(after).to.equal(([NSSet setWithArray:@[ @1, @3 ]]));
+        expect(after).to(equal(([NSSet setWithArray:@[ @1, @3 ]])));
     });
 });
 
@@ -79,7 +79,7 @@ describe(@"for ordered sets", ^{
             return idx < 2;
         });
 
-        expect(after).to.equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]]));
+        expect(after).to(equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]])));
     });
 
     it(@"should remove all objects that fail the test", ^{
@@ -87,8 +87,8 @@ describe(@"for ordered sets", ^{
             return obj.integerValue % 2 == 1;
         });
 
-        expect(after).to.equal(([NSOrderedSet orderedSetWithArray:@[ @1, @3 ]]));
+        expect(after).to(equal(([NSOrderedSet orderedSetWithArray:@[ @1, @3 ]])));
     });
 });
 
-SpecEnd
+QuickSpecEnd

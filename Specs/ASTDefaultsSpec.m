@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
 //
 
-#import "Asterism.h"
+#import <Asterism/Asterism.h>
 
-SpecBegin(ASTDefaults)
+QuickSpecBegin(ASTDefaultsSpec)
 
 it(@"should return the union of both dictionaries", ^{
     NSDictionary *dict     = @{ @1: @"foo" };
@@ -19,14 +19,14 @@ it(@"should return the union of both dictionaries", ^{
         @2: @"baz"
     };
 
-    expect(ASTDefaults(dict, defaults)).to.equal(result);
+    expect(ASTDefaults(dict, defaults)).to(equal(result));
 });
 
 it(@"should prefer values from dict over values from defaults", ^{
     NSDictionary *dict     = @{ @1: @"foo" };
     NSDictionary *defaults = @{ @1: @"bar" };
 
-    expect(ASTDefaults(dict, defaults)).to.equal(dict);
+    expect(ASTDefaults(dict, defaults)).to(equal(dict));
 });
 
-SpecEnd
+QuickSpecEnd
