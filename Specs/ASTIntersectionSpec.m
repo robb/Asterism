@@ -8,50 +8,56 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTIntersectionSpec)
+@interface ASTIntersectionTests : XCTestCase
 
-describe(@"for arrays", ^{
-    it(@"should return all values present in both arrays", ^{
-        NSArray *result = ASTIntersection(@[ @1, @2, @3 ], @[ @3, @4, @5 ]);
+@end
 
-        expect(result).to(equal((@[ @3 ])));
-    });
+@implementation ASTIntersectionTests
 
-    it(@"should maintain order", ^{
-        NSArray *result = ASTIntersection(@[ @1, @2, @3 ], @[ @1, @2, @3 ]);
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return all values present in both arrays" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *result = ASTIntersection(@[ @1, @2, @3 ], @[ @3, @4, @5 ]);
 
-        expect(result).to(equal((@[ @1, @2, @3 ])));
-    });
-});
+            XCTAssertEqualObjects(result, (@[ @3 ]));
+        }];
 
-describe(@"for sets", ^{
-    it(@"should return all values present in both sets", ^{
-        NSSet *a = [NSSet setWithArray:@[ @1, @2, @3 ]];
-        NSSet *b = [NSSet setWithArray:@[ @5, @4, @3 ]];
+        [XCTContext runActivityNamed:@"should maintain order" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *result = ASTIntersection(@[ @1, @2, @3 ], @[ @1, @2, @3 ]);
 
-        NSSet *result = ASTIntersection(a, b);
+            XCTAssertEqualObjects(result, (@[ @1, @2, @3 ]));
+        }];
+    }];
 
-        expect(result).to(equal(([NSSet setWithArray:@[ @3 ]])));
-    });
-});
+    [XCTContext runActivityNamed:@"for sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return all values present in both sets" block:^(id<XCTActivity> _Nonnull activity){
+            NSSet *a = [NSSet setWithArray:@[ @1, @2, @3 ]];
+            NSSet *b = [NSSet setWithArray:@[ @5, @4, @3 ]];
 
-describe(@"for ordered sets", ^{
-    it(@"should return all values present in both sets", ^{
-        NSOrderedSet *a = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
-        NSOrderedSet *b = [NSOrderedSet orderedSetWithArray:@[ @5, @4, @3 ]];
+            NSSet *result = ASTIntersection(a, b);
 
-        NSOrderedSet *result = ASTIntersection(a, b);
+            XCTAssertEqualObjects(result, ([NSSet setWithArray:@[ @3 ]]));
+        }];
+    }];
 
-        expect(result).to(equal(([NSOrderedSet orderedSetWithArray:@[ @3 ]])));
-    });
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return all values present in both sets" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *a = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+            NSOrderedSet *b = [NSOrderedSet orderedSetWithArray:@[ @5, @4, @3 ]];
 
-    it(@"should should maintain order", ^{
-        NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+            NSOrderedSet *result = ASTIntersection(a, b);
 
-        NSOrderedSet *result = ASTIntersection(set, set);
+            XCTAssertEqualObjects(result, ([NSOrderedSet orderedSetWithArray:@[ @3 ]]));
+        }];
 
-        expect(result).to(equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]])));
-    });
-});
+        [XCTContext runActivityNamed:@"should should maintain order" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
 
-QuickSpecEnd
+            NSOrderedSet *result = ASTIntersection(set, set);
+
+            XCTAssertEqualObjects(result, ([NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]]));
+        }];
+    }];
+}
+
+@end

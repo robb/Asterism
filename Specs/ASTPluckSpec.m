@@ -8,18 +8,24 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTPluckSpec)
+@interface ASTPluckTests : XCTestCase
 
-it(@"should return an array containing the objects' values for the given key path", ^{
-    NSArray *before = @[ @"a", @"ab", @"abc" ];
+@end
 
-    expect(ASTPluck(before, @"length")).to(equal((@[ @1, @2, @3 ])));
-});
+@implementation ASTPluckTests
 
-it(@"should use the values of dictionaries", ^{
-    NSDictionary *before = @{ @"a": @"a", @"ab": @"ab", @"abc":@"abc" };
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"should return an array containing the objects' values for the given key path" block:^(id<XCTActivity> _Nonnull activity){
+        NSArray *before = @[ @"a", @"ab", @"abc" ];
 
-    expect(ASTPluck(before, @"length")).to(equal((@{ @"a": @1, @"ab": @2, @"abc":@3 })));
-});
+        XCTAssertEqualObjects(ASTPluck(before, @"length"), (@[ @1, @2, @3 ]));
+    }];
 
-QuickSpecEnd
+    [XCTContext runActivityNamed:@"should use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *before = @{ @"a": @"a", @"ab": @"ab", @"abc":@"abc" };
+
+        XCTAssertEqualObjects(ASTPluck(before, @"length"), (@{ @"a": @1, @"ab": @2, @"abc":@3 }));
+    }];
+}
+
+@end

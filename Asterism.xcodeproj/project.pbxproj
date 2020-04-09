@@ -66,15 +66,7 @@
 		37D145F11CAB336900B73728 /* ASTTail.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED6F175A0FAC0076C6EA /* ASTTail.m */; };
 		37D145F21CAB336900B73728 /* ASTUnion.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96E2177053FE006F40AC /* ASTUnion.m */; };
 		37D145F31CAB336900B73728 /* ASTWithout.m in Sources */ = {isa = PBXBuildFile; fileRef = 545059C2186274E100A062D9 /* ASTWithout.m */; };
-		37D145F51CAB346500B73728 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D145F41CAB346500B73728 /* Nimble.framework */; };
-		37D145F71CAB346E00B73728 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D145F61CAB346E00B73728 /* Quick.framework */; };
-		37D145F91CAB347900B73728 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D145F81CAB347900B73728 /* Nimble.framework */; };
-		37D145FB1CAB347F00B73728 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D145FA1CAB347F00B73728 /* Quick.framework */; };
-		37D145FE1CAB34E300B73728 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37D145F41CAB346500B73728 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		37D145FF1CAB34EB00B73728 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37D145F61CAB346E00B73728 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		37D146001CAB351D00B73728 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54D9EE821721543D00383762 /* InfoPlist.strings */; };
-		37D146021CAB355A00B73728 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37D145FA1CAB347F00B73728 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		37D146031CAB356000B73728 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37D145F81CAB347900B73728 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		37D146041CAB65E800B73728 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E002BB18C920F600B66BC3 /* XCTest.framework */; };
 		37D146171CAB6DEA00B73728 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E002A918C920F600B66BC3 /* Foundation.framework */; };
 		37D146181CAB719600B73728 /* ASTAnySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BB2184AB268009CF268 /* ASTAnySpec.m */; };
@@ -219,8 +211,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				37D145FF1CAB34EB00B73728 /* Quick.framework in CopyFiles */,
-				37D145FE1CAB34E300B73728 /* Nimble.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +220,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				37D146031CAB356000B73728 /* Nimble.framework in CopyFiles */,
-				37D146021CAB355A00B73728 /* Quick.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,8 +345,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				54D9EE7B1721543D00383762 /* Foundation.framework in Frameworks */,
-				37D145F51CAB346500B73728 /* Nimble.framework in Frameworks */,
-				37D145F71CAB346E00B73728 /* Quick.framework in Frameworks */,
 				37D146041CAB65E800B73728 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,8 +362,6 @@
 			files = (
 				37D146171CAB6DEA00B73728 /* Foundation.framework in Frameworks */,
 				54E0030A18C922EF00B66BC3 /* Asterism.framework in Frameworks */,
-				37D145F91CAB347900B73728 /* Nimble.framework in Frameworks */,
-				37D145FB1CAB347F00B73728 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1122,10 +1106,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
 				INFOPLIST_FILE = "Specs/Specs-Info.plist";
@@ -1143,10 +1123,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
 				INFOPLIST_FILE = "Specs/Specs-Info.plist";
@@ -1235,11 +1211,6 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
@@ -1274,11 +1245,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";

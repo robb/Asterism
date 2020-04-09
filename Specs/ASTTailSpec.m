@@ -8,34 +8,40 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTTailSpec)
+@interface ASTTailTests : XCTestCase
 
-describe(@"for arrays", ^{
-    it(@"should return an empty array when given an empty array", ^{
-        expect(ASTTail(@[])).to(equal(@[]));
-    });
+@end
 
-    it(@"should return an empty array when given an array with one element", ^{
-        expect(ASTTail(@[ @1 ])).to(equal(@[]));
-    });
+@implementation ASTTailTests
 
-    it(@"should return all elements after the first element", ^{
-        expect((ASTTail(@[ @1, @2, @3 ]))).to(equal((@[ @2, @3 ])));
-    });
-});
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return an empty array when given an empty array" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertEqualObjects(ASTTail(@[]), @[]);
+        }];
 
-describe(@"for ordered sets", ^{
-    it(@"should return an empty array when given an empty array", ^{
-        expect(ASTTail([NSOrderedSet orderedSet])).to(equal([NSOrderedSet orderedSet]));
-    });
+        [XCTContext runActivityNamed:@"should return an empty array when given an array with one element" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertEqualObjects(ASTTail(@[ @1 ]), @[]);
+        }];
 
-    it(@"should return an empty array when given an array with one element", ^{
-        expect(ASTTail([NSOrderedSet orderedSetWithObject:@1])).to(equal([NSOrderedSet orderedSet]));
-    });
+        [XCTContext runActivityNamed:@"should return all elements after the first element" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertEqualObjects((ASTTail(@[ @1, @2, @3 ])), (@[ @2, @3 ]));
+        }];
+    }];
 
-    it(@"should return all elements after the first element", ^{
-        expect((ASTTail([NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]]))).to(equal(([NSOrderedSet orderedSetWithArray:@[ @2, @3 ]])));
-    });
-});
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return an empty array when given an empty array" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertEqualObjects(ASTTail([NSOrderedSet orderedSet]), [NSOrderedSet orderedSet]);
+        }];
 
-QuickSpecEnd
+        [XCTContext runActivityNamed:@"should return an empty array when given an array with one element" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertEqualObjects(ASTTail([NSOrderedSet orderedSetWithObject:@1]), [NSOrderedSet orderedSet]);
+        }];
+
+        [XCTContext runActivityNamed:@"should return all elements after the first element" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertEqualObjects((ASTTail([NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]])), ([NSOrderedSet orderedSetWithArray:@[ @2, @3 ]]));
+        }];
+    }];
+}
+
+@end

@@ -8,68 +8,74 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTMinMaxSpec)
+@interface ASTMinMaxTests : XCTestCase
 
-NSArray *array = @[ @2, @3, @9, @4, @-1 ];
+@end
 
-NSDictionary *dict = @{ @"foo": @2, @"bar": @9, @"baz": @-1 };
+@implementation ASTMinMaxTests
 
-NSComparator comparator = ^NSComparisonResult(id obj1, id obj2) {
-    // Reverse the result to make sure the block is actually invoked
-    switch ([obj1 compare:obj2]) {
-        case NSOrderedAscending:
-            return NSOrderedDescending;
+- (void)testEverything {
+    NSArray *array = @[ @2, @3, @9, @4, @-1 ];
 
-        case NSOrderedSame:
-            return NSOrderedSame;
+    NSDictionary *dict = @{ @"foo": @2, @"bar": @9, @"baz": @-1 };
 
-        case NSOrderedDescending:
-            return NSOrderedAscending;
-    }
-};
+    NSComparator comparator = ^NSComparisonResult(id obj1, id obj2) {
+        // Reverse the result to make sure the block is actually invoked
+        switch ([obj1 compare:obj2]) {
+            case NSOrderedAscending:
+                return NSOrderedDescending;
 
-describe(@"ASTMin", ^{
-    describe(@"without a comparator block", ^{
-        it(@"should return the minimum by calling compare:", ^{
-            expect(ASTMin(array)).to(equal(@(-1)));
-        });
+            case NSOrderedSame:
+                return NSOrderedSame;
 
-        it(@"should use the values of dictionaries", ^{
-            expect(ASTMin(dict)).to(equal(@(-1)));
-        });
-    });
+            case NSOrderedDescending:
+                return NSOrderedAscending;
+        }
+    };
 
-    describe(@"with a block returning an NSComparisonResult", ^{
-        it(@"should return the minimum", ^{
-            expect(ASTMin(array, comparator)).to(equal(@9));
-        });
+    [XCTContext runActivityNamed:@"ASTMin" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"without a comparator block" block:^(id<XCTActivity> _Nonnull activity){
+            [XCTContext runActivityNamed:@"should return the minimum by calling compare:" block:^(id<XCTActivity> _Nonnull activity){
+                XCTAssertEqualObjects(ASTMin(array), @(-1));
+            }];
 
-        it(@"should use the values of dictionaries", ^{
-            expect(ASTMin(dict, comparator)).to(equal(@9));
-        });
-    });
-});
+            [XCTContext runActivityNamed:@"should use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+                XCTAssertEqualObjects(ASTMin(dict), @(-1));
+            }];
+        }];
 
-describe(@"ASTMax", ^{
-    describe(@"without a comparator block", ^{
-        it(@"should return the maximum by calling compare:", ^{
-            expect(ASTMax(array)).to(equal(@9));
-        });
+        [XCTContext runActivityNamed:@"with a block returning an NSComparisonResult" block:^(id<XCTActivity> _Nonnull activity){
+            [XCTContext runActivityNamed:@"should return the minimum" block:^(id<XCTActivity> _Nonnull activity){
+                XCTAssertEqualObjects(ASTMin(array, comparator), @9);
+            }];
 
-        it(@"should use the values of dictionaries", ^{
-            expect(ASTMax(dict)).to(equal(@9));
-        });
-    });
+            [XCTContext runActivityNamed:@"should use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+                XCTAssertEqualObjects(ASTMin(dict, comparator), @9);
+            }];
+        }];
+    }];
 
-    describe(@"with a block returning an NSComparisonResult", ^{
-        it(@"should return the maximum", ^{
-             expect(ASTMax(array, comparator)).to(equal(@(-1)));
-        });
+    [XCTContext runActivityNamed:@"ASTMax" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"without a comparator block" block:^(id<XCTActivity> _Nonnull activity){
+            [XCTContext runActivityNamed:@"should return the maximum by calling compare:" block:^(id<XCTActivity> _Nonnull activity){
+                XCTAssertEqualObjects(ASTMax(array), @9);
+            }];
 
-        it(@"should use the values of dictionaries", ^{
-            expect(ASTMax(dict, comparator)).to(equal(@(-1)));
-        });
-    });
-});
+            [XCTContext runActivityNamed:@"should use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+                XCTAssertEqualObjects(ASTMax(dict), @9);
+            }];
+        }];
 
-QuickSpecEnd
+        [XCTContext runActivityNamed:@"with a block returning an NSComparisonResult" block:^(id<XCTActivity> _Nonnull activity){
+            [XCTContext runActivityNamed:@"should return the maximum" block:^(id<XCTActivity> _Nonnull activity){
+                XCTAssertEqualObjects(ASTMax(array, comparator), @(-1));
+            }];
+
+            [XCTContext runActivityNamed:@"should use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+                XCTAssertEqualObjects(ASTMax(dict, comparator), @(-1));
+            }];
+        }];
+    }];
+}
+
+@end

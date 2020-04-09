@@ -8,27 +8,33 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTFlattenSpec)
+@interface ASTFlattenTests : XCTestCase
 
-it(@"should concatenate all array elements", ^{
-    NSArray *array = @[ @[ @1 ], @[ @2 ], @[ @3 ] ];
-    NSArray *result = @[ @1, @2, @3 ];
+@end
 
-    expect(ASTFlatten(array)).to(equal(result));
-});
+@implementation ASTFlattenTests
+- (void)testEverything {
 
-it(@"should preserve non-array elements", ^{
-    NSArray *array = @[ @[ @1, @2 ], @3, @[ @4, @5 ] ];
-    NSArray *result = @[ @1, @2, @3, @4, @5 ];
+    [XCTContext runActivityNamed:@"should concatenate all array elements" block:^(id<XCTActivity> _Nonnull activity){
+        NSArray *array = @[ @[ @1 ], @[ @2 ], @[ @3 ] ];
+        NSArray *result = @[ @1, @2, @3 ];
 
-    expect(ASTFlatten(array)).to(equal(result));
-});
+        XCTAssertEqualObjects(ASTFlatten(array), result);
+    }];
 
-it(@"should flatten the array only a single level", ^{
-    NSArray *array = @[ @[ @1 ], @[ @[ @2, @3 ] ], @[ @4 ] ];
-    NSArray *result = @[ @1, @[ @2, @3 ], @4 ];
+    [XCTContext runActivityNamed:@"should preserve non-array elements" block:^(id<XCTActivity> _Nonnull activity){
+        NSArray *array = @[ @[ @1, @2 ], @3, @[ @4, @5 ] ];
+        NSArray *result = @[ @1, @2, @3, @4, @5 ];
 
-    expect(ASTFlatten(array)).to(equal(result));
-});
+        XCTAssertEqualObjects(ASTFlatten(array), result);
+    }];
 
-QuickSpecEnd
+    [XCTContext runActivityNamed:@"should flatten the array only a single level" block:^(id<XCTActivity> _Nonnull activity){
+        NSArray *array = @[ @[ @1 ], @[ @[ @2, @3 ] ], @[ @4 ] ];
+        NSArray *result = @[ @1, @[ @2, @3 ], @4 ];
+
+        XCTAssertEqualObjects(ASTFlatten(array), result);
+    }];
+}
+
+@end

@@ -8,57 +8,63 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTGroupBySpec)
+@interface ASTGroupByTests : XCTestCase
 
-NSArray *array = @[ @"Hello", @"Bonjour", @"Hallo", @"Hej" ];
+@end
 
-it(@"should return a dictionary of sets, grouped by the blocks return value", ^{
-    NSDictionary *dictionary = ASTGroupBy(array, ^(NSString *string) {
-        return @(string.length);
-    });
+@implementation ASTGroupByTests
 
-    expect(@(dictionary.count)).to(equal(@3));
+- (void)testEverything {
+    NSArray *array = @[ @"Hello", @"Bonjour", @"Hallo", @"Hej" ];
 
-    expect(dictionary[@3]).to(contain(@"Hej"));
-    expect(dictionary[@5]).to(contain(@"Hello"));
-    expect(dictionary[@5]).to(contain(@"Hallo"));
-    expect(dictionary[@7]).to(contain(@"Bonjour"));
-});
+    [XCTContext runActivityNamed:@"should return a dictionary of sets, grouped by the blocks return value" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *dictionary = ASTGroupBy(array, ^(NSString *string) {
+            return @(string.length);
+        });
 
-it(@"should remove elements that grouped by `nil`", ^{
-    NSDictionary *dictionary = ASTGroupBy(@[ @[ @1 ], @[ @2, @3 ], @[] ], ^(NSArray *array) {
-        return array.firstObject;
-    });
+        XCTAssertEqualObjects(@(dictionary.count), @3);
 
-    expect(@(dictionary.count)).to(equal(@2));
+        XCTAssertTrue([dictionary[@3] containsObject:@"Hej"]);
+        XCTAssertTrue([dictionary[@5] containsObject:@"Hello"]);
+        XCTAssertTrue([dictionary[@5] containsObject:@"Hallo"]);
+        XCTAssertTrue([dictionary[@7] containsObject:@"Bonjour"]);
+    }];
 
-    expect(dictionary[@1]).to(contain(@[ @1 ]));
-    expect(dictionary[@2]).to(contain(( @[ @2, @3 ] )));
-});
+    [XCTContext runActivityNamed:@"should remove elements that grouped by `nil`" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *dictionary = ASTGroupBy(@[ @[ @1 ], @[ @2, @3 ], @[] ], ^(NSArray *array) {
+            return array.firstObject;
+        });
 
-it(@"should return a dictionary of sets, grouped by their value for a key path", ^{
-    NSDictionary *dictionary = ASTGroupBy(array, @"length");
+        XCTAssertEqualObjects(@(dictionary.count), @2);
 
-    expect(@(dictionary.count)).to(equal(@3));
+        XCTAssertTrue([dictionary[@1] containsObject:@[ @1 ]]);
+        XCTAssertTrue([dictionary[@2] containsObject:( @[ @2, @3 ] )]);
+    }];
 
-    expect(dictionary[@3]).to(contain(@"Hej"));
-    expect(dictionary[@5]).to(contain(@"Hello"));
-    expect(dictionary[@5]).to(contain(@"Hallo"));
-    expect(dictionary[@7]).to(contain(@"Bonjour"));
-});
+    [XCTContext runActivityNamed:@"should return a dictionary of sets, grouped by their value for a key path" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *dictionary = ASTGroupBy(array, @"length");
 
-it(@"should use the values of dictionaries", ^{
-    NSDictionary *dict = @{ @"foo": @"Hello" };
+        XCTAssertEqualObjects(@(dictionary.count), @3);
 
-    NSDictionary *blockResult = ASTGroupBy(dict, ^(NSString *string) {
-        return @(string.length);
-    });
+        XCTAssertTrue([dictionary[@3] containsObject:@"Hej"]);
+        XCTAssertTrue([dictionary[@5] containsObject:@"Hello"]);
+        XCTAssertTrue([dictionary[@5] containsObject:@"Hallo"]);
+        XCTAssertTrue([dictionary[@7] containsObject:@"Bonjour"]);
+    }];
 
-    expect(blockResult[@5]).to(contain(@"Hello"));
+    [XCTContext runActivityNamed:@"should use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *dict = @{ @"foo": @"Hello" };
 
-    NSDictionary *keyPathResult = ASTGroupBy(dict, @"length");
+        NSDictionary *blockResult = ASTGroupBy(dict, ^(NSString *string) {
+            return @(string.length);
+        });
 
-    expect(keyPathResult[@5]).to(contain(@"Hello"));
-});
+        XCTAssertTrue([blockResult[@5] containsObject:@"Hello"]);
 
-QuickSpecEnd
+        NSDictionary *keyPathResult = ASTGroupBy(dict, @"length");
+
+        XCTAssertTrue([keyPathResult[@5] containsObject:@"Hello"]);
+    }];
+}
+
+@end

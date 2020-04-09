@@ -17,15 +17,15 @@ depending on the data structure it operates on:
 ```objective-c
 ASTEach(@[ @"a", @"b", @"c" ], ^(NSString *letter) {
     NSLog(@"%@", letter);
-});
+}];
 
 ASTEach(@[ @"a", @"b", @"c" ], ^(NSString *letter, NSUInteger index) {
     NSLog(@"%u: %@", index, letter);
-});
+}];
 
 ASTEach(@{ @"foo": @"bar" }, ^(NSString *key, NSString *value) {
     NSLog(@"%@: %@", key, value);
-});
+}];
 ```
 
 [This page](http://robb.github.io/Asterism/) provides extensive documentation on

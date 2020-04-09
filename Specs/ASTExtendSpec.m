@@ -8,25 +8,31 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTExtendSpec)
+@interface ASTExtendTests : XCTestCase
 
-it(@"should return the union of both dictionaries", ^{
-    NSDictionary *dict   = @{ @1: @"foo" };
-    NSDictionary *source = @{ @2: @"baz" };
+@end
 
-    NSDictionary *result = @{
-        @1: @"foo",
-        @2: @"baz"
-    };
+@implementation ASTExtendTests
 
-    expect(ASTExtend(dict, source)).to(equal(result));
-});
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"should return the union of both dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *dict   = @{ @1: @"foo" };
+        NSDictionary *source = @{ @2: @"baz" };
 
-it(@"should prefer values from source over values from dict", ^{
-    NSDictionary *dict   = @{ @1: @"foo" };
-    NSDictionary *source = @{ @1: @"bar" };
+        NSDictionary *result = @{
+            @1: @"foo",
+            @2: @"baz"
+        };
 
-    expect(ASTExtend(dict, source)).to(equal(source));
-});
+        XCTAssertEqualObjects(ASTExtend(dict, source), result);
+    }];
 
-QuickSpecEnd
+    [XCTContext runActivityNamed:@"should prefer values from source over values from dict" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *dict   = @{ @1: @"foo" };
+        NSDictionary *source = @{ @1: @"bar" };
+
+        XCTAssertEqualObjects(ASTExtend(dict, source), source);
+    }];
+}
+
+@end

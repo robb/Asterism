@@ -8,34 +8,40 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTShuffleSpec)
+@interface ASTShuffleTests : XCTestCase
 
-describe(@"for arrays", ^{
-    it(@"should shuffle the array", ^{
-        NSArray *original = @[ @1, @2, @3, @4, @5, @6, @7, @8, @9, @10 ];
+@end
 
-        NSArray *shuffled = ASTShuffle(original);
+@implementation ASTShuffleTests
 
-        for (NSNumber *number in original) {
-            expect(shuffled).to(contain(number));
-        }
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should shuffle the array" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *original = @[ @1, @2, @3, @4, @5, @6, @7, @8, @9, @10 ];
 
-        expect(original).toNot(equal(shuffled));
-    });
-});
+            NSArray *shuffled = ASTShuffle(original);
 
-describe(@"for ordered sets", ^{
-    it(@"should shuffle the set", ^{
-        NSOrderedSet *original = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3, @4, @5, @6, @7, @8, @9, @10 ]];
+            for (NSNumber *number in original) {
+                XCTAssertTrue([shuffled containsObject:number]);
+            }
 
-        NSOrderedSet *shuffled = ASTShuffle(original);
+            XCTAssertNotEqual(original, shuffled);
+        }];
+    }];
 
-        for (NSNumber *number in original) {
-            expect(@([shuffled containsObject:number])).to(beTruthy());
-        }
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should shuffle the set" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *original = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3, @4, @5, @6, @7, @8, @9, @10 ]];
 
-        expect(original).toNot(equal(shuffled));
-    });
-});
+            NSOrderedSet *shuffled = ASTShuffle(original);
 
-QuickSpecEnd
+            for (NSNumber *number in original) {
+                XCTAssertTrue([shuffled containsObject:number]);
+            }
+
+            XCTAssertNotEqual(original, shuffled);
+        }];
+    }];
+}
+
+@end

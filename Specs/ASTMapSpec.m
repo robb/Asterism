@@ -8,235 +8,242 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTMapSpec)
+@interface ASTMapTests : XCTestCase
 
-describe(@"for arrays", ^{
-    it(@"should not call the block when given an empty array", ^{
-        __block NSUInteger calls = 0;
+@end
 
-        ASTMap(@[], ^(id obj) {
-            return @(calls++);
-        });
+@implementation ASTMapTests
 
-        expect(@(calls)).to(equal(@0));
-    });
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should not call the block when given an empty array" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-    it(@"should replace the objects with the result of the block", ^{
-        NSArray *before = @[ @1, @2, @3 ];
+            ASTMap(@[], ^(id obj) {
+                return @(calls++);
+            });
 
-        NSArray *after = ASTMap(before, ^(id obj) {
-            return [obj description];
-        });
+            XCTAssertEqualObjects(@(calls), @0);
+        }];
 
-        expect(after).to(equal((@[ @"1", @"2", @"3" ])));
-    });
+        [XCTContext runActivityNamed:@"should replace the objects with the result of the block" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *before = @[ @1, @2, @3 ];
 
-    it(@"should remove all elements for which the block returns nil", ^{
-        NSArray *even = ASTMap(@[ @0, @1, @2, @3 ], ^(NSNumber *number) {
-            return number.integerValue % 2 == 0 ? number : nil;
-        });
+            NSArray *after = ASTMap(before, ^(id obj) {
+                return [obj description];
+            });
 
-        expect(even).to(equal((@[ @0, @2 ])));
-    });
+            XCTAssertEqualObjects(after, (@[ @"1", @"2", @"3" ]));
+        }];
 
-    it(@"should call the block once for every object", ^{
-        __block NSUInteger calls = 0;
+        [XCTContext runActivityNamed:@"should remove all elements for which the block returns nil" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *even = ASTMap(@[ @0, @1, @2, @3 ], ^(NSNumber *number) {
+                return number.integerValue % 2 == 0 ? number : nil;
+            });
 
-        ASTMap(@[ @0, @1, @2 ], ^(id obj) {
-            return @(calls++);
-        });
+            XCTAssertEqualObjects(even, (@[ @0, @2 ]));
+        }];
 
-        expect(@(calls)).to(equal(@3));
-    });
+        [XCTContext runActivityNamed:@"should call the block once for every object" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-    it(@"should optionally pass in the index", ^{
-        ASTMap(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
-            expect(obj).to(equal(@(idx)));
+            ASTMap(@[ @0, @1, @2 ], ^(id obj) {
+                return @(calls++);
+            });
 
-            return @(idx);
-        });
-    });
+            XCTAssertEqualObjects(@(calls), @3);
+        }];
 
-    it(@"should maintain order", ^{
-        NSArray *before = @[ @1, @2, @3, @4 ];
+        [XCTContext runActivityNamed:@"should optionally pass in the index" block:^(id<XCTActivity> _Nonnull activity){
+            ASTMap(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
+                XCTAssertEqualObjects(obj, @(idx));
 
-        NSArray *after = ASTMap(before, ^(id obj) { return obj; });
+                return @(idx);
+            });
+        }];
 
-        expect(after).to(equal(before));
-    });
-});
+        [XCTContext runActivityNamed:@"should maintain order" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *before = @[ @1, @2, @3, @4 ];
 
-describe(@"for dictionaries", ^{
-    it(@"should not call the block when given an empty dictionary", ^{
-        __block NSUInteger calls = 0;
+            NSArray *after = ASTMap(before, ^(id obj) { return obj; });
 
-        ASTMap(@{}, ^(id obj) {
-            return @(calls++);
-        });
+            XCTAssertEqualObjects(after, before);
+        }];
+    }];
 
-        expect(@(calls)).to(equal(@0));
-    });
+    [XCTContext runActivityNamed:@"for dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should not call the block when given an empty dictionary" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-    it(@"should replace the values with the result of the block", ^{
-        NSDictionary *before = @{
-            @"fr": @"Bonjour",
-            @"en": @"Hello"
-        };
+            ASTMap(@{}, ^(id obj) {
+                return @(calls++);
+            });
 
-        NSDictionary *after = ASTMap(before, ^(NSString *string) {
-            return string.uppercaseString;
-        });
+            XCTAssertEqualObjects(@(calls), @0);
+        }];
 
-        expect(after).to(equal((@{
-            @"fr": @"BONJOUR",
-            @"en": @"HELLO"
-        })));
-    });
+        [XCTContext runActivityNamed:@"should replace the values with the result of the block" block:^(id<XCTActivity> _Nonnull activity){
+            NSDictionary *before = @{
+                @"fr": @"Bonjour",
+                @"en": @"Hello"
+            };
 
-    it(@"should remove all elements for which the block returns nil", ^{
-        NSDictionary *before = @{
-            @"fr": @"Bonjour",
-            @"en": @"Hello"
-        };
+            NSDictionary *after = ASTMap(before, ^(NSString *string) {
+                return string.uppercaseString;
+            });
 
-        NSDictionary *after = ASTMap(before, ^(NSString *string) {
-            return [string isEqual:@"Bonjour"] ? string : nil;
-        });
+            XCTAssertEqualObjects(after, (@{
+                @"fr": @"BONJOUR",
+                @"en": @"HELLO"
+                                          }));
+        }];
 
-        expect(after).to(equal(@{
-            @"fr": @"Bonjour"
-        }));
-    });
+        [XCTContext runActivityNamed:@"should remove all elements for which the block returns nil" block:^(id<XCTActivity> _Nonnull activity){
+            NSDictionary *before = @{
+                @"fr": @"Bonjour",
+                @"en": @"Hello"
+            };
 
-    it(@"should call the block once for every key-value-pair", ^{
-        __block NSUInteger calls = 0;
+            NSDictionary *after = ASTMap(before, ^(NSString *string) {
+                return [string isEqual:@"Bonjour"] ? string : nil;
+            });
 
-        NSDictionary *dictionary = @{
-            @"fr": @"Bonjour",
-            @"en": @"Hello"
-        };
+            XCTAssertEqualObjects(after, @{
+                @"fr": @"Bonjour"
+                                         });
+        }];
 
-        ASTMap(dictionary, ^(id obj) {
-            return @(calls++);
-        });
+        [XCTContext runActivityNamed:@"should call the block once for every key-value-pair" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-        expect(@(calls)).to(equal(@2));
-    });
+            NSDictionary *dictionary = @{
+                @"fr": @"Bonjour",
+                @"en": @"Hello"
+            };
 
-    it(@"should optionally pass in the key", ^{
-        ASTMap(@{ @"foo": @"FOO" }, ^(id key, id obj) {
-            expect([key uppercaseString]).to(equal(obj));
+            ASTMap(dictionary, ^(id obj) {
+                return @(calls++);
+            });
 
-            return obj;
-        });
-    });
-});
+            XCTAssertEqualObjects(@(calls), @2);
+        }];
 
-describe(@"for sets", ^{
-    it(@"should not call the block when given an empty set", ^{
-        __block NSUInteger calls = 0;
+        [XCTContext runActivityNamed:@"should optionally pass in the key" block:^(id<XCTActivity> _Nonnull activity){
+            ASTMap(@{ @"foo": @"FOO" }, ^(id key, id obj) {
+                XCTAssertEqualObjects([key uppercaseString], obj);
 
-        ASTMap([[NSSet alloc] init], ^(id obj) {
-            return @(calls++);
-        });
+                return obj;
+            });
+        }];
+    }];
 
-        expect(@(calls)).to(equal(@0));
-    });
+    [XCTContext runActivityNamed:@"for sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should not call the block when given an empty set" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-    it(@"should replace the objects with the result of the block", ^{
-        NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
+            ASTMap([[NSSet alloc] init], ^(id obj) {
+                return @(calls++);
+            });
 
-        NSSet *after = ASTMap(before, ^(id obj) {
-            return [obj description];
-        });
+            XCTAssertEqualObjects(@(calls), @0);
+        }];
 
-        expect(after).to(equal(([NSSet setWithArray:@[
-            @"1", @"2", @"3"
-        ]])));
-    });
+        [XCTContext runActivityNamed:@"should replace the objects with the result of the block" block:^(id<XCTActivity> _Nonnull activity){
+            NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-    it(@"should remove all elements for which the block returns nil", ^{
-        NSSet *numbers = [NSSet setWithArray:@[ @0, @1, @2, @3 ]];
+            NSSet *after = ASTMap(before, ^(id obj) {
+                return [obj description];
+            });
 
-        NSSet *even = ASTMap(numbers, ^(NSNumber *number) {
-            return number.integerValue % 2 == 0 ? number : nil;
-        });
 
-        expect(even).to(equal(([NSSet setWithArray:@[ @0, @2 ]])));
-    });
+            XCTAssertEqualObjects(after, ([NSSet setWithArray:@[
+                @"1", @"2", @"3"
+            ]]));
+        }];
 
-    it(@"should call the block once for every object", ^{
-        __block NSUInteger calls = 0;
+        [XCTContext runActivityNamed:@"should remove all elements for which the block returns nil" block:^(id<XCTActivity> _Nonnull activity){
+            NSSet *numbers = [NSSet setWithArray:@[ @0, @1, @2, @3 ]];
 
-        NSSet *set = [NSSet setWithArray:@[ @1, @2, @3 ]];
+            NSSet *even = ASTMap(numbers, ^(NSNumber *number) {
+                return number.integerValue % 2 == 0 ? number : nil;
+            });
 
-        ASTMap(set, ^(id obj) {
-            return @(calls++);
-        });
+            XCTAssertEqualObjects(even, ([NSSet setWithArray:@[ @0, @2 ]]));
+        }];
 
-        expect(@(calls)).to(equal(@3));
-    });
-});
+        [XCTContext runActivityNamed:@"should call the block once for every object" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-describe(@"for ordered sets", ^{
-    it(@"should not call the block when given an empty array", ^{
-        __block NSUInteger calls = 0;
+            NSSet *set = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-        ASTMap([NSOrderedSet orderedSet], ^(id obj) {
-            return @(calls++);
-        });
+            ASTMap(set, ^(id obj) {
+                return @(calls++);
+            });
 
-        expect(@(calls)).to(equal(@0));
-    });
+            XCTAssertEqualObjects(@(calls), @3);
+        }];
+    }];
 
-    it(@"should replace the objects with the result of the block", ^{
-        NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should not call the block when given an empty array" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-        NSOrderedSet *after = ASTMap(before, ^(id obj) {
-            return [obj description];
-        });
+            ASTMap([NSOrderedSet orderedSet], ^(id obj) {
+                return @(calls++);
+            });
 
-        expect(after).to(equal(([NSOrderedSet orderedSetWithArray:@[ @"1", @"2", @"3" ]])));
-    });
+            XCTAssertEqualObjects(@(calls), @0);
+        }];
 
-    it(@"should remove all elements for which the block returns nil", ^{
-        NSOrderedSet *numbers = [NSOrderedSet orderedSetWithArray:@[ @0, @1, @2, @3 ]];
+        [XCTContext runActivityNamed:@"should replace the objects with the result of the block" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
 
-        NSOrderedSet *even = ASTMap(numbers, ^(NSNumber *number) {
-            return number.integerValue % 2 == 0 ? number : nil;
-        });
+            NSOrderedSet *after = ASTMap(before, ^(id obj) {
+                return [obj description];
+            });
 
-        expect(even).to(equal(([NSOrderedSet orderedSetWithArray:@[ @0, @2 ]])));
-    });
+            XCTAssertEqualObjects(after, ([NSOrderedSet orderedSetWithArray:@[ @"1", @"2", @"3" ]]));
+        }];
 
-    it(@"should call the block once for every object", ^{
-        NSOrderedSet *numbers = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
-        __block NSUInteger calls = 0;
+        [XCTContext runActivityNamed:@"should remove all elements for which the block returns nil" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *numbers = [NSOrderedSet orderedSetWithArray:@[ @0, @1, @2, @3 ]];
 
-        ASTMap(numbers, ^(id obj) {
-            return @(calls++);
-        });
+            NSOrderedSet *even = ASTMap(numbers, ^(NSNumber *number) {
+                return number.integerValue % 2 == 0 ? number : nil;
+            });
 
-        expect(@(calls)).to(equal(@3));
-    });
+            XCTAssertEqualObjects(even, ([NSOrderedSet orderedSetWithArray:@[ @0, @2 ]]));
+        }];
 
-    it(@"should optionally pass in the index", ^{
-        NSOrderedSet *numbers = [NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]];
+        [XCTContext runActivityNamed:@"should call the block once for every object" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *numbers = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+            __block NSUInteger calls = 0;
 
-        ASTMap(numbers, ^(id obj, NSUInteger idx) {
-            expect(obj).to(equal(@(idx)));
+            ASTMap(numbers, ^(id obj) {
+                return @(calls++);
+            });
 
-            return @(idx);
-        });
-    });
+            XCTAssertEqualObjects(@(calls), @3);
+        }];
 
-    it(@"should maintain order", ^{
-        NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+        [XCTContext runActivityNamed:@"should optionally pass in the index" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *numbers = [NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]];
 
-        NSOrderedSet *after = ASTMap(before, ^(id obj) { return obj; });
+            ASTMap(numbers, ^(id obj, NSUInteger idx) {
+                XCTAssertEqualObjects(obj, @(idx));
 
-        expect(after).to(equal(before));
-    });
-});
+                return @(idx);
+            });
+        }];
 
-QuickSpecEnd
+        [XCTContext runActivityNamed:@"should maintain order" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+
+            NSOrderedSet *after = ASTMap(before, ^(id obj) { return obj; });
+
+            XCTAssertEqualObjects(after, before);
+        }];
+    }];
+}
+
+@end

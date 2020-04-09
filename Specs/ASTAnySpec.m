@@ -12,30 +12,36 @@ BOOL (^isOdd)(NSNumber *) = ^BOOL (NSNumber *number) {
     return number.integerValue % 2 == 1;
 };
 
-QuickSpecBegin(ASTAnySpec)
+@interface ASTAnyTests : XCTestCase
 
-it(@"should return NO for empty collections", ^{
-    expect(@(ASTAny((id<NSFastEnumeration>)nil, ^(id obj){ return NO; }))).to(beFalsy());
+@end
 
-    expect(@(ASTAny(@[], ^(id obj){ return NO; }))).to(beFalsy());
-});
+@implementation ASTAnyTests
 
-it(@"should return YES if one element passes the test", ^{
-    NSArray *numbers = @[ @2, @4, @6, @8, @9 ];
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"should return NO for empty collections" block:^(id<XCTActivity> _Nonnull activity){
+        XCTAssertFalse(ASTAny((id<NSFastEnumeration>)nil, ^(id obj){ return NO; }));
 
-    expect(@(ASTAny(numbers, isOdd))).to(beTruthy());
-});
+        XCTAssertFalse(ASTAny(@[], ^(id obj){ return NO; }));
+    }];
 
-it(@"should return NO if all elements fail the test", ^{
-    NSArray *numbers = @[ @2, @4, @6, @8 ];
+    [XCTContext runActivityNamed:@"should return YES if one element passes the test" block:^(id<XCTActivity> _Nonnull activity){
+        NSArray *numbers = @[ @2, @4, @6, @8, @9 ];
 
-    expect(@(ASTAny(numbers, isOdd))).to(beFalsy());
-});
+        XCTAssertTrue(ASTAny(numbers, isOdd));
+    }];
 
-it(@"should use the values of dictionaries", ^{
-    NSDictionary *dict = @{ @"foo": @1 };
+    [XCTContext runActivityNamed:@"should return NO if all elements fail the test" block:^(id<XCTActivity> _Nonnull activity){
+        NSArray *numbers = @[ @2, @4, @6, @8 ];
 
-    expect(@(ASTAny(dict, isOdd))).to(beTruthy());
-});
+        XCTAssertFalse(ASTAny(numbers, isOdd));
+    }];
 
-QuickSpecEnd
+    [XCTContext runActivityNamed:@"should use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *dict = @{ @"foo": @1 };
+
+        XCTAssertTrue(ASTAny(dict, isOdd));
+    }];
+}
+
+@end

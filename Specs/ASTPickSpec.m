@@ -8,13 +8,19 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTPickSpec)
+@interface ASTPickTests : XCTestCase
 
-it(@"should pick only the given keys", ^{
-    NSDictionary *dict = @{ @"foo": @"foo", @"bar": @"bar" };
-    NSArray *keys = @[ @"foo" ];
+@end
 
-    expect(ASTPick(dict, keys)).to(equal(@{ @"foo": @"foo" }));
-});
+@implementation ASTPickTests
 
-QuickSpecEnd
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"should pick only the given keys" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *dict = @{ @"foo": @"foo", @"bar": @"bar" };
+        NSArray *keys = @[ @"foo" ];
+
+        XCTAssertEqualObjects(ASTPick(dict, keys), @{ @"foo": @"foo" });
+    }];
+}
+
+@end

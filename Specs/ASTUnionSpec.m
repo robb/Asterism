@@ -8,47 +8,53 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTUnionSpec)
+@interface ASTUnionTests : XCTestCase
 
-describe(@"for arrays", ^{
-    it(@"should return a array of unique objects present in both arrays", ^{
-        NSArray *result = ASTUnion(@[ @1, @2 ], @[ @2, @3, @4 ]);
+@end
 
-        expect(@(result.count)).to(equal(@4));
+@implementation ASTUnionTests
 
-        expect(result).to(contain(@1));
-        expect(result).to(contain(@2));
-        expect(result).to(contain(@3));
-        expect(result).to(contain(@4));
-    });
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return a array of unique objects present in both arrays" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *result = ASTUnion(@[ @1, @2 ], @[ @2, @3, @4 ]);
 
-    it(@"should maintain order", ^{
-        NSArray *result = ASTUnion(@[ @2 ], @[ @1 ]);
+            XCTAssertEqualObjects(@(result.count), @4);
 
-        expect(result).to(equal((@[ @2, @1 ])));
-    });
-});
+            XCTAssertTrue([result containsObject:@1]);
+            XCTAssertTrue([result containsObject:@2]);
+            XCTAssertTrue([result containsObject:@3]);
+            XCTAssertTrue([result containsObject:@4]);
+        }];
 
-describe(@"for sets", ^{
-    it(@"should return a set of objects present in both sets", ^{
-        NSSet *a = [NSSet setWithArray:@[ @1, @2, @3 ]];
-        NSSet *b = [NSSet setWithArray:@[ @5, @4, @3 ]];
+        [XCTContext runActivityNamed:@"should maintain order" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *result = ASTUnion(@[ @2 ], @[ @1 ]);
 
-        NSSet *result = ASTUnion(a, b);
+            XCTAssertEqualObjects(result, (@[ @2, @1 ]));
+        }];
+    }];
 
-        expect(result).to(equal(([NSSet setWithArray:@[ @1, @2, @3, @4, @5 ]])));
-    });
-});
+    [XCTContext runActivityNamed:@"for sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return a set of objects present in both sets" block:^(id<XCTActivity> _Nonnull activity){
+            NSSet *a = [NSSet setWithArray:@[ @1, @2, @3 ]];
+            NSSet *b = [NSSet setWithArray:@[ @5, @4, @3 ]];
 
-describe(@"for ordered sets", ^{
-    it(@"should return an ordered of unique objects present in both sets", ^{
-        NSOrderedSet *a = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
-        NSOrderedSet *b = [NSOrderedSet orderedSetWithArray:@[ @5, @4, @3 ]];
+            NSSet *result = ASTUnion(a, b);
 
-        NSOrderedSet *result = ASTUnion(a, b);
+            XCTAssertEqualObjects(result, ([NSSet setWithArray:@[ @1, @2, @3, @4, @5 ]]));
+        }];
+    }];
 
-        expect(result).to(equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2, @3, @5, @4 ]])));
-    });
-});
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return an ordered of unique objects present in both sets" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *a = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+            NSOrderedSet *b = [NSOrderedSet orderedSetWithArray:@[ @5, @4, @3 ]];
 
-QuickSpecEnd
+            NSOrderedSet *result = ASTUnion(a, b);
+
+            XCTAssertEqualObjects(result, ([NSOrderedSet orderedSetWithArray:@[ @1, @2, @3, @5, @4 ]]));
+        }];
+    }];
+}
+
+@end

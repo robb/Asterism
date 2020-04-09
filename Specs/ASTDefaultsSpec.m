@@ -8,25 +8,31 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTDefaultsSpec)
+@interface ASTDefaultsTests : XCTestCase
 
-it(@"should return the union of both dictionaries", ^{
-    NSDictionary *dict     = @{ @1: @"foo" };
-    NSDictionary *defaults = @{ @2: @"baz" };
+@end
 
-    NSDictionary *result = @{
-        @1: @"foo",
-        @2: @"baz"
-    };
+@implementation ASTDefaultsTests
 
-    expect(ASTDefaults(dict, defaults)).to(equal(result));
-});
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"should return the union of both dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *dict     = @{ @1: @"foo" };
+        NSDictionary *defaults = @{ @2: @"baz" };
 
-it(@"should prefer values from dict over values from defaults", ^{
-    NSDictionary *dict     = @{ @1: @"foo" };
-    NSDictionary *defaults = @{ @1: @"bar" };
+        NSDictionary *result = @{
+            @1: @"foo",
+            @2: @"baz"
+        };
 
-    expect(ASTDefaults(dict, defaults)).to(equal(dict));
-});
+        XCTAssertEqualObjects(ASTDefaults(dict, defaults), result);
+    }];
 
-QuickSpecEnd
+    [XCTContext runActivityNamed:@"should prefer values from dict over values from defaults" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *dict     = @{ @1: @"foo" };
+        NSDictionary *defaults = @{ @1: @"bar" };
+
+        XCTAssertEqualObjects(ASTDefaults(dict, defaults), dict);
+    }];
+}
+
+@end

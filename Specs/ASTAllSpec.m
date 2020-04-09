@@ -8,34 +8,40 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTAllSpec)
+@interface ASTAllTests : XCTestCase
 
-it(@"should return NO for empty collections", ^{
-    expect(@(ASTAll((id<NSFastEnumeration>)nil, ^(id obj){ return NO; }))).to(beFalsy());
+@end
 
-    expect(@(ASTAll(@[], ^(id obj){ return NO; }))).to(beFalsy());
-});
+@implementation ASTAllTests
 
-BOOL (^isEven)(NSNumber *) = ^BOOL (NSNumber *number) {
-    return number.integerValue % 2 == 0;
-};
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"should return NO for empty collections" block:^(id<XCTActivity> _Nonnull activity){
+        XCTAssertFalse(ASTAll((id<NSFastEnumeration>)nil, ^(id obj){ return NO; }));
 
-it(@"should return YES if all elements pass the test", ^{
-    NSArray *numbers = @[ @2, @4, @6, @8 ];
+        XCTAssertFalse(ASTAll(@[], ^(id obj){ return NO; }));
+    }];
 
-    expect(@(ASTAll(numbers, isEven))).to(beTruthy());
-});
+    BOOL (^isEven)(NSNumber *) = ^BOOL (NSNumber *number) {
+        return number.integerValue % 2 == 0;
+    };
 
-it(@"should return NO if one element fails the test", ^{
-    NSArray *numbers = @[ @2, @4, @6, @8, @9 ];
+    [XCTContext runActivityNamed:@"should return YES if all elements pass the test" block:^(id<XCTActivity> _Nonnull activity){
+        NSArray *numbers = @[ @2, @4, @6, @8 ];
 
-    expect(@(ASTAll(numbers, isEven))).to(beFalsy());
-});
+        XCTAssertTrue(ASTAll(numbers, isEven));
+    }];
 
-it(@"should use the values of dictionaries", ^{
-    NSDictionary *dict = @{ @"foo": @2 };
+    [XCTContext runActivityNamed:@"should return NO if one element fails the test" block:^(id<XCTActivity> _Nonnull activity){
+        NSArray *numbers = @[ @2, @4, @6, @8, @9 ];
 
-    expect(@(ASTAll(dict, isEven))).to(beTruthy());
-});
+        XCTAssertFalse(ASTAll(numbers, isEven));
+    }];
 
-QuickSpecEnd
+    [XCTContext runActivityNamed:@"should use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *dict = @{ @"foo": @2 };
+
+        XCTAssertTrue(ASTAll(dict, isEven));
+    }];
+}
+
+@end
