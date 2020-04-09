@@ -8,93 +8,99 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTRejectSpec)
+@interface ASTRejectTests : XCTestCase
 
-describe(@"for arrays", ^{
-    NSArray *before = @[ @1, @2, @3 ];
+@end
 
-    it(@"should remove all objects that pass the test", ^{
-        NSArray *after = ASTReject(before, ^BOOL(NSNumber *obj) {
-            return obj.integerValue % 2 == 1;
-        });
+@implementation ASTRejectTests
 
-        expect(after).to(equal((@[ @2 ])));
-    });
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        NSArray *before = @[ @1, @2, @3 ];
 
-    it(@"should optionally pass in the index", ^{
-        NSArray *after = ASTReject(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
-            return idx < 2;
-        });
+        [XCTContext runActivityNamed:@"should remove all objects that pass the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *after = ASTReject(before, ^BOOL(NSNumber *obj) {
+                return obj.integerValue % 2 == 1;
+            });
 
-        expect(after).to(equal((@[ @3 ])));
-    });
+            XCTAssertEqualObjects(after, (@[ @2 ]));
+        }];
 
-    it(@"should maintain order", ^{
-        NSArray *after = ASTReject(before, ^BOOL(NSNumber *obj) { return NO; });
+        [XCTContext runActivityNamed:@"should optionally pass in the index" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *after = ASTReject(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
+                return idx < 2;
+            });
 
-        expect(after).to(equal(before));
-    });
-});
+            XCTAssertEqualObjects(after, (@[ @3 ]));
+        }];
 
-describe(@"for dictionaries", ^{
-    NSDictionary *before = @{
-        @"en": @"Hello",
-        @"fr": @"Bonjour"
-    };
+        [XCTContext runActivityNamed:@"should maintain order" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *after = ASTReject(before, ^BOOL(NSNumber *obj) { return NO; });
 
-    it(@"should remove all objects that fail the test", ^{
-        NSDictionary *after = ASTReject(before, ^BOOL(NSString *obj) {
-            return [obj isEqualToString:@"Bonjour"];
-        });
+            XCTAssertEqualObjects(after, before);
+        }];
+    }];
 
-        expect(after).to(equal((@{ @"en": @"Hello" })));
-    });
+    [XCTContext runActivityNamed:@"for dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *before = @{
+            @"en": @"Hello",
+            @"fr": @"Bonjour"
+        };
 
-    it(@"should optionally pass in the key", ^{
-        NSDictionary *after = ASTReject(before, ^BOOL(NSString *key, NSString *obj) {
-            return [key isEqualToString:@"fr"];
-        });
+        [XCTContext runActivityNamed:@"should remove all objects that fail the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSDictionary *after = ASTReject(before, ^BOOL(NSString *obj) {
+                return [obj isEqualToString:@"Bonjour"];
+            });
 
-        expect(after).to(equal((@{ @"en": @"Hello" })));
-    });
-});
+            XCTAssertEqualObjects(after, (@{ @"en": @"Hello" }));
+        }];
 
-describe(@"for sets", ^{
-    NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
+        [XCTContext runActivityNamed:@"should optionally pass in the key" block:^(id<XCTActivity> _Nonnull activity){
+            NSDictionary *after = ASTReject(before, ^BOOL(NSString *key, NSString *obj) {
+                return [key isEqualToString:@"fr"];
+            });
 
-    it(@"should remove all objects that fail the test", ^{
-        NSSet *after = ASTReject(before, ^BOOL(NSNumber *obj) {
-            return obj.integerValue % 2 == 1;
-        });
+            XCTAssertEqualObjects(after, (@{ @"en": @"Hello" }));
+        }];
+    }];
 
-        expect(after).to(equal(([NSSet setWithArray:@[ @2 ]])));
-    });
-});
+    [XCTContext runActivityNamed:@"for sets" block:^(id<XCTActivity> _Nonnull activity){
+        NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-describe(@"for ordered sets", ^{
-    NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+        [XCTContext runActivityNamed:@"should remove all objects that fail the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSSet *after = ASTReject(before, ^BOOL(NSNumber *obj) {
+                return obj.integerValue % 2 == 1;
+            });
 
-    it(@"should remove all objects that pass the test", ^{
-        NSOrderedSet *after = ASTReject(before, ^BOOL(NSNumber *obj) {
-            return obj.integerValue % 2 == 1;
-        });
+            XCTAssertEqualObjects(after, ([NSSet setWithArray:@[ @2 ]]));
+        }];
+    }];
 
-        expect(after).to(equal([NSOrderedSet orderedSetWithObject:@2]));
-    });
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
 
-    it(@"should optionally pass in the index", ^{
-        NSOrderedSet *after = ASTReject(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
-            return idx < 2;
-        });
+        [XCTContext runActivityNamed:@"should remove all objects that pass the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *after = ASTReject(before, ^BOOL(NSNumber *obj) {
+                return obj.integerValue % 2 == 1;
+            });
 
-        expect(after).to(equal([NSOrderedSet orderedSetWithObject:@3]));
-    });
+            XCTAssertEqualObjects(after, [NSOrderedSet orderedSetWithObject:@2]);
+        }];
 
-    it(@"should maintain order", ^{
-        NSOrderedSet *after = ASTReject(before, ^BOOL(NSNumber *obj) { return NO; });
+        [XCTContext runActivityNamed:@"should optionally pass in the index" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *after = ASTReject(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
+                return idx < 2;
+            });
 
-        expect(after).to(equal(before));
-    });
-});
+            XCTAssertEqualObjects(after, [NSOrderedSet orderedSetWithObject:@3]);
+        }];
 
-QuickSpecEnd
+        [XCTContext runActivityNamed:@"should maintain order" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *after = ASTReject(before, ^BOOL(NSNumber *obj) { return NO; });
+
+            XCTAssertEqualObjects(after, before);
+        }];
+    }];
+}
+
+@end

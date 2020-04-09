@@ -66,15 +66,7 @@
 		37D145F11CAB336900B73728 /* ASTTail.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E0ED6F175A0FAC0076C6EA /* ASTTail.m */; };
 		37D145F21CAB336900B73728 /* ASTUnion.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FE96E2177053FE006F40AC /* ASTUnion.m */; };
 		37D145F31CAB336900B73728 /* ASTWithout.m in Sources */ = {isa = PBXBuildFile; fileRef = 545059C2186274E100A062D9 /* ASTWithout.m */; };
-		37D145F51CAB346500B73728 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D145F41CAB346500B73728 /* Nimble.framework */; };
-		37D145F71CAB346E00B73728 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D145F61CAB346E00B73728 /* Quick.framework */; };
-		37D145F91CAB347900B73728 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D145F81CAB347900B73728 /* Nimble.framework */; };
-		37D145FB1CAB347F00B73728 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D145FA1CAB347F00B73728 /* Quick.framework */; };
-		37D145FE1CAB34E300B73728 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37D145F41CAB346500B73728 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		37D145FF1CAB34EB00B73728 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37D145F61CAB346E00B73728 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		37D146001CAB351D00B73728 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54D9EE821721543D00383762 /* InfoPlist.strings */; };
-		37D146021CAB355A00B73728 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37D145FA1CAB347F00B73728 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		37D146031CAB356000B73728 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37D145F81CAB347900B73728 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		37D146041CAB65E800B73728 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E002BB18C920F600B66BC3 /* XCTest.framework */; };
 		37D146171CAB6DEA00B73728 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E002A918C920F600B66BC3 /* Foundation.framework */; };
 		37D146181CAB719600B73728 /* ASTAnySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 54892BB2184AB268009CF268 /* ASTAnySpec.m */; };
@@ -219,8 +211,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				37D145FF1CAB34EB00B73728 /* Quick.framework in CopyFiles */,
-				37D145FE1CAB34E300B73728 /* Nimble.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +220,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				37D146031CAB356000B73728 /* Nimble.framework in CopyFiles */,
-				37D146021CAB355A00B73728 /* Quick.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,8 +345,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				54D9EE7B1721543D00383762 /* Foundation.framework in Frameworks */,
-				37D145F51CAB346500B73728 /* Nimble.framework in Frameworks */,
-				37D145F71CAB346E00B73728 /* Quick.framework in Frameworks */,
 				37D146041CAB65E800B73728 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,8 +362,6 @@
 			files = (
 				37D146171CAB6DEA00B73728 /* Foundation.framework in Frameworks */,
 				54E0030A18C922EF00B66BC3 /* Asterism.framework in Frameworks */,
-				37D145F91CAB347900B73728 /* Nimble.framework in Frameworks */,
-				37D145FB1CAB347F00B73728 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,7 +697,7 @@
 				CLASSPREFIX = AST;
 				LastSwiftUpdateCheck = 0720;
 				LastTestingUpgradeCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Robert Böhnke";
 				TargetAttributes = {
 					37D145B01CAB31DB00B73728 = {
@@ -726,10 +710,11 @@
 			};
 			buildConfigurationList = 54D9EE601721543D00383762 /* Build configuration list for PBXProject "Asterism" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 54D9EE5C1721543D00383762;
 			productRefGroup = 54D9EE661721543D00383762 /* Products */;
@@ -1025,27 +1010,45 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -1058,20 +1061,38 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
@@ -1083,16 +1104,13 @@
 		54D9EE8E1721543D00383762 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
 				INFOPLIST_FILE = "Specs/Specs-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = AsterismSpecs;
 				SWIFT_OBJC_BRIDGING_HEADER = "Specs/AsterismSpecs-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1103,16 +1121,13 @@
 		54D9EE8F1721543D00383762 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
 				INFOPLIST_FILE = "Specs/Specs-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robertboehnke.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = AsterismSpecs;
 				SWIFT_OBJC_BRIDGING_HEADER = "Specs/AsterismSpecs-Bridging-Header.h";
 				WRAPPER_EXTENSION = xctest;
@@ -1190,17 +1205,12 @@
 		54E002CB18C920F600B66BC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				COMBINE_HIDPI_IMAGES = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";
@@ -1227,19 +1237,14 @@
 		54E002CC18C920F600B66BC3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Specs/Specs-Prefix.pch";

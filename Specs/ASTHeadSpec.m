@@ -8,26 +8,32 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTHeadSpec)
+@interface ASTHeadTests : XCTestCase
 
-describe(@"for arrays", ^{
-    it(@"should return nil if the array is empty", ^{
-        expect(ASTHead(@[])).to(beNil());
-    });
+@end
 
-    it(@"should return the first element", ^{
-        expect(ASTHead(@[ @1, @2 ])).to(equal(@1));
-    });
-});
+@implementation ASTHeadTests
 
-describe(@"for ordered sets", ^{
-    it(@"should return nil if the set is empty", ^{
-        expect(ASTHead([NSOrderedSet orderedSet])).to(beNil());
-    });
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return nil if the array is empty" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertNil(ASTHead(@[]));
+        }];
 
-    it(@"should return the first element", ^{
-        expect(ASTHead([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]])).to(equal(@1));
-    });
-});
+        [XCTContext runActivityNamed:@"should return the first element" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertEqualObjects(ASTHead(@[ @1, @2 ]), @1);
+        }];
+    }];
 
-QuickSpecEnd
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return nil if the set is empty" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertNil(ASTHead([NSOrderedSet orderedSet]));
+        }];
+
+        [XCTContext runActivityNamed:@"should return the first element" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertEqualObjects(ASTHead([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]]), @1);
+        }];
+    }];
+}
+
+@end

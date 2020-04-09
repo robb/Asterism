@@ -8,138 +8,144 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTEachSpec)
+@interface ASTEachTests : XCTestCase
 
-describe(@"for arrays", ^{
-    it(@"should not call the block when given an empty array", ^{
-        __block NSUInteger calls = 0;
+@end
 
-        ASTEach(@[], ^(id obj) {
-            calls++;
-        });
+@implementation ASTEachTests
 
-        expect(@(calls)).to(equal(@0));
-    });
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should not call the block when given an empty array" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-    it(@"should call the block once for every object", ^{
-        __block NSUInteger calls = 0;
+            ASTEach(@[], ^(id obj) {
+                calls++;
+            });
 
-        ASTEach(@[ @0, @1, @2 ], ^(id obj) {
-            calls++;
-        });
+            XCTAssertEqualObjects(@(calls), @0);
+        }];
 
-        expect(@(calls)).to(equal(@3));
-    });
+        [XCTContext runActivityNamed:@"should call the block once for every object" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-    it(@"should optionally pass in the index", ^{
-        ASTEach(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
-            expect(obj).to(equal(@(idx)));
-        });
-    });
+            ASTEach(@[ @0, @1, @2 ], ^(id obj) {
+                calls++;
+            });
 
-    it(@"should iterate over the array in order", ^{
-        __block NSUInteger calls = 0;
+            XCTAssertEqualObjects(@(calls), @3);
+        }];
 
-        ASTEach(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
-            expect(@(calls++)).to(equal(@(idx)));
-        });
-    });
-});
+        [XCTContext runActivityNamed:@"should optionally pass in the index" block:^(id<XCTActivity> _Nonnull activity){
+            ASTEach(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
+                XCTAssertEqualObjects(obj, @(idx));
+            });
+        }];
 
-describe(@"for dictionaries", ^{
-    it(@"should not call the block when given an empty dictionary", ^{
-        __block NSUInteger calls = 0;
+        [XCTContext runActivityNamed:@"should iterate over the array in order" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-        ASTEach(@{}, ^(id obj) {
-            calls++;
-        });
+            ASTEach(@[ @0, @1, @2 ], ^(id obj, NSUInteger idx) {
+                XCTAssertEqualObjects(@(calls++), @(idx));
+            });
+        }];
+    }];
 
-        expect(@(calls)).to(equal(@0));
-    });
+    [XCTContext runActivityNamed:@"for dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should not call the block when given an empty dictionary" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-    it(@"should call the block once for every key-value-pair", ^{
-        __block NSUInteger calls = 0;
+            ASTEach(@{}, ^(id obj) {
+                calls++;
+            });
 
-        NSDictionary *dictionary = @{
-            @"foo": @"FOO",
-            @"bar": @"BAR"
-        };
+            XCTAssertEqualObjects(@(calls), @0);
+        }];
 
-        ASTEach(dictionary, ^(id obj) {
-            calls++;
-        });
+        [XCTContext runActivityNamed:@"should call the block once for every key-value-pair" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-        expect(@(calls)).to(equal(@2));
-    });
+            NSDictionary *dictionary = @{
+                @"foo": @"FOO",
+                @"bar": @"BAR"
+            };
 
-    it(@"should optionally pass in the key", ^{
-        ASTEach(@{ @"foo": @"FOO" }, ^(id key, id obj) {
-            expect([key uppercaseString]).to(equal(obj));
-        });
-    });
-});
+            ASTEach(dictionary, ^(id obj) {
+                calls++;
+            });
 
-describe(@"for ordered sets", ^{
-    it(@"should not call the block when given an empty set", ^{
-        __block NSUInteger calls = 0;
+            XCTAssertEqualObjects(@(calls), @2);
+        }];
 
-        ASTEach([NSOrderedSet orderedSet], ^(id obj) {
-            calls++;
-        });
+        [XCTContext runActivityNamed:@"should optionally pass in the key" block:^(id<XCTActivity> _Nonnull activity){
+            ASTEach(@{ @"foo": @"FOO" }, ^(id key, id obj) {
+                XCTAssertEqualObjects([key uppercaseString], obj);
+            });
+        }];
+    }];
 
-        expect(@(calls)).to(equal(@0));
-    });
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should not call the block when given an empty set" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-    it(@"should call the block once for every object", ^{
-        __block NSUInteger calls = 0;
+            ASTEach([NSOrderedSet orderedSet], ^(id obj) {
+                calls++;
+            });
 
-        ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ^(id obj) {
-            calls++;
-        });
+            XCTAssertEqualObjects(@(calls), @0);
+        }];
 
-        expect(@(calls)).to(equal(@3));
-    });
+        [XCTContext runActivityNamed:@"should call the block once for every object" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-    it(@"should optionally pass in the index", ^{
-        ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ^(id obj, NSUInteger idx) {
-            expect(obj).to(equal(@(idx)));
-        });
-    });
+            ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ^(id obj) {
+                calls++;
+            });
 
-    it(@"should iterate over the array in order", ^{
-        __block NSUInteger calls = 0;
+            XCTAssertEqualObjects(@(calls), @3);
+        }];
 
-        ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ^(id obj, NSUInteger idx) {
-            expect(@(calls++)).to(equal(@(idx)));
-        });
-    });
-});
+        [XCTContext runActivityNamed:@"should optionally pass in the index" block:^(id<XCTActivity> _Nonnull activity){
+            ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ^(id obj, NSUInteger idx) {
+                XCTAssertEqualObjects(obj, @(idx));
+            });
+        }];
+
+        [XCTContext runActivityNamed:@"should iterate over the array in order" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
+
+            ASTEach([NSOrderedSet orderedSetWithArray:@[ @0, @1, @2 ]], ^(id obj, NSUInteger idx) {
+                XCTAssertEqualObjects(@(calls++), @(idx));
+            });
+        }];
+    }];
 
 
-describe(@"for objects implementing <NSFastEnumeration>", ^{
-    it(@"should not call the block when given an empty collection", ^{
-        __block NSUInteger calls = 0;
+    [XCTContext runActivityNamed:@"for objects implementing <NSFastEnumeration>" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should not call the block when given an empty collection" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-        id<NSFastEnumeration> enumerable = @[];
+            id<NSFastEnumeration> enumerable = @[];
 
-        ASTEach(enumerable, ^(id obj) {
-            calls++;
-        });
+            ASTEach(enumerable, ^(id obj) {
+                calls++;
+            });
 
-        expect(@(calls)).to(equal(@0));
-    });
+            XCTAssertEqualObjects(@(calls), @0);
+        }];
 
-    it(@"should call the block once for every object", ^{
-        __block NSUInteger calls = 0;
+        [XCTContext runActivityNamed:@"should call the block once for every object" block:^(id<XCTActivity> _Nonnull activity){
+            __block NSUInteger calls = 0;
 
-        id<NSFastEnumeration> enumerable = @[ @1, @2, @3 ];
+            id<NSFastEnumeration> enumerable = @[ @1, @2, @3 ];
 
-        ASTEach(enumerable, ^(id obj) {
-            calls++;
-        });
+            ASTEach(enumerable, ^(id obj) {
+                calls++;
+            });
 
-        expect(@(calls)).to(equal(@3));
-    });
-});
+            XCTAssertEqualObjects(@(calls), @3);
+        }];
+    }];
+}
 
-QuickSpecEnd
+@end

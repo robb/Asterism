@@ -8,87 +8,93 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTFilterSpec)
+@interface ASTFilterTests : XCTestCase
 
-describe(@"for arrays", ^{
-    NSArray *before = @[ @1, @2, @3 ];
+@end
 
-    it(@"should remove all objects that fail the test", ^{
-        NSArray *after = ASTFilter(before, ^BOOL(NSNumber *obj) {
-            return obj.integerValue % 2 == 1;
-        });
+@implementation ASTFilterTests
 
-        expect(after).to(equal((@[ @1, @3 ])));
-    });
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        NSArray *before = @[ @1, @2, @3 ];
 
-    it(@"should optionally pass in the index", ^{
-        NSArray *after = ASTFilter(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
-            return idx < 2;
-        });
+        [XCTContext runActivityNamed:@"should remove all objects that fail the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *after = ASTFilter(before, ^BOOL(NSNumber *obj) {
+                return obj.integerValue % 2 == 1;
+            });
 
-        expect(after).to(equal((@[ @1, @2 ])));
-    });
+            XCTAssertEqualObjects(after, (@[ @1, @3 ]));
+        }];
 
-    it(@"should maintain order", ^{
-        NSArray *after = ASTFilter(before, ^BOOL(NSNumber *obj) { return YES; });
+        [XCTContext runActivityNamed:@"should optionally pass in the index" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *after = ASTFilter(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
+                return idx < 2;
+            });
 
-        expect(after).to(equal(before));
-    });
-});
+            XCTAssertEqualObjects(after, (@[ @1, @2 ]));
+        }];
 
-describe(@"for dictionaries", ^{
-    NSDictionary *before = @{
-        @"en": @"Hello",
-        @"fr": @"Bonjour"
-    };
+        [XCTContext runActivityNamed:@"should maintain order" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *after = ASTFilter(before, ^BOOL(NSNumber *obj) { return YES; });
 
-    it(@"should remove all objects that fail the test", ^{
-        NSDictionary *after = ASTFilter(before, ^BOOL(NSString *obj) {
-            return [obj isEqualToString:@"Bonjour"];
-        });
+            XCTAssertEqualObjects(after, before);
+        }];
+    }];
 
-        expect(after).to(equal((@{ @"fr": @"Bonjour" })));
-    });
+    [XCTContext runActivityNamed:@"for dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *before = @{
+            @"en": @"Hello",
+            @"fr": @"Bonjour"
+        };
 
-    it(@"should optionally pass in the key", ^{
-        NSDictionary *after = ASTFilter(before, ^BOOL(NSString *key, NSString *obj) {
-            return [key isEqualToString:@"fr"];
-        });
+        [XCTContext runActivityNamed:@"should remove all objects that fail the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSDictionary *after = ASTFilter(before, ^BOOL(NSString *obj) {
+                return [obj isEqualToString:@"Bonjour"];
+            });
 
-        expect(after).to(equal((@{ @"fr": @"Bonjour" })));
-    });
-});
+            XCTAssertEqualObjects(after, (@{ @"fr": @"Bonjour" }));
+        }];
 
-describe(@"for sets", ^{
-    NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
+        [XCTContext runActivityNamed:@"should optionally pass in the key" block:^(id<XCTActivity> _Nonnull activity){
+            NSDictionary *after = ASTFilter(before, ^BOOL(NSString *key, NSString *obj) {
+                return [key isEqualToString:@"fr"];
+            });
 
-    it(@"should remove all objects that fail the test", ^{
-        NSSet *after = ASTFilter(before, ^BOOL(NSNumber *obj) {
-            return obj.integerValue % 2 == 1;
-        });
+            XCTAssertEqualObjects(after, (@{ @"fr": @"Bonjour" }));
+        }];
+    }];
 
-        expect(after).to(equal(([NSSet setWithArray:@[ @1, @3 ]])));
-    });
-});
+    [XCTContext runActivityNamed:@"for sets" block:^(id<XCTActivity> _Nonnull activity){
+        NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-describe(@"for ordered sets", ^{
-    NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+        [XCTContext runActivityNamed:@"should remove all objects that fail the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSSet *after = ASTFilter(before, ^BOOL(NSNumber *obj) {
+                return obj.integerValue % 2 == 1;
+            });
 
-    it(@"should optionally pass in the index", ^{
-        NSOrderedSet *after = ASTFilter(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
-            return idx < 2;
-        });
+            XCTAssertEqualObjects(after, ([NSSet setWithArray:@[ @1, @3 ]]));
+        }];
+    }];
 
-        expect(after).to(equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]])));
-    });
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
 
-    it(@"should remove all objects that fail the test", ^{
-        NSOrderedSet *after = ASTFilter(before, ^BOOL(NSNumber *obj) {
-            return obj.integerValue % 2 == 1;
-        });
+        [XCTContext runActivityNamed:@"should optionally pass in the index" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *after = ASTFilter(before, ^BOOL(NSNumber *obj, NSUInteger idx) {
+                return idx < 2;
+            });
 
-        expect(after).to(equal(([NSOrderedSet orderedSetWithArray:@[ @1, @3 ]])));
-    });
-});
+            XCTAssertEqualObjects(after, ([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]]));
+        }];
 
-QuickSpecEnd
+        [XCTContext runActivityNamed:@"should remove all objects that fail the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *after = ASTFilter(before, ^BOOL(NSNumber *obj) {
+                return obj.integerValue % 2 == 1;
+            });
+
+            XCTAssertEqualObjects(after, ([NSOrderedSet orderedSetWithArray:@[ @1, @3 ]]));
+        }];
+    }];
+}
+
+@end

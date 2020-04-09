@@ -8,19 +8,25 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTNegateSpec)
+@interface ASTNegateTests : XCTestCase
 
-BOOL (^block)(id) = ^BOOL(id obj) {
-    return YES;
-};
+@end
 
-it(@"should return a block", ^{
-    expect(ASTNegate(block)).toNot(beNil());
-});
+@implementation ASTNegateTests
 
-it(@"should return a block that returns the opposite of the original block", ^{
-    expect(@(block(nil))).to(beTruthy());
-    expect(@(ASTNegate(block)(nil))).to(beFalsy());
-});
+- (void)testEverything {
+    BOOL (^block)(id) = ^BOOL(id obj) {
+        return YES;
+    };
 
-QuickSpecEnd
+    [XCTContext runActivityNamed:@"should return a block" block:^(id<XCTActivity> _Nonnull activity){
+        XCTAssertNotNil(ASTNegate(block));
+    }];
+
+    [XCTContext runActivityNamed:@"should return a block that returns the opposite of the original block" block:^(id<XCTActivity> _Nonnull activity){
+        XCTAssertTrue(block(nil));
+        XCTAssertFalse(ASTNegate(block)(nil));
+    }];
+}
+
+@end

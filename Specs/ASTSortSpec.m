@@ -8,54 +8,60 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTSortSpec)
+@interface ASTSortTests : XCTestCase
 
-describe(@"for arrays", ^{
-    describe(@"without a comparator", ^{
-        it(@"it should sort the array using -compare:", ^{
-            NSArray *input = @[ @2, @4, @-2, @9 ];
-            NSArray *expected = @[ @-2, @2, @4, @9 ];
+@end
 
-            expect(ASTSort(input)).to(equal(expected));
-        });
-    });
+@implementation ASTSortTests
 
-    describe(@"with a comparator", ^{
-        it(@"it should sort the array using -compare:", ^{
-            NSArray *input = @[ @"AAA", @"B", @"CC", @"DDDD" ];
-            NSArray *expected = @[ @"B", @"CC", @"AAA", @"DDDD" ];
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"without a comparator" block:^(id<XCTActivity> _Nonnull activity){
+            [XCTContext runActivityNamed:@"it should sort the array using -compare:" block:^(id<XCTActivity> _Nonnull activity){
+                NSArray *input = @[ @2, @4, @-2, @9 ];
+                NSArray *expected = @[ @-2, @2, @4, @9 ];
 
-            NSComparator sortByLength = ^(NSString *a, NSString *b) {
-                return [@(a.length) compare:@(b.length)];
-            };
+                XCTAssertEqualObjects(ASTSort(input), expected);
+            }];
+        }];
 
-            expect(ASTSort(input, sortByLength)).to(equal(expected));
-        });
-    });
-});
+        [XCTContext runActivityNamed:@"with a comparator" block:^(id<XCTActivity> _Nonnull activity){
+            [XCTContext runActivityNamed:@"it should sort the array using -compare:" block:^(id<XCTActivity> _Nonnull activity){
+                NSArray *input = @[ @"AAA", @"B", @"CC", @"DDDD" ];
+                NSArray *expected = @[ @"B", @"CC", @"AAA", @"DDDD" ];
 
-describe(@"for ordered sets", ^{
-    describe(@"without a comparator", ^{
-        it(@"it should sort the array using -compare:", ^{
-            NSOrderedSet *input = [NSOrderedSet orderedSetWithArray:@[ @2, @4, @-2, @9 ]];
-            NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:@[ @-2, @2, @4, @9 ]];
+                NSComparator sortByLength = ^(NSString *a, NSString *b) {
+                    return [@(a.length) compare:@(b.length)];
+                };
 
-            expect(ASTSort(input)).to(equal(expected));
-        });
-    });
+                XCTAssertEqualObjects(ASTSort(input, sortByLength), expected);
+            }];
+        }];
+    }];
 
-    describe(@"with a comparator", ^{
-        it(@"it should sort the array using -compare:", ^{
-            NSOrderedSet *input = [NSOrderedSet orderedSetWithArray:@[ @"AAA", @"B", @"CC", @"DDDD" ]];
-            NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:@[ @"B", @"CC", @"AAA", @"DDDD" ]];
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"without a comparator" block:^(id<XCTActivity> _Nonnull activity){
+            [XCTContext runActivityNamed:@"it should sort the array using -compare:" block:^(id<XCTActivity> _Nonnull activity){
+                NSOrderedSet *input = [NSOrderedSet orderedSetWithArray:@[ @2, @4, @-2, @9 ]];
+                NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:@[ @-2, @2, @4, @9 ]];
 
-            NSComparator sortByLength = ^(NSString *a, NSString *b) {
-                return [@(a.length) compare:@(b.length)];
-            };
+                XCTAssertEqualObjects(ASTSort(input), expected);
+            }];
+        }];
 
-            expect(ASTSort(input, sortByLength)).to(equal(expected));
-        });
-    });
-});
+        [XCTContext runActivityNamed:@"with a comparator" block:^(id<XCTActivity> _Nonnull activity){
+            [XCTContext runActivityNamed:@"it should sort the array using -compare:" block:^(id<XCTActivity> _Nonnull activity){
+                NSOrderedSet *input = [NSOrderedSet orderedSetWithArray:@[ @"AAA", @"B", @"CC", @"DDDD" ]];
+                NSOrderedSet *expected = [NSOrderedSet orderedSetWithArray:@[ @"B", @"CC", @"AAA", @"DDDD" ]];
 
-QuickSpecEnd
+                NSComparator sortByLength = ^(NSString *a, NSString *b) {
+                    return [@(a.length) compare:@(b.length)];
+                };
+
+                XCTAssertEqualObjects(ASTSort(input, sortByLength), expected);
+            }];
+        }];
+    }];
+}
+
+@end

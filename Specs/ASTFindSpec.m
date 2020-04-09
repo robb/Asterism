@@ -8,86 +8,92 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTFindSpec)
+@interface ASTFindTests : XCTestCase
 
-describe(@"for arrays", ^{
-    it(@"should return the first object that passes the test", ^{
-        NSArray *array = @[ @1, @2, @3, @4, @5, @6 ];
+@end
 
-        NSNumber *result = ASTFind(array, ^BOOL (NSNumber *number){
-            return number.integerValue % 2 == 0;
-        });
+@implementation ASTFindTests
 
-        expect(result).to(equal(@2));
-    });
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return the first object that passes the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *array = @[ @1, @2, @3, @4, @5, @6 ];
 
-    it(@"should return nil if no object passes the test", ^{
-        NSArray *array = @[ @1, @3, @5 ];
+            NSNumber *result = ASTFind(array, ^BOOL (NSNumber *number){
+                return number.integerValue % 2 == 0;
+            });
 
-        NSNumber *result = ASTFind(array, ^BOOL (NSNumber *number){
-            return number.integerValue % 2 == 0;
-        });
+            XCTAssertEqualObjects(result, @2);
+        }];
 
-        expect(result).to(beNil());
-    });
+        [XCTContext runActivityNamed:@"should return nil if no object passes the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *array = @[ @1, @3, @5 ];
 
-    it(@"should optionally pass in the index", ^{
-        NSArray *array = @[ @1, @2, @3, @4, @5, @6 ];
+            NSNumber *result = ASTFind(array, ^BOOL (NSNumber *number){
+                return number.integerValue % 2 == 0;
+            });
 
-        NSNumber *result = ASTFind(array, ^BOOL (NSNumber *number, NSUInteger index){
-            return index == 3;
-        });
+            XCTAssertNil(result);
+        }];
 
-        expect(result).to(equal(@4));
-    });
-});
+        [XCTContext runActivityNamed:@"should optionally pass in the index" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *array = @[ @1, @2, @3, @4, @5, @6 ];
 
-describe(@"for dictionaries", ^{
-    NSDictionary *dictionary = @{ @"foo": @"bar", @"baz": @"qux" };
+            NSNumber *result = ASTFind(array, ^BOOL (NSNumber *number, NSUInteger index){
+                return index == 3;
+            });
 
-    it(@"should return the first object that passes the test", ^{
-        NSString *result = ASTFind(dictionary, ^BOOL(NSString *string) {
-            return [string characterAtIndex:0] == 'b';
-        });
+            XCTAssertEqualObjects(result, @4);
+        }];
+    }];
 
-        expect(result).to(equal(@"bar"));
-    });
+    [XCTContext runActivityNamed:@"for dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+        NSDictionary *dictionary = @{ @"foo": @"bar", @"baz": @"qux" };
 
-    it(@"should return nil if no object passes the test", ^{
-        NSString *result = ASTFind(dictionary, ^BOOL (NSString *string){
-            return [string characterAtIndex:0] == 'Y';
-        });
+        [XCTContext runActivityNamed:@"should return the first object that passes the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSString *result = ASTFind(dictionary, ^BOOL(NSString *string) {
+                return [string characterAtIndex:0] == 'b';
+            });
 
-        expect(result).to(beNil());
-    });
+            XCTAssertEqualObjects(result, @"bar");
+        }];
 
-    it(@"should optionally pass in the key", ^{
-        NSString *result = ASTFind(dictionary, ^BOOL (NSString *key, NSString *value){
-            return [key characterAtIndex:0] == 'f';
-        });
+        [XCTContext runActivityNamed:@"should return nil if no object passes the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSString *result = ASTFind(dictionary, ^BOOL (NSString *string){
+                return [string characterAtIndex:0] == 'Y';
+            });
 
-        expect(result).to(equal(@"bar"));
-    });
-});
+            XCTAssertNil(result);
+        }];
 
-describe(@"for objects implementing <NSFastEnumeration>", ^{
-    id<NSFastEnumeration> collection = @[ @1, @2, @3 ];
+        [XCTContext runActivityNamed:@"should optionally pass in the key" block:^(id<XCTActivity> _Nonnull activity){
+            NSString *result = ASTFind(dictionary, ^BOOL (NSString *key, NSString *value){
+                return [key characterAtIndex:0] == 'f';
+            });
 
-    it(@"should return the first object that passes the test", ^{
-        NSString *result = ASTFind(collection, ^BOOL (NSNumber *number){
-            return [number integerValue] % 2 == 0;
-        });
+            XCTAssertEqualObjects(result, @"bar");
+        }];
+    }];
 
-        expect(result).to(equal(@2));
-    });
+    [XCTContext runActivityNamed:@"for objects implementing <NSFastEnumeration>" block:^(id<XCTActivity> _Nonnull activity){
+        id<NSFastEnumeration> collection = @[ @1, @2, @3 ];
 
-    it(@"should return nil if no object passes the test", ^{
-        NSString *result = ASTFind(collection, ^BOOL (NSNumber *number){
-            return [number integerValue] > 9;
-        });
+        [XCTContext runActivityNamed:@"should return the first object that passes the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSString *result = ASTFind(collection, ^BOOL (NSNumber *number){
+                return [number integerValue] % 2 == 0;
+            });
 
-        expect(result).to(beNil());
-    });
-});
+            XCTAssertEqualObjects(result, @2);
+        }];
 
-QuickSpecEnd
+        [XCTContext runActivityNamed:@"should return nil if no object passes the test" block:^(id<XCTActivity> _Nonnull activity){
+            NSString *result = ASTFind(collection, ^BOOL (NSNumber *number){
+                return [number integerValue] > 9;
+            });
+
+            XCTAssertNil(result);
+        }];
+    }];
+}
+
+@end

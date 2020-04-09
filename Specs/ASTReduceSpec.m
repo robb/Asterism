@@ -8,76 +8,82 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTReduceSpec)
+@interface ASTReduceTests : XCTestCase
 
-NSNumber *(^add)(NSNumber *, NSNumber *) = ^(NSNumber *memo, NSNumber *obj) {
-    return @(memo.doubleValue + obj.doubleValue);
-};
+@end
 
-describe(@"reduce", ^{
-    describe(@"for objects implementing <NSFastEnumeration>", ^{
-        describe(@"when given an intial value", ^{
-            it(@"should return the initial value when reducing an empty collection", ^{
-                NSString *initial = @"initial";
+@implementation ASTReduceTests
 
-                id result = ASTReduce(@[], initial, ^id(id memo, id obj) {
-                    return nil;
+- (void)testEverything {
+    NSNumber *(^add)(NSNumber *, NSNumber *) = ^(NSNumber *memo, NSNumber *obj) {
+        return @(memo.doubleValue + obj.doubleValue);
+    };
+
+    [XCTContext runActivityNamed:@"reduce" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"for objects implementing <NSFastEnumeration>" block:^(id<XCTActivity> _Nonnull activity){
+            [XCTContext runActivityNamed:@"when given an intial value" block:^(id<XCTActivity> _Nonnull activity){
+                [XCTContext runActivityNamed:@"should return the initial value when reducing an empty collection" block:^(id<XCTActivity> _Nonnull activity){
+                    NSString *initial = @"initial";
+
+                    id result = ASTReduce(@[], initial, ^id(id memo, id obj) {
+                        return nil;
+                    });
+
+                    XCTAssertEqualObjects(result, initial);
+                }];
+
+                [XCTContext runActivityNamed:@"should use the inital value in the first iteration" block:^(id<XCTActivity> _Nonnull activity){
+                    id result = ASTReduce(@[ @1, @2, @3 ], @4, add);
+
+                    XCTAssertEqualObjects(result, @10);
+                }];
+
+                [XCTContext runActivityNamed:@"should  use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+                    NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
+
+                    XCTAssertEqualObjects(ASTReduce(dict, @4, add), @10);
+                }];
+            }];
+
+            [XCTContext runActivityNamed:@"without an inital value" block:^(id<XCTActivity> _Nonnull activity){
+                [XCTContext runActivityNamed:@"should return nil when reducing an empty collection" block:^(id<XCTActivity> _Nonnull activity){
+                    id result = ASTReduce(@[], ^id(id memo, id obj) {
+                        return nil;
+                    });
+
+                    XCTAssertNil(result);
+                }];
+
+                [XCTContext runActivityNamed:@"should return the single value of a collection with one member" block:^(id<XCTActivity> _Nonnull activity){
+                    id result = ASTReduce(@[ @1 ], ^id(id memo, id obj) {
+                        return nil;
+                    });
+
+                    XCTAssertEqualObjects(result, @1);
+                }];
+
+                [XCTContext runActivityNamed:@"should reduce the collection starting from the first value" block:^(id<XCTActivity> _Nonnull activity){
+                    id result = ASTReduce(@[ @1, @2, @3 ], add);
+
+                    XCTAssertEqualObjects(result, @6);
+                }];
+
+                [XCTContext runActivityNamed:@"should  use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+                    NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
+
+                    XCTAssertEqualObjects(ASTReduce(dict, add), @6);
+                }];
+            }];
+
+            [XCTContext runActivityNamed:@"should reduce arrays in order" block:^(id<XCTActivity> _Nonnull activity){
+                id result = ASTReduce(@[ @"a", @"b", @"c" ], ^(NSString *memo, NSString *obj) {
+                    return [memo stringByAppendingString:obj];
                 });
 
-                expect(result).to(equal(initial));
-            });
+                XCTAssertEqualObjects(result, @"abc");
+            }];
+        }];
+    }];
+}
 
-            it(@"should use the inital value in the first iteration", ^{
-                id result = ASTReduce(@[ @1, @2, @3 ], @4, add);
-
-                expect(result).to(equal(@10));
-            });
-
-            it(@"should  use the values of dictionaries", ^{
-                NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
-
-                expect(ASTReduce(dict, @4, add)).to(equal(@10));
-            });
-        });
-
-        describe(@"without an inital value", ^{
-            it(@"should return nil when reducing an empty collection", ^{
-                id result = ASTReduce(@[], ^id(id memo, id obj) {
-                    return nil;
-                });
-
-                expect(result).to(beNil());
-            });
-
-            it(@"should return the single value of a collection with one member", ^{
-                id result = ASTReduce(@[ @1 ], ^id(id memo, id obj) {
-                    return nil;
-                });
-
-                expect(result).to(equal(@1));
-            });
-
-            it(@"should reduce the collection starting from the first value", ^{
-                id result = ASTReduce(@[ @1, @2, @3 ], add);
-
-                expect(result).to(equal(@6));
-            });
-
-            it(@"should  use the values of dictionaries", ^{
-                NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
-
-                expect(ASTReduce(dict, add)).to(equal(@6));
-            });
-        });
-
-        it(@"should reduce arrays in order", ^{
-            id result = ASTReduce(@[ @"a", @"b", @"c" ], ^(NSString *memo, NSString *obj) {
-                return [memo stringByAppendingString:obj];
-            });
-
-            expect(result).to(equal(@"abc"));
-        });
-    });
-});
-
-QuickSpecEnd
+@end

@@ -8,60 +8,66 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTEmptySpec)
+@interface ASTEmptyTests : XCTestCase
 
-describe(@"for arrays", ^{
-    it(@"should return YES for an empty array", ^{
-        expect(@(ASTEmpty(@[]))).to(beTruthy());
-    });
+@end
 
-    it(@"should return NO for a non-empty array", ^{
-        expect(@(ASTEmpty(@[ @1 ]))).to(beFalsy());
-    });
-});
+@implementation ASTEmptyTests
 
-describe(@"for dictionaries", ^{
-    it(@"should return YES for an empty dictionary", ^{
-        expect(@(ASTEmpty(@{}))).to(beTruthy());
-    });
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return YES for an empty array" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertTrue(ASTEmpty(@[]));
+        }];
 
-    it(@"should return NO for a non-empty dictionary", ^{
-        expect(@(ASTEmpty(@{ @1: @2 }))).to(beFalsy());
-    });
-});
+        [XCTContext runActivityNamed:@"should return NO for a non-empty array" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertFalse(ASTEmpty(@[ @1 ]));
+        }];
+    }];
 
-describe(@"for sets", ^{
-    it(@"should return YES for an empty set", ^{
-        expect(@(ASTEmpty([NSSet set]))).to(beTruthy());
-    });
+    [XCTContext runActivityNamed:@"for dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return YES for an empty dictionary" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertTrue(ASTEmpty(@{}));
+        }];
 
-    it(@"should return NO for a non-empty set", ^{
-        expect(@(ASTEmpty([NSSet setWithObject:@1]))).to(beFalsy());
-    });
-});
+        [XCTContext runActivityNamed:@"should return NO for a non-empty dictionary" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertFalse(ASTEmpty(@{ @1: @2 }));
+        }];
+    }];
 
-describe(@"for ordered sets", ^{
-    it(@"should return YES for an empty set", ^{
-        expect(@(ASTEmpty([NSOrderedSet orderedSet]))).to(beTruthy());
-    });
+    [XCTContext runActivityNamed:@"for sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return YES for an empty set" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertTrue(ASTEmpty([NSSet set]));
+        }];
 
-    it(@"should return NO for a non-empty set", ^{
-        expect(@(ASTEmpty([NSOrderedSet orderedSetWithObject:@1]))).to(beFalsy());
-    });
-});
+        [XCTContext runActivityNamed:@"should return NO for a non-empty set" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertFalse(ASTEmpty([NSSet setWithObject:@1]));
+        }];
+    }];
 
-describe(@"for objects that implement NSFastEnumeration", ^{
-    it(@"should return YES for empty collections", ^{
-        id<NSFastEnumeration> collection = @[];
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return YES for an empty set" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertTrue(ASTEmpty([NSOrderedSet orderedSet]));
+        }];
 
-        expect(@(ASTEmpty(collection))).to(beTruthy());
-    });
+        [XCTContext runActivityNamed:@"should return NO for a non-empty set" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertFalse(ASTEmpty([NSOrderedSet orderedSetWithObject:@1]));
+        }];
+    }];
 
-    it(@"should return NO for non-empty collections", ^{
-        id<NSFastEnumeration> collection = @[ @1 ];
+    [XCTContext runActivityNamed:@"for objects that implement NSFastEnumeration" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return YES for empty collections" block:^(id<XCTActivity> _Nonnull activity){
+            id<NSFastEnumeration> collection = @[];
 
-        expect(@(ASTEmpty(collection))).to(beFalsy());
-    });
-});
+            XCTAssertTrue(ASTEmpty(collection));
+        }];
 
-QuickSpecEnd
+        [XCTContext runActivityNamed:@"should return NO for non-empty collections" block:^(id<XCTActivity> _Nonnull activity){
+            id<NSFastEnumeration> collection = @[ @1 ];
+
+            XCTAssertFalse(ASTEmpty(collection));
+        }];
+    }];
+}
+
+@end

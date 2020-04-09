@@ -8,44 +8,50 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTDifferenceSpec)
+@interface ASTDifferenceTests : XCTestCase
 
-describe(@"for arrays", ^{
-    it(@"should return all values from the first array that are not present in the other", ^{
-        NSArray *before = @[ @1, @2, @3, @4 ];
+@end
 
-        NSArray *result = ASTDifference(before, @[ @3, @4 ]);
+@implementation ASTDifferenceTests
 
-        expect(result).to(equal((@[ @1, @2 ])));
-    });
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return all values from the first array that are not present in the other" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *before = @[ @1, @2, @3, @4 ];
 
-    it(@"should preserve the order of the first array", ^{
-        NSArray *before = @[ @1, @2, @3, @4 ];
+            NSArray *result = ASTDifference(before, @[ @3, @4 ]);
 
-        NSArray *result = ASTDifference(before, @[ @2, @4 ]);
+            XCTAssertEqualObjects(result, (@[ @1, @2 ]));
+        }];
 
-        expect(result).to(equal((@[ @1, @3 ])));
-    });
-});
+        [XCTContext runActivityNamed:@"should preserve the order of the first array" block:^(id<XCTActivity> _Nonnull activity){
+            NSArray *before = @[ @1, @2, @3, @4 ];
 
-describe(@"for sets", ^{
-    it(@"should return all values from the first set that are not present in the other", ^{
-        NSSet *before = [NSSet setWithArray:@[ @1, @2, @3, @4 ]];
+            NSArray *result = ASTDifference(before, @[ @2, @4 ]);
 
-        NSSet *result = ASTDifference(before, [NSSet setWithArray:@[ @3, @4 ]]);
+            XCTAssertEqualObjects(result, (@[ @1, @3 ]));
+        }];
+    }];
 
-        expect(result).to(equal(([NSSet setWithArray:@[ @1, @2 ]])));
-    });
-});
+    [XCTContext runActivityNamed:@"for sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return all values from the first set that are not present in the other" block:^(id<XCTActivity> _Nonnull activity){
+            NSSet *before = [NSSet setWithArray:@[ @1, @2, @3, @4 ]];
 
-describe(@"for ordered sets", ^{
-    it(@"should return all values from the first set that are not present in the other", ^{
-        NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3, @4 ]];
+            NSSet *result = ASTDifference(before, [NSSet setWithArray:@[ @3, @4 ]]);
 
-        NSOrderedSet *result = ASTDifference(before, [NSOrderedSet orderedSetWithArray:@[ @3, @4 ]]);
+            XCTAssertEqualObjects(result, ([NSSet setWithArray:@[ @1, @2 ]]));
+        }];
+    }];
 
-        expect(result).to(equal(([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]])));
-    });
-});
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return all values from the first set that are not present in the other" block:^(id<XCTActivity> _Nonnull activity){
+            NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3, @4 ]];
 
-QuickSpecEnd
+            NSOrderedSet *result = ASTDifference(before, [NSOrderedSet orderedSetWithArray:@[ @3, @4 ]]);
+
+            XCTAssertEqualObjects(result, ([NSOrderedSet orderedSetWithArray:@[ @1, @2 ]]));
+        }];
+    }];
+}
+
+@end

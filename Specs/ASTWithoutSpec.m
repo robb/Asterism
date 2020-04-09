@@ -8,30 +8,36 @@
 
 #import <Asterism/Asterism.h>
 
-QuickSpecBegin(ASTWithoutSpec)
+@interface ASTWithoutTests : XCTestCase
 
-describe(@"for arrays", ^{
-    NSArray *before = @[ @1, @2, @3 ];
+@end
 
-    it(@"should remove all objects that match the value", ^{
-        expect(ASTWithout(before, @1)).to(equal((@[ @2, @3 ])));
-    });
-});
+@implementation ASTWithoutTests
 
-describe(@"for sets", ^{
-    NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
+- (void)testEverything {
+    [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
+        NSArray *before = @[ @1, @2, @3 ];
 
-    it(@"should remove all objects that match the value", ^{
-        expect(ASTWithout(before, @1)).to(equal(([NSSet setWithArray:@[ @2, @3 ]])));
-    });
-});
+        [XCTContext runActivityNamed:@"should remove all objects that match the value" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertEqualObjects(ASTWithout(before, @1), (@[ @2, @3 ]));
+        }];
+    }];
 
-describe(@"for ordered sets", ^{
-    NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+    [XCTContext runActivityNamed:@"for sets" block:^(id<XCTActivity> _Nonnull activity){
+        NSSet *before = [NSSet setWithArray:@[ @1, @2, @3 ]];
 
-    it(@"should remove all objects that match the value", ^{
-        expect(ASTWithout(before, @1)).to(equal(([NSOrderedSet orderedSetWithArray:@[ @2, @3 ]])));
-    });
-});
+        [XCTContext runActivityNamed:@"should remove all objects that match the value" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertEqualObjects(ASTWithout(before, @1), ([NSSet setWithArray:@[ @2, @3 ]]));
+        }];
+    }];
 
-QuickSpecEnd
+    [XCTContext runActivityNamed:@"for ordered sets" block:^(id<XCTActivity> _Nonnull activity){
+        NSOrderedSet *before = [NSOrderedSet orderedSetWithArray:@[ @1, @2, @3 ]];
+
+        [XCTContext runActivityNamed:@"should remove all objects that match the value" block:^(id<XCTActivity> _Nonnull activity){
+            XCTAssertEqualObjects(ASTWithout(before, @1), ([NSOrderedSet orderedSetWithArray:@[ @2, @3 ]]));
+        }];
+    }];
+}
+
+@end
