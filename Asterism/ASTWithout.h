@@ -18,34 +18,34 @@ ASTERISM_USE_INSTEAD(ASTWithout) NSOrderedSet *__ASTWithout_NSOrderedSet(NSOrder
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// Filters out the elements of an array that are equal to a given value.
-//
-// array - An array of elements.
-// obj   - An element to be removed.
-//
-// Returns an array of all values in `array` that are not equal to `obj`. The
-// order is being maintained.
+/// Filters out the elements of an array that are equal to a given value.
+///
+/// @param array An array of elements.
+/// @param obj   An element to be removed.
+///
+/// @returns An array of all values in @c array that are not equal to @c obj.
+///          The order is being maintained.
 ASTERISM_OVERLOADABLE NSArray *ASTWithout(NSArray *array, id obj) {
     return __ASTWithout_NSArray(array, obj);
 }
 
-// Filters out the elements of a set that are equal to a given value.
-//
-// set - A set of elements.
-// obj - An element to be removed.
-//
-// Returns a set of all values in `set` that are not equal to `obj`.
+/// Filters out the elements of a set that are equal to a given value.
+///
+/// @param set A set of elements.
+/// @param obj An element to be removed.
+///
+/// @returns A set of all values in @c set that are not equal to @c obj.
 ASTERISM_OVERLOADABLE NSSet *ASTWithout(NSSet *set, id obj) {
     return __ASTWithout_NSSet(set, obj);
 }
 
-// Filters out the elements of an ordered set that are equal to a given value.
-//
-// set - An ordered set of elements.
-// obj - An element to be removed.
-//
-// Returns an ordered set of all values in `set` that are not equal to `obj`.
-// The order is being maintained.
+/// Filters out the elements of an ordered set that are equal to a given value.
+///
+/// @param set An ordered set of elements.
+/// @param obj An element to be removed.
+///
+/// @returns An ordered set of all values in @c set that are not equal to
+///          @c obj. The order is being maintained.
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTWithout(NSOrderedSet *set, id obj) {
     return __ASTWithout_NSOrderedSet(set, obj);
 }

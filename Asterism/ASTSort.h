@@ -19,42 +19,42 @@ ASTERISM_USE_INSTEAD(ASTSort) NSOrderedSet *__ASTSort_NSOrderedSet_comparator(NS
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// Sorts an array using `-compare:`.
-//
-// array - An array of elements.
-//
-// Returns a copy of `array`, sorted using `-compare:`.
+/// Sorts an array using @c -compare: .
+///
+/// @param array An array of elements.
+///
+/// @returns A copy of @c array, sorted using @c -compare: .
 ASTERISM_OVERLOADABLE NSArray *ASTSort(NSArray *array) {
     return __ASTSort_NSArray(array);
 }
 
-// Sorts an array using a custom comparator.
-//
-// array      - An array of elements.
-// comparator - An NSComparator used to compare the values. This argument must
-//              not be nil.
-//
-// Returns a copy of `array`, sorted using `comparator`.
+/// Sorts an array using a custom comparator.
+///
+/// @param array      An array of elements.
+/// @param comparator An @c NSComparator used to compare the values.
+///                   This argument must not be @c nil .
+///
+/// @returns A copy of @c array, sorted using @c comparator.
 ASTERISM_OVERLOADABLE NSArray *ASTSort(NSArray *array, NSComparator comparator) {
     return __ASTSort_NSArray_comparator(array, comparator);
 }
 
-// Sorts an ordered set using `-compare:`.
-//
-// set - An array of elements.
-//
-// Returns a copy of `set`, sorted using `-compare:`.
+/// Sorts an ordered set using @c  -compare: .
+///
+/// @param set An ordered set of elements.
+///
+/// @returns A copy of @c set, sorted using @c -compare: .
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTSort(NSOrderedSet *set) {
     return __ASTSort_NSOrderedSet(set);
 }
 
-// Sorts an ordered set using a custom comparator.
-//
-// set        - An ordered set of elements.
-// comparator - An NSComparator used to compare the values. This argument must
-//              not be nil.
-//
-// Returns a copy of `set`, sorted using `comparator`.
+/// Sorts an ordered set using a custom comparator.
+///
+/// @param set        An ordered set of elements.
+/// @param comparator An @c NSComparator used to compare the values.
+///                   This argument must not be @c nil .
+///
+/// @returns A copy of @c set, sorted using @c comparator.
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTSort(NSOrderedSet *set, NSComparator comparator) {
     return __ASTSort_NSOrderedSet_comparator(set, comparator);
 }

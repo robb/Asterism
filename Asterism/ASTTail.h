@@ -17,22 +17,22 @@ ASTERISM_USE_INSTEAD(ASTTail) NSOrderedSet *__ASTTail_NSOrderedSet(NSOrderedSet 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// Returns all elements of an array after the first one.
-//
-// array - An array of elements.
-//
-// Returns all elements after the first one. If the array has less than one
-// element, an empty array is returned.
+/// Returns all elements of an array after the first one.
+///
+/// @param array An array of elements.
+///
+/// @returns All elements after the first one. If the array has less than one
+///          element, an empty array is returned.
 ASTERISM_OVERLOADABLE NSArray *ASTTail(NSArray *array) {
     return __ASTTail_NSArray(array);
 }
 
-// Returns all elements of an ordered set after the first one.
-//
-// set - An ordered set of elements.
-//
-// Returns all elements after the first one. If the set has less than one
-// element, an empty ordered set is returned.
+/// Returns all elements of an ordered set after the first one.
+///
+/// @param set An ordered set of elements.
+///
+/// @returns All elements after the first one. If the set has less than one
+///          element, an empty ordered set is returned.
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTTail(NSOrderedSet *set) {
     return __ASTTail_NSOrderedSet(set);
 }

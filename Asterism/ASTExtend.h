@@ -16,14 +16,14 @@ ASTERISM_USE_INSTEAD(ASTExtend) NSDictionary *__ASTExtend_NSDictionary(NSDiction
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// Extends a dictionary with values from another dictionary.
-//
-// dict   - A dictionary.
-// source - A dictionary of extensions.
-//
-// Returns a new dictionary that contains a union of key-value-pairs of `dict`
-// and `source`. Key-value-pairs of `source` will have precedence over those
-// taken from `dict`.
+/// Extends a dictionary with values from another dictionary.
+///
+/// @param dict   A dictionary.
+/// @param source A dictionary of extensions.
+///
+/// @returns A new dictionary that contains a union of key-value-pairs of
+///          @c dict and @c source. Key-value-pairs of @c source will have
+///          precedence over those taken from @c dict.
 ASTERISM_OVERLOADABLE NSDictionary *ASTExtend(NSDictionary *dict, NSDictionary *source) {
     return __ASTExtend_NSDictionary(dict, source);
 }

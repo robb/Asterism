@@ -16,13 +16,13 @@ ASTERISM_USE_INSTEAD(ASTPick) NSDictionary *__ASTPick_NSDictionary(NSDictionary 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// Picks the elements of a dictionary that are contained in a given array.
-//
-// dict - A dictionary of elements.
-// keys - An array of keys to pick.
-//
-// Returns a dictionary of the keys and values in `dict` for which the keys are
-// contained in `keys`.
+/// Picks the elements of a dictionary that are contained in a given array.
+///
+/// @param dict A dictionary of elements.
+/// @param keys An array of keys to pick.
+///
+/// @returns A dictionary of the keys and values in @c dict for which the keys
+///          are contained in @c keys.
 ASTERISM_OVERLOADABLE NSDictionary *ASTPick(NSDictionary *dict, NSArray *keys) {
     return __ASTPick_NSDictionary(dict, keys);
 }

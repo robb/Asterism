@@ -16,14 +16,14 @@ ASTERISM_USE_INSTEAD(ASTDefaults) NSDictionary *__ASTDefaults_NSDictionary(NSDic
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// Fills in missing values from another dictionary.
-//
-// dict     - A dictionary.
-// defaults - A dictionary of default values.
-//
-// Returns a new dictionary that contains a union of key-value-pairs of `dict`
-// and `defaults`. Key-value-pairs of `dict` will have precedence over those
-// taken from `defaults`.
+/// Fills in missing values from another dictionary.
+///
+/// @param dict     A dictionary.
+/// @param defaults A dictionary of default values.
+///
+/// @returns A new dictionary that contains a union of key-value-pairs of
+///          @c dict and @c defaults. Key-value-pairs of @c dict will have
+///          precedence over those taken from @c defaults.
 ASTERISM_OVERLOADABLE NSDictionary *ASTDefaults(NSDictionary *dict, NSDictionary *defaults) {
     return __ASTDefaults_NSDictionary(dict, defaults);
 }

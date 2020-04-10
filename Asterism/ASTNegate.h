@@ -18,36 +18,36 @@ ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id_NSUInteger(BOOL(^block)(id
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// Negates a block.
-//
-// block - takes a single argument of type id and returns a BOOL.
-//         This argument must not be nil.
-//
-// Returns a new block of the same type that returns the opposite of what
-// `block` returns.
+/// Negates a block.
+///
+/// @param block Takes a single argument of type @c id and returns a @c BOOL .
+///              This argument must not be @c nil .
+///
+/// @returns A new block of the same type that returns the opposite of what
+///          @c block returns.
 ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id)))(id) {
     return __ASTNegate_id(block);
 }
 
-// Negates a block.
-//
-// block - takes two arguments of type id and returns a BOOL.
-//         This argument must not be nil.
-//
-// Returns a new block of the same type that returns the opposite of what
-// `block` returns.
+/// Negates a block.
+///
+/// @param block Takes two arguments of type @c id and returns a @c BOOL .
+///              This argument must not be @c nil .
+///
+/// Returns a new block of the same type that returns the opposite of what
+/// @c block returns.
 ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id) {
     return __ASTNegate_id_id(block);
 }
 
-// Negates a block.
-//
-// block - takes an argument of type id and one of type NSUInteger and returns
-//         a BOOL.
-//         This argument must not be nil.
-//
-// Returns a new block of the same type that returns the opposite of what
-// `block` returns.
+/// Negates a block.
+///
+/// @params block Takes an argument of type id and one of type @c NSUInteger
+///               and returns a @c BOOL.
+///               This argument must not be @c nil .
+///
+/// Returns a new block of the same type that returns the opposite of what
+/// @c block returns.
 ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, NSUInteger)))(id, NSUInteger) {
     return __ASTNegate_id_NSUInteger(block);
 }

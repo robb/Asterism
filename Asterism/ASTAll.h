@@ -17,24 +17,26 @@ ASTERISM_USE_INSTEAD(ASTAll) BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeratio
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// Tests if all values in a dictionary pass a test.
-//
-// dict  - A dictionary of elements.
-// block - A block that takes a value of `dict` as its only argument and returns
-//         `YES` if the value passes the test. The block must no be nil.
-//
-// Returns `YES` if all values in `dict` pass the test `block`.
+/// Tests if all values in a dictionary pass a test.
+///
+/// @param dict  A dictionary of elements.
+/// @param block A block that takes a value of @c dict as its only argument and
+///              returns @c YES if the value passes the test. The block must no
+///              be @c nil .
+///
+/// @returns @c YES if all values in @c dict pass the test @c block.
 ASTERISM_OVERLOADABLE BOOL ASTAll(NSDictionary *dict, BOOL(^block)(id obj)) {
     return __ASTAll_NSDictionary(dict, block);
 }
 
-// Tests if all elements in a collection pass a test.
-//
-// collection - A collection of elements.
-// block      - A block that takes an element as its only argument and returns
-//              `YES` if the element passes the test. The block must no be nil.
-//
-// Returns `YES` if all elements in `collection` pass the test `block`.
+/// Tests if all elements in a collection pass a test.
+///
+/// @param collection A collection of elements.
+/// @param block      A block that takes an element as its only argument and
+///                   returns @c YES if the element passes the test. The block
+///                   must not be @c nil .
+///
+/// @returns @c YES if all elements in @c collection pass the test @c block.
 ASTERISM_OVERLOADABLE BOOL ASTAll(id<NSFastEnumeration> collection, BOOL(^block)(id obj)) {
     return __ASTAll_NSFastEnumeration(collection, block);
 }
