@@ -111,3 +111,16 @@ Finally, tell Cocopods to download and link Asterism in your project:
 ```sh
 pod install
 ```
+
+### Using the Amalgamation header/source file pair
+Checkout this repo at the version you desire.
+
+```sh
+script/gen_amalgamation.sh
+
+cp Amalgamation/* <PathToYourProjectSourcesHere>
+```
+
+And just add the `.m` file to the targets you desire and `#import "Asterism.h"` when you use it or in your `.pch`
+
+

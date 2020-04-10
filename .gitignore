@@ -33,3 +33,6 @@ xcuserdata
 Carthage/Build
 Cartfile.resolved
 Carthage/
+
+# Amalgamation Generation
+Amalgamation/
