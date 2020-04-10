@@ -13,7 +13,7 @@ mkdir -p "$TARGET_BASE"
 FILE_BASE="$TARGET_BASE/Asterism"
 HEADER_FILE="$FILE_BASE.h"
 SOURCE_FILE="$FILE_BASE.m"
-GIT_REFERENCE=`git log HEAD -1 --format=reference`
+GIT_REFERENCE=`git log HEAD -1 --pretty='format:%C(auto)%h (%s, %ad)'`
 
 ## GENERATE THE HEADER FILE
 
