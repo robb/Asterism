@@ -22,86 +22,92 @@ ASTERISM_USE_INSTEAD(ASTFilter) NSOrderedSet *__ASTFilter_NSOrderedSet_withIndex
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// Filters out the elements of an array that fail a test.
-//
-// array - An array of elements.
-// block - A block that takes an element as its only argument and returns `YES`
-//         if the element passes the test. The block must no be nil.
-//
-// Returns an array of all values in `array` that pass the test. The order is
-// being maintained.
+/// Filters out the elements of an array that fail a test.
+///
+/// @param array An array of elements.
+/// @param block A block that takes an element as its only argument and returns
+///              @c YES if the element passes the test.
+///              The block must not be @c nil .
+///
+/// @returns An array of all values in @c array that pass the test. The order is
+///          being maintained.
 ASTERISM_OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj)) {
     return __ASTFilter_NSArray(array, block);
 }
 
-// Filters out the elements of an array that fail a test.
-//
-// array - An array of elements.
-// block - A block that takes an element as well as its index in `array` as its
-//         arguments and returns `YES` if the element passes the test. The block
-//         must no be nil.
-//
-// Returns an array of all values in `array` that pass the test. The order is
-// being maintained.
+/// Filters out the elements of an array that fail a test.
+///
+/// @param array An array of elements.
+/// @param block A block that takes an element as well as its index in @c array
+///              as its arguments and returns @c YES if the element passes the
+///              test. The block must not be @c nil .
+///
+/// @returns an array of all values in @c array that pass the test. The order is
+///          being maintained.
 ASTERISM_OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj, NSUInteger idx)) {
     return __ASTFilter_NSArray_withIndex(array, block);
 }
 
-// Filters out the values of a dictionary that fail a test.
-//
-// dict  - A dictionary of elements.
-// block - A block that takes a value of `dict` as its only argument and returns
-//         `YES` if the element passes the test. The block must no be nil.
-//
-// Returns a dictionary of the keys and values in `dict` for which the values
-// passed the test.
+/// Filters out the values of a dictionary that fail a test.
+///
+/// @param dict  A dictionary of elements.
+/// @param block A block that takes a value of @c dict as its only argument and
+///              returns @c YES if the element passes the test.
+///              The block must not be @c nil .
+///
+/// @returns A dictionary of the keys and values in @c dict for which the values
+///          passed the test.
 ASTERISM_OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id obj)) {
     return __ASTFilter_NSDictionary(dict, block);
 }
 
-// Filters out the keys and values of a dictionary that fail a test.
-//
-// dict  - A dictionary of elements.
-// block - A block that takes a key and a value of `dict` as its arguments and
-//         returns `YES` if the element passes the test. The block must no be
-//         nil.
-//
-// Returns a dictionary of the keys and values in `dict` that passed the test.
+/// Filters out the keys and values of a dictionary that fail a test.
+///
+/// @param dict  A dictionary of elements.
+/// @param block A block that takes a key and a value of @c dict as its
+///              arguments and returns @c YES if the element passes the test.
+///              The block must not be @c nil .
+///
+/// @returns A dictionary of the keys and values in @c dict that passed the
+///          test.
 ASTERISM_OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id key, id obj)) {
     return __ASTFilter_NSDictionary_keysAndValues(dict, block);
 }
 
-// Filters out the elements of a set that fail a test.
-//
-// set   - A set of elements.
-// block - A block that takes an element as its only argument and returns `YES`
-//         if the element passes the test. The block must no be nil.
-//
-// Returns a set of all values in `set` that pass the test.
+/// Filters out the elements of a set that fail a test.
+///
+/// @param set   A set of elements.
+/// @param block A block that takes an element as its only argument and returns
+///              @c YES if the element passes the test.
+///              The block must not be @c nil .
+///
+/// @returns A set of all values in @c set that pass the test.
 ASTERISM_OVERLOADABLE NSSet *ASTFilter(NSSet *set, BOOL(^block)(id obj)) {
     return __ASTFilter_NSSet(set, block);
 }
 
-// Filters out the elements of an ordered set that fail a test.
-//
-// set   - An ordered set of elements.
-// block - A block that takes an element as its only argument and returns `YES`
-//         if the element passes the test. The block must no be nil.
-//
-// Returns an ordered set of all values in `set` that pass the test.
+/// Filters out the elements of an ordered set that fail a test.
+///
+/// @param set   An ordered set of elements.
+/// @param block A block that takes an element as its only argument and returns
+///              @c YES if the element passes the test.
+///              The block must not be @c nil .
+///
+/// @returns An ordered set of all values in @c set that pass the test.
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id obj)) {
     return __ASTFilter_NSOrderedSet(set, block);
 }
 
-// Filters out the elements of an ordered set that fail a test.
-//
-// set   - An ordered set of elements.
-// block - A block that takes an element as well as its index in `set` as its
-//         arguments and returns `YES` if the element passes the test. The block
-//         must no be nil.
-//
-// Returns an ordered set of all values in `set` that pass the test. The order
-// is being maintained.
+/// Filters out the elements of an ordered set that fail a test.
+///
+/// @param set   An ordered set of elements.
+/// @param block A block that takes an element as well as its index in @c set as
+///              its arguments and returns @c YES if the element passes the
+///              test.
+///              The block must not be @c nil .
+///
+/// @returns An ordered set of all values in @c set that pass the test. The
+///          order is being maintained.
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx)) {
     return __ASTFilter_NSOrderedSet_withIndex(array, block);
 }

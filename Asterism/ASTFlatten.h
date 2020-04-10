@@ -16,12 +16,12 @@ ASTERISM_USE_INSTEAD(ASTFlatten) NSArray *__ASTFlatten_NSArray(NSArray *array);
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// Flattens an array a single level.
-//
-// array - An array of elements.
-//
-// Returns a new array that concatenates all array elements in `array` while
-// preserving non-array elements.
+/// Flattens an array a single level.
+///
+/// @param array An array of elements.
+///
+/// @returns A new array that concatenates all array elements in @c array while
+///          preserving non-array elements.
 ASTERISM_OVERLOADABLE NSArray *ASTFlatten(NSArray *array) {
     return __ASTFlatten_NSArray(array);
 }

@@ -20,47 +20,47 @@ ASTERISM_USE_INSTEAD(ASTSize) NSUInteger __ASTSize_NSFastEnumeration(id<NSFastEn
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// The number of values in an array.
-//
-// array - An array of elements.
-//
-// Returns the size of `array`.
+/// The number of values in an array.
+///
+/// @param array An array of elements.
+///
+/// @returns The size of @c array.
 ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSArray *array) {
     return __ASTSize_NSArray(array);
 }
 
-// The number of values in a dictionary.
-//
-// dictionary - A dictionary of elements.
-//
-// Returns the size of `dictionary`.
+/// The number of values in a dictionary.
+///
+/// @pram dictionary A dictionary of elements.
+///
+/// @returns The size of @c dictionary.
 ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSDictionary *dictionary) {
     return __ASTSize_NSDictionary(dictionary);
 }
 
-// The number of values in a set.
-//
-// set - A set of elements.
-//
-// Returns the size of `set`.
+/// The number of values in a set.
+///
+/// @param set A set of elements.
+///
+/// @returns The size of @c set.
 ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSSet *set) {
     return __ASTSize_NSSet(set);
 }
 
-// The number of values in an ordered set.
-//
-// set - An ordered set of elements.
-//
-// Returns the size of `set`.
+/// The number of values in an ordered set.
+///
+/// @param set An ordered set of elements.
+///
+/// @returns The size of @c set.
 ASTERISM_OVERLOADABLE NSUInteger ASTSize(NSOrderedSet *set) {
     return __ASTSize_NSOrderedSet(set);
 }
 
-// Counts the number of elements in a collection.
-//
-// collection - A collection of elements.
-//
-// Returns the size of `collection` in O(n).
+/// Counts the number of elements in a collection.
+///
+/// @param collection A collection of elements.
+///
+/// @returns The size of @c collection in O(n).
 ASTERISM_OVERLOADABLE NSUInteger ASTSize(id<NSFastEnumeration> collection) {
     return __ASTSize_NSFastEnumeration(collection);
 }

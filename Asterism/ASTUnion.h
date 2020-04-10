@@ -18,36 +18,36 @@ ASTERISM_USE_INSTEAD(ASTUnion) NSOrderedSet *__ASTUnion_NSOrderedSet(NSOrderedSe
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// Returns the union of two arrays.
-//
-// array - An array of elements.
-// other - An array of elements.
-//
-// Returns an array containing all elements of `array`, concatenated with all
-// elements of `other` not already present in `array`. The order is being
-// maintained.
+/// Returns the union of two arrays.
+///
+/// @param array An array of elements.
+/// @param other An array of elements.
+///
+/// @returns An array containing all elements of @c array, concatenated with all
+///          elements of @c other not already present in @c array.
+///          The order is being maintained.
 ASTERISM_OVERLOADABLE NSArray *ASTUnion(NSArray *array, NSArray *other) {
     return __ASTUnion_NSArray(array, other);
 }
 
-// Returns the union two sets.
-//
-// set   - A set of elements.
-// other - A set of elements.
-//
-// Returns a set containing the elements of `set` and `other`.
+/// Returns the union two sets.
+///
+/// @param set   A set of elements.
+/// @param other A set of elements.
+///
+/// @returns A set containing the elements of @c set and @c other.
 ASTERISM_OVERLOADABLE NSSet *ASTUnion(NSSet *set, NSSet *other) {
     return __ASTUnion_NSSet(set, other);
 }
 
-// Returns the union of two ordered sets.
-//
-// set   - An orderd set of elements.
-// other - An orderd set of elements.
-//
-// Returns an orderd set containing all elements of `set`, concatenated with all
-// elements of `other` not already present in `set`. The order is being
-// maintained.
+/// Returns the union of two ordered sets.
+///
+/// @param set   An orderd set of elements.
+/// @param other An orderd set of elements.
+///
+/// @returns An orderd set containing all elements of @c set, concatenated with
+///          all elements of @c other not already present in @c set.
+///          The order is being maintained.
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTUnion(NSOrderedSet *set, NSOrderedSet *other) {
     return __ASTUnion_NSOrderedSet(set, other);
 }

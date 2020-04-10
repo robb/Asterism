@@ -17,20 +17,20 @@ ASTERISM_USE_INSTEAD(ASTShuffle) NSOrderedSet *__ASTShuffle_NSOrderedSet(NSOrder
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-// Shuffles an array.
-//
-// array - An array of elements.
-//
-// Returns a copy of `array` shuffled using the Fisher-Yates shuffle.
+/// Shuffles an array.
+///
+/// @param array An array of elements.
+///
+/// @returns A copy of @c array shuffled using the Fisher-Yates shuffle.
 ASTERISM_OVERLOADABLE NSArray *ASTShuffle(NSArray *array) {
     return __ASTShuffle_NSArray(array);
 }
 
-// Shuffles an ordered set.
-//
-// set - An ordered set of elements.
-//
-// Returns a copy of `set` shuffled using the Fisher-Yates shuffle.
+/// Shuffles an ordered set.
+///
+/// @param set - An ordered set of elements.
+///
+/// @returns A copy of @c set shuffled using the Fisher-Yates shuffle.
 ASTERISM_OVERLOADABLE NSOrderedSet *ASTShuffle(NSOrderedSet *set) {
     return __ASTShuffle_NSOrderedSet(set);
 }
