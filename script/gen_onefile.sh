@@ -10,8 +10,6 @@ TARGET_BASE="../OneFile"
 
 mkdir -p "$TARGET_BASE"
 
-REV_SHA1=`git rev-parse HEAD`
-
 FILE_BASE="$TARGET_BASE/Asterism_OneFile"
 HEADER_FILE="$FILE_BASE.h"
 SOURCE_FILE="$FILE_BASE.m"
@@ -61,3 +59,4 @@ FH
 	tail +8 "$f" | sed '/^#import/d' | sed '$!N; /^\(.*\)\n\1$/!P; D' >>"$SOURCE_FILE"
 done
 
+echo "Generated $FILE_BASE[.h,.m] from $GIT_REFERENCE"
