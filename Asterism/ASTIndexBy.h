@@ -11,9 +11,9 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-ASTERISM_USE_INSTEAD(ASTIndexBy) NSDictionary *__ASTIndexBy_NSDictionary_block(NSDictionary *dict, NS_NOESCAPE id<NSCopying> (^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTIndexBy) NSDictionary *__ASTIndexBy_NSDictionary_block(NSDictionary *dict, id<NSCopying> (NS_NOESCAPE ^block)(id obj));
 ASTERISM_USE_INSTEAD(ASTIndexBy) NSDictionary *__ASTIndexBy_NSDictionary_keyPath(NSDictionary *dict, NSString *keyPath);
-ASTERISM_USE_INSTEAD(ASTIndexBy) NSDictionary *__ASTIndexBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, NS_NOESCAPE id<NSCopying> (^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTIndexBy) NSDictionary *__ASTIndexBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (NS_NOESCAPE ^block)(id obj));
 ASTERISM_USE_INSTEAD(ASTIndexBy) NSDictionary *__ASTIndexBy_NSFastEnumeration_keyPath(id<NSFastEnumeration> collection, NSString *keyPath);
 
 #pragma clang diagnostic push
@@ -30,7 +30,7 @@ ASTERISM_USE_INSTEAD(ASTIndexBy) NSDictionary *__ASTIndexBy_NSFastEnumeration_ke
 /// @returns A dictionary that maps the keys returned by @c block to the
 ///          respective input value. If @c block returns the same value for
 ///          multiple values, an arbitrary value is chosen.
-ASTERISM_OVERLOADABLE NSDictionary *ASTIndexBy(NSDictionary *dict, NS_NOESCAPE id<NSCopying> (^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTIndexBy(NSDictionary *dict, id<NSCopying> (NS_NOESCAPE ^block)(id obj)) {
     return __ASTIndexBy_NSDictionary_block(dict, block);
 }
 
@@ -71,7 +71,7 @@ ASTERISM_OVERLOADABLE NSDictionary *ASTIndexBy(NSDictionary *dict, NSString *key
 /// indexed[@"f"]; // @"foo"
 /// indexed[@"b"]; // @"bar"
 /// @endcode
-ASTERISM_OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, NS_NOESCAPE id<NSCopying> (^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTIndexBy(id<NSFastEnumeration> collection, id<NSCopying> (NS_NOESCAPE ^block)(id obj)) {
     return __ASTIndexBy_NSFastEnumeration_block(collection, block);
 }
 

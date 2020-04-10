@@ -11,13 +11,13 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-ASTERISM_USE_INSTEAD(ASTReject) NSArray *__ASTReject_NSArray(NSArray *array, NS_NOESCAPE BOOL(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTReject) NSArray *__ASTReject_NSArray_withIndex(NSArray *array, NS_NOESCAPE BOOL(^block)(id obj, NSUInteger idx));
-ASTERISM_USE_INSTEAD(ASTReject) NSDictionary *__ASTReject_NSDictionary(NSDictionary *dict, NS_NOESCAPE BOOL(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTReject) NSDictionary *__ASTReject_NSDictionary_keysAndValues(NSDictionary *dict, NS_NOESCAPE BOOL(^block)(id key, id obj));
-ASTERISM_USE_INSTEAD(ASTReject) NSSet *__ASTReject_NSSet(NSSet *set, NS_NOESCAPE BOOL(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTReject) NSOrderedSet *__ASTReject_NSOrderedSet(NSOrderedSet *set, NS_NOESCAPE BOOL(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTReject) NSOrderedSet *__ASTReject_NSOrderedSet_withIndex(NSOrderedSet *set, NS_NOESCAPE BOOL(^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTReject) NSArray *__ASTReject_NSArray(NSArray *array, BOOL(NS_NOESCAPE ^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTReject) NSArray *__ASTReject_NSArray_withIndex(NSArray *array, BOOL(NS_NOESCAPE ^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTReject) NSDictionary *__ASTReject_NSDictionary(NSDictionary *dict, BOOL(NS_NOESCAPE ^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTReject) NSDictionary *__ASTReject_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(NS_NOESCAPE ^block)(id key, id obj));
+ASTERISM_USE_INSTEAD(ASTReject) NSSet *__ASTReject_NSSet(NSSet *set, BOOL(NS_NOESCAPE ^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTReject) NSOrderedSet *__ASTReject_NSOrderedSet(NSOrderedSet *set, BOOL(NS_NOESCAPE ^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTReject) NSOrderedSet *__ASTReject_NSOrderedSet_withIndex(NSOrderedSet *set, BOOL(NS_NOESCAPE ^block)(id obj, NSUInteger idx));
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -31,7 +31,7 @@ ASTERISM_USE_INSTEAD(ASTReject) NSOrderedSet *__ASTReject_NSOrderedSet_withIndex
 ///
 /// @returns An array of all values in @c array that fail the test. The order is
 ///          being maintained.
-ASTERISM_OVERLOADABLE NSArray *ASTReject(NSArray *array, NS_NOESCAPE BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(NS_NOESCAPE ^block)(id obj)) {
     return __ASTReject_NSArray(array, block);
 }
 
@@ -44,7 +44,7 @@ ASTERISM_OVERLOADABLE NSArray *ASTReject(NSArray *array, NS_NOESCAPE BOOL(^block
 ///
 /// @returns An array of all values in @c array that fail the test. The order is
 ///          being maintained.
-ASTERISM_OVERLOADABLE NSArray *ASTReject(NSArray *array, NS_NOESCAPE BOOL(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE NSArray *ASTReject(NSArray *array, BOOL(NS_NOESCAPE ^block)(id obj, NSUInteger idx)) {
     return __ASTReject_NSArray_withIndex(array, block);
 }
 
@@ -57,7 +57,7 @@ ASTERISM_OVERLOADABLE NSArray *ASTReject(NSArray *array, NS_NOESCAPE BOOL(^block
 ///
 /// @returns A dictionary of the keys and values in @c dict for which the values
 ///          failed the test.
-ASTERISM_OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, NS_NOESCAPE BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(NS_NOESCAPE ^block)(id obj)) {
     return __ASTReject_NSDictionary(dict, block);
 }
 
@@ -69,7 +69,7 @@ ASTERISM_OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, NS_NOESCAPE BO
 ///              The block must not be @c nil .
 ///
 /// @returns A dictionary of the keys and values in @c dict that fail the test.
-ASTERISM_OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, NS_NOESCAPE BOOL(^block)(id key, id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, BOOL(NS_NOESCAPE ^block)(id key, id obj)) {
     return __ASTReject_NSDictionary_keysAndValues(dict, block);
 }
 
@@ -81,7 +81,7 @@ ASTERISM_OVERLOADABLE NSDictionary *ASTReject(NSDictionary *dict, NS_NOESCAPE BO
 ///              The block must not be @c nil .
 ///
 /// @returns A set of all values in @c set that fail the test.
-ASTERISM_OVERLOADABLE NSSet *ASTReject(NSSet *set, NS_NOESCAPE BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSSet *ASTReject(NSSet *set, BOOL(NS_NOESCAPE ^block)(id obj)) {
     return __ASTReject_NSSet(set, block);
 }
 
@@ -93,7 +93,7 @@ ASTERISM_OVERLOADABLE NSSet *ASTReject(NSSet *set, NS_NOESCAPE BOOL(^block)(id o
 ///              The block must not be @c nil .
 ///
 /// @returns An ordered set of all values in @c set that fail the test.
-ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, NS_NOESCAPE BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(NS_NOESCAPE ^block)(id obj)) {
     return __ASTReject_NSOrderedSet(set, block);
 }
 
@@ -106,7 +106,7 @@ ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, NS_NOESCAPE BOO
 ///
 /// @returns An ordered set of all values in @c set that fail the test.
 ///          The order  is being maintained.
-ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, NS_NOESCAPE BOOL(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTReject(NSOrderedSet *set, BOOL(NS_NOESCAPE ^block)(id obj, NSUInteger idx)) {
     return __ASTReject_NSOrderedSet_withIndex(set, block);
 }
 
