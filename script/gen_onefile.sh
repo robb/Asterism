@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# move to script directory
+cd `dirname $0`
+
+# just as reminder, this would get the absolute directory of the script
+# DIRECTORY=$(cd `dirname $0` && pwd)
 
 TARGET_BASE="../OneFile"
 
