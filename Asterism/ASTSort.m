@@ -10,14 +10,14 @@
 
 #pragma mark - Helpers
 
-static NSComparator const ASTCompare = ^NSComparisonResult(id a, id b) {
+static NSComparator const ASTSort_Compare = ^NSComparisonResult(id a, id b) {
     return [a compare:b];
 };
 
 #pragma mark - Sort
 
 NSArray *__ASTSort_NSArray(NSArray *array) {
-    return __ASTSort_NSArray_comparator(array, ASTCompare);
+    return __ASTSort_NSArray_comparator(array, ASTSort_Compare);
 }
 
 NSArray *__ASTSort_NSArray_comparator(NSArray *array, NSComparator comparator) {
@@ -27,7 +27,7 @@ NSArray *__ASTSort_NSArray_comparator(NSArray *array, NSComparator comparator) {
 }
 
 NSOrderedSet *__ASTSort_NSOrderedSet(NSOrderedSet *set) {
-    return __ASTSort_NSOrderedSet_comparator(set, ASTCompare);
+    return __ASTSort_NSOrderedSet_comparator(set, ASTSort_Compare);
 }
 
 NSOrderedSet *__ASTSort_NSOrderedSet_comparator(NSOrderedSet *set, NSComparator comparator) {
