@@ -11,13 +11,13 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-ASTERISM_USE_INSTEAD(ASTMap) NSArray *__ASTMap_NSArray(NSArray *array, id(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTMap) NSArray *__ASTMap_NSArray_withIndex(NSArray *array, id(^block)(id obj, NSUInteger idx));
-ASTERISM_USE_INSTEAD(ASTMap) NSDictionary *__ASTMap_NSDictionary(NSDictionary *dict, id(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTMap) NSDictionary *__ASTMap_NSDictionary_keysAndValues(NSDictionary *dict, id(^block)(id key, id obj));
-ASTERISM_USE_INSTEAD(ASTMap) NSSet *__ASTMap_NSSet(NSSet *set, id(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTMap) NSOrderedSet *__ASTMap_NSOrderedSet(NSOrderedSet *set, id(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTMap) NSOrderedSet *__ASTMap_NSOrderedSet_withIndex(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTMap) NSArray *__ASTMap_NSArray(NSArray *array, NS_NOESCAPE id(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTMap) NSArray *__ASTMap_NSArray_withIndex(NSArray *array, NS_NOESCAPE id(^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTMap) NSDictionary *__ASTMap_NSDictionary(NSDictionary *dict, NS_NOESCAPE id(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTMap) NSDictionary *__ASTMap_NSDictionary_keysAndValues(NSDictionary *dict, NS_NOESCAPE id(^block)(id key, id obj));
+ASTERISM_USE_INSTEAD(ASTMap) NSSet *__ASTMap_NSSet(NSSet *set, NS_NOESCAPE id(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTMap) NSOrderedSet *__ASTMap_NSOrderedSet(NSOrderedSet *set, NS_NOESCAPE id(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTMap) NSOrderedSet *__ASTMap_NSOrderedSet_withIndex(NSOrderedSet *array, NS_NOESCAPE id(^block)(id obj, NSUInteger idx));
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -31,7 +31,7 @@ ASTERISM_USE_INSTEAD(ASTMap) NSOrderedSet *__ASTMap_NSOrderedSet_withIndex(NSOrd
 /// @returns An array that contains all values of @c array after @c block has
 ///          been applied. If @c block returns @c nil . the element is not
 ///          present in the returned array. The order is being maintained.
-ASTERISM_OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSArray *ASTMap(NSArray *array, NS_NOESCAPE id(^block)(id obj)) {
     return __ASTMap_NSArray(array, block);
 }
 
@@ -45,7 +45,7 @@ ASTERISM_OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj)) {
 /// @returns An array that contains all values of @c array after @c block has
 ///          been applied. If @c block returns @c nil , the element is not
 ///          present in the returned array. The order is being maintained.
-ASTERISM_OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE NSArray *ASTMap(NSArray *array, NS_NOESCAPE id(^block)(id obj, NSUInteger idx)) {
     return __ASTMap_NSArray_withIndex(array, block);
 }
 
@@ -59,7 +59,7 @@ ASTERISM_OVERLOADABLE NSArray *ASTMap(NSArray *array, id(^block)(id obj, NSUInte
 ///          @c block has been applied to the value. If @c block returns
 ///          @c nil , the key and value are not present in the returned
 ///          dictionary.
-ASTERISM_OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, NS_NOESCAPE id(^block)(id obj)) {
     return __ASTMap_NSDictionary(dict, block);
 }
 
@@ -72,7 +72,7 @@ ASTERISM_OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id obj
 /// @returns A dictionary that contains all keys and values of @c dict after
 ///          @c block has been applied to them. If @c block returns @c nil m the
 ///          key and value are not present in the returned dictionary.
-ASTERISM_OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key, id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, NS_NOESCAPE id(^block)(id key, id obj)) {
     return __ASTMap_NSDictionary_keysAndValues(dict, block);
 }
 
@@ -85,7 +85,7 @@ ASTERISM_OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(^block)(id key
 /// @returns A set that contains all values of @c set after @c block has been
 ///          applied. If @c block returns @c nil , the element is not present in
 ///          the returned set.
-ASTERISM_OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSSet *ASTMap(NSSet *set, NS_NOESCAPE id(^block)(id obj)) {
     return __ASTMap_NSSet(set, block);
 }
 
@@ -98,7 +98,7 @@ ASTERISM_OVERLOADABLE NSSet *ASTMap(NSSet *set, id(^block)(id obj)) {
 /// @returns An ordered set that contains all values of @c set after @c block
 ///          has been applied. If @c block returns @c nil , the element is not
 ///          present in the returned set. The order is being maintained.
-ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, NS_NOESCAPE id(^block)(id obj)) {
     return __ASTMap_NSOrderedSet(set, block);
 }
 
@@ -111,7 +111,7 @@ ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(^block)(id obj)
 /// @returns An ordered set that contains all values of @c set after @c block has
 ///          been applied. If @c block returns @c nil , the element is not
 ///          present in the returned set. The order is being maintained.
-ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *array, id(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *array, NS_NOESCAPE id(^block)(id obj, NSUInteger idx)) {
     return __ASTMap_NSOrderedSet_withIndex(array, block);
 }
 

@@ -11,13 +11,13 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-ASTERISM_USE_INSTEAD(ASTFilter) NSArray *__ASTFilter_NSArray(NSArray *array, BOOL(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTFilter) NSArray *__ASTFilter_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
-ASTERISM_USE_INSTEAD(ASTFilter) NSDictionary *__ASTFilter_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTFilter) NSDictionary *__ASTFilter_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id key, id obj));
-ASTERISM_USE_INSTEAD(ASTFilter) NSSet *__ASTFilter_NSSet(NSSet *set, BOOL(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTFilter) NSOrderedSet *__ASTFilter_NSOrderedSet(NSOrderedSet *set, BOOL(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTFilter) NSOrderedSet *__ASTFilter_NSOrderedSet_withIndex(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTFilter) NSArray *__ASTFilter_NSArray(NSArray *array, NS_NOESCAPE BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFilter) NSArray *__ASTFilter_NSArray_withIndex(NSArray *array, NS_NOESCAPE BOOL(^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTFilter) NSDictionary *__ASTFilter_NSDictionary(NSDictionary *dict, NS_NOESCAPE BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFilter) NSDictionary *__ASTFilter_NSDictionary_keysAndValues(NSDictionary *dict, NS_NOESCAPE BOOL(^block)(id key, id obj));
+ASTERISM_USE_INSTEAD(ASTFilter) NSSet *__ASTFilter_NSSet(NSSet *set, NS_NOESCAPE BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFilter) NSOrderedSet *__ASTFilter_NSOrderedSet(NSOrderedSet *set, NS_NOESCAPE BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFilter) NSOrderedSet *__ASTFilter_NSOrderedSet_withIndex(NSOrderedSet *array, NS_NOESCAPE BOOL(^block)(id obj, NSUInteger idx));
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -31,7 +31,7 @@ ASTERISM_USE_INSTEAD(ASTFilter) NSOrderedSet *__ASTFilter_NSOrderedSet_withIndex
 ///
 /// @returns An array of all values in @c array that pass the test. The order is
 ///          being maintained.
-ASTERISM_OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSArray *ASTFilter(NSArray *array, NS_NOESCAPE BOOL(^block)(id obj)) {
     return __ASTFilter_NSArray(array, block);
 }
 
@@ -44,7 +44,7 @@ ASTERISM_OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj)) {
 ///
 /// @returns an array of all values in @c array that pass the test. The order is
 ///          being maintained.
-ASTERISM_OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE NSArray *ASTFilter(NSArray *array, NS_NOESCAPE BOOL(^block)(id obj, NSUInteger idx)) {
     return __ASTFilter_NSArray_withIndex(array, block);
 }
 
@@ -57,7 +57,7 @@ ASTERISM_OVERLOADABLE NSArray *ASTFilter(NSArray *array, BOOL(^block)(id obj, NS
 ///
 /// @returns A dictionary of the keys and values in @c dict for which the values
 ///          passed the test.
-ASTERISM_OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, NS_NOESCAPE BOOL(^block)(id obj)) {
     return __ASTFilter_NSDictionary(dict, block);
 }
 
@@ -70,7 +70,7 @@ ASTERISM_OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(i
 ///
 /// @returns A dictionary of the keys and values in @c dict that passed the
 ///          test.
-ASTERISM_OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(id key, id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, NS_NOESCAPE BOOL(^block)(id key, id obj)) {
     return __ASTFilter_NSDictionary_keysAndValues(dict, block);
 }
 
@@ -82,7 +82,7 @@ ASTERISM_OVERLOADABLE NSDictionary *ASTFilter(NSDictionary *dict, BOOL(^block)(i
 ///              The block must not be @c nil .
 ///
 /// @returns A set of all values in @c set that pass the test.
-ASTERISM_OVERLOADABLE NSSet *ASTFilter(NSSet *set, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSSet *ASTFilter(NSSet *set, NS_NOESCAPE BOOL(^block)(id obj)) {
     return __ASTFilter_NSSet(set, block);
 }
 
@@ -94,7 +94,7 @@ ASTERISM_OVERLOADABLE NSSet *ASTFilter(NSSet *set, BOOL(^block)(id obj)) {
 ///              The block must not be @c nil .
 ///
 /// @returns An ordered set of all values in @c set that pass the test.
-ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, NS_NOESCAPE BOOL(^block)(id obj)) {
     return __ASTFilter_NSOrderedSet(set, block);
 }
 
@@ -108,7 +108,7 @@ ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(^block)(id
 ///
 /// @returns An ordered set of all values in @c set that pass the test. The
 ///          order is being maintained.
-ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *array, BOOL(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *array, NS_NOESCAPE BOOL(^block)(id obj, NSUInteger idx)) {
     return __ASTFilter_NSOrderedSet_withIndex(array, block);
 }
 

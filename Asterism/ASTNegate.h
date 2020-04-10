@@ -11,9 +11,9 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id(BOOL(^block)(id)))(id);
-ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id_id(BOOL(^block)(id, id)))(id, id);
-ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id_NSUInteger(BOOL(^block)(id, NSUInteger)))(id, NSUInteger);
+ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id(NS_NOESCAPE BOOL(^block)(id)))(id);
+ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id_id(NS_NOESCAPE BOOL(^block)(id, id)))(id, id);
+ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id_NSUInteger(NS_NOESCAPE BOOL(^block)(id, NSUInteger)))(id, NSUInteger);
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -25,7 +25,7 @@ ASTERISM_USE_INSTEAD(ASTNegate) BOOL (^__ASTNegate_id_NSUInteger(BOOL(^block)(id
 ///
 /// @returns A new block of the same type that returns the opposite of what
 ///          @c block returns.
-ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id)))(id) {
+ASTERISM_OVERLOADABLE BOOL (^ASTNegate(NS_NOESCAPE BOOL(^block)(id)))(id) {
     return __ASTNegate_id(block);
 }
 
@@ -36,7 +36,7 @@ ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id)))(id) {
 ///
 /// Returns a new block of the same type that returns the opposite of what
 /// @c block returns.
-ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id) {
+ASTERISM_OVERLOADABLE BOOL (^ASTNegate(NS_NOESCAPE BOOL(^block)(id, id)))(id, id) {
     return __ASTNegate_id_id(block);
 }
 
@@ -48,7 +48,7 @@ ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, id)))(id, id) {
 ///
 /// Returns a new block of the same type that returns the opposite of what
 /// @c block returns.
-ASTERISM_OVERLOADABLE BOOL (^ASTNegate(BOOL(^block)(id, NSUInteger)))(id, NSUInteger) {
+ASTERISM_OVERLOADABLE BOOL (^ASTNegate(NS_NOESCAPE BOOL(^block)(id, NSUInteger)))(id, NSUInteger) {
     return __ASTNegate_id_NSUInteger(block);
 }
 

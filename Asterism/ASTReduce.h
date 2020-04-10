@@ -11,10 +11,10 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSDictionary_block(NSDictionary *dict, id(^block)(id memo, id obj));
-ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSDictionary_memo_block(NSDictionary *dict, id memo, id(^block)(id memo, id obj));
-ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSFastEnumeration_block(id<NSFastEnumeration> collection, id(^block)(id memo, id obj));
-ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSFastEnumeration_memo_block(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj));
+ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSDictionary_block(NSDictionary *dict, NS_NOESCAPE id(^block)(id memo, id obj));
+ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSDictionary_memo_block(NSDictionary *dict, id memo, NS_NOESCAPE id(^block)(id memo, id obj));
+ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSFastEnumeration_block(id<NSFastEnumeration> collection, NS_NOESCAPE id(^block)(id memo, id obj));
+ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSFastEnumeration_memo_block(id<NSFastEnumeration> collection, id memo, NS_NOESCAPE id(^block)(id memo, id obj));
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -31,7 +31,7 @@ ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSFastEnumeration_memo_block(id<N
 /// @returns The last return value of @c block once it reached the end of
 ///          @c dict . If @c dict has only one value, @c block is never invoked
 ///          and that value. If @c dict is empty, @c nil is returned.
-ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, id(^block)(id memo, id obj)) {
+ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, NS_NOESCAPE id(^block)(id memo, id obj)) {
     return __ASTReduce_NSDictionary_block(dict, block);
 }
 
@@ -47,7 +47,7 @@ ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, id(^block)(id memo, id ob
 ///
 /// @returns The last return value of @c block once it reached the end of
 ///          @c dict. If @c dict is empty, @c memo is returned.
-ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, id memo, id(^block)(id memo, id obj)) {
+ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, id memo, NS_NOESCAPE id(^block)(id memo, id obj)) {
     return __ASTReduce_NSDictionary_memo_block(dict, memo, block);
 }
 
@@ -78,7 +78,7 @@ ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, id memo, id(^block)(id me
 /// // Equivalent to [[@"a" stringByAppendingString:@"b"] stringByAppendingString:@"c"];
 /// ASTReduce(@[ @"a", @"b", @"c" ], concat);
 /// @endcode
-ASTERISM_OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(id memo, id obj)) {
+ASTERISM_OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, NS_NOESCAPE id(^block)(id memo, id obj)) {
     return __ASTReduce_NSFastEnumeration_block(collection, block);
 }
 
@@ -95,7 +95,7 @@ ASTERISM_OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id(^block)(
 ///
 /// @returns The last return value of @c block once it reached the end of
 ///          @c collection. If @c collection is empty, @c memo is returned.
-ASTERISM_OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id memo, id(^block)(id memo, id obj)) {
+ASTERISM_OVERLOADABLE id ASTReduce(id<NSFastEnumeration> collection, id memo, NS_NOESCAPE id(^block)(id memo, id obj)) {
     return __ASTReduce_NSFastEnumeration_memo_block(collection, memo, block);
 }
 

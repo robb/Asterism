@@ -12,13 +12,13 @@
 
 // You should not call these methods directly.
 ASTERISM_USE_INSTEAD(ASTMin) id __ASTMin_NSDictionary(NSDictionary *dict);
-ASTERISM_USE_INSTEAD(ASTMin) id __ASTMin_NSDictionary_comparator(NSDictionary *dict, NSComparator comparator);
+ASTERISM_USE_INSTEAD(ASTMin) id __ASTMin_NSDictionary_comparator(NSDictionary *dict, NS_NOESCAPE NSComparator comparator);
 ASTERISM_USE_INSTEAD(ASTMax) id __ASTMax_NSDictionary(NSDictionary *dict);
-ASTERISM_USE_INSTEAD(ASTMax) id __ASTMax_NSDictionary_comparator(NSDictionary *dict, NSComparator comparator);
+ASTERISM_USE_INSTEAD(ASTMax) id __ASTMax_NSDictionary_comparator(NSDictionary *dict, NS_NOESCAPE NSComparator comparator);
 ASTERISM_USE_INSTEAD(ASTMin) id __ASTMin_NSFastEnumeration(id<NSFastEnumeration> collection);
-ASTERISM_USE_INSTEAD(ASTMin) id __ASTMin_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSComparator comparator);
+ASTERISM_USE_INSTEAD(ASTMin) id __ASTMin_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NS_NOESCAPE NSComparator comparator);
 ASTERISM_USE_INSTEAD(ASTMax) id __ASTMax_NSFastEnumeration(id<NSFastEnumeration> collection);
-ASTERISM_USE_INSTEAD(ASTMax) id __ASTMax_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NSComparator comparator);
+ASTERISM_USE_INSTEAD(ASTMax) id __ASTMax_NSFastEnumeration_comparator(id<NSFastEnumeration> collection, NS_NOESCAPE NSComparator comparator);
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -42,7 +42,7 @@ ASTERISM_OVERLOADABLE id ASTMin(NSDictionary *dict) {
 ///
 /// @returns The minimum of the values of @c dict comparing all values using
 ///          @c comparator .
-ASTERISM_OVERLOADABLE id ASTMin(NSDictionary *dict, NSComparator comparator) {
+ASTERISM_OVERLOADABLE id ASTMin(NSDictionary *dict, NS_NOESCAPE NSComparator comparator) {
     return __ASTMin_NSDictionary_comparator(dict, comparator);
 }
 
@@ -65,7 +65,7 @@ ASTERISM_OVERLOADABLE id ASTMax(NSDictionary *dict) {
 ///
 /// @returns The maximum of the values of @c dict comparing all values using
 ///          @c comparator.
-ASTERISM_OVERLOADABLE id ASTMax(NSDictionary *dict, NSComparator comparator) {
+ASTERISM_OVERLOADABLE id ASTMax(NSDictionary *dict, NS_NOESCAPE NSComparator comparator) {
     return __ASTMax_NSDictionary_comparator(dict, comparator);
 }
 
@@ -87,7 +87,7 @@ ASTERISM_OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection) {
 ///
 /// @returns The minimum of the collection by comparing all values using
 ///          @c comparator .
-ASTERISM_OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NSComparator comparator) {
+ASTERISM_OVERLOADABLE id ASTMin(id<NSFastEnumeration> collection, NS_NOESCAPE NSComparator comparator) {
     return __ASTMin_NSFastEnumeration_comparator(collection, comparator);
 }
 
@@ -109,7 +109,7 @@ ASTERISM_OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection) {
 ///
 /// @returns The maximum of the collection by comparing all values using
 ///          @c comparator.
-ASTERISM_OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NSComparator comparator) {
+ASTERISM_OVERLOADABLE id ASTMax(id<NSFastEnumeration> collection, NS_NOESCAPE NSComparator comparator) {
     return __ASTMax_NSFastEnumeration_comparator(collection, comparator);
 }
 
