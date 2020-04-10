@@ -34,6 +34,5 @@ Carthage/Build
 Cartfile.resolved
 Carthage/
 
-
-# OneFile Generation
-OneFile/
+# Amalgamation Generation
+Amalgamation/

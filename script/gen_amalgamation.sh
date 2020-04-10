@@ -6,11 +6,11 @@ cd `dirname $0`
 # just as reminder, this would get the absolute directory of the script
 # DIRECTORY=$(cd `dirname $0` && pwd)
 
-TARGET_BASE="../OneFile"
+TARGET_BASE="../Amalgamation"
 
 mkdir -p "$TARGET_BASE"
 
-FILE_BASE="$TARGET_BASE/Asterism_OneFile"
+FILE_BASE="$TARGET_BASE/Asterism"
 HEADER_FILE="$FILE_BASE.h"
 SOURCE_FILE="$FILE_BASE.m"
 GIT_REFERENCE=`git log HEAD -1 --format=reference`
@@ -20,7 +20,7 @@ GIT_REFERENCE=`git log HEAD -1 --format=reference`
 cat >"$HEADER_FILE" <<HEADER
 // ${HEADER_FILE##*/}
 //
-// Generated from:
+// Amalgamation generated from:
 // $GIT_REFERENCE
 
 #import <Foundation/Foundation.h>
@@ -44,7 +44,7 @@ done
 cat >"$SOURCE_FILE" <<HEADER
 // ${SOURCE_FILE##*/}
 //
-// Generated from:
+// Amalgamation generated from:
 // $GIT_REFERENCE
 
 #import "${HEADER_FILE##*/}"
