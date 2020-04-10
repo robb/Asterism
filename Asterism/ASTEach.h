@@ -11,12 +11,12 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSArray(NSArray *array, void(^iterator)(id obj));
-ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSArray_withIndex(NSArray *array, void(^iterator)(id obj, NSUInteger idx));
-ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSDictionary(NSDictionary *dict, void(^iterator)(id obj));
-ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSDictionary_keysAndValues(NSDictionary *dict, void(^iterator)(id key, id obj));
-ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSOrderedSet_withIndex(NSOrderedSet *set, void(^iterator)(id obj, NSUInteger idx));
-ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSFastEnumeration(id<NSFastEnumeration> enumerable, void(^iterator)(id obj));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSArray(NSArray *array, void(NS_NOESCAPE ^iterator)(id obj));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSArray_withIndex(NSArray *array, void(NS_NOESCAPE ^iterator)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSDictionary(NSDictionary *dict, void(NS_NOESCAPE ^iterator)(id obj));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSDictionary_keysAndValues(NSDictionary *dict, void(NS_NOESCAPE ^iterator)(id key, id obj));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSOrderedSet_withIndex(NSOrderedSet *set, void(NS_NOESCAPE ^iterator)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSFastEnumeration(id<NSFastEnumeration> enumerable, void(NS_NOESCAPE ^iterator)(id obj));
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -26,7 +26,7 @@ ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSFastEnumeration(id<NSFastEnumerat
 /// @param array    An array of elements.
 /// @param iterator A block that takes an element as its only argument. The
 ///                 block must not be @c nil .
-ASTERISM_OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id obj)) {
+ASTERISM_OVERLOADABLE void ASTEach(NSArray *array, void(NS_NOESCAPE ^iterator)(id obj)) {
     __ASTEach_NSArray(array, iterator);
 }
 
@@ -35,7 +35,7 @@ ASTERISM_OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id obj)) {
 /// @param array    An array of elements.
 /// @param iterator A block that takes an element and its index in @c array as
 ///                 its arguments. The block must not be @c nil .
-ASTERISM_OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE void ASTEach(NSArray *array, void(NS_NOESCAPE ^iterator)(id obj, NSUInteger idx)) {
     __ASTEach_NSArray_withIndex(array, iterator);
 }
 
@@ -44,7 +44,7 @@ ASTERISM_OVERLOADABLE void ASTEach(NSArray *array, void(^iterator)(id obj, NSUIn
 /// @param dict     A dictionary of elements.
 /// @param iterator A block that takes an element as its only argument. The
 ///                 block must not be @c nil .
-ASTERISM_OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id obj)) {
+ASTERISM_OVERLOADABLE void ASTEach(NSDictionary *dict, void(NS_NOESCAPE ^iterator)(id obj)) {
     __ASTEach_NSDictionary(dict, iterator);
 }
 
@@ -53,7 +53,7 @@ ASTERISM_OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id obj)) 
 /// @param dict     A dictionary of elements.
 /// @param iterator A block that takes a key and a value as its arguments. The
 ///                 block must not be @c nil .
-ASTERISM_OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id key, id obj)) {
+ASTERISM_OVERLOADABLE void ASTEach(NSDictionary *dict, void(NS_NOESCAPE ^iterator)(id key, id obj)) {
     __ASTEach_NSDictionary_keysAndValues(dict, iterator);
 }
 
@@ -62,7 +62,7 @@ ASTERISM_OVERLOADABLE void ASTEach(NSDictionary *dict, void(^iterator)(id key, i
 /// @param set      An ordered set of elements.
 /// @param iterator A block that takes an element and its index in @c set as its
 ///                 arguments. The block must not be @c nil .
-ASTERISM_OVERLOADABLE void ASTEach(NSOrderedSet *set, void(^iterator)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE void ASTEach(NSOrderedSet *set, void(NS_NOESCAPE ^iterator)(id obj, NSUInteger idx)) {
     __ASTEach_NSOrderedSet_withIndex(set, iterator);
 }
 
@@ -71,7 +71,7 @@ ASTERISM_OVERLOADABLE void ASTEach(NSOrderedSet *set, void(^iterator)(id obj, NS
 /// @param enumerable An object that implements @c NSFastEnumeration.
 /// @param iterator   A block that takes an element as its only argument. The
 ///                   block must not be @c nil .
-ASTERISM_OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, void(^iterator)(id obj)) {
+ASTERISM_OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, void(NS_NOESCAPE ^iterator)(id obj)) {
     __ASTEach_NSFastEnumeration(enumerable, iterator);
 }
 

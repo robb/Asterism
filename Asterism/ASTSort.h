@@ -12,9 +12,9 @@
 
 // You should not call these methods directly.
 ASTERISM_USE_INSTEAD(ASTSort) NSArray *__ASTSort_NSArray(NSArray *array);
-ASTERISM_USE_INSTEAD(ASTSort) NSArray *__ASTSort_NSArray_comparator(NSArray *array, NSComparator comparator);
+ASTERISM_USE_INSTEAD(ASTSort) NSArray *__ASTSort_NSArray_comparator(NSArray *array, NS_NOESCAPE NSComparator comparator);
 ASTERISM_USE_INSTEAD(ASTSort) NSOrderedSet *__ASTSort_NSOrderedSet(NSOrderedSet *set);
-ASTERISM_USE_INSTEAD(ASTSort) NSOrderedSet *__ASTSort_NSOrderedSet_comparator(NSOrderedSet *set, NSComparator comparator);
+ASTERISM_USE_INSTEAD(ASTSort) NSOrderedSet *__ASTSort_NSOrderedSet_comparator(NSOrderedSet *set, NS_NOESCAPE NSComparator comparator);
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -35,7 +35,7 @@ ASTERISM_OVERLOADABLE NSArray *ASTSort(NSArray *array) {
 ///                   This argument must not be @c nil .
 ///
 /// @returns A copy of @c array, sorted using @c comparator.
-ASTERISM_OVERLOADABLE NSArray *ASTSort(NSArray *array, NSComparator comparator) {
+ASTERISM_OVERLOADABLE NSArray *ASTSort(NSArray *array, NS_NOESCAPE NSComparator comparator) {
     return __ASTSort_NSArray_comparator(array, comparator);
 }
 
@@ -55,7 +55,7 @@ ASTERISM_OVERLOADABLE NSOrderedSet *ASTSort(NSOrderedSet *set) {
 ///                   This argument must not be @c nil .
 ///
 /// @returns A copy of @c set, sorted using @c comparator.
-ASTERISM_OVERLOADABLE NSOrderedSet *ASTSort(NSOrderedSet *set, NSComparator comparator) {
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTSort(NSOrderedSet *set, NS_NOESCAPE NSComparator comparator) {
     return __ASTSort_NSOrderedSet_comparator(set, comparator);
 }
 

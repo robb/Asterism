@@ -11,8 +11,8 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-ASTERISM_USE_INSTEAD(ASTAll) BOOL __ASTAll_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTAll) BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTAll) BOOL __ASTAll_NSDictionary(NSDictionary *dict, BOOL(NS_NOESCAPE ^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTAll) BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(NS_NOESCAPE ^block)(id obj));
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -25,7 +25,7 @@ ASTERISM_USE_INSTEAD(ASTAll) BOOL __ASTAll_NSFastEnumeration(id<NSFastEnumeratio
 ///              be @c nil .
 ///
 /// @returns @c YES if all values in @c dict pass the test @c block.
-ASTERISM_OVERLOADABLE BOOL ASTAll(NSDictionary *dict, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE BOOL ASTAll(NSDictionary *dict, BOOL(NS_NOESCAPE ^block)(id obj)) {
     return __ASTAll_NSDictionary(dict, block);
 }
 
@@ -37,7 +37,7 @@ ASTERISM_OVERLOADABLE BOOL ASTAll(NSDictionary *dict, BOOL(^block)(id obj)) {
 ///                   must not be @c nil .
 ///
 /// @returns @c YES if all elements in @c collection pass the test @c block.
-ASTERISM_OVERLOADABLE BOOL ASTAll(id<NSFastEnumeration> collection, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE BOOL ASTAll(id<NSFastEnumeration> collection, BOOL(NS_NOESCAPE ^block)(id obj)) {
     return __ASTAll_NSFastEnumeration(collection, block);
 }
 

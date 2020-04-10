@@ -11,11 +11,11 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSArray(NSArray *array, BOOL(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSArray_withIndex(NSArray *array, BOOL(^block)(id obj, NSUInteger idx));
-ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSDictionary(NSDictionary *dict, BOOL(^block)(id obj));
-ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(^block)(id key, id obj));
-ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSArray(NSArray *array, BOOL(NS_NOESCAPE ^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSArray_withIndex(NSArray *array, BOOL(NS_NOESCAPE ^block)(id obj, NSUInteger idx));
+ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSDictionary(NSDictionary *dict, BOOL(NS_NOESCAPE ^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSDictionary_keysAndValues(NSDictionary *dict, BOOL(NS_NOESCAPE ^block)(id key, id obj));
+ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSFastEnumeration(id<NSFastEnumeration> collection, BOOL(NS_NOESCAPE ^block)(id obj));
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -29,7 +29,7 @@ ASTERISM_USE_INSTEAD(ASTFind) id __ASTFind_NSFastEnumeration(id<NSFastEnumeratio
 ///
 /// @returns The first item in @c array for which @c block returns @c YES or
 ///          @c nil if no such value was found.
-ASTERISM_OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE id ASTFind(NSArray *array, BOOL(NS_NOESCAPE ^block)(id obj)) {
     return __ASTFind_NSArray(array, block);
 }
 
@@ -42,7 +42,7 @@ ASTERISM_OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj)) {
 ///
 /// @returns The first item in @c array for which @c block returns @c YES or
 ///          @c nil if no such value was found.
-ASTERISM_OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj, NSUInteger idx)) {
+ASTERISM_OVERLOADABLE id ASTFind(NSArray *array, BOOL(NS_NOESCAPE ^block)(id obj, NSUInteger idx)) {
     return __ASTFind_NSArray_withIndex(array, block);
 }
 
@@ -55,7 +55,7 @@ ASTERISM_OVERLOADABLE id ASTFind(NSArray *array, BOOL(^block)(id obj, NSUInteger
 ///
 /// @returns Any value in @c dict for which @c block returns @c YES or @c nil if no
 ///          such value was found.
-ASTERISM_OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(NS_NOESCAPE ^block)(id obj)) {
     return __ASTFind_NSDictionary(dict, block);
 }
 
@@ -68,7 +68,7 @@ ASTERISM_OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id obj)) {
 ///
 /// @returns Any value in @c dict for which @c block returns @c YES or @c nil
 ///          if no such value was found.
-ASTERISM_OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id key, id obj)) {
+ASTERISM_OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(NS_NOESCAPE ^block)(id key, id obj)) {
     return __ASTFind_NSDictionary_keysAndValues(dict, block);
 }
 
@@ -83,7 +83,7 @@ ASTERISM_OVERLOADABLE id ASTFind(NSDictionary *dict, BOOL(^block)(id key, id obj
 ///          @c nil if no such value was found. If @c collection makes an order
 ///          guarantee, @c ASTFind will return the first value matching the
 ///          search criteria.
-ASTERISM_OVERLOADABLE id ASTFind(id<NSFastEnumeration> collection, BOOL(^block)(id obj)) {
+ASTERISM_OVERLOADABLE id ASTFind(id<NSFastEnumeration> collection, BOOL(NS_NOESCAPE ^block)(id obj)) {
     return __ASTFind_NSFastEnumeration(collection, block);
 }
 

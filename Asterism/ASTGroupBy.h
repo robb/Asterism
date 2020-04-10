@@ -11,9 +11,9 @@
 #import "AsterismDefines.h"
 
 // You should not call these methods directly.
-ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSDictionary_block(NSDictionary *dict, id<NSCopying> (^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSDictionary_block(NSDictionary *dict, id<NSCopying> (NS_NOESCAPE ^block)(id obj));
 ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSDictionary_keyPath(NSDictionary *dict, NSString *keyPath);
-ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj));
+ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSFastEnumeration_block(id<NSFastEnumeration> collection, id<NSCopying> (NS_NOESCAPE ^block)(id obj));
 ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSFastEnumeration_keyPath(id<NSFastEnumeration> collection, NSString *keyPath);
 
 #pragma clang diagnostic push
@@ -29,7 +29,7 @@ ASTERISM_USE_INSTEAD(ASTGroupBy) NSDictionary *__ASTGroupBy_NSFastEnumeration_ke
 ///
 /// @returns A dictionary that maps the keys returned by @c block to a set of all
 ///          values of @c dict that share the same key.
-ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(NSDictionary *dict, id<NSCopying> (^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(NSDictionary *dict, id<NSCopying> (NS_NOESCAPE ^block)(id obj)) {
     return __ASTGroupBy_NSDictionary_block(dict, block);
 }
 
@@ -68,7 +68,7 @@ ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(NSDictionary *dict, NSString *key
 /// grouped[@"even"]; /// { @2, @4 }
 /// grouped[@"odd"];  /// { @1, @3, @5 }
 /// @endcode
-ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, id<NSCopying> (^block)(id obj)) {
+ASTERISM_OVERLOADABLE NSDictionary *ASTGroupBy(id<NSFastEnumeration> collection, id<NSCopying> (NS_NOESCAPE ^block)(id obj)) {
     return __ASTGroupBy_NSFastEnumeration_block(collection, block);
 }
 
