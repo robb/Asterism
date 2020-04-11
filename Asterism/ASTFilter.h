@@ -108,8 +108,8 @@ ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(NS_NOESCAP
 ///
 /// @returns An ordered set of all values in @c set that pass the test. The
 ///          order is being maintained.
-ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *array, BOOL(NS_NOESCAPE ^block)(id obj, NSUInteger idx)) {
-    return __ASTFilter_NSOrderedSet_withIndex(array, block);
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTFilter(NSOrderedSet *set, BOOL(NS_NOESCAPE ^block)(id obj, NSUInteger idx)) {
+    return __ASTFilter_NSOrderedSet_withIndex(set, block);
 }
 
 #pragma clang diagnostic pop

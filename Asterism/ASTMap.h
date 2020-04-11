@@ -111,8 +111,8 @@ ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(NS_NOESCAPE ^bl
 /// @returns An ordered set that contains all values of @c set after @c block has
 ///          been applied. If @c block returns @c nil , the element is not
 ///          present in the returned set. The order is being maintained.
-ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *array, id(NS_NOESCAPE ^block)(id obj, NSUInteger idx)) {
-    return __ASTMap_NSOrderedSet_withIndex(array, block);
+ASTERISM_OVERLOADABLE NSOrderedSet *ASTMap(NSOrderedSet *set, id(NS_NOESCAPE ^block)(id obj, NSUInteger idx)) {
+    return __ASTMap_NSOrderedSet_withIndex(set, block);
 }
 
 #pragma clang diagnostic pop
