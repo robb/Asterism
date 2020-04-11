@@ -26,8 +26,8 @@ ASTERISM_USE_INSTEAD(ASTPluck) NSArray *__ASTPluck_NSFastEnumeration(id<NSFastEn
 ///          values in @c dict return for @c keyPath. If a value returns
 ///          @c nil when invoked with @c -valueForKeyPath: , it is not present
 ///          in the returned dictionary.
-ASTERISM_OVERLOADABLE NSDictionary *ASTPluck(NSDictionary *dictionary, NSString *keyPath) {
-    return __ASTPluck_NSDictionary(dictionary, keyPath);
+ASTERISM_OVERLOADABLE NSDictionary *ASTPluck(NSDictionary *dict, NSString *keyPath) {
+    return __ASTPluck_NSDictionary(dict, keyPath);
 }
 
 /// Extracts a value for a given key path from all elements in a collection.
