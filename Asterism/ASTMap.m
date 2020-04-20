@@ -113,3 +113,31 @@ NSOrderedSet *__ASTMap_NSOrderedSet_withIndex(NSOrderedSet *set, id(^block)(id o
 
     return result;
 }
+
+NSArray *__ASTMap_NSFastEnumeration(id<NSFastEnumeration> collection, id(NS_NOESCAPE ^block)(id obj)) {
+    NSCParameterAssert(block != nil);
+
+    if (collection == nil) return nil;
+
+    return ASTMap(collection, ^(id obj, NSUInteger _) {
+        return block(obj);
+    });
+}
+
+NSArray *__ASTMap_NSFastEnumeration_withIndex(id<NSFastEnumeration> collection, id(NS_NOESCAPE ^block)(id obj, NSUInteger idx)) {
+    NSCParameterAssert(block != nil);
+
+    if (collection == nil) return nil;
+
+    NSMutableArray *result = [NSMutableArray array];
+
+    ASTEach(collection, ^(id obj, NSUInteger idx) {
+        id transformed = block(obj, idx);
+
+        if (transformed != nil) {
+            [result addObject:transformed];
+        }
+    });
+
+    return result;
+}

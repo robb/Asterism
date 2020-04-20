@@ -53,3 +53,14 @@ void __ASTEach_NSFastEnumeration(id<NSFastEnumeration> enumerable, void(^iterato
         iterator(obj);
     }
 }
+
+void __ASTEach_NSFastEnumeration_withIndex(id<NSFastEnumeration> enumerable, void(^iterator)(id obj, NSUInteger idx)) {
+    NSCParameterAssert(iterator != nil);
+
+    NSUInteger idx = 0;
+
+    for (id obj in enumerable) {
+        iterator(obj, idx);
+        idx++;
+    }
+}
