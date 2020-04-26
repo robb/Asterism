@@ -17,6 +17,7 @@ ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSDictionary(NSDictionary *dict, vo
 ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSDictionary_keysAndValues(NSDictionary *dict, void(NS_NOESCAPE ^iterator)(id key, id obj));
 ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSOrderedSet_withIndex(NSOrderedSet *set, void(NS_NOESCAPE ^iterator)(id obj, NSUInteger idx));
 ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSFastEnumeration(id<NSFastEnumeration> enumerable, void(NS_NOESCAPE ^iterator)(id obj));
+ASTERISM_USE_INSTEAD(ASTEach) void __ASTEach_NSFastEnumeration_withIndex(id<NSFastEnumeration> enumerable, void(NS_NOESCAPE ^iterator)(id obj, NSUInteger idx));
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -73,6 +74,15 @@ ASTERISM_OVERLOADABLE void ASTEach(NSOrderedSet *set, void(NS_NOESCAPE ^iterator
 ///                   block must not be @c nil .
 ASTERISM_OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, void(NS_NOESCAPE ^iterator)(id obj)) {
     __ASTEach_NSFastEnumeration(enumerable, iterator);
+}
+
+/// Iterates over elements in a collection.
+///
+/// @param enumerable An object that implements @c NSFastEnumeration.
+/// @param iterator   A block that takes an element and its index in @c array as
+///                   its arguments. The block must not be @c nil .
+ASTERISM_OVERLOADABLE void ASTEach(id<NSFastEnumeration> enumerable, void(NS_NOESCAPE ^iterator)(id obj, NSUInteger idx)) {
+    __ASTEach_NSFastEnumeration_withIndex(enumerable, iterator);
 }
 
 #pragma clang diagnostic pop

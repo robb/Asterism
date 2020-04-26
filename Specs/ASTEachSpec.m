@@ -145,6 +145,14 @@
 
             XCTAssertEqualObjects(@(calls), @3);
         }];
+
+        [XCTContext runActivityNamed:@"should optionally pass in the index" block:^(id<XCTActivity> _Nonnull activity){
+             id<NSFastEnumeration> enumerable = @[ @0, @1, @2 ];
+
+             ASTEach(enumerable, ^(id obj, NSUInteger idx) {
+                XCTAssertEqualObjects(obj, @(idx));
+            });
+        }];
     }];
 }
 
