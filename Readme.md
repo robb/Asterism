@@ -102,7 +102,7 @@ target 'My-iOS-App' do
 end
 ```
 
-Finally, tell Cocopods to download and link Asterism in your project:
+Finally, tell CocoaPods to download and link Asterism in your project:
 
 ```sh
 pod install
