@@ -99,10 +99,10 @@
             XCTAssertEqualObjects(after, (@{
                 @"fr": @"BONJOUR",
                 @"en": @"HELLO"
-                                          }));
+            }));
         }];
 
-        [XCTContext runActivityNamed:@"should return a dictioanry" block:^(id<XCTActivity> _Nonnull activity){
+        [XCTContext runActivityNamed:@"should return an array" block:^(id<XCTActivity> _Nonnull activity){
             NSDictionary *before = @{
                 @"fr": @"Bonjour",
                 @"en": @"Hello"
@@ -116,7 +116,7 @@
             XCTAssertEqualObjects(after, (@[
                 @"en: Hello",
                 @"fr: Bonjour",
-                                          ]));
+            ]));
         }];
 
         
@@ -132,7 +132,7 @@
 
             XCTAssertEqualObjects(after, @{
                 @"fr": @"Bonjour"
-                                         });
+            });
         }];
 
         [XCTContext runActivityNamed:@"should call the block once for every key-value-pair" block:^(id<XCTActivity> _Nonnull activity){

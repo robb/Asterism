@@ -47,17 +47,6 @@
 
                     XCTAssertEqualObjects(ASTReduce(dict, @4, add), @10);
                 }];
-                
-                [XCTContext runActivityNamed:@"should be able to reduce key value pairs in dictionary" block:^(id<XCTActivity> _Nonnull activity){
-                    NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
-
-                    NSArray *result = ASTReduce(dict, [NSMutableArray new], ^(NSMutableArray *memo, id key, id value) {
-                        [memo addObject:keyValue(key,value)];
-                        return memo;
-                    });
-                    result = [result sortedArrayUsingSelector:@selector(compare:)];
-                    XCTAssertEqualObjects(result, (@[@"a: 1", @"b: 2", @"c: 3"]));
-                }];
             }];
 
             [XCTContext runActivityNamed:@"without an inital value" block:^(id<XCTActivity> _Nonnull activity){
@@ -83,7 +72,7 @@
                     XCTAssertEqualObjects(result, @6);
                 }];
 
-                [XCTContext runActivityNamed:@"should  use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+                [XCTContext runActivityNamed:@"should use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
                     NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
 
                     XCTAssertEqualObjects(ASTReduce(dict, add), @6);
@@ -96,6 +85,19 @@
                 });
 
                 XCTAssertEqualObjects(result, @"abc");
+            }];
+        }];
+        
+        [XCTContext runActivityNamed:@"for dictionaries" block:^(id<XCTActivity> _Nonnull activity) {
+            [XCTContext runActivityNamed:@"should be able to reduce key value pairs in dictionary" block:^(id<XCTActivity> _Nonnull activity){
+                NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
+                
+                NSArray *result = ASTReduce(dict, [NSMutableArray new], ^(NSMutableArray *memo, id key, id value) {
+                    [memo addObject:keyValue(key,value)];
+                    return memo;
+                });
+                result = [result sortedArrayUsingSelector:@selector(compare:)];
+                XCTAssertEqualObjects(result, (@[@"a: 1", @"b: 2", @"c: 3"]));
             }];
         }];
     }];

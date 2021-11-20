@@ -78,20 +78,6 @@ NSArray *__ASTMap_NSDictionary_keysAndValues_toArray(NSDictionary *dict, id(^blo
         if (element) [memo addObject:element];
         return memo;
     });
-    
-//    if (dict == nil) return nil;
-//
-//    NSMutableArray *result = [NSMutableArray array];
-//
-//    ASTEach(dict, ^(id key, id obj) {
-//        id transformed = block(key, obj);
-//
-//        if (transformed != nil) {
-//            [result addObject:transformed];
-//        }
-//    });
-//
-//    return result;
 }
 
 
