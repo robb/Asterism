@@ -9,6 +9,7 @@
 #import "ASTEach.h"
 
 #import "ASTMap.h"
+#import "ASTReduce.h"
 
 #pragma mark - Arrays
 
@@ -67,6 +68,32 @@ NSDictionary *__ASTMap_NSDictionary_keysAndValues(NSDictionary *dict, id(^block)
 
     return result;
 }
+
+NSArray *__ASTMap_NSDictionary_keysAndValues_toArray(NSDictionary *dict, id(^block)(id key, id obj)) {
+    NSCParameterAssert(block != nil);
+    if (dict == nil) { return nil; }
+
+    return ASTReduce(dict, [NSMutableArray array], ^(NSMutableArray *memo, id key, id obj) {
+        id element = block(key,obj);
+        if (element) [memo addObject:element];
+        return memo;
+    });
+    
+//    if (dict == nil) return nil;
+//
+//    NSMutableArray *result = [NSMutableArray array];
+//
+//    ASTEach(dict, ^(id key, id obj) {
+//        id transformed = block(key, obj);
+//
+//        if (transformed != nil) {
+//            [result addObject:transformed];
+//        }
+//    });
+//
+//    return result;
+}
+
 
 NSSet *__ASTMap_NSSet(NSSet *set, id(^block)(id obj)) {
     NSCParameterAssert(block != nil);

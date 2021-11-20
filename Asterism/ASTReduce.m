@@ -16,6 +16,15 @@ id __ASTReduce_NSDictionary_memo_block(NSDictionary *dict, id memo, id(^block)(i
     return ASTReduce(dict.allValues, memo, block);
 }
 
+id __ASTReduce_NSDictionary_memo_keysAndValues_block(NSDictionary *dict, id memo, id(^block)(id memo, id key, id obj)) {
+    __block id current = memo;
+    [dict enumerateKeysAndObjectsWithOptions:0 usingBlock:^(id key, id obj, BOOL *_stop) {
+        current = block(current, key, obj);
+    }];
+    return current;
+}
+
+
 id __ASTReduce_NSFastEnumeration_block(id<NSFastEnumeration> collection, id(^block)(id memo, id obj)) {
     NSCParameterAssert(block != nil);
 

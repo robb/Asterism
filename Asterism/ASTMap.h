@@ -15,6 +15,7 @@ ASTERISM_USE_INSTEAD(ASTMap) NSArray *__ASTMap_NSArray(NSArray *array, id(NS_NOE
 ASTERISM_USE_INSTEAD(ASTMap) NSArray *__ASTMap_NSArray_withIndex(NSArray *array, id(NS_NOESCAPE ^block)(id obj, NSUInteger idx));
 ASTERISM_USE_INSTEAD(ASTMap) NSDictionary *__ASTMap_NSDictionary(NSDictionary *dict, id(NS_NOESCAPE ^block)(id obj));
 ASTERISM_USE_INSTEAD(ASTMap) NSDictionary *__ASTMap_NSDictionary_keysAndValues(NSDictionary *dict, id(NS_NOESCAPE ^block)(id key, id obj));
+ASTERISM_USE_INSTEAD(ASTMap) NSArray *__ASTMap_NSDictionary_keysAndValues_toArray(NSDictionary *dict, id(NS_NOESCAPE ^block)(id key, id obj));
 ASTERISM_USE_INSTEAD(ASTMap) NSSet *__ASTMap_NSSet(NSSet *set, id(NS_NOESCAPE ^block)(id obj));
 ASTERISM_USE_INSTEAD(ASTMap) NSOrderedSet *__ASTMap_NSOrderedSet(NSOrderedSet *set, id(NS_NOESCAPE ^block)(id obj));
 ASTERISM_USE_INSTEAD(ASTMap) NSOrderedSet *__ASTMap_NSOrderedSet_withIndex(NSOrderedSet *array, id(NS_NOESCAPE ^block)(id obj, NSUInteger idx));
@@ -77,6 +78,20 @@ ASTERISM_OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(NS_NOESCAPE ^b
 ASTERISM_OVERLOADABLE NSDictionary *ASTMap(NSDictionary *dict, id(NS_NOESCAPE ^block)(id key, id obj)) {
     return __ASTMap_NSDictionary_keysAndValues(dict, block);
 }
+
+/// Maps a block across a dictionary to an array.
+///
+/// @param dict  A dictionary of elements.
+/// @param block A block that takes a key and a value as its arguments and
+///              returns a new value. The block must not be @c nil .
+///
+/// @returns An array that contains all key value pairs of @c dict after @c block has
+///          been applied. If @c block returns @c nil , the element is not
+///          present in the returned array. The order is not defined.
+ASTERISM_OVERLOADABLE NSArray *ASTMapPairs(NSDictionary *dict, id(NS_NOESCAPE ^block)(id key, id obj)) {
+    return __ASTMap_NSDictionary_keysAndValues_toArray(dict, block);
+}
+
 
 /// Maps a block across a set.
 ///

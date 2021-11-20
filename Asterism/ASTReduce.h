@@ -13,6 +13,7 @@
 // You should not call these methods directly.
 ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSDictionary_block(NSDictionary *dict, id(NS_NOESCAPE ^block)(id memo, id obj));
 ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSDictionary_memo_block(NSDictionary *dict, id memo, id(NS_NOESCAPE ^block)(id memo, id obj));
+ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSDictionary_memo_keysAndValues_block(NSDictionary *dict, id memo, id(NS_NOESCAPE ^block)(id memo, id key, id obj));
 ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSFastEnumeration_block(id<NSFastEnumeration> collection, id(NS_NOESCAPE ^block)(id memo, id obj));
 ASTERISM_USE_INSTEAD(ASTReduce) id __ASTReduce_NSFastEnumeration_memo_block(id<NSFastEnumeration> collection, id memo, id(NS_NOESCAPE ^block)(id memo, id obj));
 
@@ -50,6 +51,24 @@ ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, id(NS_NOESCAPE ^block)(id
 ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, id memo, id(NS_NOESCAPE ^block)(id memo, id obj)) {
     return __ASTReduce_NSDictionary_memo_block(dict, memo, block);
 }
+
+
+/// Reduces a dictionary to a single value.
+///
+/// @param dict  A @c NSDictionary
+/// @param memo  The first argument to @c block when it is invoked for the first time.
+/// @param block A block that takes two arguments and returns an object. The
+///              first argument is its last return value or @c memo when it is
+///              called for the first time. The second argument is the next
+///              value of @c dict .
+///              The block must not be @c nil .
+///
+/// @returns The last return value of @c block once it reached the end of
+///          @c dict. If @c dict is empty, @c memo is returned.
+ASTERISM_OVERLOADABLE id ASTReduce(NSDictionary *dict, id memo, id(NS_NOESCAPE ^block)(id memo, id key, id obj)) {
+    return __ASTReduce_NSDictionary_memo_keysAndValues_block(dict, memo, block);
+}
+
 
 /// Reduces a collection to a single value.
 ///
