@@ -19,6 +19,10 @@
         return @(memo.doubleValue + obj.doubleValue);
     };
 
+    NSString *(^keyValue)(NSString *, id) = ^(NSString *key, id value) {
+        return [NSString stringWithFormat:@"%@: %@", key, value];
+    };
+    
     [XCTContext runActivityNamed:@"reduce" block:^(id<XCTActivity> _Nonnull activity){
         [XCTContext runActivityNamed:@"for objects implementing <NSFastEnumeration>" block:^(id<XCTActivity> _Nonnull activity){
             [XCTContext runActivityNamed:@"when given an intial value" block:^(id<XCTActivity> _Nonnull activity){
@@ -68,7 +72,7 @@
                     XCTAssertEqualObjects(result, @6);
                 }];
 
-                [XCTContext runActivityNamed:@"should  use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
+                [XCTContext runActivityNamed:@"should use the values of dictionaries" block:^(id<XCTActivity> _Nonnull activity){
                     NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
 
                     XCTAssertEqualObjects(ASTReduce(dict, add), @6);
@@ -81,6 +85,19 @@
                 });
 
                 XCTAssertEqualObjects(result, @"abc");
+            }];
+        }];
+        
+        [XCTContext runActivityNamed:@"for dictionaries" block:^(id<XCTActivity> _Nonnull activity) {
+            [XCTContext runActivityNamed:@"should be able to reduce key value pairs in dictionary" block:^(id<XCTActivity> _Nonnull activity){
+                NSDictionary *dict = @{ @"a": @1, @"b": @2, @"c": @3 };
+                
+                NSArray *result = ASTReduce(dict, [NSMutableArray new], ^(NSMutableArray *memo, id key, id value) {
+                    [memo addObject:keyValue(key,value)];
+                    return memo;
+                });
+                result = [result sortedArrayUsingSelector:@selector(compare:)];
+                XCTAssertEqualObjects(result, (@[@"a: 1", @"b: 2", @"c: 3"]));
             }];
         }];
     }];

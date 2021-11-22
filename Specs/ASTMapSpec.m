@@ -15,6 +15,10 @@
 @implementation ASTMapTests
 
 - (void)testEverything {
+    NSString *(^keyValue)(NSString *, id) = ^(NSString *key, id value) {
+        return [NSString stringWithFormat:@"%@: %@", key, value];
+    };
+    
     [XCTContext runActivityNamed:@"for arrays" block:^(id<XCTActivity> _Nonnull activity){
         [XCTContext runActivityNamed:@"should not call the block when given an empty array" block:^(id<XCTActivity> _Nonnull activity){
             __block NSUInteger calls = 0;
@@ -95,9 +99,27 @@
             XCTAssertEqualObjects(after, (@{
                 @"fr": @"BONJOUR",
                 @"en": @"HELLO"
-                                          }));
+            }));
         }];
 
+        [XCTContext runActivityNamed:@"should return an array" block:^(id<XCTActivity> _Nonnull activity){
+            NSDictionary *before = @{
+                @"fr": @"Bonjour",
+                @"en": @"Hello"
+            };
+
+            NSArray *after = ASTMapPairs(before, ^(id key, id value) {
+                return keyValue(key, value);
+            });
+            after = [after sortedArrayUsingSelector:@selector(compare:)];
+
+            XCTAssertEqualObjects(after, (@[
+                @"en: Hello",
+                @"fr: Bonjour",
+            ]));
+        }];
+
+        
         [XCTContext runActivityNamed:@"should remove all elements for which the block returns nil" block:^(id<XCTActivity> _Nonnull activity){
             NSDictionary *before = @{
                 @"fr": @"Bonjour",
@@ -110,7 +132,7 @@
 
             XCTAssertEqualObjects(after, @{
                 @"fr": @"Bonjour"
-                                         });
+            });
         }];
 
         [XCTContext runActivityNamed:@"should call the block once for every key-value-pair" block:^(id<XCTActivity> _Nonnull activity){
